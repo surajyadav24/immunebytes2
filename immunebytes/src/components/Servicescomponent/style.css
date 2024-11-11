@@ -1,0 +1,164 @@
+.service-discription h2 {
+    padding-bottom: 30px;
+    color: #FFF;
+    text-align: left;
+    font-family: "RobotoMono-Regular";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.service-discription p {
+    color: #fff;
+    max-width: 470px;
+    font-family: RobotoMono-Regular;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25.06px;
+    text-align: left;
+}
+.service-discription button.btn.btn-primary {
+    padding: 9px 27px !important;
+    font-size: 12px;
+}
+.service-discription button.btn.btn-primary span {
+padding-left: 2px;
+}
+.service-discription button.btn.btn-primary span svg{
+transform: scale(0.5);
+}
+.service-discription button.btn.btn-primary {
+    background: url(../../assets/images/immunebytes/red-bg-btn.svg);
+    margin-left: 0px;
+    padding: 9px 13px !important;
+    font-size: 12px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.service-discription h2 {
+    padding-bottom: 10px;
+}
+.service-img {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 379px;
+    min-width: 379px;
+}
+.service-img img {
+    width: 350px;
+}
+@media (max-width:768px) {
+    .left-serv{
+        width: 50% !important;
+    }
+    .col-lg-8.md-6.col-sm-6.col-xs-6.left-serv {
+        max-width: 50%;
+    }
+    .col-lg-4.md-6.col-sm-6.col-xs-6.right-serv {
+        max-width: 50%;
+    }
+    .service-discription h2 {
+       font-size: 14px;
+
+}
+.service-discription p {
+    max-width: 145px;
+
+}
+.service-discription h2 {
+    padding-bottom: 0px;
+}
+.service-discription button.btn.btn-primary {
+    padding: 5px 6px !important;
+    font-size: 10px;
+}
+.service-discription p {
+    font-size: 9px;
+    max-width: 165px;
+    line-height: 16px;
+}
+.service-img img {
+    margin-right: 0px;
+    max-width: 50%;
+}
+.service-img {
+    display: flex;
+    justify-content: flex-end;
+}
+.service-discription {
+    padding-bottom: 40px;
+}
+}
+@media (max-width:425px) {
+    .left-serv{
+        width: 50% !important;
+    }
+    .col-lg-8.md-6.col-sm-6.col-xs-6.left-serv {
+        max-width: 50%;
+    }
+    .col-lg-4.md-6.col-sm-6.col-xs-6.right-serv {
+        max-width: 50%;
+    }
+    .service-discription h2 {
+       font-size: 12px;
+
+}
+.service-discription p {
+    max-width: 145px;
+
+}
+.service-discription h2 {
+    padding-bottom: 0px;
+}
+.service-discription button.btn.btn-primary {
+    padding: 5px 6px !important;
+    font-size: 10px;
+}
+
+.service-discription p {
+    font-size: 9px;
+    max-width: 165px;
+    line-height: 13px;
+}
+
+.service-img img {
+    margin-right: 0px;
+    max-width: 80%;
+}
+
+.service-img {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.service-discription {
+    padding-bottom: 0px;
+}
+.service-img img{
+    width: 200px;
+}
+.service-img {
+    display: flex;
+    justify-content: center;
+    min-width: 180px;
+}
+
+.services-component .row {
+    padding: 0px 5px;
+    min-height: 300px;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.services-wrapper .right-serv {
+    max-width: 200px !important;
+    position: relative;
+}
+
+.services-wrapper h1 {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+}

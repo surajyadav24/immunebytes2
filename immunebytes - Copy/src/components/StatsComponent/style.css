@@ -1,0 +1,140 @@
+
+  
+  .stat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    position: relative;
+    text-align: center;
+    min-width: 250px !important;
+  }
+  
+  .stat-card h2 {
+    -webkit-text-fill-color: rgba( 255, 255, 255, 0 );
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #4f4f4f;
+    font-family: "RobotoMono-Bold";
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .stat-card:hover h2{
+    color: #000 !important;
+    background: transparent;
+    -webkit-text-fill-color:#000;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+  }
+  .stat-card:hover p{
+    color: #000 !important;
+    background: transparent;
+    -webkit-text-fill-color:#000;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+  }
+  .stat-card p {
+    -webkit-text-fill-color: rgba( 255, 255, 255, 0 );
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #4f4f4f;
+    font-family: "RobotoMono-Bold";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .yellow-border {
+background: url(../../assets/images/portfolio/card-green.svg) no-repeat center center / contain;
+padding: 37px 0px;
+
+  }
+  .yellow-border:hover{
+    background: url(../../assets/images/portfolio/hover-yellow.svg) no-repeat center center / contain;
+    color: #000;
+  }
+  .red-border {
+    background: url(../../assets/images/portfolio/red-card.svg) no-repeat center center / contain;
+    max-width: 427px;
+  }
+  .red-border:hover {
+    background: url(../../assets/images/portfolio/hover-red.svg) no-repeat center center / contain;
+  }
+  .green-border {
+    background: url(../../assets/images/portfolio/green-card-2.svg) no-repeat center center / contain;
+  }
+  .green-border:hover{
+    background: url(../../assets/images/portfolio/hover-green.svg) no-repeat center center / contain;
+  }
+  
+  @media (max-width:768px) {
+    .stat-card {
+        min-height: 250px;
+        margin: 20px 0px;
+    }
+    .red-border {
+        background: url(../../assets/images/portfolio/hover-red.svg) no-repeat center center / contain;
+      }
+      .green-border{
+        background: url(../../assets/images/portfolio/hover-green.svg) no-repeat center center / contain;
+      }
+
+      .secure-audit h2 {
+        font-size: 50px;
+      }
+      .yellow-border{
+        background: url(../../assets/images/portfolio/hover-yellow.svg) no-repeat center center / contain;
+        color: #000;
+      }
+      .stat-card p, .stat-card h2{
+        color: #000 !important;
+        background: transparent;
+        -webkit-text-fill-color:#000;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #000;
+      }
+      .container.stats-container .row {
+        justify-content: center !important;
+    }
+    .stat-card {.service-2 .right-serv::after {
+      content: url(http://localhost:3002/static/media/second-audit.144aca7….svg);
+      left: 192px;
+      top: -137px !important;
+      transform: scale(0.5) !important;
+  }
+      min-width: 353px !important;
+  }
+  }
+  @media (max-width:425px) {
+    .stat-card {
+        min-height: 230px;
+        margin: 10px 0px;
+    }
+    .container.stats-container {
+        padding: 0px 10px;
+    }
+    .red-border {
+        background: url(../../assets/images/portfolio/hover-red.svg) no-repeat center center / contain;
+      }
+      .green-border{
+        background: url(../../assets/images/portfolio/hover-green.svg) no-repeat center center / contain;
+      }
+
+      .secure-audit h2 {
+        font-size: 30px;
+      }
+      .yellow-border{
+        background: url(../../assets/images/portfolio/hover-yellow.svg) no-repeat center center / contain;
+        color: #000;
+      }
+      .stat-card p, .stat-card h2{
+        color: #000 !important;
+        background: transparent;
+        -webkit-text-fill-color:#000;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #000;
+      }
+  }

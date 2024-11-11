@@ -1,0 +1,108 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
+}
+
+
+.login-container p{
+    font-family: Arvo-Regular;
+
+}
+.login-container h2  {
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+}
+
+.login-container .logo {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"],
+input[type="password"] {
+
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin-bottom: 15px;
+}
+.login-form label{
+    font-family: 'Arvo-Bold';
+    color: #fff;
+    font-size: 18px;
+}
+
+button {
+  background-color: #dcdcdc33;
+  padding: 0.75rem;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid #DCDCDC80;
+  font-family: Arvo-Bold;
+}
+
+button:hover {
+  background: rgba(165, 165, 165, 0.1);
+}
+
+.forgot-password {
+  margin-top: 1rem;
+  color: #a9a9a9;
+  font-size: 0.875rem;
+  cursor: pointer;
+  text-align: end;
+}
+
+.otp-container {
+  margin-top: 1.5rem;
+}
+input[type="text"], input[type="password"] {
+    background-color: #dcdcdc33!important;
+    color: #a9a9a9;
+    border: 2px solid #DCDCDC80;
+    font-family: Arvo-Bold;
+}
+input[type="text"]:focus-visible {
+    border: 2px solid #DCDCDC80;
+}
+
+.otp-inputs {
+  display: flex;
+  justify-content: space-between;
+  font-family: Arvo-Bold;
+}
+
+.otp-inputs input {
+background-color:#dcdcdc33 !important;
+  width: 40px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+ color:  rgba(255, 255, 255, 1);
+
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .login-box {
+    width: 500px;
+    padding: 3rem;
+  }
+}

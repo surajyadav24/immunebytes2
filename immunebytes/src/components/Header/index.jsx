@@ -6,7 +6,6 @@ import Formpopup from '../Formpopup';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false); // State to track menu open/close
-
   const toggleMenu = () => {
     setIsOpen(!isOpen); // Toggle menu on click
   };

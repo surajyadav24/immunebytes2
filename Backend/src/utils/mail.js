@@ -85,3 +85,47 @@ export const plainEmailTemplate = (heading,message) => {
    </html>
    `;
    };
+
+
+export const forgotPasswordTemplate = ()=>{
+   return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Your Password</title>
+    <style>
+        /* Tailwind CSS CDN for use in email previews */
+        @import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-lg mx-auto my-8 p-4 bg-white shadow-md rounded-lg">
+        <header class="text-center mb-4">
+            <h1 class="text-2xl font-semibold text-gray-800">Reset Your Password</h1>
+            <p class="text-gray-600 mt-1">We received a request to reset your password.</p>
+        </header>
+
+        <div class="text-center">
+            <p class="mb-4 text-gray-700">
+                Click the button below to reset your password. If you did not request this, please ignore this email.
+            </p>
+            <a href="https://example.com/reset-password" class="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg shadow hover:bg-blue-700 transition">
+                Reset Password
+            </a>
+        </div>
+
+        <footer class="mt-8 text-center text-gray-500">
+            <p>If the button above does not work, copy and paste this link into your browser:</p>
+            <a href="https://example.com/reset-password" class="text-blue-600 hover:underline break-words">
+                https://example.com/reset-password
+            </a>
+            <p class="mt-4 text-sm">
+                This link will expire in 24 hours for your security.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
+`
+   }

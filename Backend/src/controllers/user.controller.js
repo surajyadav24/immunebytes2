@@ -8,9 +8,11 @@ import {
   generateOTP,
   mailTransport,
   plainEmailTemplate,
+  forgotPasswordTemplate
 } from "../utils/mail.js";
 import { VerificationToken } from "../models/verificationToken.model.js";
 import { isValidObjectId } from "mongoose";
+import crypto from 'crypto'
 
 // TOKEN ----------->
 const generateAccessAndRefreshToken = async (userid) => {
@@ -64,19 +66,7 @@ const signUp = asyncHandler(async (req, res) => {
     password: hashedPassword,
   });
 
-  const OTP = generateOTP();
-  const verificationToken = new VerificationToken({
-    owner: user._id,
-    token: OTP,
-  });
-  await verificationToken.save();
 
-  mailTransport().sendMail({
-    from: "Immunebytes@gmail.com",
-    to: user.email,
-    subject: "Verify your email account",
-    html: generateEmailTemplate(OTP),
-  });
 
   if (!user) {
     throw new ApiError(400, "Invalid user details");
@@ -130,6 +120,20 @@ const logIn = asyncHandler(async (req, res) => {
   const loggedInUser = await User.findById(user._id).select(
     "-password -refreshToken "
   );
+
+  const OTP = generateOTP();
+  const verificationToken = new VerificationToken({
+    owner: user._id,
+    token: OTP,
+  });
+  await verificationToken.save();
+
+  mailTransport().sendMail({
+    from: "Immunebytes@gmail.com",
+    to: user.email,
+    subject: "Verify your email account",
+    html: generateEmailTemplate(OTP),
+  });
 
   const options = {
     httpOnly: true,
@@ -211,4 +215,90 @@ const verifyEmail = asyncHandler(async (req, res) => {
   });
 });
 
-export { signUp, logIn, logOut, verifyEmail };
+
+
+// FORGOT PASSWORD -------------->
+
+
+
+const forgotPassword = asyncHandler(async(req,res)=>{
+	const { email } = req.body;
+  if(!email){
+    throw new ApiError(401,"user doesn't exist")
+  }
+
+  const user = await User.findOne({ email });
+
+		if (!user) {
+			throw new ApiError(401, "username and password is required")
+		}
+
+		// Generate reset token
+		const resetToken = crypto.randomBytes(20).toString("hex");
+		const resetTokenExpiresAt = Date.now() + 1 * 60 * 60 * 1000; // 1 hour
+
+		user.resetPasswordToken = resetToken;
+		user.resetPasswordExpiresAt = resetTokenExpiresAt;
+
+		await user.save();
+
+		// send email
+		// await sendPasswordResetEmail(user.email, `${process.env.CLIENT_URL}/reset-password/${resetToken}`);
+    mailTransport().sendMail({
+      from: "Immunebytes@gmail.com",
+      to: user.email,
+      subject: "Forgot-Password",
+      html: forgotPasswordTemplate("Email verified Successfully","Thanks for contacting with us"),
+    });
+
+  return res
+    .status(200)
+    .json(
+      new ApiResponse(
+        200,
+        { user },
+        "Password reset link sent to your email"
+      )
+    );
+
+})
+
+
+// RESET PASSWORD -------------->
+//  const resetPassword = asyncHandler( async (req, res) => {
+// 		const { token } = req.params;
+//     console.log("TOKEN :",token)
+// 		const { password } = req.body;
+
+// 		const user = await User.findOne({
+// 			resetPasswordToken: token,
+// 			resetPasswordExpiresAt: { $gt: new Date() },
+// 		});
+
+// 		if (!user) {
+// 			return res.status(400).json({ success: false, message: "Invalid or expired reset token" });
+// 		}
+
+// 		// update password
+// 		const hashedPassword = await bcryptjs.hash(password, 10);
+
+// 		user.password = hashedPassword;
+// 		user.resetPasswordToken = undefined;
+// 		user.resetPasswordExpiresAt = undefined;
+// 		await user.save();
+
+// 		await sendResetSuccessEmail(user.email);
+
+//     return res
+//     .status(200)
+//     .json(
+//       new ApiResponse(
+//         200,
+//         { user },
+//         "Password reset successful"
+//       )
+//     );
+// });
+
+
+export { signUp, logIn, logOut, verifyEmail,forgotPassword};

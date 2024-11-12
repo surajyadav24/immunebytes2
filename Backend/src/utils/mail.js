@@ -7,6 +7,12 @@ export const generateOTP = () => {
   }
   return otp;
 };
+// Hash OTP function
+export const hashOTP = async (otp) => {
+  const salt = await bcrypt.genSalt(10);
+  const hashedOTP = await bcrypt.hash(otp, salt);
+  return hashedOTP;
+};
 
 export const mailTransport = () =>
   nodemailer.createTransport({
@@ -125,6 +131,45 @@ export const forgotPasswordTemplate = ()=>{
             </p>
         </footer>
     </div>
+</body>
+</html>
+`
+   }
+
+   export const resetPasswordTemplate = ()=>{
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Reset Successful</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
+    <h2 class="text-2xl font-semibold text-center text-gray-800 mb-4">Password Reset Successfully</h2>
+    <p class="text-gray-600 text-center mb-8">
+      Your password has been reset successfully! You can now log in with your new password.
+    </p>
+
+    <div class="mb-8 text-center">
+      <a href="http://yourwebsite.com/login" class="bg-blue-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+        Go to Login
+      </a>
+    </div>
+
+    <div class="border-t border-gray-200 pt-8 text-center">
+      <p class="text-sm text-gray-500">
+        If you did not request this change, please contact our support team immediately at
+        <a href="mailto:support@yourwebsite.com" class="text-blue-500 hover:underline">support@yourwebsite.com</a>.
+      </p>
+    </div>
+  </div>
 </body>
 </html>
 `

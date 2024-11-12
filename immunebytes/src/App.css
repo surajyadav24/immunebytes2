@@ -1,0 +1,108 @@
+
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+@font-face {
+  font-family:"Arame-Bold" ;
+  src: url("./assets/Fonts/Arame-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'Arame-Thin';
+  src: url('./assets/Fonts/Arame-Thin.ttf')  ;
+}
+
+@font-face {
+  font-family: 'RobotoMono-Regular';
+  src: url('./assets/Fonts/RobotoMono-Regular.ttf')  ;
+}
+
+@font-face {
+  font-family: 'RobotoMono-Bold';
+  src: url('./assets/Fonts/RobotoMono-Bold.ttf')  ;
+}
+
+@font-face {
+  font-family: 'RobotoMono-Italic';
+  src: url('./assets/Fonts/RobotoMono-Italic.ttf')  ;
+}
+
+
+
+@font-face {
+  font-family: 'Arvo-Regular';
+  src: url('./assets/Fonts/Arvo-Regular.ttf')  ;
+}
+
+@font-face {
+  font-family: 'Arvo-Bold';
+  src: url('./assets/Fonts/Arvo-Bold.ttf')  ;
+}
+
+@font-face {
+  font-family: 'Arvo-Italic';
+  src: url('./assets/Fonts/Arvo-Italic.ttf')  ;
+}
+
+.container-fluid{
+  padding: 0px ;
+}
+body{
+  background-color: #000;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: Arvo-Bold;
+}
+p{
+  font-family: RobotoMono-Regular;
+}
+.btn-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.heading-h1{
+color:#F9116C;
+}
+button.splide__arrow.splide__arrow--prev {
+  display: none;
+}
+button.splide__arrow.splide__arrow--next {
+  display: none;
+}
+.case-study-wrapper{
+
+  margin: 0 auto;
+}
+button.twit-x img {
+  max-width: 23px !important;
+}
+.view-more button {
+  padding: 4px 12px !important;
+  font-size: 16px !important;
+  line-height: 24px;
+  font-family: 'RobotoMono-Regular' !important;
+}
+
+@media (max-width:768px) {
+  .container, .container-sm {
+    max-width: 700px;
+}
+.register-btn{
+  margin-top: 0px;
+  color: #f9116c !important;
+}
+
+}
+@media (max-width:425px) {
+  h1.text-center.py-5.pb-4.heading-h1 {
+    padding-top: 0px !important;
+    padding-bottom: 20px !important;
+}
+
+}

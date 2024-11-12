@@ -1,0 +1,265 @@
+/* src/components/CaseStudyCard.css */
+
+.case-study-card {
+  background-color: #1c1c1e;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  padding: 20px 75px;
+  max-width: max-content;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 300px;
+}
+  .card-content {
+    max-width: 60%;
+  }
+  
+  .card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .card-description {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+  }
+  
+  .card-button {
+    padding: 10px 20px;
+border: none;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .card-button:hover {
+
+    color: white;
+  }
+  
+  .card-image img {
+    max-width: 100px;
+    border-radius: 5px;
+  }
+  
+.card-bg-1 
+.case-study-card{
+  background: url('../../assets/images/cards/card-bg-1.svg' )no-repeat center center / contain;
+}
+.card-bg-2 
+.case-study-card{
+  background: url('../../assets/images/cards/card-bg-2.svg' )no-repeat center center / contain;
+}
+.card-bg-3 
+.case-study-card{
+  background: url('../../assets/images/cards/card-bg-3.svg' )no-repeat center center / contain;
+}
+.card-bg-4 
+.case-study-card{
+  background: url('../../assets/images/cards/card-bg-4.svg' )no-repeat center center / contain;
+}
+.card-bg-1 button{
+  background: url('../../assets/images/btn-1bg.svg' )no-repeat center center / contain;
+}
+.card-bg-2 button{
+  background: url('../../assets/images/btn-bg2.svg' )no-repeat center center / contain;
+}
+.card-bg-3 button{
+  background: url('../../assets/images/btn-3bg.svg' )no-repeat center center / contain;
+}
+.card-bg-4 button{
+  background: url('../../assets/images/btn-4bg.svg' )no-repeat center center / contain;
+}
+
+
+
+.services-wrapper .right-serv {
+  max-width: 400px;
+  position: relative;
+}
+.services-component .row {
+  min-height: 300px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styles for the ::after pseudo-element */
+.right-serv::after {
+  content: url('../../assets/images/first-audit.svg');
+  position: absolute;
+  top: -87px !important;
+  left: 66px;
+  right: 0;
+  transform: scale(0.62) !important ;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease-out, top 1s ease-out;
+}
+.service-2 .right-serv::after{
+  content: url('../../assets/images/second-audit.svg');
+  left: 65px;
+  top: -78px !important;
+}
+.service-3 .right-serv::after{
+  content: url('../../assets/images/third-audit.svg');
+  left: 71px;
+  top: -48px !important;
+}
+
+/* Hover state to trigger animation */
+.services-wrapper .row:hover::after {
+  top: -67% ;
+  opacity: 1;
+}
+
+/* Keyframe animation */
+@keyframes revealFromBottom {
+  0% {
+    opacity: 0;
+    top: 100%;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+    transform: translateY(0px);
+    
+  }
+}
+
+/* Apply animation on hover */
+.services-wrapper .row:hover .right-serv::after {
+  animation: revealFromBottom 0.5s ease-out forwards;
+}
+
+
+@media (max-width:1440px) {
+  .case-study-wrapper {
+    padding-top: 40px;
+    margin: 0 auto;
+}
+
+}
+@media (max-width:768px) {
+  .right-serv::after {
+    content: url('../../assets/images/first-audit.svg');
+    position: absolute;
+    top: -135px !important;
+    left: 218px;
+    right: 0;
+    transform: scale(0.4) !important;
+    transition: opacity 0.3s ease-out, top 1s ease-out;
+    opacity: 1 !important;
+}
+
+  .service-2 .right-serv::after {
+    left: 192px;
+    top: -137px !important; 
+    transform: scale(0.5) !important;
+}
+
+.service-3 .right-serv::after {
+  left: 192px;
+  top: -99px !important;
+  transform: scale(0.5) !important;
+}
+}
+
+@media (max-width:425px) {
+  .card-title {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+.card-title {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+.card-description{
+  font-size: 10px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.case-study-card {
+  background-color: #1c1c1e;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  padding: 0px 20px;
+  max-height: 250px;
+  min-height: 250px;
+}
+.case-study-wrapper {
+  display: flex;
+  margin: 0 auto;
+
+  flex-direction: column;
+  align-items: center;
+} 
+
+
+.services-wrapper .right-serv {
+  position: relative;
+}
+
+/* Styles for the ::after pseudo-element */
+.right-serv::after {
+  content: url('../../assets/images/first-audit.svg');
+  position: absolute;
+  top: -135px !important;
+  left: -11px;
+  right: 0;
+  transform: scale(0.3) !important ;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease-out, top 1s ease-out;
+  opacity: 1 !important;
+}
+.service-2 .right-serv::after{
+  content: url('../../assets/images/second-audit.svg') !important;
+  left: -14px;
+  top: -122px !important;
+  opacity: 1 !important;
+}
+.service-3 .right-serv::after{
+  content: url('../../assets/images/third-audit.svg');
+  left: -7px;
+  top: -94px !important;
+  opacity: 1 !important;
+}
+.services-component .row {
+  min-height: 185px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hover state to trigger animation */
+.case-study-card {
+  padding: 30px 20px !important;
+  max-height: auto !important;
+  min-height: auto !important;
+}
+.card-bg-3.pt-4 {
+  padding-top: 0px;
+  margin-top: -30px;
+}
+.case-study-wrapper h1.text-center.py-5.pb-4.heading-h1 {
+  padding-top: 30px !important;
+}
+.case-study-wrapper {
+  padding-top: 0px;
+}
+.testimonial-slider .swiper-wrapper {
+  padding-top: 40px;
+  padding-bottom: 0px;
+}
+footer .container-fluid {
+  width: 100vw;
+  min-width: 100vw;
+}
+}

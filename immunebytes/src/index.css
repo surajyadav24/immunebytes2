@@ -1,0 +1,12 @@
+
+.header-wrapper {
+  justify-content: space-between;
+  display: flex;
+}
+.view-more button{
+  padding: 7px 15px !important;
+  font-size: 14px !important;
+}
+.view-more button span{
+transform: scale(0.8);
+}

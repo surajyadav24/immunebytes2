@@ -1,0 +1,101 @@
+.testimonial-slider .swiper-slide{
+    padding: 0px 70px;
+    min-height: 500px;
+    background:url(../../assets/images/slider/active-slide.svg) no-repeat center center/ contain ;
+}
+.testimonial-slider .swiper-slide-prev {
+    padding: 20px 25px;
+    min-height: 440px;
+    max-height: 263px !important;
+    background:url(../../assets/images/slider/prev-slide.svg) no-repeat center center/ contain ;
+}
+.testimonial-slider .swiper-slide-next{
+    padding: 20px 25px;
+    min-height: 440px;
+    max-height: 263px !important;
+    background:url(../../assets/images/slider/next-slide.svg) no-repeat center center/ contain ;
+
+}
+.testimonial-slider .swiper-slide.swiper-slide-active {
+    transform: scale(1.1);
+    position: relative;
+    padding: 55px 10px;
+    top: -36px;
+    min-height: 541px;
+    min-width: 346px;
+}
+.testimonial-wrapper h3{
+    font-size: 20px;
+}
+.testimonial-wrapper p{
+    font-size: 12px;
+}
+.testimonial-slider .swiper-wrapper{
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+.testimonial-slider span.swiper-pagination-bullet {
+    background: #D9D9D9;
+}
+
+.testimonial-slider .swiper-pagination-bullet-active-main{
+    background: #F9116C !important;
+    height: 12px !important;
+    width: 12px !important;
+
+}
+.testimonial-slider .swiper-button-prev , .swiper-button-next  {
+    display: none !important;
+}
+.testimonial-slider .swiper-slide p {
+    margin: 0 auto;
+    max-width: 340px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    font-family: RobotoMono-Regular;
+    color: #F9116C;
+    padding-top: 12px;
+}
+.testimonial-slider .swiper-slide h5{
+    font-size: 14px;
+    font-family: RobotoMono-Regular;
+}
+.container.testimonial-slider {
+    padding-top: 49px;
+}
+
+@media (max-width:1440px) {
+    .testimonial-slider .swiper-slide{
+        min-height: 520px;
+    }
+    .testimonial-slider .swiper-slide-prev {
+        padding: 41px 25px;
+    }
+    .testimonial-slider .swiper-slide-next {
+        padding: 41px 25px;
+    }
+    .swiper-slide img{
+        max-width: 65px;
+    }
+    .swiper-slide.swiper-slide-active img{
+        max-width: 100px;
+    }
+}
+@media (max-width:425px) {
+    .testimonial-slider .swiper-slide.swiper-slide-active{
+        transform: scale(0.9) !important;
+    }
+    .container.testimonial-slider {
+        padding-top: 0px;
+    }
+    h1.text-center.py-5.pb-4.heading-h1.testimonial-heading {
+        padding-top: 10px !important;
+        margin-bottom: -18px;
+        padding-bottom: 0px !important;
+    }
+    
+}
+
+

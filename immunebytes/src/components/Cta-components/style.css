@@ -1,0 +1,63 @@
+.cta-wrapper h2{
+background: linear-gradient(272deg, #F96746 3.28%, #FFE500 56.57%, #C800C0 96.67%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-family: "Arame-Bold";
+font-size: 50px;
+font-style: normal;
+font-weight: 700;
+line-height: 101.329%; /* 112.475px */
+text-align: center;
+margin-bottom: 0px;
+}
+
+.cta-wrapper{
+    margin: 40px 0px;
+    padding: 80px 20px;
+    border-radius: 27px;
+border: 1px solid #C700BF;
+background: rgba(255, 77, 0, 0.10);
+box-shadow: 37.067px -37.067px 37.067px -16px rgba(208, 35, 162, 0.10) inset, -37.067px 37.067px 37.067px -16px rgba(250, 131, 54, 0.10) inset;
+backdrop-filter: blur(37.06666564941406px);
+}
+.cta-wrapper button {
+    margin-top: 40px !important;
+    padding: 15px 27px !important;
+}
+
+@media (max-width:768px) {
+    .cta-wrapper h2{
+        font-size: 42px;
+    }
+    button.btn.btn-primary{
+        font-size: 15px;
+    }
+    .cta-wrapper {
+        margin: 30px 0px;
+        padding: 40px 20px;
+    }
+}
+
+
+@media (max-width:425px) {
+    .cta-wrapper {
+        margin: 30px 0px;
+        padding: 31px 20px;
+    }
+    .cta-wrapper h2{
+      font-size: 24px;
+    }
+    .cta-wrapper button {
+        font-size: 14px !important;
+        margin-top: 21px !important;
+        padding: 9px 12px !important;
+        font-size: 12px !important;
+        background-color: transparent !important;
+    }
+    .cta-wrapper button.btn.btn-primary span {
+        transform: scale(0.7);
+        padding-left: 15px;
+    }
+  
+  }

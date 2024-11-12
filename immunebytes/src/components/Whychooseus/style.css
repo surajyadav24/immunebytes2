@@ -1,0 +1,278 @@
+.clients{
+    padding: 40px 50px;
+    background: url(../../assets/images/whychoose/bg-clients.svg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 95%;
+    display: flex;
+    width: 80%;
+    min-height: 389px;
+    justify-content: center;
+    align-items: center;
+}
+
+.clients h2{
+    padding-top: 36px;
+    text-align: justify;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #4F4F4F;
+font-family: "RobotoMono-Bold";
+font-size: 90px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.clients:hover{
+    padding: 40px 50px;
+    background: url(../../assets/images/whychoose/base-bg.svg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 95%;
+    display: flex;
+    width: 80%;
+    min-height: 389px;
+    justify-content: center;
+    align-items: center;
+}
+.clients:hover h2 , .clients-5:hover h2{
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke-color: #fff;
+}
+.clients h2 span{
+    padding-left: 50px;
+}
+.clients-5 h2{
+    padding-top: 36px;
+    text-align: justify;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #4F4F4F;
+font-family: "RobotoMono-Bold";
+font-size: 60px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.clients-5{
+    padding: 0px 0px;
+    background: url(../../assets/images/whychoose/client500k.svg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 95%;
+    min-height: 193px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clients-5:hover{
+    padding: 0px 10px;
+    background: url(../../assets/images/whychoose/bg-5kbase.svg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 95%;
+    min-height: 193px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clients-5 h2  span{
+    font-size: 40px;
+}
+
+@media (max-width:768px) {
+    
+.clients {
+    padding: 20px 50px;
+    background: url(../../assets/images/whychoose/base-bg.svg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+padding: 20px 10px;
+    width: 100%;
+min-height: 250px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.clients:hover {
+padding: 20px 10px;
+    width: 100%;
+min-height: 250px;
+}
+.col-lg-4.box-wrap {
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+}
+.clients h2 {
+    font-size: 65px;
+    padding: 10px 0px;
+    text-align: left;
+}
+.clients:hover h2 {
+    font-size: 41px;
+}
+.clients h2 , .clients-5 h2{
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke-color: #fff;
+}
+.clients-5:hover{
+    background: url(../../assets/images/Second-frame.svg) no-repeat center center / contain;
+}
+.clients-5{
+    background: url(../../assets/images/Second-frame.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.first-clients {
+    padding: 20px;
+    background: url("../../assets/images/third-frame.svg") no-repeat center center / contain;
+}
+.clients-5 h2 {
+    padding: 40px 0px;
+    padding-top: 36px;
+    font-size: 41px;
+}
+.clients h2 {
+    font-family: 'RobotoMono-Regular' !important ;
+    font-weight: 500;
+    text-align: left;
+    letter-spacing: 5px;
+    line-height: 56px;
+    font-size: 41px;
+}
+.clients-5 h2 span {
+    padding-left: 40px;
+    font-size: 41px;
+}
+.clients-5 {
+    text-align: center;
+
+}
+.first-clients h2 {
+    font-family: 'RobotoMono-Regular' !important;
+    font-size: 20px !important;
+    font-weight: 400;
+}
+.clients-5 h2{
+    font-family: 'RobotoMono-Regular' !important;
+    font-size: 41px !important;
+    letter-spacing: 4px;
+    font-weight: 400;
+}
+.container.py-5.clients-card {
+    padding: 0px !important;
+} 
+.clients-5:hover {
+    padding: 30px 47px;
+}
+}
+@media (max-width:425px) {
+    
+.clients {
+    padding: 20px 50px;
+    background: url(../../assets/images/whychoose/base-bg.svg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+padding: 20px 10px;
+    width: 100%;
+min-height: 250px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.clients:hover {
+padding: 20px 10px;
+    width: 100%;
+min-height: 250px;
+}
+.col-lg-4.box-wrap {
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+}
+.clients h2 {
+    font-size: 65px;
+    padding: 10px 0px;
+    text-align: left;
+}
+.clients:hover h2 {
+    font-size: 41px;
+}
+.clients h2 , .clients-5 h2{
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke-color: #fff;
+}
+.clients-5:hover{
+    background: url(../../assets/images/Second-frame.svg) no-repeat center center / contain;
+}
+.clients-5{
+    background: url(../../assets/images/Second-frame.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.first-clients {
+    padding: 20px;
+    background: url("../../assets/images/third-frame.svg") no-repeat center center / contain;
+}
+.clients-5 h2 {
+    padding: 40px 0px;
+    padding-top: 36px;
+    font-size: 41px;
+}
+.clients h2 {
+    font-family: 'RobotoMono-Regular' !important ;
+    font-weight: 500;
+    text-align: left;
+    letter-spacing: 5px;
+    line-height: 56px;
+    font-size: 41px;
+}
+.clients-5 h2 span {
+    padding-left: 40px;
+    font-size: 41px;
+}
+.clients-5 {
+    text-align: center;
+
+}
+.first-clients h2 {
+    font-family: 'RobotoMono-Regular' !important;
+    font-size: 41px !important;
+    font-weight: 400;
+}
+.clients-5 h2{
+    font-family: 'RobotoMono-Regular' !important;
+    font-size: 41px !important;
+    letter-spacing: 4px;
+    font-weight: 400;
+}
+.container.py-5.clients-card {
+    padding: 0px !important;
+} 
+.clients-5:hover {
+    padding: 30px 47px;
+}
+}

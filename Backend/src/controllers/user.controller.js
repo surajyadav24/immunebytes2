@@ -3,14 +3,19 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { ApiError } from "../utils/ApiError.js";
 import bcrypt from "bcryptjs";
+
 import {
   generateEmailTemplate,
   generateOTP,
   mailTransport,
   plainEmailTemplate,
+  forgotPasswordTemplate,
+  resetPasswordTemplate,
+  hashOTP
 } from "../utils/mail.js";
 import { VerificationToken } from "../models/verificationToken.model.js";
 import { isValidObjectId } from "mongoose";
+import crypto from 'crypto'
 
 // TOKEN ----------->
 const generateAccessAndRefreshToken = async (userid) => {
@@ -64,19 +69,7 @@ const signUp = asyncHandler(async (req, res) => {
     password: hashedPassword,
   });
 
-  const OTP = generateOTP();
-  const verificationToken = new VerificationToken({
-    owner: user._id,
-    token: OTP,
-  });
-  await verificationToken.save();
 
-  mailTransport().sendMail({
-    from: "Immunebytes@gmail.com",
-    to: user.email,
-    subject: "Verify your email account",
-    html: generateEmailTemplate(OTP),
-  });
 
   if (!user) {
     throw new ApiError(400, "Invalid user details");
@@ -96,7 +89,6 @@ const signUp = asyncHandler(async (req, res) => {
 });
 
 // LOGIN ---------- >
-
 const logIn = asyncHandler(async (req, res) => {
   const { username, password } = req.body;
   if (!username || !password) {
@@ -131,6 +123,21 @@ const logIn = asyncHandler(async (req, res) => {
     "-password -refreshToken "
   );
 
+  const OTP = generateOTP();
+  const hashedOTP = await hashOTP(OTP);
+  const verificationToken = new VerificationToken({
+    owner: user._id,
+    token: hashedOTP,
+  });
+  await verificationToken.save();
+
+  mailTransport().sendMail({
+    from: "Immunebytes@gmail.com",
+    to: user.email,
+    subject: "Verify your email account",
+    html: generateEmailTemplate(OTP),
+  });
+
   const options = {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
@@ -150,7 +157,6 @@ const logIn = asyncHandler(async (req, res) => {
 });
 
 // LOGOUT ------------------->
-
 const logOut = asyncHandler(async (req, res) => {
   await User.findByIdAndUpdate(
     req.user._id,
@@ -176,7 +182,6 @@ const logOut = asyncHandler(async (req, res) => {
 });
 
 // VERIFY EMAIL ----------->
-
 const verifyEmail = asyncHandler(async (req, res) => {
   const { userId, otp } = req.body;
   if (!userId || !otp.trim()) {
@@ -211,4 +216,144 @@ const verifyEmail = asyncHandler(async (req, res) => {
   });
 });
 
-export { signUp, logIn, logOut, verifyEmail };
+
+const verifyOTP = asyncHandler(async (req, res) => {
+  const { userId, otp } = req.body;
+  if (!userId || !otp.trim()) {
+    throw new ApiError(401, "Invalid request missing parameters !");
+  }
+
+  const user = await User.findById(userId);
+  if (!user) {
+    throw new ApiError(401, "Sorry! This userId doesn't exist");
+  }
+
+  const token = await VerificationToken.findOne({ owner: user._id });
+  if (!token) {
+    throw new ApiError(401, "OTP not found or expired");
+  }
+
+  // Compare the hashed OTP stored in the token with the OTP provided by the user
+  const isOTPValid = await bcrypt.compare(otp, token.token);
+  if (!isOTPValid) {
+    throw new ApiError(401, "Invalid OTP");
+  }
+
+  // OTP is valid, proceed with email verification or other actions
+  user.verified = true;
+  await VerificationToken.findByIdAndDelete(token._id);
+  await user.save();
+
+  mailTransport().sendMail({
+    from: "Immunebytes@gmail.com",
+    to: user.email,
+    subject: "Email Verified",
+    html: plainEmailTemplate("Email verified Successfully", "Thanks for verifying your email"),
+  });
+
+  return res.status(200).json(new ApiResponse(200, user, "Email verified successfully"));
+});
+
+
+
+
+// FORGOT PASSWORD -------------->
+const forgotPassword = asyncHandler(async(req,res)=>{
+	const { email } = req.body;
+  if(!email){
+    throw new ApiError(401,"user doesn't exist")
+  }
+
+  const user = await User.findOne({ email });
+
+		if (!user) {
+			throw new ApiError(401, "username and password is required")
+		}
+
+		// Generate reset token
+		const resetPasswordToken = crypto.randomBytes(20).toString("hex");
+    const resetTokenExpiresAt = new Date(Date.now() + 2 * 60 * 60 * 1000);
+    const day = resetTokenExpiresAt.getDate();
+    const month = resetTokenExpiresAt.getMonth() + 1; // Adding 1 as months are 0-indexed
+    const year = resetTokenExpiresAt.getFullYear();
+    const hours = resetTokenExpiresAt.getHours();
+    const mins = resetTokenExpiresAt.getMinutes();
+
+
+
+    const formattedDate = `${day}-${month}-${year}-${hours}-${mins}`;
+console.log(formattedDate); // Example: 12-11-2024
+
+		user.resetPasswordToken = resetPasswordToken;
+		user.resetPasswordExpiresAt = resetTokenExpiresAt;
+
+		await user.save();
+
+		// send email
+		// await sendPasswordResetEmail(user.email, `${process.env.CLIENT_URL}/reset-password/${resetToken}`);
+    mailTransport().sendMail({
+      from: "Immunebytes@gmail.com",
+      to: user.email,
+      subject: "Forgot-Password",
+      html: forgotPasswordTemplate("forgot password Successfully","Thanks for contacting with us"),
+    });
+
+  return res
+    .status(200)
+    .json(
+      new ApiResponse(
+        200,
+        { user },
+        "Password reset link sent to your email"
+      )
+    );
+
+})
+
+
+// RESET PASSWORD -------------->
+ const resetPassword = asyncHandler( async (req, res) => {
+		const { resetPasswordToken } = req.params;
+    console.log("TOKEN :",resetPasswordToken)
+		const { password } = req.body;
+
+		const user = await User.findOne({
+			resetPasswordToken: resetPasswordToken,
+			resetPasswordExpiresAt: { $gt: new Date() },
+		});
+
+
+
+		if (!user) {
+			throw new ApiError(401,"User doesn't exist")
+		}
+
+		// update password
+		const hashedPassword = await bcrypt.hash(password, 10);
+
+		user.password = hashedPassword;
+		user.resetPasswordToken = undefined;
+		user.resetPasswordExpiresAt = undefined;
+		await user.save();
+
+		// await sendResetSuccessEmail(user.email);
+
+    mailTransport().sendMail({
+      from: "Immunebytes@gmail.com",
+      to: user.email,
+      subject: "Reset-Password",
+      html: resetPasswordTemplate("Password Reset successfully","Thanks for contacting with us"),
+    });
+    return res
+    .status(200)
+    .json(
+      new ApiResponse(
+        200,
+        { user },
+        "Password reset successful"
+      )
+    );
+});
+
+
+export { signUp, logIn, logOut, verifyEmail,forgotPassword,resetPassword,verifyOTP};

@@ -25,7 +25,12 @@ const userSchema = new Schema({
 type:Boolean,
 default :false,
 required:true,
-    }
+    },
+
+    resetPasswordToken: String,
+		resetPasswordExpiresAt: Date,
+		verificationToken: String,
+		verificationTokenExpiresAt: Date,
 },{timestamps:true})
 
 userSchema.methods.generateAccessToken=function(){

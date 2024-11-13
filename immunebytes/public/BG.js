@@ -59911,7 +59911,7 @@
            // Host Relative URL
            if ( /^https?:\/\//i.test( path ) && /^\//.test( url ) ) {
    
-               path = path.replace( /(^https?:\/\/[^\/]+).*/i, '$1' );
+               path = path().replace( /(^https?:\/\/[^\/]+).*/i, '$1' );
    
            }
    

@@ -3,7 +3,9 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { ApiError } from "../utils/ApiError.js";
 import bcrypt from "bcryptjs";
-
+import { VerificationToken } from "../models/verificationToken.model.js";
+import { isValidObjectId } from "mongoose";
+import crypto from "crypto";
 import {
   generateEmailTemplate,
   generateOTP,
@@ -11,11 +13,8 @@ import {
   plainEmailTemplate,
   forgotPasswordTemplate,
   resetPasswordTemplate,
-  hashOTP
 } from "../utils/mail.js";
-import { VerificationToken } from "../models/verificationToken.model.js";
-import { isValidObjectId } from "mongoose";
-import crypto from 'crypto'
+
 
 // TOKEN ----------->
 const generateAccessAndRefreshToken = async (userid) => {
@@ -69,8 +68,6 @@ const signUp = asyncHandler(async (req, res) => {
     password: hashedPassword,
   });
 
-
-
   if (!user) {
     throw new ApiError(400, "Invalid user details");
   }
@@ -99,12 +96,18 @@ const logIn = asyncHandler(async (req, res) => {
     throw new ApiError(401, "user doesn't exist");
   }
 
-  const allowedEmails = ["chetnadigitalmolecule@gmail.com", "suraj@digitalmolecule.in"];
+  const allowedEmails = [
+    "chetnadigitalmolecule@gmail.com",
+    "suraj@digitalmolecule.in",
+  ];
 
-    // Check if the user's email is in the allowed list
-    if (!allowedEmails.includes(user.email)) {
-        throw new ApiError(403, "Access denied. This email is not allowed to log in.");
-      }
+  // Check if the user's email is in the allowed list
+  if (!allowedEmails.includes(user.email)) {
+    throw new ApiError(
+      403,
+      "Access denied. This email is not allowed to log in."
+    );
+  }
   const isPasswordCorrect = await bcrypt.compare(
     password,
     user?.password || ""
@@ -124,10 +127,10 @@ const logIn = asyncHandler(async (req, res) => {
   );
 
   const OTP = generateOTP();
-  const hashedOTP = await hashOTP(OTP);
+  // const hashedOTP = await hashOTP(OTP);
   const verificationToken = new VerificationToken({
     owner: user._id,
-    token: hashedOTP,
+    token: OTP,
   });
   await verificationToken.save();
 
@@ -189,171 +192,179 @@ const verifyEmail = asyncHandler(async (req, res) => {
   }
   if (!isValidObjectId(userId)) {
     throw new ApiError(401, "Invalid UserId");
-
   }
   const user = await User.findById(userId);
 
   if (!user) {
     throw new ApiError(401, "Sorry! This userId doesn't exist");
   }
-  if(user.verified){
-    throw new ApiError(401,"This Account already verified")
-  }
-  const token = await VerificationToken.findOne({owner:user._id})
-  if(!token){
-    throw new ApiError(401,"Sorry User Not Found")
+  // if (user.verified) {
+  //   throw new ApiError(401, "This Account already verified");
+  // }
+  const token = await VerificationToken.findOne({ owner: user._id });
+  if (!token) {
+    throw new ApiError(401, "Sorry User Not Found");
   }
 
-  user.verified=true;
-  await VerificationToken.findByIdAndDelete(token._id)
+  user.verified = true;
+  await VerificationToken.findByIdAndDelete(token._id);
 
-  await user.save()
+  await user.save();
   mailTransport().sendMail({
     from: "Immunebytes@gmail.com",
     to: user.email,
     subject: "Verify your email account",
-    html: plainEmailTemplate("Email verified Successfully","Thanks for contacting with us"),
+    html: plainEmailTemplate(
+      "Email verified Successfully",
+      "Thanks for contacting with us"
+    ),
   });
+
+  return res
+  .status(200)
+  .json(
+    new ApiResponse(
+      200,
+      { user },
+      "Email verified successfully"
+    )
+  );
 });
 
 
-const verifyOTP = asyncHandler(async (req, res) => {
-  const { userId, otp } = req.body;
-  if (!userId || !otp.trim()) {
-    throw new ApiError(401, "Invalid request missing parameters !");
-  }
 
-  const user = await User.findById(userId);
-  if (!user) {
-    throw new ApiError(401, "Sorry! This userId doesn't exist");
-  }
+// VERIFY OTP ----------->
 
-  const token = await VerificationToken.findOne({ owner: user._id });
-  if (!token) {
-    throw new ApiError(401, "OTP not found or expired");
-  }
+// const verifyOTP = asyncHandler(async(req, res) => {
+//   const { userId, otp } = req.body;
+//   if (!userId || !otp.trim()) {
+//     throw new ApiError(401, "Invalid request missing parameters !");
+//   }
 
-  // Compare the hashed OTP stored in the token with the OTP provided by the user
-  const isOTPValid = await bcrypt.compare(otp, token.token);
-  if (!isOTPValid) {
-    throw new ApiError(401, "Invalid OTP");
-  }
+//   const user = await User.findById(userId);
+//   if (!user) {
+//     throw new ApiError(401, "Sorry! This userId doesn't exist");
+//   }
 
-  // OTP is valid, proceed with email verification or other actions
-  user.verified = true;
-  await VerificationToken.findByIdAndDelete(token._id);
-  await user.save();
+//   const token = await VerificationToken.findOne({ owner: user._id });
+//   if (!token) {
+//     throw new ApiError(401, "OTP not found or expired");
+//   }
 
-  mailTransport().sendMail({
-    from: "Immunebytes@gmail.com",
-    to: user.email,
-    subject: "Email Verified",
-    html: plainEmailTemplate("Email verified Successfully", "Thanks for verifying your email"),
-  });
+//   // Compare the hashed OTP stored in the token with the OTP provided by the user
+//   const isOTPValid = await bcrypt.compare(otp, token.token);
+//   if (!isOTPValid) {
+//     throw new ApiError(401, "Invalid OTP");
+//   }
 
-  return res.status(200).json(new ApiResponse(200, user, "Email verified successfully"));
-});
+//   // OTP is valid, proceed with email verification or other actions
+//   user.verified = true;
+//   await VerificationToken.findByIdAndDelete(token._id);
+//   await user.save();
 
+//   mailTransport().sendMail({
+//     from: "Immunebytes@gmail.com",
+//     to: user.email,
+//     subject: "Email Verified",
+//     html: plainEmailTemplate(
+//       "Email verified Successfully",
+//       "Thanks for verifying your email"
+//     ),
+//   });
+
+//   return res
+//     .status(200)
+//     .json(new ApiResponse(200, { user }, "User details fetched successfully"));
+// });
 
 
 
 // FORGOT PASSWORD -------------->
-const forgotPassword = asyncHandler(async(req,res)=>{
-	const { email } = req.body;
-  if(!email){
-    throw new ApiError(401,"user doesn't exist")
+const forgotPassword = asyncHandler(async (req, res) => {
+  const { email } = req.body;
+  if (!email) {
+    throw new ApiError(401, "user doesn't exist");
   }
 
   const user = await User.findOne({ email });
 
-		if (!user) {
-			throw new ApiError(401, "username and password is required")
-		}
+  if (!user) {
+    throw new ApiError(401, "username and password is required");
+  }
 
-		// Generate reset token
-		const resetPasswordToken = crypto.randomBytes(20).toString("hex");
-    const resetTokenExpiresAt = new Date(Date.now() + 2 * 60 * 60 * 1000);
-    const day = resetTokenExpiresAt.getDate();
-    const month = resetTokenExpiresAt.getMonth() + 1; // Adding 1 as months are 0-indexed
-    const year = resetTokenExpiresAt.getFullYear();
-    const hours = resetTokenExpiresAt.getHours();
-    const mins = resetTokenExpiresAt.getMinutes();
+  // Generate reset token
+  const resetPasswordToken = crypto.randomBytes(20).toString("hex");
+  const resetTokenExpiresAt = new Date(Date.now() + 2 * 60 * 60 * 1000);
+  const day = resetTokenExpiresAt.getDate();
+  const month = resetTokenExpiresAt.getMonth() + 1; // Adding 1 as months are 0-indexed
+  const year = resetTokenExpiresAt.getFullYear();
+  const hours = resetTokenExpiresAt.getHours();
+  const mins = resetTokenExpiresAt.getMinutes();
 
+  const formattedDate = `${day}-${month}-${year}-${hours}-${mins}`;
+  console.log(formattedDate); // Example: 12-11-2024
 
+  user.resetPasswordToken = resetPasswordToken;
+  user.resetPasswordExpiresAt = resetTokenExpiresAt;
 
-    const formattedDate = `${day}-${month}-${year}-${hours}-${mins}`;
-console.log(formattedDate); // Example: 12-11-2024
+  await user.save();
 
-		user.resetPasswordToken = resetPasswordToken;
-		user.resetPasswordExpiresAt = resetTokenExpiresAt;
-
-		await user.save();
-
-		// send email
-		// await sendPasswordResetEmail(user.email, `${process.env.CLIENT_URL}/reset-password/${resetToken}`);
-    mailTransport().sendMail({
-      from: "Immunebytes@gmail.com",
-      to: user.email,
-      subject: "Forgot-Password",
-      html: forgotPasswordTemplate("forgot password Successfully","Thanks for contacting with us"),
-    });
+  // send email
+  // await sendPasswordResetEmail(user.email, `${process.env.CLIENT_URL}/reset-password/${resetToken}`);
+  mailTransport().sendMail({
+    from: "Immunebytes@gmail.com",
+    to: user.email,
+    subject: "Forgot-Password",
+    html: forgotPasswordTemplate(
+      "forgot password Successfully",
+      "Thanks for contacting with us"
+    ),
+  });
 
   return res
     .status(200)
     .json(
-      new ApiResponse(
-        200,
-        { user },
-        "Password reset link sent to your email"
-      )
-    );
-
-})
-
-
-// RESET PASSWORD -------------->
- const resetPassword = asyncHandler( async (req, res) => {
-		const { resetPasswordToken } = req.params;
-    console.log("TOKEN :",resetPasswordToken)
-		const { password } = req.body;
-
-		const user = await User.findOne({
-			resetPasswordToken: resetPasswordToken,
-			resetPasswordExpiresAt: { $gt: new Date() },
-		});
-
-
-
-		if (!user) {
-			throw new ApiError(401,"User doesn't exist")
-		}
-
-		// update password
-		const hashedPassword = await bcrypt.hash(password, 10);
-
-		user.password = hashedPassword;
-		user.resetPasswordToken = undefined;
-		user.resetPasswordExpiresAt = undefined;
-		await user.save();
-
-		// await sendResetSuccessEmail(user.email);
-
-    mailTransport().sendMail({
-      from: "Immunebytes@gmail.com",
-      to: user.email,
-      subject: "Reset-Password",
-      html: resetPasswordTemplate("Password Reset successfully","Thanks for contacting with us"),
-    });
-    return res
-    .status(200)
-    .json(
-      new ApiResponse(
-        200,
-        { user },
-        "Password reset successful"
-      )
+      new ApiResponse(200, { user }, "Password reset link sent to your email")
     );
 });
 
+// RESET PASSWORD -------------->
+const resetPassword = asyncHandler(async (req, res) => {
+  const { resetPasswordToken } = req.params;
+  console.log("TOKEN :", resetPasswordToken);
+  const { password } = req.body;
 
-export { signUp, logIn, logOut, verifyEmail,forgotPassword,resetPassword,verifyOTP};
+  const user = await User.findOne({
+    resetPasswordToken: resetPasswordToken,
+    resetPasswordExpiresAt: { $gt: new Date() },
+  });
+
+  if (!user) {
+    throw new ApiError(401, "User doesn't exist");
+  }
+
+  // update password
+  const hashedPassword = await bcrypt.hash(password, 10);
+
+  user.password = hashedPassword;
+  user.resetPasswordToken = undefined;
+  user.resetPasswordExpiresAt = undefined;
+  await user.save();
+
+  // await sendResetSuccessEmail(user.email);
+
+  mailTransport().sendMail({
+    from: "Immunebytes@gmail.com",
+    to: user.email,
+    subject: "Reset-Password",
+    html: resetPasswordTemplate(
+      "Password Reset successfully",
+      "Thanks for contacting with us"
+    ),
+  });
+  return res
+    .status(200)
+    .json(new ApiResponse(200, { user }, "Password reset successful"));
+});
+
+export { signUp, logIn, logOut, verifyEmail, forgotPassword, resetPassword };

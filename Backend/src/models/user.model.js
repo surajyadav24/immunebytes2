@@ -26,6 +26,7 @@ type:Boolean,
 default :false,
 required:true,
     },
+
     resetPasswordToken: String,
 		resetPasswordExpiresAt: Date,
 		verificationToken: String,

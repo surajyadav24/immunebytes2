@@ -22,6 +22,7 @@ function LoginForm() {
       console.log("response-data",response.data)
   
       if (response.data.statusCode === 200) {
+        navigate('/otpform')
         // console.log(response.data.data.accessToken)
         // setShowOtp(true);
       } else {

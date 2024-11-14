@@ -1,10 +1,12 @@
 // OtpForm.js
 import React from 'react';
-
+import './style.css'
+import Logo from '../../../assets/images/logos/Logo.svg';
 function OtpForm({ otp, onOtpChange, onSubmit }) {
   return (
     <div className="otp-container">
-      <p className="otp-label">OTP</p>
+ <img className="logo" src={Logo} alt="Logo" />
+      <p className="otp-label">Please Enter Your OTP</p>
       <div className="otp-inputs">
         {otp.map((digit, index) => (
           <input

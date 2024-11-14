@@ -1,123 +1,72 @@
-/* Font */
-.form-container .logo{
-    max-width: 180px;
-    margin: 0 auto;
+.otp-container {
     display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-.form-container{
-    width: 1000px;
-    font-family: "Arvo-Bold";
-    margin: 0 auto;
-    background: url("../../../../assets/images/Dashboard/bg-1.png") no-repeat center center / contain;
-  }
-  .form-container p {
-    font-family: "Arvo-Bold";
-  }
-  /* Main container */
-  .form-container .container {
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    min-height: 100vh;
-  }
-  
-  .form-container 
-  /* Form */
-  .form {
-    width: 100%;
-    max-width: 500px;
+    color: #fff;
+    background-color: #1a1a1a;
     padding: 20px;
     border-radius: 8px;
-    color: #fff;
-  }
-  
-  /* Title and subtitle */
-  .title {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
-  }
-  
-  .subtitle {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #aaa;
-    margin-bottom: 20px;
-  }
-  
-  /* Input group */
-  .input-group {
-    margin-bottom: 15px;
-  }
-  
-  .label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 0.85rem;
-    color: #aaa;
-  }
-  
-  .input {
-
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px !important;
-    border: 1px solid #333;
-    background-color: #333;
-    color: #fff;
-  }
-  
-  /* Forgot password */
-  .forgot-password {
-    display: block;
-    text-align: right;
-    font-size: 0.8rem;
-    color: #888;
-    margin-top: 5px;
-    text-decoration: none;
-  }
-  
-  /* Button */
-  .button {
-    width: 100%;
-    padding: 10px;
-    border-radius: 4px;
-    border: none;
-    background-color: #444;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  /* OTP Container */
-  .otp-container {
-    margin-top: 20px;
-    text-align: center;
+    max-width: 300px;
+    margin: auto;
   }
   
   .otp-label {
     font-size: 1rem;
-    color: #aaa;
     margin-bottom: 10px;
+    color: #e0e0e0;
   }
   
-  /* OTP Inputs */
   .otp-inputs {
-    display: flex;
-    justify-content: space-between;
+display: block;
+    gap: 10px;
+    margin-bottom: 20px;
   }
   
   .otp-input {
     width: 40px;
     height: 40px;
-    border-radius: 4px;
+    text-align: center;
+    font-size: 1.5rem;
     border: 1px solid #333;
+    border-radius: 6px;
     background-color: #333;
     color: #fff;
-    text-align: center;
-    font-size: 1.2rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .otp-input:focus {
+    border-color: #e0e0e0;
+  }
+  
+  .button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #e0e0e0;
+    background-color: #555;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #777;
+  }
+  
+  .resend-link {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+  }
+  
+  .resend-link a {
+    color: #ff4d6d;
+    text-decoration: none;
+  }
+  
+  .resend-link a:hover {
+    text-decoration: underline;
   }
   

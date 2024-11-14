@@ -10,7 +10,7 @@
     width: 1000px;
     font-family: "Arvo-Bold";
     margin: 0 auto;
-    background: url("../../../assets/images/Dashboard/bg-1.png") no-repeat center center / contain;
+    background: url("../../../../assets/images/Dashboard/bg-1.png") no-repeat center center / contain;
   }
   .form-container p {
     font-family: "Arvo-Bold";

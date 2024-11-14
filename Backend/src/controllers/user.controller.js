@@ -95,6 +95,7 @@ const logIn = asyncHandler(async (req, res) => {
   if (!user) {
     throw new ApiError(401, "user doesn't exist");
   }
+  // console.log(user.email)
 
   const allowedEmails = [
     "chetnadigitalmolecule@gmail.com",
@@ -127,19 +128,31 @@ const logIn = asyncHandler(async (req, res) => {
   );
 
   const OTP = generateOTP();
-  // const hashedOTP = await hashOTP(OTP);
+  
+  // Hash the OTP before saving in the database
+  const hashedOTP = await bcrypt.hash(OTP, 10);
+
+  // Save the hashed OTP in VerificationToken collection
   const verificationToken = new VerificationToken({
     owner: user._id,
-    token: OTP,
+    token: hashedOTP,
   });
   await verificationToken.save();
+// MAIL--SMTP
+  // mailTransport().sendMail({
+  //   from: "Immunebytes@gmail.com",
+  //   to: user.email,
+  //   subject: "Verify your email account",
+  //   html: generateEmailTemplate(OTP),
+  // });
 
   mailTransport().sendMail({
-    from: "Immunebytes@gmail.com",
-    to: user.email,
+    from: "chetnachetna8585@gmail.com",  // Set your sender email here
+    to: user.email,  // This is dynamically set to the user's email
     subject: "Verify your email account",
-    html: generateEmailTemplate(OTP),
+    html: generateEmailTemplate(OTP),  // Use the template for the email content
   });
+  // console.log(user.email)
 
   const options = {
     httpOnly: true,
@@ -277,6 +290,57 @@ const verifyEmail = asyncHandler(async (req, res) => {
 //     .json(new ApiResponse(200, { user }, "User details fetched successfully"));
 // });
 
+// VERIFY OTP ------------>
+const verifyOTP = asyncHandler(async (req, res) => {
+  const { userId, otp } = req.body;
+
+  if (!userId || !otp.trim()) {
+    throw new ApiError(401, "Invalid request missing parameters!");
+  }
+
+  const user = await User.findById(userId);
+  if (!user) {
+    throw new ApiError(401, "Sorry! This userId doesn't exist");
+  }
+
+  const token = await VerificationToken.findOne({ owner: user._id });
+  if (!token) {
+    throw new ApiError(401, "OTP not found or expired");
+  }
+
+  // Compare the hashed OTP stored in the token with the OTP provided by the user
+  const isOTPValid = await bcrypt.compare(otp, token.token);
+  if (!isOTPValid) {
+    throw new ApiError(401, "Invalid OTP");
+  }
+
+  // OTP is valid, proceed with email verification or other actions
+  user.verified = true;
+  await VerificationToken.findByIdAndDelete(token._id);
+  await user.save();
+
+  mailTransport().sendMail({
+    from: "Immunebytes@gmail.com",
+    to: user.email,
+    subject: "Email Verified",
+    html: plainEmailTemplate(
+      "Email verified Successfully",
+      "Thanks for verifying your email"
+    ),
+  });
+
+  return res
+    .status(200)
+    .json(
+      new ApiResponse(
+        200,
+        { user },
+        "Email verified successfully"
+      )
+    );
+});
+
+
 
 
 // FORGOT PASSWORD -------------->
@@ -367,4 +431,4 @@ const resetPassword = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, { user }, "Password reset successful"));
 });
 
-export { signUp, logIn, logOut, verifyEmail, forgotPassword, resetPassword };
+export { signUp, logIn, logOut, verifyEmail, forgotPassword, resetPassword ,verifyOTP};

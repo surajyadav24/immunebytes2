@@ -19,10 +19,11 @@ function LoginForm() {
         { username, password },
         { withCredentials: true }
       );
-      console.log("response-data", response.data);
-
-      if (response.data.statuscode === 200) {
-        navigate('/otp');
+      console.log("response-data",response.data)
+  
+      if (response.data.statusCode === 200) {
+        // console.log(response.data.data.accessToken)
+        // setShowOtp(true);
       } else {
         alert(response.data.message || 'Login failed');
       }

@@ -20,8 +20,8 @@ function LoginForm() {
       );
       console.log("response-data",response.data)
   
-      if (response.data.statuscode === 200) {
-        console.log(response.data.accessToken)
+      if (response.data.statusCode === 200) {
+        // console.log(response.data.data.accessToken)
         setShowOtp(true);
       } else {
         alert(response.data.message || 'Login failed');

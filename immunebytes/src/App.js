@@ -17,8 +17,6 @@ function App() {
         <Route path="/portfolio" element={<Portfolio/>} />
         <Route path="/dashboard" element={<Dashboard/>} />
         <Route path="/otpform" element={<OtpForm/>} />
-
-
         <Route path="/Dashboard-main" element={<DashboardMain/>} />
         <Route path="/forgotpassword" element={<ForgotPassword/>} />
         <Route path="/resetpassword" element={<ResetPassword/>} />

@@ -138,7 +138,9 @@ const logIn = asyncHandler(async (req, res) => {
     token: hashedOTP,
   });
   await verificationToken.save();
-// MAIL--SMTP
+
+  
+// MAIL--SMTP----->
   // mailTransport().sendMail({
   //   from: "Immunebytes@gmail.com",
   //   to: user.email,
@@ -147,7 +149,7 @@ const logIn = asyncHandler(async (req, res) => {
   // });
 
   mailTransport().sendMail({
-    from: "chetnachetna8585@gmail.com",  // Set your sender email here
+    from: "Immunebytes@gmail.com",  // Set your sender email here
     to: user.email,  // This is dynamically set to the user's email
     subject: "Verify your email account",
     html: generateEmailTemplate(OTP),  // Use the template for the email content

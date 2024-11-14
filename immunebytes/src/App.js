@@ -7,6 +7,7 @@ import './App.css'
 import Dashboard from "./Pages/user/Login/Dashboard";
 import ForgotPassword from "./Pages/Forgot-password";
 import ResetPassword from "./Pages/Reset-Password";
+import DashboardMain from './Pages/Dashboard-Main'
 function App() {
   return (
     <Router>
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio/>} />
         <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/Dashboard-main" element={<DashboardMain/>} />
         <Route path="/forgotpassword" element={<ForgotPassword/>} />
         <Route path="/resetpassword" element={<ResetPassword/>} />
       </Routes>

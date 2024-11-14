@@ -138,7 +138,7 @@ const logIn = asyncHandler(async (req, res) => {
     token: hashedOTP,
   });
   await verificationToken.save();
-
+// MAIL--SMTP
   // mailTransport().sendMail({
   //   from: "Immunebytes@gmail.com",
   //   to: user.email,

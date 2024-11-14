@@ -5,6 +5,9 @@
   box-sizing: border-box;
   max-width: 100%;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @font-face {
   font-family:"Arame-Bold" ;
   src: url("./assets/Fonts/Arame-Bold.ttf");

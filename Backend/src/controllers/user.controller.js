@@ -141,19 +141,19 @@ const logIn = asyncHandler(async (req, res) => {
 
   
 // MAIL--SMTP----->
-  // mailTransport().sendMail({
-  //   from: "Immunebytes@gmail.com",
-  //   to: user.email,
-  //   subject: "Verify your email account",
-  //   html: generateEmailTemplate(OTP),
-  // });
-
   mailTransport().sendMail({
-    from: "Immunebytes@gmail.com",  // Set your sender email here
-    to: user.email,  // This is dynamically set to the user's email
+    from: "Immunebytes@gmail.com",
+    to: user.email,
     subject: "Verify your email account",
-    html: generateEmailTemplate(OTP),  // Use the template for the email content
+    html: generateEmailTemplate(OTP),
   });
+
+  // mailTransport().sendMail({
+  //   from: "Immunebytes@gmail.com",  // Set your sender email here
+  //   to: user.email,  // This is dynamically set to the user's email
+  //   subject: "Verify your email account",
+  //   html: generateEmailTemplate(OTP),  // Use the template for the email content
+  // });
   // console.log(user.email)
 
   const options = {

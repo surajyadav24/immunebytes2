@@ -1,8 +1,8 @@
 // OtpForm.js
 import React from 'react';
 import './style.css'
-import Logo from '../../../assets/images/logos/Logo.svg';
-function OtpForm({ otp, onOtpChange, onSubmit }) {
+import Logo from '../../../../assets/images/logos/Logo.svg';
+function OtpForm({ otp=[], onOtpChange, onSubmit }) {
   return (
     <div className="otp-container">
  <img className="logo" src={Logo} alt="Logo" />

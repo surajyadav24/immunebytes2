@@ -8,25 +8,25 @@ export const generateOTP = () => {
   return otp;
 };
 
+export const mailTransport = () =>
+  nodemailer.createTransport({
+    host: "sandbox.smtp.mailtrap.io",
+    port: 2525,
+    auth: {
+      user: process.env.MAILTRAP_USERNAME,
+      pass: process.env.MAILTRAP_PASSWORD,
+    },
+  });
+
 // export const mailTransport = () =>
 //   nodemailer.createTransport({
-//     host: "sandbox.smtp.mailtrap.io",
-//     port: 2525,
+//     service: 'gmail', // Use your email service provider, like SendGrid, Gmail, etc.
 //     auth: {
-//       user: process.env.MAILTRAP_USERNAME,
-//       pass: process.env.MAILTRAP_PASSWORD,
+//       user: process.env.EMAIL_USERNAME, // Your email address
+//       pass: process.env.EMAIL_PASSWORD, // Your email password (consider using app passwords)
 //     },
 //   });
 
-export const mailTransport = () =>
-  nodemailer.createTransport({
-    service: 'gmail', // Use your email service provider, like SendGrid, Gmail, etc.
-    auth: {
-      user: process.env.EMAIL_USERNAME, // Your email address
-      pass: process.env.EMAIL_PASSWORD, // Your email password (consider using app passwords)
-    },
-  });
-  
 export const generateEmailTemplate = (OTP) => {
  return `<!DOCTYPE html>
 <html lang="en">

@@ -13,16 +13,16 @@ function LoginForm() {
     e.preventDefault();
 
     try {
-      // Send login request to the backend
-      const response = await axios.post('http://localhost:5000/api/login', {
-        username,
-        password,
-      });
-
-      // Backend response handling
-      if (response.data.status === 200) {
-        setShowOtp(true); // Assuming the backend sends OTP here
-        console.log(response.data); // You could show a success message or navigate
+      const response = await axios.post(
+        '/api/v1/users/login', // Make sure this URL matches your backend route
+        { username, password },
+        { withCredentials: true } // Ensures cookies and credentials are included
+      );
+      console.log("response-data",response.data)
+  
+      if (response.data.statuscode === 200) {
+        console.log(response.data.accessToken)
+        setShowOtp(true);
       } else {
         alert(response.data.message || 'Login failed');
       }

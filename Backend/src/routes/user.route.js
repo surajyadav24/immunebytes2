@@ -11,7 +11,7 @@ const router = Router()
 
 
 router.route("/SignUp").post(signUp)
-router.route("/Login").post(logIn)
+router.route("/login").post(logIn)
 router.route("/Email-verify").post(verifyEmail)
 router.route("/Forgot-Password").post(forgotPassword)
 router.route("/Reset-Password/:resetPasswordToken").post(resetPassword)

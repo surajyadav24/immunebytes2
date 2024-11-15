@@ -18,8 +18,8 @@ router.route("/Reset-Password/:resetPasswordToken").post(resetPassword)
 router.route("/Add-Portfolio").post(upload.single('image'),addportfolio);
 router.route("/Platform").post(platform);
 router.route("/cSigma").post(upload.single('image'),cSigma);
-// In your routes file
 router.route("/resend-otp").post(verifyJwt, resendOtp);
+
 
 
 

@@ -142,7 +142,7 @@ const logIn = asyncHandler(async (req, res) => {
   
 // MAIL--SMTP----->
   mailTransport().sendMail({
-    from: "Immunebytes@gmail.com",
+    from: process.env.EMAIL_USERNAME,
     to: user.email,
     subject: "Verify your email account",
     html: generateEmailTemplate(OTP),
@@ -221,7 +221,7 @@ const verifyEmail = asyncHandler(async (req, res) => {
 
   await user.save();
   mailTransport().sendMail({
-    from: "Immunebytes@gmail.com",
+    from: process.env.EMAIL_USERNAME,
     to: user.email,
     subject: "Verify your email account",
     html: plainEmailTemplate(
@@ -273,7 +273,7 @@ const verifyOTP = asyncHandler(async (req, res) => {
   await user.save();
 
   mailTransport().sendMail({
-    from: "Immunebytes@gmail.com",
+    from: process.env.EMAIL_USERNAME,
     to: user.email,
     subject: "Email Verified",
     html: plainEmailTemplate(
@@ -329,7 +329,7 @@ const forgotPassword = asyncHandler(async (req, res) => {
   // send email
   // await sendPasswordResetEmail(user.email, `${process.env.CLIENT_URL}/reset-password/${resetToken}`);
   mailTransport().sendMail({
-    from: "Immunebytes@gmail.com",
+    from: process.env.EMAIL_USERNAME,
     to: user.email,
     subject: "Forgot-Password",
     html: forgotPasswordTemplate(
@@ -371,7 +371,7 @@ const resetPassword = asyncHandler(async (req, res) => {
   // await sendResetSuccessEmail(user.email);
 
   mailTransport().sendMail({
-    from: "Immunebytes@gmail.com",
+    from: process.env.EMAIL_USERNAME,
     to: user.email,
     subject: "Reset-Password",
     html: resetPasswordTemplate(
@@ -411,7 +411,7 @@ const resendOtp = asyncHandler(async (req, res) => {
 
   // Send the new OTP via email
   mailTransport().sendMail({
-    from: "Immunebytes@gmail.com", // Change to your sender email
+    from: process.env.EMAIL_USERNAME, // Change to your sender email
     to: user.email,
     subject: "Your New OTP Code",
     html: generateEmailTemplate(OTP),

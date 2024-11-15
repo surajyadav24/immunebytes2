@@ -10,11 +10,11 @@ export const generateOTP = () => {
 
 export const mailTransport = () =>
   nodemailer.createTransport({
-    host: "sandbox.smtp.mailtrap.io",
-    port: 2525,
+    service:'gmail',
+    host:'smtp.gmail.com',
     auth: {
-      user: process.env.MAILTRAP_USERNAME,
-      pass: process.env.MAILTRAP_PASSWORD,
+      user: process.env.EMAIL_USERNAME,
+      pass: process.env.EMAIL_PASSWORD,
     },
   });
 

@@ -1,0 +1,20 @@
+.cards{
+    width: 50%;
+    height: 238px;
+    border-radius: 10px;
+    opacity: 0px;
+    justify-content: space-evenly !important;
+    border: 1px solid #fff;
+}
+.cards-wrapper{
+    padding-top: 40px !important;
+    justify-content: space-between;
+}
+.cards-wrapper .card-title {
+    font-size: 30px !important;
+    font-family: Arvo-Bold;
+}
+.card-count{
+    font-size: 70px !important;
+    font-family: Arvo-Bold;
+}

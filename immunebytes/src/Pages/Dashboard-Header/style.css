@@ -1,3 +1,6 @@
-.header-container{
-    width: 80vw;
+.header-container {
+    padding-left: 20vw;
+    float: right;
+    max-height: 10vh;
+    width: 100%;
 }

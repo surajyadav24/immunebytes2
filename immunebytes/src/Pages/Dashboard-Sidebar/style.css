@@ -1,6 +1,8 @@
 .sidebar-container{
     max-width: 20vw;
     min-width: 20vw;
+    position: absolute;
+    top: 0px;
 }
 .sidebar-wrapper{
     width: 100%;

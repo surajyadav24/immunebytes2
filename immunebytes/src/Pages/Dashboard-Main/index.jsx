@@ -7,8 +7,8 @@ function DashboardMain() {
   return (
 <>
 <div className="main-contaner">
-<Sidebar/>
-<DashboardHeader/>
+
+
 
 </div>
 </>

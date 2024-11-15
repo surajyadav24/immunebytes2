@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 export const generateOTP = () => {
   let otp = "";
   for (let i = 0; i <6; i++) {
-    const randval = Math.round(Math.random() * 10);
+    const randval = Math.floor(Math.random() * 10);
     otp = otp + randval;
   }
   return otp;

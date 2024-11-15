@@ -1,5 +1,5 @@
 // App.js
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Portfolio from "./components/Portfolio";
@@ -13,6 +13,27 @@ import './App.css';
 import DashboardMain from "./Pages/Dashboard-Main";
 
 function App() {
+  // State for the OTP
+  const [otp, setOtp] = useState('');
+
+  // Function to handle OTP input changes
+  const handleOtpChange = (value) => {
+    setOtp(value);
+  };
+
+  // Function to handle OTP submission
+  const handleSubmit = () => {
+    alert(`OTP Submitted: ${otp}`);
+    // Add your logic here for handling the OTP submission (e.g., API call)
+  };
+
+  // Function to handle resending the OTP
+  const handleResend = () => {
+    alert('Resending OTP...');
+    setOtp(''); // Reset the OTP if needed
+    // Add your logic here for resending the OTP (e.g., API call)
+  };
+
   return (
     <Router>
       <Routes>

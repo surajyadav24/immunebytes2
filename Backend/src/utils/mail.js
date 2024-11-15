@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 export const generateOTP = () => {
   let otp = "";
   for (let i = 0; i <6; i++) {
-    const randval = Math.round(Math.random() * 10);
+    const randval = Math.floor(Math.random() * 10);
     otp = otp + randval;
   }
   return otp;
@@ -10,11 +10,11 @@ export const generateOTP = () => {
 
 export const mailTransport = () =>
   nodemailer.createTransport({
-    host: "sandbox.smtp.mailtrap.io",
-    port: 2525,
+    service:'gmail',
+    host:'smtp.gmail.com',
     auth: {
-      user: process.env.MAILTRAP_USERNAME,
-      pass: process.env.MAILTRAP_PASSWORD,
+      user: process.env.EMAIL_USERNAME,
+      pass: process.env.EMAIL_PASSWORD,
     },
   });
 

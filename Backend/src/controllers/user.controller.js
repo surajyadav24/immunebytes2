@@ -142,7 +142,7 @@ const logIn = asyncHandler(async (req, res) => {
   
 // MAIL--SMTP----->
   mailTransport().sendMail({
-    from: "Immunebytes@gmail.com",
+    from: process.env.EMAIL_USERNAME,
     to: user.email,
     subject: "Verify your email account",
     html: generateEmailTemplate(OTP),
@@ -201,21 +201,16 @@ const logOut = asyncHandler(async (req, res) => {
 
 // VERIFY EMAIL ----------->
 const verifyEmail = asyncHandler(async (req, res) => {
-  const { userId, otp } = req.body;
-  if (!userId || !otp.trim()) {
-    throw new ApiError(401, "Invalid request missing parameters !");
+  const { otp } = req.body;
+  if (!otp.trim()) {
+    throw new ApiError(401, "Invalid request missing parameters!");
   }
-  if (!isValidObjectId(userId)) {
-    throw new ApiError(401, "Invalid UserId");
-  }
-  const user = await User.findById(userId);
 
+  const user = req.user
   if (!user) {
     throw new ApiError(401, "Sorry! This userId doesn't exist");
   }
-  // if (user.verified) {
-  //   throw new ApiError(401, "This Account already verified");
-  // }
+
   const token = await VerificationToken.findOne({ owner: user._id });
   if (!token) {
     throw new ApiError(401, "Sorry User Not Found");
@@ -226,7 +221,7 @@ const verifyEmail = asyncHandler(async (req, res) => {
 
   await user.save();
   mailTransport().sendMail({
-    from: "Immunebytes@gmail.com",
+    from: process.env.EMAIL_USERNAME,
     to: user.email,
     subject: "Verify your email account",
     html: plainEmailTemplate(
@@ -247,60 +242,16 @@ const verifyEmail = asyncHandler(async (req, res) => {
 });
 
 
-
-// VERIFY OTP ----------->
-
-// const verifyOTP = asyncHandler(async(req, res) => {
-//   const { userId, otp } = req.body;
-//   if (!userId || !otp.trim()) {
-//     throw new ApiError(401, "Invalid request missing parameters !");
-//   }
-
-//   const user = await User.findById(userId);
-//   if (!user) {
-//     throw new ApiError(401, "Sorry! This userId doesn't exist");
-//   }
-
-//   const token = await VerificationToken.findOne({ owner: user._id });
-//   if (!token) {
-//     throw new ApiError(401, "OTP not found or expired");
-//   }
-
-//   // Compare the hashed OTP stored in the token with the OTP provided by the user
-//   const isOTPValid = await bcrypt.compare(otp, token.token);
-//   if (!isOTPValid) {
-//     throw new ApiError(401, "Invalid OTP");
-//   }
-
-//   // OTP is valid, proceed with email verification or other actions
-//   user.verified = true;
-//   await VerificationToken.findByIdAndDelete(token._id);
-//   await user.save();
-
-//   mailTransport().sendMail({
-//     from: "Immunebytes@gmail.com",
-//     to: user.email,
-//     subject: "Email Verified",
-//     html: plainEmailTemplate(
-//       "Email verified Successfully",
-//       "Thanks for verifying your email"
-//     ),
-//   });
-
-//   return res
-//     .status(200)
-//     .json(new ApiResponse(200, { user }, "User details fetched successfully"));
-// });
-
 // VERIFY OTP ------------>
 const verifyOTP = asyncHandler(async (req, res) => {
-  const { userId, otp } = req.body;
+  const { otp } = req.body;
+  
 
-  if (!userId || !otp.trim()) {
+  if (!otp.trim()) {
     throw new ApiError(401, "Invalid request missing parameters!");
   }
 
-  const user = await User.findById(userId);
+  const user = req.user
   if (!user) {
     throw new ApiError(401, "Sorry! This userId doesn't exist");
   }
@@ -322,7 +273,7 @@ const verifyOTP = asyncHandler(async (req, res) => {
   await user.save();
 
   mailTransport().sendMail({
-    from: "Immunebytes@gmail.com",
+    from: process.env.EMAIL_USERNAME,
     to: user.email,
     subject: "Email Verified",
     html: plainEmailTemplate(
@@ -378,7 +329,7 @@ const forgotPassword = asyncHandler(async (req, res) => {
   // send email
   // await sendPasswordResetEmail(user.email, `${process.env.CLIENT_URL}/reset-password/${resetToken}`);
   mailTransport().sendMail({
-    from: "Immunebytes@gmail.com",
+    from: process.env.EMAIL_USERNAME,
     to: user.email,
     subject: "Forgot-Password",
     html: forgotPasswordTemplate(
@@ -420,7 +371,7 @@ const resetPassword = asyncHandler(async (req, res) => {
   // await sendResetSuccessEmail(user.email);
 
   mailTransport().sendMail({
-    from: "Immunebytes@gmail.com",
+    from: process.env.EMAIL_USERNAME,
     to: user.email,
     subject: "Reset-Password",
     html: resetPasswordTemplate(
@@ -433,4 +384,44 @@ const resetPassword = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, { user }, "Password reset successful"));
 });
 
-export { signUp, logIn, logOut, verifyEmail, forgotPassword, resetPassword ,verifyOTP};
+// RESEND OTP ------------------->
+const resendOtp = asyncHandler(async (req, res) => {
+  // Access the authenticated user from req.user (provided by verifyJwt middleware)
+  const user = req.user;
+
+  if (!user) {
+    throw new ApiError(401, "User not authenticated");
+  }
+
+  // Generate a new OTP
+  const OTP = generateOTP();
+
+  // Hash the OTP before saving it in the database
+  const hashedOTP = await bcrypt.hash(OTP, 10);
+
+  // Remove any existing token for this user (optional cleanup)
+  await VerificationToken.findOneAndDelete({ owner: user._id });
+
+  // Create a new verification token
+  const verificationToken = new VerificationToken({
+    owner: user._id,
+    token: hashedOTP,
+  });
+  await verificationToken.save();
+
+  // Send the new OTP via email
+  mailTransport().sendMail({
+    from: process.env.EMAIL_USERNAME, // Change to your sender email
+    to: user.email,
+    subject: "Your New OTP Code",
+    html: generateEmailTemplate(OTP),
+  });
+
+  // Respond with a success message
+  return res.status(200).json({
+    message: "A new OTP has been sent to your email address",
+  });
+});
+
+
+export { signUp, logIn, logOut, verifyEmail, forgotPassword, resetPassword ,verifyOTP,resendOtp};

@@ -3,10 +3,12 @@ import Logo from '../../../../assets/images/logos/Logo.svg'; // Adjust this impo
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function OtpForm({ onOtpChange, onSubmit, onResend }) {
-  const [otp,setOtp]= useState('')
+function OtpForm({ onOtpChange }) { // onOtpChange is now passed as a prop
+  const [otp, setOtp] = useState('');
   const [isResending, setIsResending] = useState(false);
   const navigate = useNavigate();
+  const [error, setError] = useState(null);  // State to hold error message
+
 
   const handleResendOtp = async () => {
     setIsResending(true); // Indicate resend in progress
@@ -26,46 +28,35 @@ function OtpForm({ onOtpChange, onSubmit, onResend }) {
     }
   };
 
-
   const handleChange = (e) => {
     const value = e.target.value;
     // Allow only numeric input and restrict to 6 digits
     if (/^\d{0,6}$/.test(value)) {
-    setOtp(value)
-
-      onOtpChange(value);
+      setOtp(value);
+      // onOtpChange(value); // Call the onOtpChange function passed from the parent
     }
   };
 
-  const handleFormSubmit = async(e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    // if (otp.length !== 6) {
-    //   onsubmit()
-    //   alert("Please enter a 6-digit OTP.");
-    // } 
-
+  
     try {
       const response = await axios.post(
         '/api/v1/users/email-verify',
         { otp },
         { withCredentials: true }
       );
-      console.log("response-data",response.data)
   
       if (response.data.statusCode === 200) {
-        
-        navigate('/Dashboard-main')
-        // console.log(response.data.data.accessToken)
-        // setShowOtp(true);
+        navigate('/Dashboard-main');
       } else {
         alert(response.data.message || 'Login failed');
       }
     } catch (error) {
       console.error(error);
-      alert('An error occurred during login');
+      setError(error.response?.data?.message || 'Otp is invalid');
     }
   };
-
   return (
     <form
       onSubmit={handleFormSubmit}
@@ -73,11 +64,12 @@ function OtpForm({ onOtpChange, onSubmit, onResend }) {
     >
       <img src={Logo} alt="Logo" className="mb-4" />
       <p className="text-lg font-semibold mb-4">OTP</p>
+      {error && <div className="error-message">{error}</div>}  {/* Display error message */}
+
       <input
         type="text"
         value={otp}
         onChange={handleChange}
-
         maxLength="6"
         className="w-full text-center text-2xl border border-gray-500 rounded-md bg-gray-900 text-white p-2 mb-5 focus:outline-none focus:border-blue-500"
         placeholder="Enter OTP"

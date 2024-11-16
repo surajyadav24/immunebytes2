@@ -3,7 +3,7 @@ import Logo from '../../../../assets/images/logos/Logo.svg'; // Adjust this impo
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function OtpForm({ onOtpChange }) { // onOtpChange is now passed as a prop
+function OtpForm() { // onOtpChange is now passed as a prop
   const [otp, setOtp] = useState('');
   const [isResending, setIsResending] = useState(false);
   const navigate = useNavigate();
@@ -39,6 +39,8 @@ function OtpForm({ onOtpChange }) { // onOtpChange is now passed as a prop
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    setError(null);  // Reset the error message before each request
+
   
     try {
       const response = await axios.post(
@@ -48,7 +50,7 @@ function OtpForm({ onOtpChange }) { // onOtpChange is now passed as a prop
       );
   
       if (response.data.statusCode === 200) {
-        navigate('/Dashboard-main');
+        navigate('/dashboard-main');
       } else {
         alert(response.data.message || 'Login failed');
       }

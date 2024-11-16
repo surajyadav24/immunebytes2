@@ -1,6 +1,10 @@
 import mongoose ,{Schema} from 'mongoose'
 
 const addPortfolioSchema  = new Schema({
+    name:{
+        type:String,
+        required:true
+    },
     image: { 
         type: String, 
         required: true },
@@ -10,11 +14,11 @@ const addPortfolioSchema  = new Schema({
     auditDate: { 
         type: Date,
         required: true },
-    Errors: { 
+    errorBags: { 
         type: String },
     status:{
         type:String, 
-        enum:['complete','In-Progress']},
+        enum:['complete','In Progress']},
 },{timestamps:true})
 
 

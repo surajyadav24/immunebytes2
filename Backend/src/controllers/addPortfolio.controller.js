@@ -41,7 +41,7 @@ import { uploadOnCloudinary } from "../utils/Cloudinary.js";
 
     return res
     .status(201)
-    .json(new ApiResponse(201, {result}, " Portfolio added Successfully"))
+    .json(new ApiResponse(200, {result}, " Portfolio added Successfully"))
 
   }) 
 

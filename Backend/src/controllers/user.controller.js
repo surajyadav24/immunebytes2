@@ -202,59 +202,56 @@ const logOut = asyncHandler(async (req, res) => {
 // VERIFY EMAIL ----------->
 const verifyEmail = asyncHandler(async (req, res) => {
   const { otp } = req.body;
-
   if (!otp.trim()) {
     throw new ApiError(401, "Invalid request missing parameters!");
   }
 
-  const user = req.user;
+  const user = req.user
   if (!user) {
     throw new ApiError(401, "Sorry! This userId doesn't exist");
   }
 
   const token = await VerificationToken.findOne({ owner: user._id });
   if (!token) {
-    throw new ApiError(401, "OTP not found or expired");
+    throw new ApiError(401, "Sorry User Not Found");
   }
 
-  // Compare the hashed OTP stored in the token with the OTP provided by the user
-  const isOTPValid = await bcrypt.compare(otp, token.token);
-  if (!isOTPValid) {
-    throw new ApiError(401, "Invalid OTP");
-  }
-
-  // OTP is valid, proceed with email verification or other actions
   user.verified = true;
   await VerificationToken.findByIdAndDelete(token._id);
-  await user.save();
 
+  await user.save();
   mailTransport().sendMail({
     from: process.env.EMAIL_USERNAME,
     to: user.email,
-    subject: "Email Verified",
+    subject: "Verify your email account",
     html: plainEmailTemplate(
       "Email verified Successfully",
-      "Thanks for verifying your email"
+      "Thanks for contacting with us"
     ),
   });
 
   return res
-    .status(200)
-    .json(
-      new ApiResponse(200, { user }, "Email verified successfully")
-    );
+  .status(200)
+  .json(
+    new ApiResponse(
+      200,
+      { user },
+      "Email verified successfully"
+    )
+  );
 });
 
 
 // VERIFY OTP ------------>
 const verifyOTP = asyncHandler(async (req, res) => {
   const { otp } = req.body;
+  
 
   if (!otp.trim()) {
     throw new ApiError(401, "Invalid request missing parameters!");
   }
 
-  const user = req.user;
+  const user = req.user
   if (!user) {
     throw new ApiError(401, "Sorry! This userId doesn't exist");
   }
@@ -288,9 +285,15 @@ const verifyOTP = asyncHandler(async (req, res) => {
   return res
     .status(200)
     .json(
-      new ApiResponse(200, { user }, "Email verified successfully")
+      new ApiResponse(
+        200,
+        { user },
+        "Email verified successfully"
+      )
     );
 });
+
+
 
 
 // FORGOT PASSWORD -------------->

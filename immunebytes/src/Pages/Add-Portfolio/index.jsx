@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import './style.css'
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 const AddPortfolio = () => {
+  const navigate = useNavigate()
+  const [error,setError]=useState('')
   const [formData, setFormData] = useState({
     name: "",
     platform: "",
@@ -19,9 +24,44 @@ const AddPortfolio = () => {
     setFormData({ ...formData, image: e.target.files[0] });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const form = new FormData();
+    form.append('name', formData.name);
+    form.append('platform', formData.platform);
+    form.append('status', formData.status);
+    form.append('errorBags', formData.errorBags);
+    form.append('auditDate', formData.auditDate);
+    
+    if (formData.image) {
+      form.append('image', formData.image);
+    }
+    
     console.log(formData);
+    try {
+      const response = await axios.post(
+        '/api/v1/users/Add-Portfolio',
+        form,
+        {
+          headers: { 
+            'Content-Type': 'multipart/form-data',
+          },
+          withCredentials: true,
+        }
+      );
+  
+      console.log("response-data", response.data);
+
+      if (response.data.statusCode === 200) {
+        navigate('/dashboard-main');
+      } else {
+        setError(response.data.message || 'add portfolio failed');  // Set the error message from response
+      }
+    } catch (error) {
+      console.error(error);
+      setError(error.response?.data?.message || 'add portfolio details are invalid');
+    }
   };
 
   return (
@@ -55,7 +95,7 @@ const AddPortfolio = () => {
               type="file"
               id="image"
               name="image"
-              accept="image/*"
+              // accept="image/*"
               onChange={handleImageChange}
               className="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none"
             />

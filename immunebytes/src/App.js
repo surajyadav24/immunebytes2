@@ -15,26 +15,6 @@ import AddPortfolio from "./Pages/Add-Portfolio";
 import PlatformManagement from './Pages/Add-Platform'
 
 function App() {
-  // State for the OTP
-  const [otp, setOtp] = useState("");
-
-  // Function to handle OTP input changes
-  const handleOtpChange = (value) => {
-    setOtp(value);
-  };
-
-  // Function to handle OTP submission
-  const handleSubmit = () => {
-    alert(`OTP Submitted: ${otp}`);
-    // Add your logic here for handling the OTP submission (e.g., API call)
-  };
-
-  // Function to handle resending the OTP
-  const handleResend = () => {
-    alert("Resending OTP...");
-    setOtp(""); // Reset the OTP if needed
-    // Add your logic here for resending the OTP (e.g., API call)
-  };
 
   return (
     <Router>
@@ -44,7 +24,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/otpform" element={<OtpForm />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route path="/resetpassword" element={<ResetPassword />} />
+        <Route path="/resetpassword/:resetPasswordToken" element={<ResetPassword />} />
 
         {/* Routes with Layout */}
         <Route

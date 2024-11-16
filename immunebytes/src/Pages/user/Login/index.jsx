@@ -1,4 +1,3 @@
-// LoginForm.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -8,10 +7,12 @@ import Logo from '../../../assets/images/logos/Logo.svg';
 function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);  // State to hold error message
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setError(null);  // Reset the error message before each request
 
     try {
       const response = await axios.post(
@@ -19,18 +20,16 @@ function LoginForm() {
         { username, password },
         { withCredentials: true }
       );
-      console.log("response-data",response.data)
-  
+      console.log("response-data", response.data);
+
       if (response.data.statusCode === 200) {
-        navigate('/otpform')
-        // console.log(response.data.data.accessToken)
-        // setShowOtp(true);
+        navigate('/otpform');
       } else {
-        alert(response.data.message || 'Login failed');
+        setError(response.data.message || 'Login failed');  // Set the error message from response
       }
     } catch (error) {
       console.error(error);
-      alert('An error occurred during login');
+      setError(error.response?.data?.message || 'Username and Password id invalid');
     }
   };
 
@@ -41,6 +40,8 @@ function LoginForm() {
           <img className="logo" src={Logo} alt="Logo" />
           <h2 className="title">Login to your Dashboard</h2>
           <p className="subtitle">Welcome back! Select method to login</p>
+
+          {error && <div className="error-message">{error}</div>}  {/* Display error message */}
 
           <div className="input-group">
             <label className="label">User Name</label>
@@ -62,7 +63,7 @@ function LoginForm() {
               placeholder="Password"
               className="input"
             />
-            <a href="#" className="forgot-password">Forgot Password?</a>
+            <a href="/forgotpassword" className="forgot-password">Forgot Password?</a>
           </div>
 
           <button type="submit" className="button">Login</button>

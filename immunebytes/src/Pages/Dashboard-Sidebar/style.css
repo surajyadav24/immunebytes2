@@ -8,3 +8,6 @@
     width: 100%;
     height: 100vh;
 }
+.sidebar-wrapper.w-64.bg-gray-800.p-4.hidden.md\:block {
+    width: 100%;
+}

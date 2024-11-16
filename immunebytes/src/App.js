@@ -6,11 +6,13 @@ import Portfolio from "./components/Portfolio";
 import Dashboard from "./Pages/user/Login/Dashboard";
 import ForgotPassword from "./Pages/Forgot-password";
 import ResetPassword from "./Pages/Reset-Password";
-import OtpForm from './Pages/user/Login/OtpForm';
+import OtpForm from "./Pages/user/Login/OtpForm";
 import SeverityButtons from "./Pages/Savrity-Form";
-import Layout from "./Pages/Layout/layout";  // Import the Layout component
-import './App.css';
+import Layout from "./Pages/Layout/layout"; // Import the Layout component
+import "./App.css";
 import DashboardMain from "./Pages/Dashboard-Main";
+import AddPortfolio from "./Pages/Add-Portfolio";
+import PlatformManagement from './Pages/Add-Platform'
 
 function App() {
 
@@ -25,39 +27,58 @@ function App() {
         <Route path="/resetpassword/:resetPasswordToken" element={<ResetPassword />} />
 
         {/* Routes with Layout */}
-        <Route 
-          path="/dashboard" 
+        <Route
+          path="/dashboard"
           element={
             <Layout>
               <Dashboard />
             </Layout>
-          } 
+          }
         />
-        <Route 
-          path="/dashboard-main" 
+        <Route
+          path="/dashboard-main"
           element={
             <Layout>
-              <DashboardMain/>
+              <DashboardMain />
             </Layout>
-          } 
+          }
         />
-        <Route 
-          path="/severity" 
+
+        <Route
+          path="/severity"
           element={
             <Layout>
               <SeverityButtons />
             </Layout>
-          } 
+          }
         />
-        <Route 
-          path="/severity" 
+
+        <Route
+          path="/severity"
           element={
             <Layout>
-     <SeverityButtons/>
+              <SeverityButtons />
             </Layout>
-          } 
+          }
+        />
+        <Route
+          path="/addportfolio"
+          element={
+            <Layout>
+              <AddPortfolio/>
+            </Layout>
+          }
+        />
+        <Route
+          path="/addplatform"
+          element={
+            <Layout>
+              <PlatformManagement/>
+            </Layout>
+          }
         />
       </Routes>
+
     </Router>
   );
 }

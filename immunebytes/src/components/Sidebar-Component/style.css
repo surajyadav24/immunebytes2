@@ -1,0 +1,7 @@
+
+.sidebar-wrapper{
+box-shadow: -27.37px 27.37px 27.37px 0px #A5A5A51A inset;
+box-shadow: 27.37px -27.37px 27.37px 0px #A5A5A51A inset;
+backdrop-filter: blur(67.86933135986328px);
+background-color: #000;
+}

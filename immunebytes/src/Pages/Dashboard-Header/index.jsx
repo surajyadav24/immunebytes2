@@ -4,7 +4,7 @@ import './style.css'
 function DashboardHeader() {
   return (
 <div className="header-container">
-<div className=" flex items-center justify-between p-4 bg-gray-800">
+<div className=" flex items-center justify-between p-4 header-wrap">
       <h2 className="text-xl text-white font-semibold">Good Morning User</h2>
       <div className="flex items-center space-x-4">
         <div className="flex items-center bg-gray-700 p-2 rounded">

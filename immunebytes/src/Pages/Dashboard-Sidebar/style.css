@@ -7,7 +7,22 @@
 .sidebar-wrapper{
     width: 100%;
     height: 100vh;
+    box-shadow: -27.37px 27.37px 27.37px 0px #A5A5A51A inset;
+box-shadow: 27.37px -27.37px 27.37px 0px #A5A5A51A inset;
+backdrop-filter: blur(67.86933135986328px);
+background-color:#000 !important;
 }
 .sidebar-wrapper.w-64.bg-gray-800.p-4.hidden.md\:block {
     width: 100%;
+}
+.sidebar-wrapper {
+    border: 1px solid;
+    width: 100%;
+    height: 100vh;
+    box-shadow: -27.37px 27.37px 27.37px 0px #A5A5A51A inset;
+    box-shadow: 27.37px -27.37px 27.37px 0px #A5A5A51A inset;
+    -webkit-backdrop-filter: blur(67.86933135986328px);
+    backdrop-filter: blur(67.86933135986328px);
+    background-color: #000 !important;
+    border-radius: 15px;
 }

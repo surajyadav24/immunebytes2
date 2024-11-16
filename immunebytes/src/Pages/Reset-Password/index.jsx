@@ -16,35 +16,47 @@ function ResetPassword() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-        // Check if passwords match
-        if (password !== confirmpassword) {
-          setError('Passwords do not match');
-          return;
-        }
-
+  
+    // Check if the password fields are empty
+    if (!password || !confirmpassword) {
+      setError('Password and Confirm Password cannot be empty');
+      return;
+    }
+  
+    // Check if passwords match
+    if (password !== confirmpassword) {
+      setError('Passwords do not match');
+      return;
+    }
+  
+    // Check password strength (example: minimum length of 6)
+    if (password.length < 6) {
+      setError('Password should be at least 6 characters');
+      return;
+    }
+  
     if(!resetPasswordToken){
       console.log("Reset password token is not accessible")
+      return;
     }
+  
     try {
       const response = await axios.post(
         `/api/v1/users/Reset-Password/${resetPasswordToken}`,
-        { password,confirmpassword},
+        { password, confirmpassword },
         { withCredentials: true }
       );
-      console.log("response-data",response.data)
-      console.log("Response received:", response.data)
-  
+      console.log("response-data", response.data)
       if (response.data.statusCode === 200) {
         navigate('/dashboard')
-        // console.log(response.data.data.accessToken)
-        // setShowOtp(true);
       } else {
         alert(response.data.message || 'Password Reset failed');
       }
     } catch (error) {
       console.error(error);
-      alert('An error occurred during Reset password');
+      setError(error.response?.data?.message || 'Password or Confirm Password is invalid');
     }
+  
   };
 
   return (
@@ -52,7 +64,10 @@ function ResetPassword() {
       <div className="container">
         <form  className="form" onSubmit={handleSubmit}>
           <img className="logo" src={Logo} alt="Logo" />
-          <h2 className="title">Forgot Password</h2>
+          <h2 className="title">Reset Password</h2>
+
+          {error && <div className="error-message">{error}</div>}  {/* Display error message */}
+
           <div className="input-group">
             <label className="label">New Password</label>
             <input

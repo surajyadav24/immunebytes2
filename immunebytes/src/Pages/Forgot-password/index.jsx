@@ -10,6 +10,8 @@ import { useNavigate } from 'react-router-dom'
 function ForgotPassword() {
   const [email,setEmail]=useState()
   const navigate = useNavigate();
+  const [error, setError] = useState(null);  // State to hold error message
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,9 +31,9 @@ function ForgotPassword() {
       } else {
         alert(response.data.message || 'password failed');
       }
-    } catch (error) {
+    }catch (error) {
       console.error(error);
-      alert('An error occurred during Forgeting password');
+      setError(error.response?.data?.message || 'Email id is invalid');
     }
   };
 
@@ -43,6 +45,8 @@ function ForgotPassword() {
           <h2 className="title">Forgot Password</h2>
           <div className="input-group">
             <label className="label">Email</label>
+          {error && <div className="error-message">{error}</div>}  {/* Display error message */}
+
             <input
               type="email"
               placeholder="Enter Your Email Address"

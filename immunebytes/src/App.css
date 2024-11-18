@@ -70,7 +70,8 @@ p{
 
 
 .heading-h1{
-color:#F9116C;
+  font-size: 40px;
+  color: #F9116C;
 }
 button.splide__arrow.splide__arrow--prev {
   display: none;

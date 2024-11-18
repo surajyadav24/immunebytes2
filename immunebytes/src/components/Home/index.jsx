@@ -4,7 +4,8 @@ import Header from "../Header";
 import PrimaryBtn from "../Primarybutton";
 import Herosection from "../Herosection";
 import Cta from "../Cta-components";
-import Whychooseus from "../Whychooseus";
+// import Whychooseus from "../Whychooseus";
+
 import Servicescomponent from "../Servicescomponent";
 import TestimonialSlider from "../Testimonial slider";
 import LogoSlider from "../Logo-Slider";
@@ -13,6 +14,7 @@ import Whychooseusec from "../WhychooseusSec";
 import CaseStudyCard from "../Case-study";
 import Community from "../Joinourcommunity";
 import Footer from "../Footer";
+
 // Import images
 import img10 from "../../assets/images/img11.svg";
 import img14 from "../../assets/images/img14.svg";
@@ -56,7 +58,7 @@ const Home = () => {
       <AuditProcess />
       <div className="container pb-4">
         <h1 className="text-center py-5  pb-4 heading-h1">Why Choose Us?</h1>
-        <Whychooseus />
+        {/* <Whychooseus /> */}
         <Whychooseusec />
       </div>
       <h1 className="text-center py-5  pb-4 heading-h1 testimonial-heading">Testimonials</h1>

@@ -2,3 +2,27 @@
  margin: 0 auto;
 
 }
+.addportfolio input , .addportfolio select{
+border: 1px solid grey !important;
+max-height: 80px !important;
+padding: 5px !important;
+background-color: #262626;
+}
+
+#companyDescription, #errorDescription {
+    background-color: #262626 !important;
+    width: 100%;
+    height: 80px !important;
+}
+.addportfolio form{
+    background: #262626;
+
+}
+.submitportfolio {
+padding: 8px 20px !important;
+max-width:120px ;
+font-size: 12px;
+background-color: #F9116C;
+margin: 0 auto;
+display: flex;
+}

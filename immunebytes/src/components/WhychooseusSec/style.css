@@ -98,10 +98,10 @@
     padding-left: 34px !important;
   }
   .sec-clients ,.first-clients, .third-clients{
-    padding: 45px 55px;
+    padding: 84px 55px;
   }
   .sec-clients:hover ,.first-clients:hover, .third-clients:hover{
-    padding: 45px 55px;
+    padding: 84px 55px;
   }
 
 }

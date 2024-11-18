@@ -1,44 +1,42 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import PortfolioModal from '../PortfolioModal'; // Modal component for popup
 import './style.css'; // Add custom styles for div layout
 import forward from '../../assets/images/portfolio/forward.svg';
 import backward from '../../assets/images/portfolio/backward.svg';
 import eye from '../../assets/images/portfolio/eye.svg';
-import csigma from '../../assets/images/portfolio/csigma.svg';
-import vanar from '../../assets/images/portfolio/vanar.svg';
-import virtua from '../../assets/images/portfolio/virtua.svg';
-import demex from '../../assets/images/portfolio/demex.svg';
-import supere from '../../assets/images/portfolio/super.svg';
-import wam from '../../assets/images/portfolio/wam.svg';
-import poly from '../../assets/images/portfolio/csigma.svg';
-import retreeb from '../../assets/images/portfolio/csigma.svg';
-
-const portfolioData = [
-  { id: 1, name: csigma, nameString: 'CSigma', platform: 'ARBITRUM', auditDate: '2024-05-31', errors: 'ARBITRUM', status: 'Completed' },
-  { id: 2, name: vanar, nameString: 'Vanar', platform: 'VANAR', auditDate: '2024-02-12', errors: 'ARBITRUM', status: 'Completed' },
-  { id: 3, name: virtua, nameString: 'Virtua', platform: 'ETHEREUM', auditDate: '2023-07-19', errors: 'ARBITRUM', status: 'Progress' },
-  { id: 4, name: demex, nameString: 'Demex', platform: 'ARBITRUM', auditDate: '2023-02-03', errors: 'ARBITRUM', status: 'Completed' },
-  { id: 5, name: supere, nameString: 'SuperE', platform: 'ETHEREUM', auditDate: '2022-11-06', errors: 'ARBITRUM', status: 'Completed' },
-  { id: 6, name: wam, nameString: 'WAM', platform: 'ETHEREUM', auditDate: '2022-10-12', errors: 'ARBITRUM', status: 'Completed' },
-  { id: 7, name: poly, nameString: 'Poly', platform: 'ETHEREUM', auditDate: '2021-11-22', errors: 'ARBITRUM', status: 'Completed' },
-  { id: 8, name: retreeb, nameString: 'Retreeb', platform: 'FANTOM', auditDate: '2021-11-08', errors: 'ARBITRUM', status: 'Progress' },
-  { id: 9, name: vanar, nameString: 'Vanar', platform: 'FANTOM', auditDate: '2021-11-08', errors: 'ARBITRUM', status: 'Progress' },
-  { id: 10, name: supere, nameString: 'SuperE', platform: 'FANTOM', auditDate: '2021-11-08', errors: 'ARBITRUM', status: 'Progress' },
-  { id: 11, name: poly, nameString: 'Poly', platform: 'FANTOM', auditDate: '2021-11-08', errors: 'ARBITRUM', status: 'Progress' },
-  { id: 12, name: retreeb, nameString: 'Retreeb', platform: 'FANTOM', auditDate: '2021-11-08', errors: 'ARBITRUM', status: 'Progress', description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged." },
-];
 
 const PortfolioTable = () => {
   const [search, setSearch] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage,setItemsPerPage] = useState(9);
+  const [itemsPerPage, setItemsPerPage] = useState(9);
+  const [portfolios, setPortfolios] = useState([]); // Updated to hold fetched data
   const [selectedItem, setSelectedItem] = useState(null);
 
-  // Filter portfolio data based on search input
-  const filteredData = portfolioData.filter(item => 
-    item.nameString.toLowerCase().includes(search.toLowerCase())
-  );
+  // Fetch portfolio data from the backend
+  useEffect(() => {
+    const fetchPortfolios = async () => {
+      try {
+        const response = await axios.post('/api/v1/users/getportfolio');
+        // Ensure the response is an array
+        if (response.data && response.data.data && Array.isArray(response.data.data.Portfolio)) {
+          setPortfolios(response.data.data.Portfolio);  // Access Portfolio array correctly
+        } else {
+          console.error('Invalid response data:', response.data);
+        }
+      } catch (error) {
+        console.error('Error fetching portfolio data', error);
+      }
+    };
 
+    fetchPortfolios();
+  }, []);
+
+  // Filter portfolio data based on search input
+  const filteredData = (portfolios || []).filter(item =>
+    item.name && item.name.toLowerCase().includes(search.toLowerCase())  // Add check for item.name
+  );
+  
 
   useEffect(() => {
     const updateItemsPerPage = () => {
@@ -57,7 +55,8 @@ const PortfolioTable = () => {
       window.removeEventListener("resize", updateItemsPerPage);
     };
   }, []);
-  // Get current items for pagination
+
+  // Pagination logic
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
@@ -90,9 +89,8 @@ const PortfolioTable = () => {
 
   return (
     <div className="container">
-              <h2 className="portfolio-title">Our Portfolio</h2>
+      <h2 className="portfolio-title">Our Portfolio</h2>
       <div className="portfolio-table-container">
-
         <div className="search-bar">
           <input
             type="text"
@@ -113,11 +111,16 @@ const PortfolioTable = () => {
             <div>Report</div>
           </div>
           {currentItems.map(item => (
-            <div key={item.id} className="portfolio-grid-row" onClick={() => handleRowClick(item)}>
-              <div><img src={item.name} alt={item.nameString} /></div>
+            <div
+              key={item._id}
+              className="portfolio-grid-row"
+              onClick={() => handleRowClick(item)}
+            >
+              <div><img src={item.image} alt={item.name} style={{ width: '50px', height: '50px', objectFit: 'cover' }} /></div>
+              {/* <div>{item.name}</div> */}
               <div>{item.platform}</div>
-              <div>{item.auditDate}</div>
-              <div>{item.errors}</div>
+              <div>{new Date(item.auditDate).toLocaleDateString()}</div>
+              <div>{item.errorBags}</div>
               <div>{item.status}</div>
               <div><button className="report-btn"><img src={eye} alt="View Report" /></button></div>
             </div>

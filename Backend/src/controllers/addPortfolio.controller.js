@@ -45,4 +45,10 @@ import { uploadOnCloudinary } from "../utils/Cloudinary.js";
 
   }) 
 
-  export {addportfolio}
+  // Fetch all platforms
+const getportfolio = asyncHandler(async (req, res) => {
+    const Portfolio = await AddPortfolio.find();
+    return res.status(200).json(new ApiResponse(200, { Portfolio }, "portfolio got successful"));
+  });
+
+  export {addportfolio,getportfolio}

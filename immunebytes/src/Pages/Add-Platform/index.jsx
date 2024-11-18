@@ -1,49 +1,119 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const PlatformManagement = () => {
-  const [platforms, setPlatforms] = useState([
-    "Ethereum",
-    "Arbitrum",
-    "Vanar",
-    "Fantom",
-    "BSC",
-    "Solana",
-    "Avalanche",
-  ]);
-  const [newPlatform, setNewPlatform] = useState("");
+  const [platforms, setPlatforms] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
   const [editedPlatform, setEditedPlatform] = useState("");
-
   const [currentPage, setCurrentPage] = useState(1);
   const platformsPerPage = 5;
+  const [error, setError] = useState("");
+  const [platformName, setAddPlatform] = useState("");
 
-  // Add a new platform
-  const addPlatform = () => {
-    if (newPlatform.trim() && !platforms.includes(newPlatform.trim())) {
-      setPlatforms([...platforms, newPlatform.trim()]);
-      setNewPlatform("");
+  // Fetch platforms on component mount
+  useEffect(() => {
+    const fetchPlatforms = async () => {
+      try {
+        const response = await axios.post('/api/v1/users/getplatforms', { withCredentials: true });
+        console.log("Fetched platforms data:", response.data);
+        if (response.data.statusCode === 200) {
+          const sortedPlatforms = response.data.data.platforms.sort(
+            (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+          );
+          setPlatforms(sortedPlatforms); // Ensure it's an array
+        }
+      } catch (error) {
+        console.error(error);
+        setError("Failed to fetch platforms");
+      }
+    };
+    fetchPlatforms();
+  }, []);
+
+  const savePlatform = async () => {
+    if (!editedPlatform.trim()) {
+      setError("Platform name cannot be empty.");
+      return;
+    }
+  
+    try {
+      const response = await axios.post(
+        `/api/v1/users/updateplatform/${platforms[editIndex]._id}`, // Send platform ID for the update
+        { platformName: editedPlatform.trim() },
+        { withCredentials: true }
+      );
+  
+      console.log("Updated platform:", response.data);
+  
+      if (response.data.statusCode === 200) {
+        // Update the platforms list with the newly updated platform
+        const updatedPlatforms = [...platforms];
+        updatedPlatforms[editIndex] = { ...updatedPlatforms[editIndex], platformName: editedPlatform.trim() };
+        setPlatforms(updatedPlatforms);
+        setEditIndex(null);
+        setEditedPlatform("");
+      } else {
+        setError(response.data.message || "Update failed");
+      }
+    } catch (error) {
+      console.error(error);
+      setError(error.response?.data?.message || "Failed to update platform");
+    }
+  };
+
+  // Handle pagination
+  const indexOfLastPlatform = currentPage * platformsPerPage;
+  const indexOfFirstPlatform = indexOfLastPlatform - platformsPerPage;
+  const currentPlatforms = Array.isArray(platforms) ? platforms.slice(indexOfFirstPlatform, indexOfLastPlatform) : [];
+
+  // Handle add platform
+  const handlesubmit = async (e) => {
+    e.preventDefault();
+    if (!platformName.trim()) {
+      setError("Platform name cannot be empty.");
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        '/api/v1/users/Platform',
+        { platformName },
+        { withCredentials: true }
+      );
+  
+      console.log("response-data", response.data);
+  
+      if (response.data.statusCode === 200) {
+        // Update the platforms list with the newly added platform
+        setPlatforms((prevPlatforms) => [
+          { platformName: platformName.trim(), createdAt: new Date() }, // Add createdAt for sorting
+          ...prevPlatforms // Existing platforms come after
+        ]);
+        setAddPlatform(""); // Clear input field
+      } else {
+        setError(response.data.message || 'Add platform failed');
+      }
+    } catch (error) {
+      console.error(error);
+      setError(error.response?.data?.message || 'Platform details are invalid');
     }
   };
 
   // Start editing a platform
   const startEditing = (index) => {
     setEditIndex(index);
-    setEditedPlatform(platforms[index]);
+    setEditedPlatform(platforms[index].platformName); // Initialize the editedPlatform with current platform name
   };
 
   // Save the edited platform
-  const savePlatform = () => {
-    const updatedPlatforms = [...platforms];
-    updatedPlatforms[editIndex] = editedPlatform.trim();
-    setPlatforms(updatedPlatforms);
-    setEditIndex(null);
-    setEditedPlatform("");
-  };
-
-  // Handle pagination
-  const indexOfLastPlatform = currentPage * platformsPerPage;
-  const indexOfFirstPlatform = indexOfLastPlatform - platformsPerPage;
-  const currentPlatforms = platforms.slice(indexOfFirstPlatform, indexOfLastPlatform);
+  // const savePlatform = () => {
+  //   const updatedPlatforms = [...platforms];
+  //   updatedPlatforms[editIndex] = { ...updatedPlatforms[editIndex], platformName: editedPlatform.trim() };
+  //   setPlatforms(updatedPlatforms);
+  //   setEditIndex(null);
+  //   setEditedPlatform("");
+  // };
 
   return (
     <div className="flex flex-col items-center min-h-screen bg-gray-900 text-white p-6">
@@ -60,19 +130,19 @@ const PlatformManagement = () => {
       <div className="w-full max-w-3xl bg-gray-800 rounded-lg p-4 shadow-lg mb-6">
         <h2 className="text-xl font-semibold mb-4">Add Platform</h2>
         <div className="flex items-center gap-4">
-          <input
-            type="text"
-            value={newPlatform}
-            onChange={(e) => setNewPlatform(e.target.value)}
-            placeholder="Enter new platform"
-            className="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
-          />
-          <button
-            onClick={addPlatform}
-            className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-md transition"
-          >
-            Submit
-          </button>
+          <form onSubmit={handlesubmit}>
+            <input
+              type="text"
+              value={platformName}
+              onChange={(e) => setAddPlatform(e.target.value)}
+              placeholder="Enter new platform"
+              className="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+            />
+            <button className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-md transition">
+              Submit
+            </button>
+          </form>
+          {error && <div className="error-message">{error}</div>} {/* Display error message */}
         </div>
       </div>
 
@@ -81,36 +151,33 @@ const PlatformManagement = () => {
         <h2 className="text-xl font-semibold mb-4">Platforms</h2>
         <div className="space-y-4">
           {currentPlatforms.map((platform, index) => (
-            <div
-              key={index + indexOfFirstPlatform}
-              className="flex items-center justify-between bg-gray-700 rounded-md p-2"
-            >
-              {editIndex === index + indexOfFirstPlatform ? (
-                <>
-                  <input
-                    type="text"
-                    value={editedPlatform}
-                    onChange={(e) => setEditedPlatform(e.target.value)}
-                    className="flex-1 p-2 bg-gray-600 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
-                  />
-                  <button
-                    onClick={savePlatform}
-                    className="ml-4 bg-pink-500 hover:bg-pink-600 text-white font-semibold py-1 px-4 rounded-md transition"
-                  >
-                    Save
-                  </button>
-                </>
-              ) : (
-                <>
-                  <p className="flex-1">{platform}</p>
-                  <button
-                    onClick={() => startEditing(index + indexOfFirstPlatform)}
-                    className="bg-gray-600 hover:bg-gray-500 text-white font-semibold py-1 px-4 rounded-md transition"
-                  >
-                    Edit
-                  </button>
-                </>
-              )}
+            <div key={index + indexOfFirstPlatform} className="flex items-center justify-between bg-gray-700 rounded-md p-2">
+             {editIndex === index + indexOfFirstPlatform ? (
+  <>
+    <input
+      type="text"
+      value={editedPlatform}
+      onChange={(e) => setEditedPlatform(e.target.value)}
+      className="flex-1 p-2 bg-gray-600 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+    />
+    <button
+      onClick={savePlatform}
+      className="ml-4 bg-pink-500 hover:bg-pink-600 text-white font-semibold py-1 px-4 rounded-md transition"
+    >
+      Save
+    </button>
+  </>
+) : (
+  <>
+    <p className="flex-1">{platform.platformName}</p> {/* Correctly render platformName */}
+    <button
+      onClick={() => startEditing(index + indexOfFirstPlatform)}
+      className="bg-gray-600 hover:bg-gray-500 text-white font-semibold py-1 px-4 rounded-md transition"
+    >
+      Edit
+    </button>
+  </>
+)}
             </div>
           ))}
         </div>

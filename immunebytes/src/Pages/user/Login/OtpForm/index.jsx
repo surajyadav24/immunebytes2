@@ -47,7 +47,7 @@ function OtpForm() { // onOtpChange is now passed as a prop
         '/api/v1/users/email-verify',
         { otp },
         { withCredentials: true }
-      );
+      )
   
       if (response.data.statusCode === 200) {
         navigate('/dashboard-main');

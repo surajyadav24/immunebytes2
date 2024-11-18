@@ -1,21 +1,57 @@
-import { ApiResponse } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
-import { Platform } from "../models/platform.model.js";
+import { UserPlatform } from "../models/userPlatform.model.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
 
+// Add a new platform
+const addPlatform = asyncHandler(async (req, res) => {
+  const { platformName } = req.body;
 
- const platform =asyncHandler(async (req, res) => {
-    const data = req.body;
-    if(!data) {
-        throw new ApiError(401,"Issue while getting data from frontend")
-    }
-    const result = await Platform.create(data);
-    if(!result) {
-        throw new ApiError(401,"Issue while adding book in create functionality")
-    }
-    return res
+  if (!platformName) {
+    throw new ApiError(400, "Platform name is required");
+  }
+
+  const existingPlatform = await UserPlatform.findOne({ platformName });
+  if (existingPlatform) {
+    throw new ApiError(409, "Platform already exists");
+  }
+
+  const newPlatform = await UserPlatform.create({ platformName });
+  return res
     .status(201)
-    .json(new ApiResponse(201, {result}, " Platform added Successfully"));
-  }) ;
+    .json(new ApiResponse(200, {  }, "Platform added successful"));
+});
 
-  export {platform}
+// Fetch all platforms
+const getPlatforms = asyncHandler(async (req, res) => {
+  const platforms = await UserPlatform.find();
+  return res.status(200).json(new ApiResponse(200, { platforms }, "Platform got successful"));
+});
+
+// Update a platform
+// Update a platform
+const updatePlatform = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const { platformName } = req.body;
+
+  if (!platformName) {
+    throw new ApiError(400, "Platform name is required");
+  }
+
+  const updatedPlatform = await UserPlatform.findByIdAndUpdate(
+    id,
+    { platformName },
+    { new: true, runValidators: true }
+  );
+
+  if (!updatedPlatform) {
+    throw new ApiError(404, "Platform not found");
+  }
+
+  return res
+    .status(200)
+    .json(new ApiResponse(200, { platform: updatedPlatform }, "Platform updated successfully"));
+});
+
+
+export { addPlatform, getPlatforms, updatePlatform };

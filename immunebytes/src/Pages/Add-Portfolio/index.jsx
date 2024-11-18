@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const AddPortfolio = () => {
   const navigate = useNavigate()
   const [error,setError]=useState('')
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     platform: "",
@@ -15,17 +16,39 @@ const AddPortfolio = () => {
     image: null,
   });
 
+  const [formErrors, setFormErrors] = useState({});
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    setFormErrors({ ...formErrors, [name]: "" })
   };
 
   const handleImageChange = (e) => {
     setFormData({ ...formData, image: e.target.files[0] });
+    setFormErrors({ ...formErrors, image: "" }); 
+  };
+
+  const validateForm = () => {
+    let errors = {};
+    if (!formData.name) errors.name = "Name is required.";
+    if (!formData.platform) errors.platform = "Platform is required.";
+    if (!formData.auditDate) errors.auditDate = "Audit Date is required.";
+    if (!formData.status) errors.status = "Status is required.";
+    if (!formData.image) errors.image = "Image is required.";
+    if (formData.errorBags === "" || formData.errorBags === undefined) {
+      errors.errorBags = "Error Bags is required.";
+    } else if (isNaN(formData.errorBags)) {
+      errors.errorBags = "Error Bags must be a number.";
+    }
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0; // Returns true if no errors
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return; // Prevent submission if validation fails
+    setLoading(true); // Start loading
 
     const form = new FormData();
     form.append('name', formData.name);
@@ -61,6 +84,8 @@ const AddPortfolio = () => {
     } catch (error) {
       console.error(error);
       setError(error.response?.data?.message || 'add portfolio details are invalid');
+    } finally {
+      setLoading(false); // Stop loading
     }
   };
 
@@ -85,6 +110,7 @@ const AddPortfolio = () => {
               onChange={handleChange}
               className="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
             />
+             {formErrors.name && <p className="text-red-500 mt-1">{formErrors.name}</p>}
           </div>
           {/* Upload Image */}
           <div>
@@ -100,6 +126,7 @@ const AddPortfolio = () => {
               className="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none"
             />
             <p className="text-sm text-gray-400 mt-1">JPEG, PNG, SVG, JPG</p>
+            {formErrors.image && <p className="text-red-500 mt-1">{formErrors.image}</p>}
           </div>
           {/* Platform */}
           <div>
@@ -118,6 +145,8 @@ const AddPortfolio = () => {
               <option value="Binance">Binance</option>
               <option value="Polygon">Polygon</option>
             </select>
+            {formErrors.platform && <p className="text-red-500 mt-1">{formErrors.platform}</p>}
+            </div>
           </div>
           {/* Audit Date */}
           <div>
@@ -133,6 +162,8 @@ const AddPortfolio = () => {
               className="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
             />
           </div>
+          {formErrors.platform && <p className="text-red-500 mt-1">{formErrors.auditDate}</p>}
+
           {/* Error / Bags */}
           <div>
             <label htmlFor="errorBags" className="block text-sm font-medium mb-1">
@@ -147,6 +178,8 @@ const AddPortfolio = () => {
               className="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
             />
           </div>
+          {formErrors.platform && <p className="text-red-500 mt-1">{formErrors.errorBags}</p>}
+
           {/* Status */}
           <div>
             <label htmlFor="status" className="block text-sm font-medium mb-1">
@@ -164,8 +197,10 @@ const AddPortfolio = () => {
               <option value="Completed">Completed</option>
               <option value="Pending">Pending</option>
             </select>
+            {formErrors.platform && <p className="text-red-500 mt-1">{formErrors.status}</p>}
+
           </div>
-        </div>
+       
         {/* Submit Button */}
         <button
           type="submit"
@@ -173,6 +208,8 @@ const AddPortfolio = () => {
         >
           Submit
         </button>
+
+        {error && <p className="text-red-500 mt-4">{error}</p>}
       </form>
     </div>
   );

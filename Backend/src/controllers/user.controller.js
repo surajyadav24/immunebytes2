@@ -211,15 +211,27 @@ const verifyEmail = asyncHandler(async (req, res) => {
     throw new ApiError(401, "Sorry! This userId doesn't exist");
   }
 
+  
+
   const token = await VerificationToken.findOne({ owner: user._id });
   if (!token) {
     throw new ApiError(401, "Sorry User Not Found");
   }
 
+  
+  const isOTPValid = await bcrypt.compare(otp, token.token);
+if (!isOTPValid) {
+  throw new ApiError(401, "Invalid OTP");
+}
+
   user.verified = true;
   await VerificationToken.findByIdAndDelete(token._id);
 
+
+
   await user.save();
+
+  
   mailTransport().sendMail({
     from: process.env.EMAIL_USERNAME,
     to: user.email,
@@ -246,8 +258,7 @@ const verifyEmail = asyncHandler(async (req, res) => {
 const verifyOTP = asyncHandler(async (req, res) => {
   const { otp } = req.body;
   
-
-  if (!otp.trim()) {
+  if (typeof otp !== "string" || !otp.trim()) {
     throw new ApiError(401, "Invalid request missing parameters!");
   }
 

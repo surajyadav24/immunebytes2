@@ -3,7 +3,7 @@ import { signUp,logOut,logIn, forgotPassword,resetPassword,resendOtp } from "../
 import { verifyJwt } from "../middlewares/auth.middleware.js"
 import { verifyEmail } from "../controllers/user.controller.js"
 import { addportfolio } from "../controllers/addPortfolio.controller.js"
-import { platform } from "../controllers/platform.controller.js"
+import { addPlatform, getPlatforms, updatePlatform } from "../controllers/platform.controller.js"
 import { cSigma } from "../controllers/cSigma.controller.js"
 import { upload } from "../middlewares/multer.middleware.js"
 
@@ -16,9 +16,14 @@ router.route("/email-verify").post(verifyJwt,verifyEmail)
 router.route("/Forgot-Password").post(forgotPassword)
 router.route("/Reset-Password/:resetPasswordToken").post(resetPassword)
 router.route("/Add-Portfolio").post(upload.single('image'),addportfolio);
-router.route("/Platform").post(platform);
+router.route("/Platform").post(addPlatform);
+router.route("/getplatforms").post(getPlatforms);
+router.route("/updateplatform/:id").post(updatePlatform);
+
+
 router.route("/cSigma").post(upload.single('image'),cSigma);
 router.route("/resend-otp").post(verifyJwt, resendOtp);
+
 
 
 

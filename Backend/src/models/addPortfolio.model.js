@@ -18,7 +18,7 @@ const addPortfolioSchema  = new Schema({
         type: String },
     status:{
         type:String, 
-        enum:['complete','In Progress']},
+        required:true},
 },{timestamps:true})
 
 

@@ -68,7 +68,9 @@ p{
   align-items: center;
 }
 
-
+.bg-pink-600{
+  background-color: #F9116C;
+}
 .heading-h1{
   font-size: 40px;
   color: #F9116C;

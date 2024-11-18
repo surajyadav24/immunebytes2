@@ -19,7 +19,7 @@ const addPlatform = asyncHandler(async (req, res) => {
   const newPlatform = await UserPlatform.create({ platformName });
   return res
     .status(201)
-    .json(new ApiResponse(200, {  }, "Platform added successful"));
+    .json(new ApiResponse(200, { newPlatform }, "Platform added successful"));
 });
 
 // Fetch all platforms

@@ -6,7 +6,7 @@ import forward from '../../assets/images/portfolio/forward.svg';
 import backward from '../../assets/images/portfolio/backward.svg';
 import eye from '../../assets/images/portfolio/eye.svg';
 
-const PortfolioTable = () => {
+const PortfolioTable = ({ showEditButton }) => {
   const [search, setSearch] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(9);
@@ -19,7 +19,7 @@ const PortfolioTable = () => {
         const response = await axios.post('/api/v1/users/getportfolio');
         if (response.data && response.data.data && Array.isArray(response.data.data.Portfolio)) {
           setPortfolios(response.data.data.Portfolio);
-          console.log("Response portfolio table ",response)
+          console.log('Response portfolio table ', response);
         } else {
           console.error('Invalid response data:', response.data);
         }
@@ -42,10 +42,10 @@ const PortfolioTable = () => {
     };
 
     updateItemsPerPage();
-    window.addEventListener("resize", updateItemsPerPage);
+    window.addEventListener('resize', updateItemsPerPage);
 
     return () => {
-      window.removeEventListener("resize", updateItemsPerPage);
+      window.removeEventListener('resize', updateItemsPerPage);
     };
   }, []);
 
@@ -62,8 +62,8 @@ const PortfolioTable = () => {
     if (currentPage > 1) setCurrentPage(currentPage - 1);
   };
 
-  const handleRowClick = (item) => {
-    setSelectedItem(item._id);  // Correctly set the selected item ID
+  const handleRowClick = item => {
+    setSelectedItem(item._id);
   };
 
   const closeModal = () => {
@@ -79,7 +79,7 @@ const PortfolioTable = () => {
             type="text"
             placeholder="Search by Name"
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={e => setSearch(e.target.value)}
           />
         </div>
 
@@ -91,20 +91,31 @@ const PortfolioTable = () => {
             <div>Audit Date</div>
             <div>Errors</div>
             <div>Status</div>
-            <div>Report</div>
+            <div>Actions</div>
           </div>
           {currentItems.map(item => (
-            <div
-              key={item._id}
-              className="portfolio-grid-row"
-              onClick={() => handleRowClick(item)}  // On click, set the selected item
-            >
-              <div><img src={item.image} alt={item.name} style={{ width: '50px', height: '50px', objectFit: 'cover' }} /></div>
+            <div key={item._id} className="portfolio-grid-row">
+              <div>
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  style={{ width: '50px', height: '50px', objectFit: 'cover' }}
+                />
+              </div>
               <div>{item.platform}</div>
               <div>{new Date(item.auditDate).toLocaleDateString()}</div>
               <div>{item.errorBags}</div>
               <div>{item.status}</div>
-              <div><button className="report-btn"><img src={eye} alt="View Report" /></button></div>
+              <div className="portfolio-actions">
+                <button className="report-btn">
+                  <img src={eye} alt="View Report" />
+                </button>
+                {showEditButton && (
+                  <button className="edit-btn" onClick={() => console.log(`Editing: ${item._id}`)}>
+                    Edit
+                  </button>
+                )}
+              </div>
             </div>
           ))}
         </div>
@@ -130,7 +141,7 @@ const PortfolioTable = () => {
 
         {/* Modal */}
         {selectedItem && (
-          <PortfolioModal selectedItemId={selectedItem} closeModal={closeModal} />  // Pass the correct selectedItemId prop
+          <PortfolioModal selectedItemId={selectedItem} closeModal={closeModal} />
         )}
       </div>
     </div>

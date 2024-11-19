@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 const SeverityButtons = () => {
   // Initial count for each severity level
+  const [error,setError]=useState('')
+  const navigate = useNavigate()
   const [counts, setCounts] = useState({
     critical: 5,
     high: 2,
@@ -20,9 +25,33 @@ const SeverityButtons = () => {
   };
 
   // Function to handle submit
-  const handleSubmit = () => {
-    alert(`Submitted counts: ${JSON.stringify(counts)}`);
+  const handleSubmit = async(e) => {
+    // alert(`Submitted counts: ${JSON.stringify(counts)}`);   
+    e.preventDefault();
+    setError(null);  // Reset the error message before each request
+
+    try {
+      const response = await axios.post(
+        '/api/v1/users/severity',
+        {  counts},
+        { withCredentials: true }
+      );
+      console.log("response-data", response.data);
+
+      if (response.data.statusCode === 200) {
+        navigate('/dashboard-main');
+      } else {
+        setError(response.data.message || 'severity failed');  // Set the error message from response
+      }
+    } catch (error) {
+      console.error(error);
+      setError(error.response?.data?.message || 'severity is invalid');
+    }
+
   };
+
+
+
 
   return (
     <div className="sverity-form bg-gray-800 p-6 rounded-lg flex flex-col items-center border-2 border-blue-400">

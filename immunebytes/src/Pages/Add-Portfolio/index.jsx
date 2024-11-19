@@ -303,7 +303,7 @@ const AddPortfolio = () => {
               <button
                 type="button"
                 onClick={addErrorEntry}
-                className="text-white bg-green-500 hover:bg-green-600 rounded-md py-2 px-4"
+                className="text-white  add-btn rounded-md py-2 px-4"
               >
                 +
               </button>

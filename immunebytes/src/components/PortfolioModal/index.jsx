@@ -1,74 +1,112 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import DoughnutChart from '../Doughnutchart'; // Import the DoughnutChart component
 import './style.css';
-import close from '../../assets/images/portfolio/close-btn.svg'
-// Data for multiple months
-const auditData = {
-  January: {
-    errors: [
-      { severity: 'High', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Fixed' },
-      { severity: 'Medium', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Open' },
-      { severity: 'Critical', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Acknowledged' },
-      { severity: 'Medium', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Redacted' },
-      { severity: 'Informational', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Fixed' },
-      { severity: 'High', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Open' },
-      { severity: 'Critical', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Fixed' },
-    ],
-    progress: {
-      final: 30,
-      resolved: 40,
-      open: 15,
-      acknowledged: 15
-    }
-  },
-  February: {
-    errors: [
-      { severity: 'Medium', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Redacted' },
-      { severity: 'Informational', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Fixed' },
-    ],
-    progress: {
-      final: 25,
-      resolved: 35,
-      open: 10,
-      acknowledged: 30
-    }
-  },
-  March: {
-    errors: [
-      { severity: 'High', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Open' },
-      { severity: 'Critical', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Fixed' },
-    ],
-    progress: {
-      final: 20,
-      resolved: 50,
-      open: 20,
-      acknowledged: 10
-    }
-  }
-};
+import close from '../../assets/images/portfolio/close-btn.svg';
 
-const PortfolioModal = ({ item, closeModal }) => {
+const PortfolioModal = ({ selectedItemId, closeModal }) => {
   const [selectedMonth, setSelectedMonth] = useState('January');
+  const [portfolioData, setPortfolioData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // Handle the month change to dynamically update data
+  // Fetch data for the selected item when modal opens
+  useEffect(() => {
+    const fetchPortfolioData = async () => {
+      if (!selectedItemId) {
+        // setError('No item selected.');
+        console.log("selecteditemid is not available")
+        // setLoading(false);
+        // return;
+      }
+      try {
+        if (selectedItemId) {
+          const response = await axios.post(`/api/v1/users/getportfolio/${selectedItemId}`);
+          if (response.data.statusCode === 200) {
+            setPortfolioData(response.data.data.portfolio);
+            console.log("Response select item id",response)
+          } else {
+            setError('Failed to fetch portfolio data.');
+          }
+        }
+      } catch (err) {
+        console.error(err);
+        setError('An error occurred while fetching portfolio data.');
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchPortfolioData();
+  }, [selectedItemId]);
+
+  // Get dynamic data based on selected month (you can replace this with fetched data as needed)
+  const auditData = {
+    January: {
+      errors: [
+        { severity: 'High', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Fixed' },
+        { severity: 'Medium', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Open' },
+        { severity: 'Critical', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Acknowledged' },
+        { severity: 'Medium', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Redacted' },
+        { severity: 'Informational', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Fixed' },
+        { severity: 'High', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Open' },
+        { severity: 'Critical', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Fixed' },
+      ],
+      progress: {
+        final: 30,
+        resolved: 40,
+        open: 15,
+        acknowledged: 15
+      }
+    },
+    // Additional months can be defined similarly...
+  };
+
   const handleMonthChange = (e) => {
     setSelectedMonth(e.target.value);
   };
 
-  // Get dynamic data based on selected month
   const monthData = auditData[selectedMonth] || { errors: [], progress: {} };
-  
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  // Destructure portfolioData
+  const { image, name, platform, auditDate,companyDescription,errorDescription,errorStatus,errorType,pdf,status,errorBags } = portfolioData || {};
+
+  const formatAuditDate = (date) => {
+    if (date) {
+      const localDate = new Date(date).toLocaleString('en-IN', {
+        timeZone: 'Asia/Kolkata',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+      });
+      return localDate;
+    }
+    return 'N/A';
+  };
+
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <button className="close-btn" onClick={closeModal}><img src={close} alt="" /></button>
+        <button className="close-btn" onClick={closeModal} aria-label="Close">
+          <img src={close} alt="Close" />
+        </button>
         <div className="modal-left">
           <div className="company-info">
             <div className="company-logo">
-              <img src={item.name} alt={item.name} />
+              {image && <img src={image} alt={name} />}
             </div>
-            <div className="company-name">{item.nameString}</div>
-            <div className="platform-name">{item.platform}</div>
+            <div className="company-name">{name}</div>
+            <div className="platform-name">{platform}</div>
             {/* Pass the dynamic progress data to the DoughnutChart */}
             <DoughnutChart data={monthData.progress} />
             <div className="developer-response">Developer Response</div>
@@ -77,10 +115,10 @@ const PortfolioModal = ({ item, closeModal }) => {
         <div className="modal-right">
           <div className="company-description">
             <h3>Company Description</h3>
-            <p>{item.description}</p>
+            <p>{companyDescription || 'No description available'}</p>
           </div>
           <div className="audit-date">
-            <strong>Audit Date: </strong>{item.auditDate}
+            <strong>Audit Date: </strong>{formatAuditDate(auditDate)}
           </div>
 
           {/* Month Selector */}
@@ -103,11 +141,9 @@ const PortfolioModal = ({ item, closeModal }) => {
                   <div className={`severity ${error.severity.toLowerCase()}`}>
                     {error.severity}
                   </div>
-                  <div className="error-msg">
-                    {error.errorMsg}
-                  </div>
-                  <div className={`status ${error.status.toLowerCase()}`}>
-                    {error.status}
+                  <div className="error-msg">{errorDescription}</div>
+                  <div className={`status ${status.toLowerCase()}`}>
+                    {status}
                   </div>
                 </div>
               ))}
@@ -117,8 +153,22 @@ const PortfolioModal = ({ item, closeModal }) => {
           )}
 
           <div className="modal-actions">
-            <button className="request-btn">Request Audit</button>
-            <button className="download-btn">Download Report</button>
+            <button className="request-btn" aria-label="Request Audit">Request Audit</button>
+            {pdf ? (
+  <a
+    href={pdf}
+    download // This ensures the file is downloaded directly
+    className="download-btn"
+    aria-label="Download Report"
+  >
+    Download Report
+  </a>
+) : (
+  <button className="download-btn" aria-label="No Report Available" disabled>
+    Download Report
+  </button>
+)}
+
           </div>
         </div>
       </div>

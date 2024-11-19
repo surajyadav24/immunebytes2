@@ -80,7 +80,23 @@ const AddPortfolio = () => {
       });
 
       if (response.data.statusCode === 200) {
+        console.log(response)
         alert('Portfolio added successfully!');
+        // Reset form data
+        setFormData({
+          name: "",
+          platform: "",
+          auditDate: "",
+          status: "",
+          errorBags: "",
+          companyDescription: "",
+          errorType: "",
+          image: null,
+          pdf: null,
+          errorStatus: "",
+          errorDescription: ""
+        });
+        
       } else {
         setError(response.data.message || 'Add portfolio failed');
       }

@@ -10,17 +10,16 @@ const PortfolioTable = () => {
   const [search, setSearch] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(9);
-  const [portfolios, setPortfolios] = useState([]); // Updated to hold fetched data
+  const [portfolios, setPortfolios] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
 
-  // Fetch portfolio data from the backend
   useEffect(() => {
     const fetchPortfolios = async () => {
       try {
         const response = await axios.post('/api/v1/users/getportfolio');
-        // Ensure the response is an array
         if (response.data && response.data.data && Array.isArray(response.data.data.Portfolio)) {
-          setPortfolios(response.data.data.Portfolio);  // Access Portfolio array correctly
+          setPortfolios(response.data.data.Portfolio);
+          console.log("Response portfolio table ",response)
         } else {
           console.error('Invalid response data:', response.data);
         }
@@ -32,57 +31,41 @@ const PortfolioTable = () => {
     fetchPortfolios();
   }, []);
 
-  // Filter portfolio data based on search input
-  const filteredData = (portfolios || []).filter(item =>
-    item.name && item.name.toLowerCase().includes(search.toLowerCase())  // Add check for item.name
+  const filteredData = portfolios.filter(item =>
+    item.name && item.name.toLowerCase().includes(search.toLowerCase())
   );
-  
 
   useEffect(() => {
     const updateItemsPerPage = () => {
-      const isMobile = window.innerWidth <= 768; // Adjust the breakpoint as needed
+      const isMobile = window.innerWidth <= 768;
       setItemsPerPage(isMobile ? 2 : 9);
     };
 
-    // Set initial value
     updateItemsPerPage();
-
-    // Add event listener to update on window resize
     window.addEventListener("resize", updateItemsPerPage);
 
-    // Clean up event listener on component unmount
     return () => {
       window.removeEventListener("resize", updateItemsPerPage);
     };
   }, []);
 
-  // Pagination logic
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
-
-  // Calculate total pages
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
-  // Handle page change (Backward & Forward)
   const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-    }
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
   };
 
   const handlePreviousPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
   };
 
-  // Open modal with selected item
   const handleRowClick = (item) => {
-    setSelectedItem(item);
+    setSelectedItem(item._id);  // Correctly set the selected item ID
   };
 
-  // Close modal
   const closeModal = () => {
     setSelectedItem(null);
   };
@@ -114,10 +97,9 @@ const PortfolioTable = () => {
             <div
               key={item._id}
               className="portfolio-grid-row"
-              onClick={() => handleRowClick(item)}
+              onClick={() => handleRowClick(item)}  // On click, set the selected item
             >
               <div><img src={item.image} alt={item.name} style={{ width: '50px', height: '50px', objectFit: 'cover' }} /></div>
-              {/* <div>{item.name}</div> */}
               <div>{item.platform}</div>
               <div>{new Date(item.auditDate).toLocaleDateString()}</div>
               <div>{item.errorBags}</div>
@@ -148,7 +130,7 @@ const PortfolioTable = () => {
 
         {/* Modal */}
         {selectedItem && (
-          <PortfolioModal item={selectedItem} closeModal={closeModal} />
+          <PortfolioModal selectedItemId={selectedItem} closeModal={closeModal} />  // Pass the correct selectedItemId prop
         )}
       </div>
     </div>

@@ -15,13 +15,14 @@ function DashboardMain() {
     // Add any additional logic for when the button is clicked
   };
 
+
   return (
     <>
       <div className="main-container">
         <AuditStats />
         {/* Pass handleEditClick function as a prop */}
 
-<AuditProgress/>
+        <AuditProgress className="dasboard-progressbar additional-class" />
 
         {/* <DashboardAuditProgress onEdit={handleEditClick} /> */}
         <PortfolioTable showEditButton={true} />

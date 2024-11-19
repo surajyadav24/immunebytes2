@@ -4,7 +4,8 @@ import Sidebar from '../Dashboard-Sidebar';
 import './style.css';
 import AuditStats from '../Audit-Stats';
 import DashboardAuditProgress from '../../Pages/Dashboard-Progress';
-
+import PortfolioTable from '../../components/PortfolioTable';
+import AuditProgress from '../../components/Audit-Progress';
 function DashboardMain() {
   const [isEditing, setIsEditing] = useState(false);
 
@@ -19,7 +20,11 @@ function DashboardMain() {
       <div className="main-container">
         <AuditStats />
         {/* Pass handleEditClick function as a prop */}
-        <DashboardAuditProgress onEdit={handleEditClick} />
+
+<AuditProgress/>
+
+        {/* <DashboardAuditProgress onEdit={handleEditClick} /> */}
+        <PortfolioTable showEditButton={true} />
       </div>
     </>
   );

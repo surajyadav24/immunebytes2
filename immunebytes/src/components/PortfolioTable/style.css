@@ -10,6 +10,7 @@
   }
   
   .portfolio-title {
+    font-size: 40px;
     text-align: center;
     color: #ff004c;
     margin-bottom: 20px;
@@ -174,7 +175,7 @@ input[type="text"]:focus-visible {
 }
 @media (min-width: 1320px) and (max-width: 1366px) {
   .portfolio-table-container {
-    min-height: 700px !important;
+    min-height: 770px !important;
   }
 }
   /* Add headers for mobile view */

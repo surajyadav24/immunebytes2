@@ -1,0 +1,13 @@
+.audit-wrap{
+    height: 200px;
+    width: 50vw;
+
+} 
+.audit-wrap .title{
+    font-size: 30px !important;
+}
+.audit-wrap .discription{
+    margin-top: 20px;
+    font-size: 60px !important;
+}
+

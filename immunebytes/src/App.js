@@ -30,9 +30,7 @@ function App() {
         <Route
           path="/dashboard"
           element={
-            <Layout>
               <Dashboard />
-            </Layout>
           }
         />
         <Route

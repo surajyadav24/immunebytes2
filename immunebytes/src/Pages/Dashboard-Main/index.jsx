@@ -1,18 +1,28 @@
-import React from 'react'
-import DashboardHeader from '../Dashboard-Header'
-import Sidebar from '../Dashboard-Sidebar'
-import './style.css'
+import React, { useState } from 'react';
+import DashboardHeader from '../Dashboard-Header';
+import Sidebar from '../Dashboard-Sidebar';
+import './style.css';
+import AuditStats from '../Audit-Stats';
+import DashboardAuditProgress from '../../Pages/Dashboard-Progress';
 
 function DashboardMain() {
+  const [isEditing, setIsEditing] = useState(false);
+
+  const handleEditClick = () => {
+    setIsEditing(!isEditing);
+    console.log(isEditing ? "Editing ended" : "Editing started");
+    // Add any additional logic for when the button is clicked
+  };
+
   return (
-<>
-<div className="main-contaner">
-
-
-
-</div>
-</>
-  )
+    <>
+      <div className="main-container">
+        <AuditStats />
+        {/* Pass handleEditClick function as a prop */}
+        <DashboardAuditProgress onEdit={handleEditClick} />
+      </div>
+    </>
+  );
 }
 
-export default DashboardMain
+export default DashboardMain;

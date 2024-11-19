@@ -116,7 +116,7 @@ const PlatformManagement = () => {
   // };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-900 text-white p-6">
+    <div className="addplatform flex flex-col items-center min-h-screen  text-white p-6">
       {/* Header */}
       <div className="w-full max-w-3xl mb-6">
         <h1 className="text-3xl font-bold mb-2">Platform</h1>

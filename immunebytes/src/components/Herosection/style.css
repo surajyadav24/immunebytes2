@@ -9,12 +9,12 @@
 }
 .left-box{
     background: url(../../assets/images/left-box.svg) no-repeat center right / contain;
-max-width:500px ;
+max-width:600px ;
 }
 
 .right-box{
     background: url(../../assets/images/right-box.svg) no-repeat center left / contain;
-max-width: 500px;
+max-width: 600px;
 }
 .hero-wrapper p {
     max-width: 70%;
@@ -48,7 +48,6 @@ position: relative;
    
 }
 .right-box {
-    max-width: 500px;
     overflow: hidden;
     position: relative;
     justify-content: flex-start;
@@ -57,16 +56,7 @@ position: relative;
     justify-content: center;
     align-items: center;
 }
-.right-box {
-    max-width: 500px;
-    overflow: hidden;
-    position: relative;
-    justify-content: flex-start;
-    display: flex;
-    margin-left: 0px;
-    justify-content: center;
-    align-items: center;
-}
+
 .hero-wrapper .row.align-items-center.py-5 {
     padding: 0px !important;
     justify-content: center;

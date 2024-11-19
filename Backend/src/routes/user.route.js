@@ -1,7 +1,7 @@
 import { Router } from "express"
 import { signUp,logOut,logIn, forgotPassword,resetPassword,resendOtp } from "../controllers/user.controller.js"
 import { verifyJwt } from "../middlewares/auth.middleware.js"
-import { verifyEmail } from "../controllers/user.controller.js"
+import { verifyOTP } from "../controllers/user.controller.js"
 import { addportfolio, getportfolio ,selectportfolio } from "../controllers/addPortfolio.controller.js"
 import { addPlatform, getPlatforms, updatePlatform } from "../controllers/platform.controller.js"
 import { cSigma } from "../controllers/cSigma.controller.js"
@@ -13,7 +13,7 @@ const router = Router()
 
 router.route("/SignUp").post(signUp)
 router.route("/login").post(logIn)
-router.route("/email-verify").post(verifyJwt,verifyEmail)
+router.route("/email-verify").post(verifyJwt,verifyOTP)
 router.route("/Forgot-Password").post(forgotPassword)
 router.route("/Reset-Password/:resetPasswordToken").post(resetPassword)
 router.route("/Add-Portfolio").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),addportfolio);

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProgressBar from '../Progressbar'
 import "./style.css"
-function AuditProgress() {
+function AuditProgress( props) {
 
   const [percentages, setPercentages] = useState({
     critical: 0,
@@ -32,7 +32,7 @@ function AuditProgress() {
 
   return (
 <>
-<div className="audit-progress">
+<div className="audit-progress"  >
     <h4>Severity Found</h4>
     <ProgressBar label="Critical" color="#ff4d4d" percentage={percentages.critical} />
             <ProgressBar label="High" color="#ff9966" percentage={percentages.high} />

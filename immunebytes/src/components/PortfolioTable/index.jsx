@@ -94,7 +94,7 @@ const PortfolioTable = ({ showEditButton }) => {
             <div>Actions</div>
           </div>
           {currentItems.map(item => (
-            <div key={item._id} className="portfolio-grid-row">
+            <div key={item._id} className="portfolio-grid-row" onClick={() => handleRowClick(item)}  >
               <div>
                 <img
                   src={item.image}
@@ -111,13 +111,17 @@ const PortfolioTable = ({ showEditButton }) => {
                   <img src={eye} alt="View Report" />
                 </button>
                 {showEditButton && (
-                  <button className="edit-btn" onClick={() => console.log(`Editing: ${item._id}`)}>
+                  <button className="edit-btn" onClick={() => console.log(`Editing:  ${item._id}`)}>
                     Edit
                   </button>
                 )}
               </div>
             </div>
+            
+
           ))}
+           
+
         </div>
 
         {/* Pagination */}

@@ -14,20 +14,15 @@ const PortfolioModal = ({ selectedItemId, closeModal }) => {
   useEffect(() => {
     const fetchPortfolioData = async () => {
       if (!selectedItemId) {
-        // setError('No item selected.');
-        console.log("selecteditemid is not available")
-        // setLoading(false);
-        // return;
+        console.log("selectedItemId is not available");
+        return;
       }
       try {
-        if (selectedItemId) {
-          const response = await axios.post(`/api/v1/users/getportfolio/${selectedItemId}`);
-          if (response.data.statusCode === 200) {
-            setPortfolioData(response.data.data.portfolio);
-            console.log("Response select item id",response)
-          } else {
-            setError('Failed to fetch portfolio data.');
-          }
+        const response = await axios.post(`/api/v1/users/getportfolio/${selectedItemId}`);
+        if (response.data.statusCode === 200) {
+          setPortfolioData(response.data.data.portfolio);
+        } else {
+          setError('Failed to fetch portfolio data.');
         }
       } catch (err) {
         console.error(err);
@@ -39,48 +34,16 @@ const PortfolioModal = ({ selectedItemId, closeModal }) => {
     fetchPortfolioData();
   }, [selectedItemId]);
 
-  // Get dynamic data based on selected month (you can replace this with fetched data as needed)
-  const auditData = {
-    January: {
-      errors: [
-        { severity: 'High', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Fixed' },
-        { severity: 'Medium', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Open' },
-        { severity: 'Critical', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Acknowledged' },
-        { severity: 'Medium', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Redacted' },
-        { severity: 'Informational', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Fixed' },
-        { severity: 'High', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Open' },
-        { severity: 'Critical', errorMsg: 'Lorem Ipsum is simply dummy', status: 'Fixed' },
-      ],
-      progress: {
-        final: 30,
-        resolved: 40,
-        open: 15,
-        acknowledged: 15
-      }
-    },
-    // Additional months can be defined similarly...
-  };
-
   const handleMonthChange = (e) => {
     setSelectedMonth(e.target.value);
   };
 
-  const monthData = auditData[selectedMonth] || { errors: [], progress: {} };
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>{error}</div>;
-  }
-
-  // Destructure portfolioData
-  const { image, name, platform, auditDate,companyDescription,errorDescription,errorStatus,errorType,pdf,status,errorBags } = portfolioData || {};
+  // If portfolio data is loaded, extract the error entries
+  const { errorEntries = [], auditData, name, image, platform, auditDate, companyDescription, pdf } = portfolioData || {};
 
   const formatAuditDate = (date) => {
     if (date) {
-      const localDate = new Date(date).toLocaleString('en-IN', {
+      return new Date(date).toLocaleString('en-IN', {
         timeZone: 'Asia/Kolkata',
         year: 'numeric',
         month: 'long',
@@ -89,10 +52,17 @@ const PortfolioModal = ({ selectedItemId, closeModal }) => {
         minute: '2-digit',
         second: '2-digit',
       });
-      return localDate;
     }
     return 'N/A';
   };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="error-message">{error}</div>;
+  }
 
   return (
     <div className="modal-overlay">
@@ -107,8 +77,8 @@ const PortfolioModal = ({ selectedItemId, closeModal }) => {
             </div>
             <div className="company-name">{name}</div>
             <div className="platform-name">{platform}</div>
-            {/* Pass the dynamic progress data to the DoughnutChart */}
-            <DoughnutChart data={monthData.progress} />
+            {/* Add the DoughnutChart based on audit data */}
+            <DoughnutChart data={auditData?.progress || {}} />
             <div className="developer-response">Developer Response</div>
           </div>
         </div>
@@ -120,30 +90,28 @@ const PortfolioModal = ({ selectedItemId, closeModal }) => {
           <div className="audit-date">
             <strong>Audit Date: </strong>{formatAuditDate(auditDate)}
           </div>
-
-          {/* Month Selector */}
+          {/* Month selector */}
           <div className="month-selector">
             <label htmlFor="month-select">Select Month:</label>
             <select id="month-select" value={selectedMonth} onChange={handleMonthChange}>
-              {Object.keys(auditData).map((month) => (
+              {Object.keys(auditData || {}).map((month) => (
                 <option key={month} value={month}>
                   {month}
                 </option>
               ))}
             </select>
           </div>
-
-          {/* Dynamic Error List based on selected month */}
-          {monthData.errors.length > 0 ? (
+          {/* Error entries rendering */}
+          {errorEntries.length > 0 ? (
             <div className="error-list">
-              {monthData.errors.map((error, index) => (
+              {errorEntries.map((error, index) => (
                 <div key={index} className="error-row">
-                  <div className={`severity ${error.severity.toLowerCase()}`}>
-                    {error.severity}
+                  <div className={`severity ${error.errorType.toLowerCase()}`}>
+                    {error.errorType}
                   </div>
-                  <div className="error-msg">{errorDescription}</div>
-                  <div className={`status ${status.toLowerCase()}`}>
-                    {status}
+                  <div className="error-msg">{error.errorDescription}</div>
+                  <div className={`status ${error.errorStatus.toLowerCase()}`}>
+                    {error.errorStatus}
                   </div>
                 </div>
               ))}
@@ -151,24 +119,24 @@ const PortfolioModal = ({ selectedItemId, closeModal }) => {
           ) : (
             <p>No errors to display for {selectedMonth}.</p>
           )}
-
           <div className="modal-actions">
-            <button className="request-btn" aria-label="Request Audit">Request Audit</button>
+            <button className="request-btn" aria-label="Request Audit">
+              Request Audit
+            </button>
             {pdf ? (
-  <a
-    href={pdf}
-    download // This ensures the file is downloaded directly
-    className="download-btn"
-    aria-label="Download Report"
-  >
-    Download Report
-  </a>
-) : (
-  <button className="download-btn" aria-label="No Report Available" disabled>
-    Download Report
-  </button>
-)}
-
+              <a
+                href={pdf}
+                download
+                className="download-btn"
+                aria-label="Download Report"
+              >
+                Download Report
+              </a>
+            ) : (
+              <button className="download-btn" aria-label="No Report Available" disabled>
+                Download Report
+              </button>
+            )}
           </div>
         </div>
       </div>

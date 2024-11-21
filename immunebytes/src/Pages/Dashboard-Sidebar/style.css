@@ -49,3 +49,19 @@ button.mt-8.w-full.p-2.logout-btn.text-white.rounded.cursor-pointer.hover\:bg-bl
 .logout-btn img{
     max-width: 25px;
 }
+
+@media(max-width:1024px){
+    button.toggle-sidebar-btn.p-2.bg-pink-600.text-white.rounded {
+        top: 18px;
+        right: 16px;
+        position: absolute;
+        z-index: 99;
+    }
+    .sidebar-container {
+        max-width: 30vw;
+        min-width: 20vw;
+        position: absolute;
+        top: 0px;
+        z-index: 9999;
+    }
+}

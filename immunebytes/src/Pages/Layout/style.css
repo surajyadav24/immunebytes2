@@ -4,3 +4,9 @@
     padding-left: 20vw;
     overflow-y: scroll;
 }
+
+@media (max-width:1024px){
+    .layout-wrapper.p-8.bg-gray-900.flex-1 {
+        padding-left: 0px;
+    }
+}

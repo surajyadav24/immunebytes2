@@ -335,7 +335,7 @@ const AddPortfolio = (props) => {
             className="submitportfolio  w-full bg-pink-500 text-white py-3 rounded-md text-lg font-semibold hover:bg-pink-600 focus:outline-none focus:ring-4 focus:ring-pink-300"
             disabled={loading}
           >
-            {loading ? "Adding..." : "Add Portfolio"}
+            {loading ? "Adding..." : "Submit"}
           </button>
             </div>
 

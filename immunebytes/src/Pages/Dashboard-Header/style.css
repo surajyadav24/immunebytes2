@@ -15,3 +15,29 @@ padding: 0px 5px !important;
 .search-box input{
     padding: 4px 0px;
 }
+
+
+
+@media (max-width:1024px){
+    .header-container {
+        padding-left: 0px;
+        float: right;
+        max-height: 16vh;
+        width: 100%;
+    }
+    .layout-wrapper.p-8.bg-gray-900.flex-1{
+        padding: 0px;
+    }
+    .dashboard-table-container .portfolio-table-container {
+        min-height: 666px !important;
+        min-width: 101%;
+    }
+}
+@media (max-width:768px){
+
+    .dashboard-table-container .portfolio-table-container {
+        min-height: 406px !important;
+        min-width: 101%;
+        background: auto !important;
+    }  
+}

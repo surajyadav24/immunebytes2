@@ -10,3 +10,22 @@
 .dashboard-table-container     .portfolio-table-container {
     min-height: 664px !important;
 }
+
+
+@media (max-width:1024px){
+    .layout-wrapper .audit-progress {
+        min-height: 191px !important;
+        width: 49%;
+        padding: 17px 10px;
+    }
+    .sverity-form input {
+        min-width: 123px !important;
+        border: 0.5px solid #dcdcdc56 !important;
+    }
+    .sverity-form button {
+        min-width: 123px !important;
+    }
+    
+}
+
+

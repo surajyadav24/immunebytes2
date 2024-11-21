@@ -6,6 +6,7 @@ import AuditStats from '../Audit-Stats';
 import DashboardAuditProgress from '../../Pages/Dashboard-Progress';
 import PortfolioTable from '../../components/PortfolioTable';
 import AuditProgress from '../../components/Audit-Progress';
+import PlatformList from '../Platform-List';
 function DashboardMain() {
   const [isEditing, setIsEditing] = useState(false);
 
@@ -22,10 +23,16 @@ function DashboardMain() {
         <AuditStats />
         {/* Pass handleEditClick function as a prop */}
 
-        <AuditProgress className="dasboard-progressbar additional-class" />
-
+      <div className="audit-edit-wrapper">
+          <AuditProgress className="dasboard-progressbar additional-class" />
+        <PlatformList/>
+      </div>
         {/* <DashboardAuditProgress onEdit={handleEditClick} /> */}
+        <div className="dashboard-table-container">
+
         <PortfolioTable showEditButton={true} />
+        </div>
+
       </div>
     </>
   );

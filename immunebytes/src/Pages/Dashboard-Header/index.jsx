@@ -7,7 +7,7 @@ function DashboardHeader() {
 <div className=" flex items-center justify-between p-4 header-wrap">
       <h2 className="text-xl text-white font-semibold">Good Morning User</h2>
       <div className="flex items-center space-x-4">
-        <div className="flex items-center bg-gray-700 p-2 rounded">
+        <div className="search-box flex items-center  p-2 rounded">
           <SearchIcon className="h-5 w-5 text-gray-400" />
           <input
             type="text"

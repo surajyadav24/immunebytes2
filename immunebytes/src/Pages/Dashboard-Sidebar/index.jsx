@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './style.css';
+import dasboardIcon from '../../../src/assets/images/Dashboard/dashboard-icon.svg'
+import platform from '../../../src/assets/images/Dashboard/platform.svg'
+import portfolio from '../../../src/assets/images/Dashboard/portfolio-icon.svg'
+import sevrity from '../../../src/assets/images/Dashboard/sevrity-icon.svg'
+import logout from '../../../src/assets/images/Dashboard/logout.svg'
 
 function Sidebar() {
   const navigate = useNavigate();
@@ -43,6 +48,7 @@ function Sidebar() {
             }`}
             onClick={() => handleLinkClick('Dashboard', '/dashboard-main')}
           >
+            <img src={dasboardIcon } alt="" />
             Dashboard
           </li>
           <li
@@ -51,6 +57,7 @@ function Sidebar() {
             }`}
             onClick={() => handleLinkClick('Severity Found', '/severity')}
           >
+<img src={sevrity} alt="" />
             Severity Found
           </li>
           <li
@@ -59,6 +66,7 @@ function Sidebar() {
             }`}
             onClick={() => handleLinkClick('Portfolio', '/addportfolio')}
           >
+                        <img src={portfolio} alt="" />
             Portfolio
           </li>
           <li
@@ -67,14 +75,16 @@ function Sidebar() {
             }`}
             onClick={() => handleLinkClick('Platform', '/addplatform')}
           >
+             <img src={platform} alt="" />
             Platform
           </li>
         </ul>
         <button
-          className="mt-8 w-full p-2 bg-pink-600 text-white rounded cursor-pointer hover:bg-pink-500"
+          className="mt-8 w-full p-2 logout-btn text-white rounded cursor-pointer hover:bg-black-500"
           onClick={handleLogout}
         >
           Logout
+          <img src={logout} alt="" />
         </button>
       </div>
     </div>

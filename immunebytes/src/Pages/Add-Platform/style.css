@@ -1,3 +1,16 @@
-.addplatform{
-    background-color: #262626 !important;
+.platform-widget, .platform-list {
+    width: 100%;
+    min-width: 95%;
+    background-color: #262626;
+}
+
+.platform-widget form {
+    display: flex;
+    justify-content: space-between;
+    gap: 56px;
+}
+.platform-widget input{
+    background-color: #D9D9D91A ;
+    border: 0.5px solid #dcdcdc56 !important;
+    outline: none;
 }

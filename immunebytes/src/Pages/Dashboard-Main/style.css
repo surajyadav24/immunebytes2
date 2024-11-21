@@ -3,3 +3,10 @@
     margin-left: 20px;
     text-align: left;
 }
+.audit-edit-wrapper{
+    display: flex;
+    align-items: center;
+}
+.dashboard-table-container     .portfolio-table-container {
+    min-height: 664px !important;
+}

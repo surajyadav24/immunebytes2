@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './style.css';
 
-const AddPortfolio = () => {
+const AddPortfolio = (props) => {
   const [errorEntries, setErrorEntries] = useState([
     { errorType: "", errorStatus: "", errorDescription: "" },
   ]);
@@ -126,8 +126,13 @@ const AddPortfolio = () => {
 
   return (
     <>
+    <div className="dashboard-header">
+  <h2>
+    {props.headname}
+  </h2>
+</div>
       <div className="addportfolio">
-        <div className="flex items-center justify-center min-h-screen text-white">
+        <div className="addportfolio-wrapper flex items-center justify-center min-h-screen text-white">
           <form
             className="rounded-lg p-8 shadow-md max-w-3xl w-full"
             onSubmit={handleSubmit}

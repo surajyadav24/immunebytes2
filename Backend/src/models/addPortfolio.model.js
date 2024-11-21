@@ -1,5 +1,8 @@
+
 import mongoose, { Schema } from "mongoose";
 
+
+// Update the schema to include errorEntries
 const addPortfolioSchema = new Schema(
   {
     name: {
@@ -29,27 +32,29 @@ const addPortfolioSchema = new Schema(
       type: String,
       required: true,
     },
-    errorType: {
-      type: String,
-      required: true,
-    },
-    errorStatus: {
-      type: String,
-      required: true,
-    },
-    errorDescription: {
-      type: String,
-      required: true,
-    },
     companyDescription: {
       type: String,
       required: true,
     },
+    // Dynamic error entries as an array
+    errorEntries: [
+      {
+        errorType: {
+          type: String,
+          required: true,
+        },
+        errorStatus: {
+          type: String,
+          required: true,
+        },
+        errorDescription: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
   },
   { timestamps: true }
 );
 
-export const AddPortfolio = new mongoose.model(
-  "AddPortfolio",
-  addPortfolioSchema
-);
+export const AddPortfolio = mongoose.model("AddPortfolio", addPortfolioSchema);

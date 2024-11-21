@@ -73,20 +73,32 @@ const AddPortfolio = () => {
     if (!formData.platform) errors.platform = "Platform is required.";
     if (!formData.auditDate) errors.auditDate = "Audit Date is required.";
     if (!formData.status) errors.status = "Status is required.";
-    if (!formData.errorType) errors.errorType = "Error Type is required.";
+    // if (!formData.errorType) errors.errorType = "Error Type is required.";
     if (!formData.companyDescription) errors.companyDescription = "Company Description is required.";
     if (!formData.errorBags || isNaN(formData.errorBags)) {
       errors.errorBags = "Error Bags must be a number.";
     }
     if (!formData.image) errors.image = "Image is required.";
+      // Validate error entries
+  const validErrorEntry = errorEntries.some(
+    (entry) =>
+      entry.errorType.trim() !== "" ||
+      entry.errorStatus.trim() !== "" ||
+      entry.errorDescription.trim() !== ""
+  );
+
+  if (!validErrorEntry) {
+    errors.errorEntries = "At least one valid error entry is required.";
+  }
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!validateForm()) return;
-
+    if (!validateForm()) {
+      console.log("Form details are not valid")
+    }
     setLoading(true);
     const form = new FormData();
     for (const key in formData) {
@@ -242,62 +254,64 @@ const AddPortfolio = () => {
               </div>
             </div>
 
-            {/* Dynamic Error Entries */}
-            <div className="mt-6">
-              <label htmlFor="errorType" className="block text-sm font-medium mb-1">Error Entries</label>
-              {errorEntries.map((entry, index) => (
-                <div key={index} className="mb-2 border-b border-gray-600 ">
-                  <div className="grid grid-cols-3 gap-4">
-                    {/* Error Type Dropdown */}
-                    <div>
-                      <label className="block text-sm font-medium mb-1">Error Type</label>
-                      <select
-                        value={entry.errorType}
-                        onChange={(e) => handleDynamicChange(index, "errorType", e.target.value)}
-                        className="w-full p-3 border border-gray-600 rounded-md"
-                      >
-                        <option value="">Select Error Type</option>
-                        <option value="Validation">Validation</option>
-                        <option value="Server">Server</option>
-                        <option value="Network">Network</option>
-                        <option value="Authentication">Authentication</option>
-                      </select>
-                    </div>
+{/* Dynamic Error Entries */}
+<div className="mt-6">
+  <label htmlFor="errorType" className="block text-sm font-medium mb-1">Error Entries</label>
+  {errorEntries.map((entry, index) => (
+    <div key={index} className="mb-2 border-b border-gray-600">
+      <div className="grid grid-cols-3 gap-4">
+        {/* Error Type Dropdown */}
+        <div>
+          <label className="block text-sm font-medium mb-1">Error Type</label>
+          <select
+            value={entry.errorType}
+            onChange={(e) => handleDynamicChange(index, "errorType", e.target.value)}
+            className="w-full p-3 border border-gray-600 rounded-md"
+          >
+            <option value="">Select Error Type</option>
+            <option value="Validation">Validation</option>
+            <option value="Server">Server</option>
+            <option value="Network">Network</option>
+            <option value="Authentication">Authentication</option>
+          </select>
+        </div>
 
-                    {/* Error Status Dropdown */}
-                    <div>
-                      <label className="block text-sm font-medium mb-1">Error Status</label>
-                      <select
-                        value={entry.errorStatus}
-                        onChange={(e) => handleDynamicChange(index, "errorStatus", e.target.value)}
-                        className="w-full p-3 border border-gray-600 rounded-md"
-                      >
-                        <option value="">Select Error Status</option>
-                        <option value="Active">Active</option>
-                        <option value="Resolved">Resolved</option>
-                        <option value="Pending">Pending</option>
-                        <option value="Closed">Closed</option>
-                      </select>
-                    </div>
+        {/* Error Status Dropdown */}
+        <div>
+          <label className="block text-sm font-medium mb-1">Error Status</label>
+          <select
+            value={entry.errorStatus}
+            onChange={(e) => handleDynamicChange(index, "errorStatus", e.target.value)}
+            className="w-full p-3 border border-gray-600 rounded-md"
+          >
+            <option value="">Select Error Status</option>
+            <option value="Active">Active</option>
+            <option value="Resolved">Resolved</option>
+            <option value="Pending">Pending</option>
+            <option value="Closed">Closed</option>
+          </select>
+        </div>
 
-                    {/* Error Description Textarea */}
-                    <div>
-                      <label htmlFor="errorDescription" className="block text-sm font-medium mb-1">Error Description</label>
-                      <textarea
-                        id="errorDescription"
-                        name="errorDescription"
-                        value={entry.errorDescription}
-                        onChange={(e) => handleDynamicChange(index, "errorDescription", e.target.value)}
-                        className="w-full p-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 resize-none"
-                        rows="1"
-                        placeholder="Enter a detailed description of the error"
-                      ></textarea>
-                      {formErrors.errorDescription && <p className="text-red-500 mt-1">{formErrors.errorDescription}</p>}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+        {/* Error Description Textarea */}
+        <div>
+          <label htmlFor="errorDescription" className="block text-sm font-medium mb-1">Error Description</label>
+          <textarea
+            id="errorDescription"
+            name="errorDescription"
+            value={entry.errorDescription}
+            onChange={(e) => handleDynamicChange(index, "errorDescription", e.target.value)}
+            className="w-full p-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 resize-none"
+            rows="1"
+            placeholder="Enter a detailed description of the error"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  ))}
+  
+  {formErrors.errorEntries && <p className="text-red-500 mt-1">{formErrors.errorEntries}</p>}
+</div>
+
 
             <div className="mt-4">
               <button
@@ -311,12 +325,13 @@ const AddPortfolio = () => {
 
             {/* Submit */}
             <div className="mt-6">
-              <button
-                type="submit"
-                className="w-full py-3 submitportfolio text-white rounded-md "
-              >
-                {loading ? 'Submitting...' : 'Submit'}
-              </button>
+            <button
+            type="submit"
+            className="submitportfolio  w-full bg-pink-500 text-white py-3 rounded-md text-lg font-semibold hover:bg-pink-600 focus:outline-none focus:ring-4 focus:ring-pink-300"
+            disabled={loading}
+          >
+            {loading ? "Adding..." : "Add Portfolio"}
+          </button>
             </div>
 
             {/* Error Message */}

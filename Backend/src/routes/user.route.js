@@ -2,7 +2,7 @@ import { Router } from "express"
 import { signUp,logOut,logIn, forgotPassword,resetPassword,resendOtp } from "../controllers/user.controller.js"
 import { verifyJwt } from "../middlewares/auth.middleware.js"
 import { verifyOTP } from "../controllers/user.controller.js"
-import { addportfolio, getportfolio ,selectportfolio,updatePortfolio } from "../controllers/addPortfolio.controller.js"
+import { addPortfolio, getPortfolio ,selectPortfolio,updatePortfolio } from "../controllers/addPortfolio.controller.js"
 import { addPlatform, getPlatforms, updatePlatform } from "../controllers/platform.controller.js"
 import { cSigma } from "../controllers/cSigma.controller.js"
 import { upload } from "../middlewares/multer.middleware.js"
@@ -16,9 +16,9 @@ router.route("/login").post(logIn)
 router.route("/email-verify").post(verifyJwt,verifyOTP)
 router.route("/Forgot-Password").post(forgotPassword)
 router.route("/Reset-Password/:resetPasswordToken").post(resetPassword)
-router.route("/Add-Portfolio").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),addportfolio);
-router.route("/getportfolio/:selectedItemId").post(selectportfolio);
-router.route("/getportfolio").post(getportfolio);
+router.route("/Add-Portfolio").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),addPortfolio);
+router.route("/getportfolio/:selectedItemId").post(selectPortfolio);
+router.route("/getportfolio").post(getPortfolio);
 router.route("/updateportfolio/:selectedItemId").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]), updatePortfolio);
 
 

@@ -6,19 +6,23 @@
 border: 1px solid grey !important;
 max-height: 80px !important;
 padding: 5px !important;
-background-color: #262626;
+background-color: #D9D9D91A;
 }
 
 #companyDescription, #errorDescription {
     padding: 4px !important;
-    background-color: #262626 !important;
+    background-color: #D9D9D91A;
     width: 100%;
     font-size: 12px;
     height: 36px !important;
 }
-.addportfolio form{
+.addportfolio form {
+    width: 80vw;
     background: #262626;
-
+    min-width: 90%;
+}
+.addportfolio{
+    padding-top: 50px;
 }
 .submitportfolio {
 padding: 8px 20px !important;
@@ -31,7 +35,10 @@ display: flex;
 text-align: center;
 justify-content: center;
 }
-.add-btn{
-    
+.addportfolio-wrapper{
+    width: 100% !important;
 }
 
+.add-btn{
+    background-color: #D9D9D91A;
+}

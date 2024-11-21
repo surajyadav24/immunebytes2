@@ -44,9 +44,10 @@ function App() {
 
         <Route
           path="/severity"
+        
           element={
             <Layout>
-              <SeverityButtons />
+              <SeverityButtons   headname="Severity Dashboard"/>
             </Layout>
           }
         />
@@ -63,7 +64,7 @@ function App() {
           path="/addportfolio"
           element={
             <Layout>
-              <AddPortfolio/>
+              <AddPortfolio headname="Add Portfolio"/>
             </Layout>
           }
         />
@@ -71,7 +72,7 @@ function App() {
           path="/addplatform"
           element={
             <Layout>
-              <PlatformManagement/>
+              <PlatformManagement headname="Add Portfolio"/>
             </Layout>
           }
         />

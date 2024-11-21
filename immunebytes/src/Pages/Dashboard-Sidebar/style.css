@@ -26,3 +26,26 @@ background-color:#000 !important;
     background-color: #000 !important;
     border-radius: 15px;
 }
+.logout-btn {
+    margin-bottom: 0px !important;
+    margin-top: 121% !important;
+    font-size: 24px;
+    text-align: left;
+}
+.sidebar-wrapper ul li {
+    display: flex
+;
+    align-items: center;
+    gap: 10px;
+}
+.sidebar-wrapper ul li img{
+max-width: 20px;
+}
+button.mt-8.w-full.p-2.logout-btn.text-white.rounded.cursor-pointer.hover\:bg-black-500 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logout-btn img{
+    max-width: 25px;
+}

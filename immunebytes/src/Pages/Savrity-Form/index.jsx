@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import './style.css'
 
-
-const SeverityButtons = () => {
+const SeverityButtons = (props) => {
   // Initial count for each severity level
   const [error,setError]=useState('')
   const navigate = useNavigate()
@@ -54,10 +54,17 @@ const SeverityButtons = () => {
 
 
   return (
+
+    <>
+<div className="dashboard-header">
+  <h2>
+    {props.headname}
+  </h2>
+</div>
     <div className="sverity-form bg-gray-800 p-6 rounded-lg flex flex-col items-center border-2 border-blue-400">
-      <div className="flex space-x-4 mb-6">
+      <div className=" flex space-x-4 mb-6">
         {Object.keys(counts).map((severity) => (
-          <div key={severity} className="flex flex-col items-center">
+          <div key={severity} className="flex flex-col items-center sevrity-wrapper">
             <button
               className={`py-2 px-4 font-bold text-white rounded 
                 ${severity === "critical" && "bg-red-600"} 
@@ -69,21 +76,23 @@ const SeverityButtons = () => {
               {severity.charAt(0).toUpperCase() + severity.slice(1)}
             </button>
             <input
+
               type="number"
               value={counts[severity]}
               onChange={(e) => handleInputChange(e, severity)}
-              className="mt-2 text-lg font-bold text-center w-16 p-1 rounded bg-gray-700 text-white border border-gray-500"
+              className="mt-2 sevrity-input text-lg font-bold text-center w-16 p-1 rounded bg-gray-700 text-white border border-gray-500"
             />
           </div>
         ))}
       </div>
       <button
-        className="bg-pink-500 text-white py-2 px-6 rounded font-bold"
+        className="bg-pink-600 text-white py-2 px-6 rounded font-bold"
         onClick={handleSubmit}
       >
         SUBMIT
       </button>
     </div>
+    </>
   );
 };
 

@@ -1,4 +1,23 @@
-.sverity-form{
-    height: 300px;
-    max-width: 600px
+
+.sverity-form input{
+    min-width: 150px !important;
+    border: 0.5px solid #dcdcdc56 !important;
+}
+.sverity-form button{
+    min-width: 150px !important;
+}
+
+.sverity-form.bg-gray-800.p-6.rounded-lg.flex.flex-col.items-center.border-2.border-blue-400 {
+    padding: 80px 0px;
+    margin: 50px;
+}
+.dashboard-header {
+    border-bottom: 1px solid #fff;
+    margin:0px 50px;
+}
+.dashboard-header h2 {
+    font-size: 30px;
+    color: #fff;
+    padding-left: 0px;
+    padding-bottom: 10px;
 }

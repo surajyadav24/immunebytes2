@@ -173,6 +173,11 @@ input[type="text"]:focus-visible {
 .container.stats-container {
   padding: 50px 0px;
 }
+
+.audit-content .audit-progress{
+  max-width: 50%;
+}
+
 @media (min-width: 1320px) and (max-width: 1366px) {
   .portfolio-table-container {
     min-height: 770px !important;
@@ -235,6 +240,7 @@ input[type="text"]:focus-visible {
   flex-direction: row;
   align-items: center;
 }
+
 .audit-details{
   min-height: auto;
   width: 49%;

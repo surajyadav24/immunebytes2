@@ -80,16 +80,17 @@ const selectPortfolio = asyncHandler(async (req, res) => {
 
   return res
     .status(200)
-    .json(new ApiResponse(200, { portfolio }, "Portfolios fetched successfully"));
+    .json(new ApiResponse(200, { portfolio }, "Portfolio fetched successfully"));
 });
 
 // Update portfolio handler
 const updatePortfolio = asyncHandler(async (req, res) => {
-  const portfolioId = req.params.id;
+  const {selectedItemId} = req.params;
   const data = req.body;
+  
 
   // Validate portfolio existence
-  const portfolio = await AddPortfolio.findById(portfolioId);
+  const portfolio = await AddPortfolio.findById(selectedItemId);
   if (!portfolio) {
     throw new ApiError(404, "Portfolio not found");
   }

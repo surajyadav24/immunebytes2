@@ -5,6 +5,7 @@ import './style.css'; // Add custom styles for div layout
 import forward from '../../assets/images/portfolio/forward.svg';
 import backward from '../../assets/images/portfolio/backward.svg';
 import eye from '../../assets/images/portfolio/eye.svg';
+import { useNavigate } from 'react-router-dom';
 
 const PortfolioTable = ({ showEditButton }) => {
   const [search, setSearch] = useState('');
@@ -12,17 +13,18 @@ const PortfolioTable = ({ showEditButton }) => {
   const [itemsPerPage, setItemsPerPage] = useState(9);
   const [portfolios, setPortfolios] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchPortfolios = async () => {
       try {
         const response = await axios.post('/api/v1/users/getportfolio');
-        if (response.data && response.data.data && Array.isArray(response.data.data.Portfolio)) {
-          setPortfolios(response.data.data.Portfolio);
-          console.log('Response portfolio table ', response);
+        if (response.data && response.data.data && Array.isArray(response.data.data.portfolios)) {
+          setPortfolios(response.data.data.portfolios); // Use 'portfolios' instead of 'Portfolio'
         } else {
           console.error('Invalid response data:', response.data);
         }
+        
       } catch (error) {
         console.error('Error fetching portfolio data', error);
       }
@@ -30,10 +32,10 @@ const PortfolioTable = ({ showEditButton }) => {
 
     fetchPortfolios();
   }, []);
-
   const filteredData = portfolios.filter(item =>
-    item.name && item.name.toLowerCase().includes(search.toLowerCase())
+    item.name?.toLowerCase().includes(search.toLowerCase())
   );
+  
 
   useEffect(() => {
     const updateItemsPerPage = () => {
@@ -69,6 +71,10 @@ const PortfolioTable = ({ showEditButton }) => {
   const closeModal = () => {
     setSelectedItem(null);
   };
+  const handleEdit = (item) => {
+    navigate(`/updateportfolio/${item._id}`);
+  }
+  
 
   return (
     <div className="container">
@@ -105,13 +111,15 @@ const PortfolioTable = ({ showEditButton }) => {
               <div>{item.platform}</div>
               <div>{new Date(item.auditDate).toLocaleDateString()}</div>
               <div>{item.errorBags}</div>
-              <div>{item.status}</div>
+
+              <div>{item.status || 'N/A'}</div>
+
               <div className="portfolio-actions">
                 <button className="report-btn">
                   <img src={eye} alt="View Report" />
                 </button>
                 {showEditButton && (
-                  <button className="edit-btn" onClick={() => console.log(`Editing:  ${item._id}`)}>
+                  <button className="edit-btn" onClick={() => handleEdit(item)}>
                     Edit
                   </button>
                 )}

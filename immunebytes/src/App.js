@@ -13,6 +13,7 @@ import "./App.css";
 import DashboardMain from "./Pages/Dashboard-Main";
 import AddPortfolio from "./Pages/Add-Portfolio";
 import PlatformManagement from './Pages/Add-Platform'
+import UpdatePortfolio from "./Pages/Update-Portfolio"
 
 function App() {
 
@@ -68,6 +69,16 @@ function App() {
             </Layout>
           }
         />
+            <Route
+          path="/updateportfolio/:selectedItemId"
+          element={
+            <Layout>
+              <UpdatePortfolio headname="Update Portfolio"/>
+            </Layout>
+          }
+        />
+
+
         <Route
           path="/addplatform"
           element={

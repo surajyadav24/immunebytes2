@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './style.css';
+import { useParams } from "react-router-dom";
 
 
-const AddPortfolio = (props) => {
+const UpdatePortfolio = (props) => {
+  const {selectedItemId} =useParams()
   const [errorEntries, setErrorEntries] = useState([
     { errorType: "", errorStatus: "", errorDescription: "" },
   ]);
@@ -40,9 +42,57 @@ const AddPortfolio = (props) => {
   const [formErrors, setFormErrors] = useState({});
   const [platforms, setPlatforms] = useState([]);
 
-  useEffect(() => {
+  const [previewImage, setPreviewImage] = useState("");
+  const [previewPDF, setPreviewPDF] = useState("");
+
+
+    useEffect(() => {
+      const fetchPortfolioDetails = async () => {
+        try {
+          console.log("useeffect for details fetch")
+          const response = await axios.post(`/api/v1/users/getportfolio/${selectedItemId}`, { withCredentials: true });
+          if (response.data.statusCode === 200) {
+            const portfolio = response.data.data.portfolio;
+            setFormData({
+              ...formData,
+              name: portfolio.name,
+              platform: portfolio.platform,
+              auditDate: portfolio.auditDate
+              ? new Date(portfolio.auditDate).toISOString().split("T")[0] // Convert to YYYY-MM-DD format
+              : "",
+              status: portfolio.status,
+              errorBags: portfolio.errorBags,
+              companyDescription: portfolio.companyDescription,
+              image: portfolio.image, // Assuming you might want to pre-load the image URL for display
+              pdf: portfolio.pdf, // Assuming you might want to pre-load the PDF URL for display
+            });
+
+            setPreviewImage(portfolio.image);
+            setPreviewPDF(portfolio.pdf);
+            // Set the dynamic error entries
+            setErrorEntries(portfolio.errorEntries || []);
+          } else {
+            console.log("failed to fetch old details")
+            setError('Failed to fetch portfolio details');
+          }
+        } catch (error) {
+          console.error(error);
+          console.log("can not fetch by selecteditemid")
+          setError('Error fetching portfolio details');
+        }
+      };
+  
+      // if (selectedItemId) {
+      //   fetchPortfolioDetails();
+      // }
+      fetchPortfolioDetails();
+
+  
+
+
     const fetchPlatforms = async () => {
       try {
+        console.log("useeffect for fetching platforms")
         const response = await axios.post('/api/v1/users/getplatforms', { withCredentials: true });
         if (response.data.statusCode === 200) {
           setPlatforms(response.data.data.platforms);
@@ -63,12 +113,20 @@ const AddPortfolio = (props) => {
     setFormErrors({ ...formErrors, [name]: "" });
   };
 
-  const handleFileChange = (e) => {
-    const { name } = e.target;
-    setFormData({ ...formData, [name]: e.target.files[0] });
-    setFormErrors({ ...formErrors, [name]: "" });
-  };
+ // Handle file uploads
+ const handleFileChange = (e) => {
+  const { name, files } = e.target;
+  if (files && files[0]) {
+    setFormData((prevData) => ({ ...prevData, [name]: files[0] }));
 
+    // Update preview for images or PDFs
+    if (name === "image") {
+      setPreviewImage(URL.createObjectURL(files[0]));
+    } else if (name === "pdf") {
+      setPreviewPDF(URL.createObjectURL(files[0]));
+    }
+  }
+};
   const validateForm = () => {
     let errors = {};
     if (!formData.name) errors.name = "Name is required.";
@@ -81,6 +139,7 @@ const AddPortfolio = (props) => {
       errors.errorBags = "Error Bags must be a number.";
     }
     if (!formData.image) errors.image = "Image is required.";
+    
       // Validate error entries
   const validErrorEntry = errorEntries.some(
     (entry) =>
@@ -104,11 +163,27 @@ const AddPortfolio = (props) => {
       console.log("Form details are not valid")
     }
     setLoading(true);
+
+
     const form = new FormData();
     for (const key in formData) {
       form.append(key, formData[key]);
     }
 
+    if (formData.image instanceof File) {
+      form.append("image", formData.image);
+    } else {
+      form.append("existingImage", formData.image); // Send existing URL
+    }
+  
+    // Append PDF or retain existing PDF URL
+    if (formData.pdf instanceof File) {
+      form.append("pdf", formData.pdf);
+    } else {
+      form.append("existingPDF", formData.pdf); // Send existing URL
+    }
+
+    
 
   // Append dynamic error entries
   errorEntries.forEach((entry, index) => {
@@ -124,7 +199,7 @@ const AddPortfolio = (props) => {
 
 
     try {
-      const response = await axios.post('/api/v1/users/Add-Portfolio', form, {
+      const response = await axios.post(`/api/v1/users/updateportfolio/${selectedItemId}`, form, {
         headers: { 'Content-Type': 'multipart/form-data' },
         withCredentials: true,
       });
@@ -172,16 +247,28 @@ const AddPortfolio = (props) => {
 
               {/* Upload Image */}
               <div>
-                <label htmlFor="image" className="block text-sm font-medium mb-1">Upload Image</label>
-                <input
-                  type="file"
-                  id="image"
-                  name="image"
-                  onChange={handleFileChange}
-                  className="w-full p-3 border border-gray-600 rounded-md focus:outline-none"
-                />
-                {formErrors.image && <p className="text-red-500 mt-1">{formErrors.image}</p>}
-              </div>
+  <label htmlFor="image" className="block text-sm font-medium mb-1">
+    Image
+  </label>
+  {previewImage && (
+    <img
+      src={previewImage}
+      alt="Preview"
+      className="w-40 h-40 object-cover rounded-md mb-2"
+    />
+  )}
+  <input
+    type="file"
+    id="image"
+    name="image"
+    onChange={handleFileChange}
+    className="w-full p-3 border border-gray-600 rounded-md"
+  />
+  {!formData.image && (
+    <p className="text-gray-500 text-sm mt-1">Existing: {formData.image}</p>
+  )}
+  {formErrors.image && <p className="text-red-500 mt-1">{formErrors.image}</p>}
+</div>
 
               {/* Platform */}
               <div>
@@ -266,14 +353,27 @@ const AddPortfolio = (props) => {
               {/* Upload PDF */}
               <div>
                 <label htmlFor="pdf" className="block text-sm font-medium mb-1">Upload PDF</label>
-                <input
-                  type="file"
-                  id="pdf"
-                  name="pdf"
-                  onChange={handleFileChange}
-                  className="w-full p-3 border border-gray-600 rounded-md focus:outline-none"
-                />
-                {formErrors.pdf && <p className="text-red-500 mt-1">{formErrors.pdf}</p>}
+               {previewPDF && (
+    <a
+      href={previewPDF}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-500 underline mb-2 block"
+    >
+      View Existing PDF
+    </a>
+  )}
+  <input
+    type="file"
+    id="pdf"
+    name="pdf"
+    onChange={handleFileChange}
+    className="w-full p-3 border border-gray-600 rounded-md"
+  />
+  {!formData.pdf && (
+    <p className="text-gray-500 text-sm mt-1">Existing: {formData.pdf}</p>
+  )}
+  {formErrors.pdf && <p className="text-red-500 mt-1">{formErrors.pdf}</p>}
               </div>
             </div>
 
@@ -354,7 +454,7 @@ const AddPortfolio = (props) => {
             className="submitportfolio  w-full bg-pink-500 text-white py-3 rounded-md text-lg font-semibold hover:bg-pink-600 focus:outline-none focus:ring-4 focus:ring-pink-300"
             disabled={loading}
           >
-            {loading ? "Adding..." : "Add Portfolio"}
+            {loading ? "Updating..." : "Update Portfolio"}
           </button>
             </div>
 
@@ -367,4 +467,4 @@ const AddPortfolio = (props) => {
   );
 };
 
-export default AddPortfolio;
+export default UpdatePortfolio;

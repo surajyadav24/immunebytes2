@@ -18,8 +18,11 @@ router.route("/Forgot-Password").post(forgotPassword)
 router.route("/Reset-Password/:resetPasswordToken").post(resetPassword)
 router.route("/Add-Portfolio").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),addPortfolio);
 router.route("/getportfolio/:selectedItemId").post(selectPortfolio);
+router.route("/updateportfolio/:selectedItemId").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),updatePortfolio);
+
+
 router.route("/getportfolio").post(getPortfolio);
-router.route("/updateportfolio/:selectedItemId").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]), updatePortfolio);
+// router.route("/updateportfolio/:portfolioId").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]), updatePortfolio);
 
 
 

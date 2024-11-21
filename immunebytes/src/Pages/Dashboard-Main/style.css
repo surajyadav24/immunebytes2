@@ -5,12 +5,18 @@
 }
 .audit-edit-wrapper{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 .dashboard-table-container     .portfolio-table-container {
     min-height: 664px !important;
 }
 
+.main-container .platform-widget{
+    display:none;
+}
+.audit-edit-wrapper .dashboard-header{
+    display: none;
+}
 
 @media (max-width:1024px){
     .layout-wrapper .audit-progress {

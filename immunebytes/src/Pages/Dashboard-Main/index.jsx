@@ -7,6 +7,7 @@ import AuditProgress from '../../components/Audit-Progress';
 import PortfolioTable from '../../components/PortfolioTable';
 import PlatformList from '../Platform-List';
 import axios from 'axios';
+import PlatformManagement from '../Add-Platform'
 
 function DashboardMain() {
   const [platforms, setPlatforms] = useState([]);
@@ -35,11 +36,7 @@ function DashboardMain() {
       <AuditStats />
       <div className="audit-edit-wrapper">
         <AuditProgress className="dasboard-progressbar additional-class" />
-        {error ? (
-          <p className="text-red-500">{error}</p>
-        ) : (
-          <PlatformList platforms={platforms} />
-        )}
+        <PlatformManagement/>
       </div>
       <div className="dashboard-table-container">
         <PortfolioTable showEditButton={true} />

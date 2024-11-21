@@ -85,4 +85,58 @@ const getportfolio = asyncHandler(async (req, res) => {
         return res.status(200).json(new ApiResponse(200, { portfolio }, "Portfolios fetched successfully"));
   }
 
-  export {addportfolio,getportfolio,selectportfolio}
+
+  const updatePortfolio = async (req, res) => {
+    const portfolioId = req.params.id;
+    const {
+      name,
+      platform,
+      auditDate,
+      status,
+      errorBags,
+      companyDescription,
+      errorType,
+      image,
+      pdf,
+    } = req.body;
+  
+    try {
+      // Find the portfolio by ID
+      const portfolio = await Portfolio.findById(portfolioId);
+      
+      if (!portfolio) {
+        return res.status(404).json({ message: 'Portfolio not found' });
+      }
+  
+      // Update the fields that are passed in the request body
+      portfolio.name = name || portfolio.name;
+      portfolio.platform = platform || portfolio.platform;
+      portfolio.auditDate = auditDate || portfolio.auditDate;
+      portfolio.status = status || portfolio.status;
+      portfolio.errorBags = errorBags || portfolio.errorBags;
+      portfolio.companyDescription = companyDescription || portfolio.companyDescription;
+      portfolio.errorType = errorType || portfolio.errorType;
+  
+      // Handle file updates (if new image or PDF is provided)
+      if (image) {
+        portfolio.image = image; // You'll need to handle file uploads (e.g., Cloudinary)
+      }
+      if (pdf) {
+        portfolio.pdf = pdf; // Similarly, handle PDF upload
+      }
+  
+      // Save the updated portfolio
+      const updatedPortfolio = await portfolio.save();
+  
+      return res.status(200).json({
+        message: 'Portfolio updated successfully!',
+        data: updatedPortfolio,
+      });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Server error while updating portfolio' });
+    }
+  };
+  
+  
+  export {addportfolio,getportfolio,selectportfolio,updatePortfolio}

@@ -260,6 +260,7 @@ const verifyOTP = asyncHandler(async (req, res) => {
   }
 
   const user = req.user
+  console.log(user)
   if (!user) {
     throw new ApiError(401, "Sorry! This userId doesn't exist");
   }
@@ -268,6 +269,7 @@ const verifyOTP = asyncHandler(async (req, res) => {
   if (!token) {
     throw new ApiError(401, "OTP not found or expired");
   }
+  
 
   // Compare the hashed OTP stored in the token with the OTP provided by the user
   const isOTPValid = await bcrypt.compare(otp, token.token);

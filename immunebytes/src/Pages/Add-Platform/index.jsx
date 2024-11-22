@@ -3,6 +3,7 @@ import axios from "axios";
 import PlatformList from "../Platform-List"; 
 import "./style.css";
 
+
 const PlatformManagement = (props) => {
   const [platforms, setPlatforms] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
@@ -55,6 +56,7 @@ const PlatformManagement = (props) => {
         setPlatforms(updatedPlatforms);
         setEditIndex(null);
         setEditedPlatform("");
+        
       } else {
         setError(response.data.message || "Update failed");
       }
@@ -84,6 +86,7 @@ const PlatformManagement = (props) => {
           ...prevPlatforms,
         ]);
         setAddPlatform("");
+     
       } else {
         setError(response.data.message || "Add platform failed");
       }

@@ -18,6 +18,8 @@ router.route("/getportfolio/:selectedItemId").post(selectPortfolio);
 router.route("/getportfolio").post(getPortfolio);
 router.route("/getseverity").post(getseverity);
 router.route("/getplatforms").post(getPlatforms);
+router.route("/Forgot-Password").post(forgotPassword)
+
 
 //secure routes
 router.route("/logout").post(verifyJwt, logOut)
@@ -28,8 +30,7 @@ router.route("/me").post(verifyJwt,getCurrentUser);
 router.route("/severity").post(verifyJwt,severity);
 router.route("/updateportfolio/:selectedItemId").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),verifyJwt,updatePortfolio);
 router.route("/Add-Portfolio").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),verifyJwt,addPortfolio);
-router.route("/Reset-Password/:resetPasswordToken").post(verifyJwt,resetPassword)
-router.route("/Forgot-Password").post(verifyJwt,forgotPassword)
+router.route("/Reset-Password/:resetPasswordToken").post(resetPassword)
 router.route("/email-verify").post(verifyJwt,verifyOTP)
 
 // un used routes

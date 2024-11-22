@@ -250,7 +250,6 @@ const verifyEmail = asyncHandler(async (req, res) => {
   );
 });
 
-
 // VERIFY OTP ------------>
 const verifyOTP = asyncHandler(async (req, res) => {
   const { otp } = req.body;
@@ -302,9 +301,6 @@ const verifyOTP = asyncHandler(async (req, res) => {
       )
     );
 });
-
-
-
 
 // FORGOT PASSWORD -------------->
 const forgotPassword = asyncHandler(async (req, res) => {
@@ -438,5 +434,21 @@ const resendOtp = asyncHandler(async (req, res) => {
   });
 });
 
+// GETCURRENT USER
+ const getCurrentUser = async (req, res) => {
+  try {
+    // Find the user by the ID stored in the JWT (req.user._id)
+    const user = await User.findById(req.user._id).select('username');  // Adjust the fields you want to return
 
-export { signUp, logIn, logOut, verifyEmail, forgotPassword, resetPassword ,verifyOTP,resendOtp};
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    res.json(user);  // Send the user's data (including the username)
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+
+export { signUp, logIn, logOut, verifyEmail, forgotPassword, resetPassword ,verifyOTP,resendOtp,getCurrentUser};

@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { signUp,logOut,logIn, forgotPassword,resetPassword,resendOtp } from "../controllers/user.controller.js"
+import { signUp,logOut,logIn, forgotPassword,resetPassword,resendOtp ,getCurrentUser} from "../controllers/user.controller.js"
 import { verifyJwt } from "../middlewares/auth.middleware.js"
 import { verifyOTP } from "../controllers/user.controller.js"
 import { addPortfolio, getPortfolio ,selectPortfolio,updatePortfolio } from "../controllers/addPortfolio.controller.js"
@@ -8,47 +8,32 @@ import { cSigma } from "../controllers/cSigma.controller.js"
 import { upload } from "../middlewares/multer.middleware.js"
 import { severity,getseverity } from "../controllers/severityFound.controller.js"
 
+
 const router = Router()
 
-
+// UN SECURE ROUTES
 router.route("/SignUp").post(signUp)
 router.route("/login").post(logIn)
-router.route("/email-verify").post(verifyJwt,verifyOTP)
-router.route("/Forgot-Password").post(verifyJwt,forgotPassword)
-router.route("/Reset-Password/:resetPasswordToken").post(verifyJwt,resetPassword)
-router.route("/Add-Portfolio").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),verifyJwt,addPortfolio);
 router.route("/getportfolio/:selectedItemId").post(selectPortfolio);
-router.route("/updateportfolio/:selectedItemId").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),verifyJwt,updatePortfolio);
-
-
 router.route("/getportfolio").post(getPortfolio);
-// router.route("/updateportfolio/:portfolioId").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]), updatePortfolio);
-
-
-
-router.route("/severity").post(verifyJwt,severity);
 router.route("/getseverity").post(getseverity);
-
-
-
-
-router.route("/Platform").post(verifyJwt,addPlatform);
 router.route("/getplatforms").post(getPlatforms);
-router.route("/updateplatform/:id").post(verifyJwt,updatePlatform);
-
-
-router.route("/cSigma").post(upload.single('image'),cSigma);
-router.route("/resend-otp").post(verifyJwt, resendOtp);
-
-
-
-
-
-
-
-
 
 //secure routes
 router.route("/logout").post(verifyJwt, logOut)
+router.route("/resend-otp").post(verifyJwt, resendOtp);
+router.route("/updateplatform/:id").post(verifyJwt,updatePlatform);
+router.route("/Platform").post(verifyJwt,addPlatform);
+router.route("/me").post(verifyJwt,getCurrentUser);
+router.route("/severity").post(verifyJwt,severity);
+router.route("/updateportfolio/:selectedItemId").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),verifyJwt,updatePortfolio);
+router.route("/Add-Portfolio").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),verifyJwt,addPortfolio);
+router.route("/Reset-Password/:resetPasswordToken").post(verifyJwt,resetPassword)
+router.route("/Forgot-Password").post(verifyJwt,forgotPassword)
+router.route("/email-verify").post(verifyJwt,verifyOTP)
+
+// un used routes
+router.route("/cSigma").post(upload.single('image'),cSigma);
+
 
 export default router

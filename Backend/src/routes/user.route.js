@@ -14,11 +14,11 @@ const router = Router()
 router.route("/SignUp").post(signUp)
 router.route("/login").post(logIn)
 router.route("/email-verify").post(verifyJwt,verifyOTP)
-router.route("/Forgot-Password").post(forgotPassword)
-router.route("/Reset-Password/:resetPasswordToken").post(resetPassword)
-router.route("/Add-Portfolio").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),addPortfolio);
+router.route("/Forgot-Password").post(verifyJwt,forgotPassword)
+router.route("/Reset-Password/:resetPasswordToken").post(verifyJwt,resetPassword)
+router.route("/Add-Portfolio").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),verifyJwt,addPortfolio);
 router.route("/getportfolio/:selectedItemId").post(selectPortfolio);
-router.route("/updateportfolio/:selectedItemId").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),updatePortfolio);
+router.route("/updateportfolio/:selectedItemId").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),verifyJwt,updatePortfolio);
 
 
 router.route("/getportfolio").post(getPortfolio);
@@ -26,15 +26,15 @@ router.route("/getportfolio").post(getPortfolio);
 
 
 
-router.route("/severity").post(severity);
+router.route("/severity").post(verifyJwt,severity);
 router.route("/getseverity").post(getseverity);
 
 
 
 
-router.route("/Platform").post(addPlatform);
+router.route("/Platform").post(verifyJwt,addPlatform);
 router.route("/getplatforms").post(getPlatforms);
-router.route("/updateplatform/:id").post(updatePlatform);
+router.route("/updateplatform/:id").post(verifyJwt,updatePlatform);
 
 
 router.route("/cSigma").post(upload.single('image'),cSigma);

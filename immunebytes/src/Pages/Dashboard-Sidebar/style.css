@@ -50,6 +50,26 @@ button.mt-8.w-full.p-2.logout-btn.text-white.rounded.cursor-pointer.hover\:bg-bl
     max-width: 25px;
 }
 
+
+/* For desktop */
+@media (min-width: 1025px) {
+    .toggle-sidebar-btn {
+      display: none; /* Hide toggle button */
+    }
+  
+    .sidebar-container {
+      position: fixed; /* Keep the sidebar fixed */
+      display: block; /* Ensure sidebar is always visible */
+    }
+  
+    .sidebar-wrapper {
+      width: 20vw; /* Adjust the width for desktop */
+    }
+  }
+  
+
+  
+
 @media(max-width:1024px){
     button.toggle-sidebar-btn.p-2.bg-pink-600.text-white.rounded {
         top: 18px;
@@ -64,4 +84,22 @@ button.mt-8.w-full.p-2.logout-btn.text-white.rounded.cursor-pointer.hover\:bg-bl
         top: 0px;
         z-index: 9999;
     }
+
+
+    .sidebar-wrapper h2{
+        font-size: 20px;
+    }
+    .toggle-sidebar-btn {
+        display: block !important; /* Show toggle button */
+      }
+    
+      .sidebar-wrapper {
+        display: none; /* Initially hide sidebar */
+      }
+    
+      .sidebar-container.active .sidebar-wrapper {
+        display: block !important; /* Show sidebar when active */
+      }
+
 }
+

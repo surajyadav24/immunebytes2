@@ -18,8 +18,10 @@ function LoginForm() {
       const response = await axios.post(
         '/api/v1/users/login',
         { username, password },
-        { withCredentials: true }
+        { withCredentials: true },
+       
       );
+      localStorage.setItem('accessToken', response.data.data.accessToken);
       console.log("response-data", response.data);
 
       if (response.data.statusCode === 200) {

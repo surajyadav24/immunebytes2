@@ -14,6 +14,7 @@ import DashboardMain from "./Pages/Dashboard-Main";
 import AddPortfolio from "./Pages/Add-Portfolio";
 import PlatformManagement from './Pages/Add-Platform'
 import UpdatePortfolio from "./Pages/Update-Portfolio"
+import PrivateRoute from './components/Private-Route/PrivateRoutes.jsx'
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
         {/* Routes without Layout */}
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/otpform" element={<OtpForm />} />
+        <Route path="/otpform" element={    <PrivateRoute><OtpForm /> </PrivateRoute>} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/resetpassword/:resetPasswordToken" element={<ResetPassword />} />
 
@@ -37,9 +38,11 @@ function App() {
         <Route
           path="/dashboard-main"
           element={
+            <PrivateRoute>
             <Layout>
               <DashboardMain />
             </Layout>
+            </PrivateRoute>
           }
         />
 
@@ -47,34 +50,33 @@ function App() {
           path="/severity"
         
           element={
+            <PrivateRoute>
             <Layout>
               <SeverityButtons   headname="Severity Dashboard"/>
             </Layout>
+            </PrivateRoute>
           }
         />
 
         <Route
-          path="/severity"
-          element={
-            <Layout>
-              <SeverityButtons />
-            </Layout>
-          }
-        />
-        <Route
           path="/addportfolio"
           element={
+            <PrivateRoute>
             <Layout>
               <AddPortfolio headname="Add Portfolio"/>
             </Layout>
+            </PrivateRoute>
           }
         />
             <Route
           path="/updateportfolio/:selectedItemId"
           element={
+            <PrivateRoute>
+
             <Layout>
               <UpdatePortfolio headname="Update Portfolio"/>
             </Layout>
+                   </PrivateRoute>
           }
         />
 
@@ -82,9 +84,13 @@ function App() {
         <Route
           path="/addplatform"
           element={
+            <PrivateRoute>
+
             <Layout>
               <PlatformManagement headname="Add Portfolio"/>
             </Layout>
+            </PrivateRoute>
+
           }
         />
       </Routes>

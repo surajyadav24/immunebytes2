@@ -8,7 +8,7 @@ const PlatformManagement = (props) => {
   const [editIndex, setEditIndex] = useState(null);
   const [editedPlatform, setEditedPlatform] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const platformsPerPage = 5;
+  const platformsPerPage = 3;
   const [error, setError] = useState("");
   const [platformName, setAddPlatform] = useState("");
 

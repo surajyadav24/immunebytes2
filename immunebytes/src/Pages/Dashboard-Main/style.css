@@ -3,7 +3,8 @@
     margin-left: 20px;
     text-align: left;
 }
-.audit-edit-wrapper{
+.audit-edit-wrapper {
+    max-height: 400px;
     display: flex;
     align-items: flex-start;
 }
@@ -11,13 +12,15 @@
     min-height: 664px !important;
 }
 
-.main-container .platform-widget{
+.audit-edit-wrapper .platform-widget{
     display:none;
 }
 .audit-edit-wrapper .dashboard-header{
     display: none;
 }
-
+.audit-edit-wrapper .addplatform.flex.flex-col.items-center.min-h-screen.text-white.p-6 {
+    width: 50%;
+}
 @media (max-width:1024px){
     .layout-wrapper .audit-progress {
         min-height: 191px !important;

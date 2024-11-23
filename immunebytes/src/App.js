@@ -15,6 +15,7 @@ import AddPortfolio from "./Pages/Add-Portfolio";
 import PlatformManagement from './Pages/Add-Platform'
 import UpdatePortfolio from "./Pages/Update-Portfolio"
 import PrivateRoute from './components/Private-Route/PrivateRoutes.jsx'
+import About from "./Pages/About/Index.jsx";
 
 function App() {
 
@@ -23,6 +24,8 @@ function App() {
       <Routes>
         {/* Routes without Layout */}
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/otpform" element={    <PrivateRoute><OtpForm /> </PrivateRoute>} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />

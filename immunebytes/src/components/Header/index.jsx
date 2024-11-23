@@ -29,7 +29,7 @@ function Header() {
                 <a href="/portfolio" className="nav-link text-white">Portfolio</a>
               </li>
               <li className="nav-item">
-                <a href="/about-us" className="nav-link text-white">About Us</a>
+                <a href="/about" className="nav-link text-white">About Us</a>
               </li>
               <li className="nav-item">
                 <a href="/blog" className="nav-link text-white">Blog</a>

@@ -21,6 +21,11 @@
 .audit-edit-wrapper .addplatform.flex.flex-col.items-center.min-h-screen.text-white.p-6 {
     width: 50%;
 }
+
+.addportfolio-wrapper.flex.items-center.justify-center.min-h-screen.text-white img {
+    max-width: 74px;
+    max-height: 69px;
+}
 @media (max-width:1024px){
     .layout-wrapper .audit-progress {
         min-height: 191px !important;

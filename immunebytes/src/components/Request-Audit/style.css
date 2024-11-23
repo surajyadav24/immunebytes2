@@ -1,0 +1,60 @@
+.request-audit-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffe0b2; /* Light peach background */
+    padding: 100px 80px;
+    font-family:"RobotoMono-Bold"
+  }
+  
+  .text-content p {
+    margin: 0;
+    font-size: 38px;
+    color: #000; /* Black text */
+  }
+  
+  .text-content .highlight {
+    color: #ff4081; /* Pink for highlighted text */
+    font-weight: bold;
+  }
+  
+  .request-button {
+    background: none;
+    border: 2px solid #000; /* Black border */
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .request-button .arrow {
+    margin-left: 8px;
+    font-size: 18px;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .request-button:hover .arrow {
+    transform: translateX(5px); /* Slightly move the arrow on hover */
+  }
+  .request-button span svg{
+    background-color: #000 !important;
+  }
+  .request-button:hover {
+    background-color: #000;
+    color: #fff; /* Invert colors on hover */
+  }
+  
+  .button-container button.btn.btn-primary{
+   background: url("../../assets/images/services-main/button-bg.svg") no-repeat center center / contain !important; 
+   color: #000 !important;
+  }
+
+  .request-audit-container .text-content{
+max-width: 700px;
+
+  }

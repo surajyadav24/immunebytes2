@@ -15,8 +15,8 @@
 .table table tr{
     padding: 2rem;
     background-color: black;
-    color:#fff  
-
+    color:#fff  ;
+    border: none;
 }
 table {
     width: 90%;

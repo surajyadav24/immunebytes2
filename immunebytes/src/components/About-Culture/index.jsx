@@ -20,9 +20,16 @@ const Culture = () => {
           <img src={culture2} alt="culture2" />
           <img src={culture3} alt="culture3" />
           <img src={culture4} alt="culture4" />
+          <img src={culture1} alt="culture1" />
+          <img src={culture2} alt="culture2" />
+          <img src={culture3} alt="culture3" />
+          <img src={culture4} alt="culture4" />
         </div>
         <div className='image-slidder-two'>
         <img src={culture5} alt="culture5" />
+          <img src={culture6} alt="culture6" />
+          <img src={culture7} alt="culture7" />
+          <img src={culture5} alt="culture5" />
           <img src={culture6} alt="culture6" />
           <img src={culture7} alt="culture7" />
         </div>

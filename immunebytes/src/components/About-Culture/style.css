@@ -8,16 +8,37 @@
     width: 35vw;
     height: 60vh;
 }
-.image-slidder-one{
-    display: flex;
-    overflow: hidden;
-    gap: 1rem;
+.image-slidder {
     margin-top: 2rem;
+    position: relative;
+    overflow: hidden; /* Ensures only visible images are shown */
+    width: 100%;
+    /* height: 200px; Adjust based on your images */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+  }
+  .image-slidder-one,
+  .image-slidder-two {
+    display: flex;
+    gap: 1rem;
+    animation: slide 20s linear infinite; /* 20 seconds per cycle */
+    margin: 2rem;
+  }
+  .image-slidder-one {
+    animation-direction: normal;
+  }
+  
+  .image-slidder-two {
+    animation-direction: reverse;
+  }
 
-}
-.image-slidder-two{
-    margin-top: 2rem;
-    display: flex;
-    overflow: hidden;
-    gap: 1rem;
-}
+  /* Keyframes for the sliding animation */
+@keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }

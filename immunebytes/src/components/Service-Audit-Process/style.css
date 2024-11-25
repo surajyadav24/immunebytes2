@@ -1,49 +1,53 @@
 .audit-process-container {
-    background-color: #000; /* Black background */
-    padding: 40px;
-    text-align: center;
-    color: #fff;
-    font-family: "Roboto Mono", monospace;
-  }
-  
-  .audit-process-title {
-    font-size: 32px;
-    margin-bottom: 30px;
-    color: #ff4081; /* Pink color for the title */
-  }
-  
-  .audit-process-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-    gap: 20px;
-  }
-  
-  .audit-process-card {
-    background-color: #1a1a1a; /* Dark gray background for cards */
-    padding: 20px;
-    border-radius: 10px;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .audit-process-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
-  }
-  
-  .icon {
-    font-size: 40px;
-    margin-bottom: 15px;
-  }
-  
-  .audit-process-card h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #fff;
-  }
-  
-  .audit-process-card p {
-    font-size: 14px;
-    color: #d3d3d3; /* Lighter gray for text */
-  }
-  
+  background-color: #000; /* Black background */
+  padding: 40px;
+  text-align: center;
+  color: #fff;
+  font-family: "Roboto Mono", monospace;
+}
+
+.audit-process-title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #ff4081; /* Pink color for the title */
+}
+
+.audit-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 20px;
+}
+
+.audit-process-card {
+  background-color: #1a1a1a; /* Dark gray background for cards */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.audit-process-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.audit-process-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.audit-process-card p {
+  font-size: 14px;
+  color: #d3d3d3; /* Lighter gray for text */
+}
+
+.audit-process-card img {
+  max-width: 80px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,39 @@
+.about-vision{
+    text-align: center;
+}
+
+.about-vision h2{
+    font-size: 2rem;
+    color:#F9116C  ;
+    margin-top: 2rem;
+}
+.table{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.table table tr{
+    padding: 2rem;
+    background-color: black;
+    color:#fff  
+
+}
+table {
+    width: 90%;
+    border: none;
+    margin-top: 2rem;
+}
+td {
+    text-align: left;
+    padding: 8px;
+
+}
+td tr {
+    padding: 1rem 3rem 1rem 3rem;
+    border: none;
+}
+table tr td:nth-child(1){
+    font-size: 1.2rem;
+    width: 25%;
+    font-weight: bold;
+}

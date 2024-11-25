@@ -17,6 +17,7 @@ import UpdatePortfolio from "./Pages/Update-Portfolio";
 import PrivateRoute from "./components/Private-Route/PrivateRoutes.jsx";
 import Layout2 from "./components/Layout/";
 import SmartContract from "./components/Services/SmartContractAudit/index.jsx";
+import About from "./Pages/About/Index.jsx";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
       <Routes>
         {/* Routes without Layout */}
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        {/* <Route path="/about" element={<About />} /> */}
 
         <Route path="/portfolio" element={<Portfolio />} />
         <Route
@@ -49,6 +50,14 @@ function App() {
           element={
             <Layout2>
             <SmartContract/>
+            </Layout2>
+          }
+        />
+              <Route
+          path="/about"
+          element={
+            <Layout2>
+            <About/>
             </Layout2>
           }
         />

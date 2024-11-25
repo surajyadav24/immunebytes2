@@ -1,0 +1,23 @@
+.about-culture h2{
+    color:#F9116C; 
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+.image-slidder img{
+    width: 37vw;
+    height: 60vh;
+}
+.image-slidder-one{
+    display: flex;
+    overflow: hidden;
+    gap: 1rem;
+    margin-top: 2rem;
+
+}
+.image-slidder-two{
+    margin-top: 2rem;
+    display: flex;
+    overflow: hidden;
+    gap: 1rem;
+}

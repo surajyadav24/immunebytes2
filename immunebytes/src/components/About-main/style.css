@@ -1,0 +1,26 @@
+.About-main{
+   color: white;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.Image{
+    /* background: url(../../assets/images/About-main.png) no-repeat center/contain ; */
+    padding: 4rem;
+    /* min-width: 60vw; */
+    min-height: 80vh;
+}
+.About-main{
+    padding: 2rem;
+}
+.main{
+    text-align: center;
+}
+.main h2{
+    font-size: 2.5rem;
+    padding: 2rem;
+}
+.main span{
+    color:#F9116C  
+}

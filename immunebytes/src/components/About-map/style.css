@@ -1,0 +1,16 @@
+.about-map{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-top: 3rem;
+}
+.about-map h2{
+    margin-top: 3rem;
+}
+.about-map span{
+    color:#F9116C  ;
+}
+.map{
+    padding: 3.5rem;
+}

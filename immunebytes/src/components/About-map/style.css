@@ -1,5 +1,6 @@
 .about-map{
     margin-top: 5rem;
+    /* overflow-x: hidden; */
 }
 
 .about-map h2{
@@ -130,4 +131,141 @@
   .tooltip {
     border: 1px solid #ddd;
   }
+  @media screen and (max-width: 1200px) {
+    .about-map h2 {
+      font-size: 1.8rem; /* Slightly smaller heading */
+    }
   
+    .tooltip {
+      width: 14rem; /* Make the tooltip smaller */
+      font-size: 0.9rem; /* Slightly smaller font for larger screens */
+    }
+  
+    .map-topright,
+    .map-bottomcenter,
+    .map-bottomright {
+      width: 30%; /* Reduce tooltip width */
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .about-map h2 {
+      font-size: 1.6rem; /* Smaller font size for mobile */
+    }
+  
+    .tooltip {
+      width: 12rem; /* Make tooltip smaller for mobile */
+      padding: 8px; /* Reduce padding */
+      font-size: 0.8rem; /* Adjust font size */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    }
+  
+    .map-topright,
+    .map-bottomcenter,
+    .map-bottomright {
+      width: 35%; /* Further reduce width of tooltip sections */
+    }
+  
+    .map-topright {
+      top: 10%; /* Adjust positioning */
+      right: 5%;
+    }
+  
+    .map-bottomcenter {
+      bottom: 5%;
+    }
+  
+    .map-bottomright {
+      bottom: 5%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .about-map h2 {
+      font-size: 1.6rem; /* Even smaller for very small screens */
+    }
+    .map{
+      margin-top: 1rem;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .map-tooltip {
+      position: absolute;
+      z-index: 10;  /* Ensure the tooltip appears above other content */
+      max-width: 90vw;  /* Ensure tooltip stays within viewport */
+      white-space: nowrap;
+      overflow: hidden;
+  }
+  /* Make sure map tooltips are not hidden */
+  .map-container {
+    position: relative;
+    z-index: 10;
+  }
+  
+  
+    .tooltip {
+      width: 4rem; /* Tooltip size for smaller screens */
+      font-size: 0.1rem; /* Much smaller font inside the tooltip */
+      padding: 2px; /* Smaller padding */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Softer shadow for small screens */
+    }
+  
+    .map-topright,
+    .map-bottomcenter,
+    .map-bottomright {
+      width: 30%; /* Further reduce width of tooltip sections */
+    }
+  
+    .map-topright {
+      top: -95%; /* Adjust positioning for small screens */
+      right: 3%;
+    }
+  
+    .map-bottomcenter {
+      bottom: -63%;
+      left: 60% ;
+    }
+  
+    .map-bottomright {
+      bottom: -72%;
+      right: 10%;
+  
+    }
+    .tooltip h3 {
+      /* margin: 0 0 6px 0;  */
+      font-size: 7px; /* Smaller heading font */
+      text-align: center;
+      color: #F9116C;
+      font-weight: bold;
+    }
+    .tooltip p {
+      margin: 0;
+      text-align: center;
+      font-size: 5px; /* Smaller text */
+      line-height: 1.3;
+      color: #555;
+    }
+    .tooltip::after {
+      content: "";
+      position: absolute;
+      bottom: -8px; /* Position slightly below the tooltip */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px; /* Smaller dot */
+      height: 4px; /* Smaller dot */
+      background: radial-gradient(circle, #f9116c 40%, rgba(249, 17, 108, 0) 70%);
+      border-radius: 50%; /* Circular shape */
+      box-shadow: 
+        0 4px 8px rgba(255, 105, 165, 0.4), /* Softer glowing outer shadow */
+        inset 0 1px 2px rgba(255, 200, 220, 0.8), /* Light inner highlight */
+        inset 0 -2px 4px rgba(200, 50, 100, 0.5); /* Softer bottom shadow for depth */
+    }
+  }
+  
+
+
+
+  /* --------------------------->>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<------------------------ */
+
+  /* Main container */

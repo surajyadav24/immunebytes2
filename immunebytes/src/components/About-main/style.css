@@ -3,6 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* overflow-x: hidden; */
 }
 
 .Image{
@@ -24,3 +25,57 @@
 .main span{
     color:#F9116C  
 }
+
+
+/* Large screens (desktop and large tablets) */
+@media screen and (max-width: 1200px) {
+    .main h2 {
+      font-size: 2.2rem; /* Slightly smaller heading for tablets */
+    }
+  
+    .main p {
+      font-size: 1.1rem;
+    }
+  
+    .Image {
+      padding: 3rem;
+      min-height: 70vh;
+    }
+  }
+  
+  /* Medium screens (tablets and below) */
+  @media screen and (max-width: 768px) {
+    .main h2 {
+      font-size: 1.8rem; /* Smaller font for tablets */
+      padding: 1.5rem;
+    }
+  
+    .main p {
+      font-size: 1rem; /* Adjust text size for readability */
+      padding: 1rem;
+    }
+  
+    .Image {
+      padding: 2rem;
+      min-height: 60vh; /* Reduce height for smaller screens */
+    }
+  }
+  
+  /* Small screens (phones) */
+  @media screen and (max-width: 480px) {
+    .main h2 {
+      font-size: 1.6rem; /* Even smaller for phones */
+      padding: 1rem;
+    }
+  
+    .main p {
+      font-size: 10px; /* Smaller font for phones */
+      /* line-height: 1.4; */
+      padding: 10px 1px 1px 10px;
+    }
+  
+    .Image {
+      padding: 1rem;
+      min-height: 50vh; /* Further reduce height for smaller devices */
+    }
+  }

@@ -9,12 +9,13 @@ import Success from '../../components/About-success'
 const About = () => {
   return (
     <>
+    <div className='about'>
     <Main/>
     <Vision/>
     <Map/>
     <Success/>
     <Culture/>
-      <h1>Hello , This is about page</h1>
+    </div>
     </>
   )
 }

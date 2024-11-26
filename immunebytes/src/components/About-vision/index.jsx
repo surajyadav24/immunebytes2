@@ -30,8 +30,29 @@ const Vision = () => {
 
       </div>
     </div>
+      {/* Mobile version */}
+      <div className="mobile-version">
+            <div className="vision-item">
+              <h3>Securing DeFi</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+            </div>
+            <div className="vision-item">
+              <h3>Transparent Growth</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+            </div>
+            <div className="vision-item">
+              <h3>Blockchain Adoption</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+            </div>
+            <div className="vision-item">
+              <h3>Web3 Confidence</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+            </div>
+          </div>
     </>
   )
 }
 
 export default Vision
+
+

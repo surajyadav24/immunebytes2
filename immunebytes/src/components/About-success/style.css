@@ -1,27 +1,78 @@
-.about-success h2{
-    color:#F9116C; 
+/* Success Section */
+.about-success{
+    width: 100%;
+    /* overflow-x: hidden; */
+}
+.about-success h2 {
+    color: #F9116C;
     font-size: 2rem;
     text-align: center;
 }
-.about-card{
+
+/* Default grid layout */
+.about-card {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columns for larger screens */
     align-items: center;
     gap: 1rem;
     justify-content: center;
     padding: 3rem;
+    max-width: 100%;
 }
-.card{
+
+/* Card styles */
+.card {
     background: none;
     color: #fff;
     align-items: center;
     margin-top: 2rem;
 }
 
-.card img{
+.card img {
     width: 27vw;
-} 
-.card .content{
+}
+
+.card .content {
     margin-top: 1.5rem;
     text-align: center;
+}
+
+/* Media Query for Tablet Screens */
+@media screen and (max-width: 768px) {
+    .about-card {
+        grid-template-columns: 1fr 1fr; /* 2 columns for tablets */
+    }
+}
+
+/* Media Query for Mobile Screens */
+@media screen and (max-width: 480px) {
+    .about-success {
+        margin-top: 2rem;
+    }
+    .about-card {
+        padding: 1rem ;
+        grid-template-columns: 1fr 1fr; /* 1 column for mobile screens */
+    }
+
+    /* If there's only one card left at the end of the grid, center it */
+    .about-card .card:last-child {
+        margin: 0 auto; /* Center the last card */
+    }
+
+    .card img {
+        width: 50vw; /* Adjust image size for mobile screens */
+    }
+
+    .about-success h2 {
+        font-size: 1.5rem; /* Smaller heading font size for mobile */
+    }
+    .about-card .card {
+        max-width: 100%;  /* Prevent the card from overflowing */
+        width: 100%;      /* Ensure each card fits the container */
+        margin-top: 2rem;
+    }
+    
+    .card img {
+        max-width: 100%;  /* Ensure images do not exceed the container width */
+    }
 }

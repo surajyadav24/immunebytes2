@@ -259,7 +259,7 @@ border: none;
   padding-bottom: 0px;
 }
 footer .container-fluid {
-  width: 100vw;
-  min-width: 100vw;
+  width: 100%;
+  min-width: 100%;
 }
 }

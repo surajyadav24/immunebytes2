@@ -1,166 +1,133 @@
-.about-map {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-  margin-top: 3rem;
+.about-map{
+    margin-top: 5rem;
 }
 
-.about-map h2 {
-  margin-top: 3rem;
+.about-map h2{
+   text-align: center;
+   color: #fff;
+   font-size: 2rem;
+   /* margin-top: 5rem; */
+}
+.about-map span{
+    color: #F9116C;
 }
 
-.about-map span {
-  color: #F9116C;
-}
 
 .map {
-  position: relative; /* Establish positioning context for child elements */
-  padding: 3.5rem;
-  display: inline-block;
-  width: 100vw;
-}
-
-.map img,
-.map .custom-svg {
-  width: 100%;
-  height: auto;
-}
-
-.map-topright,
-.map-bottomcenter {
-  position: absolute; /* Position relative to .map */
-  width: 400px; /* Adjust size as needed */
-  height: 200px;
-  cursor: pointer;
-}
-
-.map-topright {
-  top: 10%; /* Adjust based on actual map dimensions */
-  right: 10%; /* Align with the top-right area */
-}
-
-.map-bottomcenter {
-  bottom: 10%; /* Adjust based on actual map dimensions */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Align to the center */
-}
-
-.map-topright::after,
-.map-bottomcenter::after {
-cursor: pointer;
-  position: absolute;
-  font-size: 20px;
-  color: #000;
-  z-index: 999;
-  height: 6rem;
-  width: 16rem;
-  padding: 10px;
-  border-radius: 10px;
-  display: none;
-  background: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  white-space: nowrap; /* Prevent text wrapping */
-}
-
-.map-topright::after {
-  top: 110%; /* Position tooltip below the hover area */
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.map-bottomcenter::after {
-  bottom: 110%; /* Position tooltip above the hover area */
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.map-topright:hover::after,
-.map-bottomcenter:hover::after {
-  display: block;
-}
-
-  
-
-
-  /* Base styles */
-.tooltip {
-    position: absolute;
-    display: none; /* Initially hidden */
-    font-size: 1rem;
-    color: #333; /* Neutral text color */
-    z-index: 999;
-    background: linear-gradient(135deg, #ffffff, #f3f3f3); /* Subtle gradient */
-    border-radius: 10px;
-    padding: 15px; /* More spacious */
-    width: 20rem; /* Slightly wider for better readability */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Softer shadow */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade-in */
-    opacity: 0; /* Start invisible */
-    transform: translateY(10px); /* Slightly shifted down initially */
+    position: relative;
+    padding: 3.5rem;
+    display: inline-block;
+    width: 100vw;
   }
   
-  /* Tooltip positions */
-  .map-topright .tooltip {
-    top: 100%; /* Below the element */
+  .map img,
+  .map .custom-svg {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Tooltip container sections */
+  .map-topright,
+  .map-bottomcenter,
+  .map-bottomright {
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    cursor: pointer;
+  }
+  
+  .map-topright {
+    top: -10%;
+    right: 10%;
+  }
+  
+  .map-bottomcenter {
+    bottom: 10%;
+    left: 57%;
+    transform: translateX(-50%);
+  }
+  
+  .map-bottomright {
+    bottom: 21%;
+    left: 32%;
+    transform: translateX(-50%);
+  }
+  
+  /* Base styles for tooltips */
+  .tooltip {
+    position: absolute;
+    font-size: 1rem;
+    color: #333;
+    z-index: 999;
+    background: linear-gradient(135deg, #ffffff, #f3f3f3);
+    border-radius: 10px;
+    padding: 15px;
+    width: 20rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 0;
+    transform: translateY(10px); /* Start slightly offset */
+    pointer-events: none; /* Prevent blocking hover events */
+  }
+
+  .tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -2rem; /* Position slightly below the tooltip */
     left: 50%;
-    transform: translate(-50%, 10px); /* Centered, slightly shifted down */
+    transform: translateX(-50%);
+    width: 15px; /* Diameter of the dot */
+    height: 15px; /* Diameter of the dot */
+    background: radial-gradient(circle, #f9116c 40%, rgba(249, 17, 108, 0) 70%);
+    border-radius: 50%; /* Circular shape */
+    box-shadow: 
+      0 8px 15px rgba(255, 105, 165, 0.4), /* Soft glowing outer shadow */
+      inset 0 2px 4px rgba(255, 200, 220, 0.8), /* Light inner highlight */
+      inset 0 -3px 6px rgba(200, 50, 100, 0.5); /* Soft bottom shadow for depth */
+  }
+  /* Tooltip positioning */
+  .map-topright .tooltip {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 10px);
   }
   
   .map-bottomcenter .tooltip {
-    bottom: 100%; /* Above the element */
+    bottom: 100%;
     left: 50%;
-    transform: translate(-50%, -10px); /* Centered, slightly shifted up */
+    transform: translate(-50%, -10px);
   }
   
-  /* Tooltip visibility on hover */
-  .map-topright:hover .tooltip,
-  .map-bottomcenter:hover .tooltip {
-    display: block;
+  .map-bottomright .tooltip {
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, -10px);
+  }
+  
+  /* Display tooltips when hovering over the map */
+  .map:hover .tooltip {
     opacity: 1; /* Fully visible */
-    transform: translate(-50%, 0); /* Reset shift */
-    cursor: pointer;
-    
+    transform: translate(-50%, 0); /* Reset to natural position */
+    pointer-events: auto;
   }
   
-  /* Heading styles */
+  /* Tooltip headings and text */
   .tooltip h3 {
-    margin: 0 0 8px 0; /* Space below heading */
+    margin: 0 0 8px 0;
     font-size: 1.2rem;
-    color: #F9116C; /* Accent color for heading */
+    color: #F9116C;
     font-weight: bold;
   }
   
-  /* Paragraph styles */
   .tooltip p {
     margin: 0;
     font-size: 0.9rem;
     line-height: 1.5;
-    color: #555; /* Subtle text color */
+    color: #555;
   }
   
-  /* Add a subtle border */
+  /* Add a subtle border for the tooltip */
   .tooltip {
     border: 1px solid #ddd;
-  }
-  .map-bottomright {
-    position: absolute; /* Position relative to .map */
-    bottom: 10%; /* Adjust based on map dimensions */
-    right: 10%; /* Align to the bottom-right area */
-    cursor: pointer;
-  }
-  
-  /* Tooltip for bottom-right */
-  .map-bottomright .tooltip {
-    bottom: 100%; /* Position the tooltip above the element */
-    left: 50%; /* Align horizontally with the parent element's center */
-    transform: translateX(-50%); /* Center the tooltip */
-  }
-  
-  /* Show tooltip on hover */
-  .map-bottomright:hover .tooltip {
-    display: block;
-    opacity: 1; /* Make it visible */
-    transform: translateX(-50%) translateY(-10px); /* Smooth adjustment */
   }
   

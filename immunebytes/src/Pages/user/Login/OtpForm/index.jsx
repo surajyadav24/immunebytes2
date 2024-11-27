@@ -44,7 +44,7 @@ function OtpForm() { // onOtpChange is now passed as a prop
   
     try {
       const response = await axios.post(
-        '/api/v1/users/email-verify',
+        'https://immunebytes2-7w2a.vercel.app/email-verify',
         { otp },
         { withCredentials: true }
       )

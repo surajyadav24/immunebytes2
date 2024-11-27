@@ -16,7 +16,7 @@ function DashboardMain() {
   useEffect(() => {
     const fetchPlatforms = async () => {
       try {
-        const response = await axios.post('https://immunebytes2-jn9u.vercel.app/getplatforms', { withCredentials: true });
+        const response = await axios.post('/api/v1/users/getplatforms', { withCredentials: true });
         if (response.data.statusCode === 200) {
           setPlatforms(response.data.data.platforms);
         } else {

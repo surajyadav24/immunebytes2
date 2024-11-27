@@ -4,12 +4,11 @@
   "description": "immunebytes backend",
   "main": "server.js",
   "type": "module",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "server": "nodemon -r dotenv/config --experimental-json-modules server.js",
-    "build":"npm run build"
+    "build": "npm run build"
   },
   "keywords": [
     "immunebytes",
@@ -29,6 +28,7 @@
     "crypto": "^1.0.1",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
+    "http": "^0.0.1-security",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.8.1",
     "multer": "^1.4.5-lts.1",

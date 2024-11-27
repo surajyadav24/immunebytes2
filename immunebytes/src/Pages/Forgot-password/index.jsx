@@ -25,7 +25,7 @@ function ForgotPassword() {
   
       if (response.data.statusCode === 200) {
         const resetToken = response.data.data.user.resetPasswordToken; // Assuming 'token' contains the reset token
-  navigate(`/resetpassword/${resetToken}`)
+  navigate(`/dashboard`)
         // console.log(response.data.data.accessToken)
         // setShowOtp(true);
       } else {

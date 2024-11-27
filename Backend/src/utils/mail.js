@@ -96,7 +96,7 @@ export const plainEmailTemplate = (heading,message) => {
    };
 
 
-   export const forgotPasswordTemplate=()=>{
+   export const forgotPasswordTemplate=(heading,message)=>{
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,10 +111,10 @@ export const plainEmailTemplate = (heading,message) => {
     <h1 class="text-2xl font-semibold text-gray-800 mb-4">Password Reset Request</h1>
     <p class="text-gray-600 mb-6">Hi <strong>[User’s Name]</strong>,</p>
     <p class="text-gray-600 mb-6">We received a request to reset the password for your account. If you didn’t request this, please ignore this email.</p>
-    <p class="text-gray-600 mb-6">To reset your password, click the button below:</p>
+    <p class="text-gray-600 mb-6">${heading}</p>
     <a href="[Password Reset Link]" class="inline-block px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-lg hover:bg-blue-600 transition-colors mb-6">Reset Your Password</a>
     <p class="text-gray-600 mb-6">The link will expire in <strong>[X] hours</strong> for security reasons. If the link expires, you can request a new password reset.</p>
-    <p class="text-gray-600">If you continue to have trouble, feel free to reach out to our support team.</p>
+    <p class="text-gray-600">${message}</p>
     <div class="mt-6 text-center">
       <p class="text-gray-500 text-sm">Best regards,</p>
       <p class="text-gray-500 text-sm">[Your Company Name]</p>

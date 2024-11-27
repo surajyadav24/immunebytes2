@@ -340,8 +340,7 @@ const forgotPassword = asyncHandler(async (req, res) => {
     subject: "Forgot-Password",
     html: forgotPasswordTemplate(
       "forgot password Successfully",
-      "Thanks for contacting with us"
-    ),
+      `<a href="http://localhost:3000/resetpassword/${resetPasswordToken}">"http://localhost:3000/resetpassword/${resetPasswordToken}"</a>`)
   });
 
   return res

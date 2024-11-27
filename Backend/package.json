@@ -6,14 +6,15 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "server": "nodemon -r dotenv/config --experimental-json-modules server.js",
-    "build": "npm run build"
+    "server": "nodemon -r dotenv/config --experimental-json-modules Backend/server.js",
+    "start": "node -r dotenv/config --experimental-json-modules Backend/server.js",
+    "build": "npm install && npm install --prefix immunebytes && npm run build --prefix immunebytes"
   },
   "keywords": [
     "immunebytes",
     "backend"
   ],
+
   "author": "digitalmolecule",
   "license": "ISC",
   "dependencies": {

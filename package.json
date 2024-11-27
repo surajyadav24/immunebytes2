@@ -17,8 +17,8 @@
     "tailwindcss": "^3.4.14"
   },
   "scripts": {
-    "server": "nodemon -r dotenv/config --experimental-json-modules backend/server.js",
-    "start": "node -r dotenv/config --experimental-json-modules backend/server.js",
-    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
+    "server": "nodemon -r dotenv/config --experimental-json-modules Backend/server.js",
+    "start": "node -r dotenv/config --experimental-json-modules Backend/server.js",
+    "build": "npm install && npm install --prefix immunebytes && npm run build --prefix immunebytes"
   }
 }

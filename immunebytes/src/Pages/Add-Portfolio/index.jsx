@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './style.css';
+import {useNavigate} from 'react-router-dom'
 
 
 const AddPortfolio = (props) => {
+  const navigate = useNavigate()
   const [errorEntries, setErrorEntries] = useState([
     { errorType: "", errorStatus: "", errorDescription: "" },
   ]);
@@ -45,7 +47,9 @@ const AddPortfolio = (props) => {
       try {
         const response = await axios.post('/api/v1/users/getplatforms', { withCredentials: true });
         if (response.data.statusCode === 200) {
-          setPlatforms(response.data.data.platforms);
+          setPlatforms(response.data.data.platforms)
+  
+          
         } else {
           setError('Failed to fetch platforms');
         }
@@ -131,6 +135,7 @@ const AddPortfolio = (props) => {
 
       if (response.data.statusCode === 200) {
         alert('Portfolio added successfully!');
+       navigate('/dashboard-main')
       } else {
         setError(response.data.message || 'Add portfolio failed');
       }

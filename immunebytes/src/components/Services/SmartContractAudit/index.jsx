@@ -2,7 +2,8 @@ import React from 'react'
 import Herosection from '../../Herosection'
 import RequestAudit from '../../Request-Audit'
 import AuditProcess from '../../Service-Audit-Process'
-
+import FeaturedAudit from '../../Feauture-Audit'
+import FeatureSection from '../../Why-us-Feature'
 function SmartContract() {
   return (
 <>
@@ -11,6 +12,8 @@ function SmartContract() {
 
  <RequestAudit/>
  <AuditProcess/>
+ <FeaturedAudit/>
+ <FeatureSection/>
 </div>
 </>
   )

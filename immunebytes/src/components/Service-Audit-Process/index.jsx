@@ -2,10 +2,10 @@ import React from "react";
 import "./style.css";
 import icon1 from '../../assets/images/services-main/Preparatory stage.gif'
 import icon2 from '../../assets/images/services-main/manual examination.gif'
-import icon3 from '../../assets/images/services-main/search.gif'
+import icon3 from '../../assets/images/services-main/audit-reprt.gif'
 import icon4 from '../../assets/images/services-main/search.gif'
-import icon5 from '../../assets/images/services-main/Preparatory stage.gif'
-import icon6 from '../../assets/images/services-main/Preparatory stage.gif'
+import icon5 from '../../assets/images/services-main/PreliminaryAudit.gif'
+import icon6 from '../../assets/images/services-main/auditRevision.gif'
 
 
 
@@ -15,37 +15,37 @@ function AuditProcess() {
       icon:icon1 ,
       title: "Preparatory Stage",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
     },
     {
       icon:icon2 ,
       title: "Manual Examination",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
     },
     {
-      icon: "📃",
+      icon: icon3,
       title: "Final Audit Report",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
     },
     {
-      icon: "🔬",
+      icon: icon4,
       title: "Testing Automation",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
     },
     {
-      icon: "📋",
+      icon:icon5,
       title: "Preliminary Audit Report",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
     },
     {
-      icon: "🔄",
+      icon: icon6,
       title: "Audit Support & Revisions",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
     },
   ];
 

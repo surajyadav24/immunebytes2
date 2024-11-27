@@ -1,6 +1,6 @@
 .audit-process-container {
   background-color: #000; /* Black background */
-  padding: 40px;
+
   text-align: center;
   color: #fff;
   font-family: "Roboto Mono", monospace;
@@ -26,15 +26,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.audit-process-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
-}
 
-.icon {
-  font-size: 40px;
-  margin-bottom: 15px;
-}
 
 .audit-process-card h3 {
   font-size: 20px;
@@ -50,4 +42,68 @@
 .audit-process-card img {
   max-width: 80px;
   margin-bottom: 10px;
+  position: relative;
+  top: 0px;
 }
+
+.Preparatory.Stage {
+    display: flex;
+    padding: 2px;
+    background: #53A5F8;
+    width: 99px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.Manual.Examination {
+    display: flex;
+    padding: 2px;
+    background: #FFD5A7;
+    width: 99px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.Final.Audit.Report {
+    display: flex;
+    padding: 2px;
+    background: #FFE345;
+    width: 99px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.Testing.Automation {
+    display: flex;
+    padding: 2px;
+    background: #fff;
+    width: 99px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.Preliminary.Audit.Report{
+    display: flex;
+    padding: 2px;
+    background: #FFA747;
+    width: 99px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.Revisions{
+    display: flex;
+    padding: 2px;
+    background: #FF0000;
+    width: 99px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+

@@ -105,7 +105,7 @@ const PortfolioTable = ({ showEditButton }) => {
                 <img
                   src={item.image}
                   alt={item.name}
-                  style={{ width: '50px', height: '50px', objectFit: 'cover' }}
+                  style={{ }}
                 />
               </div>
               <div>{item.platform}</div>

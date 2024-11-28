@@ -8,8 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "server": "nodemon -r dotenv/config --experimental-json-modules server.js",
-    "build":"npm run build"
+    "server": "nodemon -r dotenv/config --experimental-json-modules server.js"
   },
   "keywords": [
     "immunebytes",

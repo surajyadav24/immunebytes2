@@ -8,7 +8,7 @@ const app = express()
 
 app.use(cors(
 {
-  origin:["https://immunebytes2-7w2a.vercel.app"],
+  origin:["https://immunebytes2-7w2a-a9iyijvcd-surajyadav24s-projects.vercel.app/"],
   methods:["POST"],
   credentials:true,
 

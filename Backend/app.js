@@ -2,15 +2,13 @@ import express from "express"
 import cors from 'cors'
 import cookieParser from "cookie-parser"
 import axios from "axios"
-import path from 'path'
 
-const __dirname = path.resolve()
 
 const app = express()
 
 app.use(cors(
 {
-  origin:["https://localhost:3000"],
+  origin:["https://immunebytes2-7w2a.vercel.app"],
   methods:["POST"],
   credentials:true,
 
@@ -41,7 +39,11 @@ app.get('/',(req,res)=>{
 
 import userRouter from './src/routes/user.route.js'
 import Cookies from "cookies"
-app.use("/api/v1/users",userRouter)
+app.use("https://immunebytes2-7w2a.vercel.app",userRouter)
+
+
+
+
 
 
 export { app }

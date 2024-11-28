@@ -39,7 +39,7 @@ app.get('/',(req,res)=>{
 
 import userRouter from './src/routes/user.route.js'
 import Cookies from "cookies"
-app.use("https://immunebytes2-7w2a.vercel.app",userRouter)
+app.use("/api/v1/users",userRouter)
 
 
 

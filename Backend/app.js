@@ -2,11 +2,19 @@ import express from "express"
 import cors from 'cors'
 import cookieParser from "cookie-parser"
 import axios from "axios"
+import path from 'path'
 
+const __dirname = path.resolve()
 
 const app = express()
 
-app.use(cors());
+app.use(cors(
+  {
+    origin:"http://localhost:3000",
+    methods:["POST","GET"],
+    credentials:true
+  }
+));
 
 app.use(express.json({limit: "16kb"}))
 app.use(express.urlencoded({extended: true, limit: "16kb"}))

@@ -30,3 +30,16 @@
 .svg{
     padding:2rem;
 }
+@media (max-width: 768px) {
+    .otherweb3services{
+        padding: 10px;
+    }
+    .otherweb3services h2{
+        font-size: 1rem;
+        text-align: center;
+     }
+    .otherweb3services-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}

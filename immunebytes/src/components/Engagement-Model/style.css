@@ -1,0 +1,75 @@
+.engagementmodel{
+    padding: 1rem;
+}
+
+.engagementmodel h2{
+    text-align: center;
+    padding: 1rem;
+ color: #F9116C ;
+ font-size: 2rem;
+}
+.engagementmodel-boxes{
+    padding: 2rem;
+    margin: 1rem;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 3rem;
+}
+.engagementmodel-box {
+    /* background: linear-gradient(180deg, #A90545 0%, #F9116C 100%); */
+    background: linear-gradient(180deg, #F9116C 0%, #A90545 100%);
+
+    border-radius: 0.5rem;
+    padding: 3rem 1rem 3rem 1rem;
+    /* padding-top: 2rem; */
+}
+.engagementmodel-box h3{
+    font-size: 2.5rem;
+    color: #fff;
+    padding-bottom: 1rem;
+}
+.engagementmodel-box p{
+    font-size: 1.3rem;
+    color: #fff;
+}
+.engagementmodel-yellow-box{
+    margin: 2rem;
+    /* padding: 2rem; */
+    /* align-items: center; */
+    background: url(../../assets/images/Subtract.png) ;
+    background-size: contain; /* Ensures the image covers the entire element */
+    background-position: center; 
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    min-height: 60vh; /* Ensures at least full viewport height */
+    width: 95%; /* Full width relative to the parent */
+    display: flex; /* Enables content positioning */
+    justify-content: center; /* Centers content horizontally */
+align-items: center;
+    position: relative; /* Ensures children are positioned relative to this container */
+    color: black; /* Text color (adjust for contrast) */
+    text-align: center; /* Align text in the center */
+  
+}
+.content{
+    z-index: 1; /* Ensures content is above the background image */
+}
+.engagementmodel-yellow-box h3{
+    /* text-align: center; */
+    /* padding: 7rem 1rem 1rem 1rem; */
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+.engagementmodel-yellow-box h3 span{
+    color: #F9116C;
+    padding: 0rem 1rem 0rem 1rem;
+}
+
+.engagementmodel-yellow-box  .btn-primary svg path {
+    fill: #000;
+}
+.engagementmodel-yellow-box .btn-primary {
+    font-size: 1.5rem !important;
+    padding: 2rem !important;
+    
+}

@@ -1,0 +1,24 @@
+.faq-btn{
+    width: 100%;
+    min-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #c9c9c9c9 !important;
+}
+.faq-btn button{
+    background-color: #D9D9D91A;
+}
+.faq-btn button span{
+    color: #F9116C;
+    font-size: 24px;
+    font-family: Arvo-Regular;
+}
+.answer {
+    background-color: #D9D9D91A;
+    font-size: 15px;
+    font-family: 'RobotoMono-Regular';
+}
+.faq-btn button span img{
+    max-width: 10px;
+    min-width: 20px;
+    height: 20px;
+}

@@ -4,6 +4,7 @@ import RequestAudit from '../../Request-Audit'
 import AuditProcess from '../../Service-Audit-Process'
 import FeaturedAudit from '../../Feauture-Audit'
 import FeatureSection from '../../Why-us-Feature'
+import FAQ from '../../FAQ'
 function SmartContract() {
   return (
 <>
@@ -14,6 +15,7 @@ function SmartContract() {
  <AuditProcess/>
  <FeaturedAudit/>
  <FeatureSection/>
+ <FAQ/>
 </div>
 </>
   )

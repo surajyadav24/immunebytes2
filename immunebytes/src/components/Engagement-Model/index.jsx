@@ -8,7 +8,7 @@ const EngagementModel = () => {
   return (
     <>
     <div className='engagementmodel'>
-      <h2>EngagementModel</h2>
+      <h2>Engagement Model</h2>
       <div className='engagementmodel-boxes'>
         <div className='engagementmodel-box'>
             <h3>Fixed Price</h3>

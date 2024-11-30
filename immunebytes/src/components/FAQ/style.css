@@ -37,6 +37,12 @@
   
   /* Mobile: Show mobile arrow and hide desktop arrow */
   @media (max-width: 768px) {
+     
+    .faq-container h2 {
+        font-size: 1.7rem;
+        color: #ff4081; /* Pink color for the title */
+        margin-bottom: 0px;
+      }
     .desktop-arrow {
       display: none;
     }

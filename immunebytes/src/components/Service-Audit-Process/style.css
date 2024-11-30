@@ -7,8 +7,9 @@
 }
 
 .audit-process-title {
+  margin-top: 1.5rem;
   font-size: 32px;
-  margin-bottom: 30px;
+  margin-bottom: 1rem;
   color: #ff4081; /* Pink color for the title */
 }
 
@@ -108,6 +109,11 @@
 }
 
 @media (max-width:425px){
-
+  .audit-process-title {
+    margin-top: 1.5rem;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    color: #ff4081; /* Pink color for the title */
+  }
 
 }

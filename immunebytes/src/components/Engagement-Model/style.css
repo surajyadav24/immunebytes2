@@ -40,7 +40,7 @@ gap: 3rem;
     background-size: contain; /* Ensures the image covers the entire element */
     background-position: center; 
     background-repeat: no-repeat; /* Prevents the image from repeating */
-    min-height: 60vh; /* Ensures at least full viewport height */
+    min-height: 300px; /* Ensures at least full viewport height */
     width: 95%; /* Full width relative to the parent */
     display: flex; /* Enables content positioning */
     justify-content: center; /* Centers content horizontally */

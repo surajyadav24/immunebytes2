@@ -7,6 +7,7 @@
   font-size: 2rem;
   color: #ff007f;
   margin-bottom: 20px;
+  margin-top: 2rem;
 }
 
 .featured-audit-grid {
@@ -261,9 +262,14 @@ padding: 50px 10px;
     margin-bottom: 1rem;
     color: #ff4081; 
   }
+  .case-study-card{
+    min-height: 286px;
+    padding: 0px;
+  }
   .case-study-card h3 {
     gap: 10px 0px;
     font-size: 22px;
+  
   }
   .arrow-btn {
     bottom: 8px;
@@ -296,14 +302,18 @@ padding: 50px 10px;
 .featured-card.talk-card {
   background: url("../../assets/images/services-main/talk-bg.svg") no-repeat center center / contain;
   position: relative;
-  min-width: 57%;
-  max-width: 65%;
-  right: -42%;
-  top: -275px;
-  min-height: 151px;
-  padding: 46px 0px;
+  min-width: 44%;
+  max-width: 51%;
+  right: -49%;
+  top: -311px;
+  min-height: 150px;
+  padding: 51px 0px;
   border: none;
 
+
+}
+.talk-card{
+  gap:0px;
 }
 .featured-card.testimonial-card{
   padding-top: 4rem;

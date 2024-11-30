@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./style.css";
 import downarrow from "../../assets/images/services-main/down-arrow.svg";
+import downarrowmobile from '../../assets/images/Down-Arrow-Mobile.svg'
+import rightarrowmobile from '../../assets/images/Right-Arrow-Mobile.svg'
+
 import rightarrow from "../../assets/images/services-main/right-arrow.svg";
 
 const FAQ = () => {
@@ -39,7 +42,7 @@ const FAQ = () => {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="faq-btn border rounded-lg overflow-hidden"
+            className="faq-btn question border rounded-lg overflow-hidden"
           >
             <button
               onClick={() => toggleFAQ(index)}
@@ -54,9 +57,15 @@ const FAQ = () => {
               </span>
               <span>
                 {openIndex === index ? (
-                  <img src={downarrow} alt="" />
+                  <>
+                  <img src={downarrow} alt="Desktop Down Arrow" className="desktop-arrow" />
+                  <img src={downarrowmobile} alt="Mobile Down Arrow" className="mobile-arrow" />
+                  </>
                 ) : (
-                  <img src={rightarrow} alt="" />
+                 <>
+                         <img src={rightarrow} alt="Desktop Down Arrow" className="desktop-arrow" />
+                         <img src={rightarrowmobile} alt="Mobile Down Arrow" className="mobile-arrow" />
+                 </>
                 )}
               </span>
             </button>

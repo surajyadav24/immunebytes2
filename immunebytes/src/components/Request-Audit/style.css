@@ -58,3 +58,21 @@
 max-width: 700px;
 
   }
+  .request-audit-container svg path {
+    fill: #000;
+  }
+
+  @media (max-width:425px){
+    .request-audit-container {
+      padding: 30px;
+  }
+  .request-audit-container .text-content {
+    max-width: 208px;
+}
+.text-content p {
+  font-size: 15px;
+}
+.request-audit-container button.btn.btn-primary {
+  font-size: 11px;
+}
+  }

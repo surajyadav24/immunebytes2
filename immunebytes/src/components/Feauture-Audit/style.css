@@ -168,7 +168,6 @@
 }
 .audit-flex-sec {
   display: flex;
-
   justify-content: space-between;
 }
 .featured-card.talk-card .btn-primary svg path{
@@ -179,7 +178,7 @@
     margin-top: 1.5rem;
     font-size: 1.7rem;
     margin-bottom: 1rem;
-    color: #ff4081; /* Pink color for the title */
+    color: #ff4081; 
   }
   .case-study-card h3 {
     gap: 10px 0px;
@@ -255,13 +254,82 @@ padding: 50px 10px;
 }
 }
 
-@media (max-width:375px){
-  .featured-card.case-study-card {
-    min-width: 35%;
-    padding: 37px 10px !important;
+@media (max-width:768px) {
+  .featured-audit-title {
+    margin-top: 1.5rem;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    color: #ff4081; 
+  }
+  .case-study-card h3 {
+    gap: 10px 0px;
+    font-size: 22px;
+  }
+  .arrow-btn {
+    bottom: 8px;
+    right: 9px;
+    height: 50px;
+    width: 50px;
+}
+  .arrow-btn span {
+    margin-top: -3px;
+    font-size: 30px;
+  }
+  .audit-flex-sec {
+    flex-direction: column;
+  }
+  .audit-process-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.featured-card.stader-card {
+  min-width: 100%;
+}
+.featured-audit-grid {
+  flex-direction: column;
+}
+.featured-card.talk-card button.btn.btn-primary {
+  font-size: 11px;
+}
+.featured-card.talk-card {
+  background: url("../../assets/images/services-main/talk-bg.svg") no-repeat center center / contain;
+  position: relative;
+  min-width: 57%;
+  max-width: 65%;
+  right: -42%;
+  top: -275px;
+  min-height: 151px;
+  padding: 46px 0px;
+  border: none;
+
+}
+.featured-card.testimonial-card{
+  padding-top: 4rem;
+  position: relative;
+  min-width: 100%;
+  top: -256px;
+}
+.featured-card.talk-card h3 {
+  padding: 30px;
+  font-size: 18px;
+  text-align: center;
+  /* margin-right: 10rem; */
+}
+.case-study-card{
+background:url("../../assets/images/services-main/case-mobile.svg") no-repeat center center/ contain;
+padding: 50px 10px;
 }
 .feature-wrapper {
-  max-height: 908px;
+  max-height: 800px;
   overflow: hidden;
+}
+.featured-card.case-study-card {
+  padding: 42px 10px !important;
+  min-width: 35%;
+}
+.why-sec-feature {
+  padding: 0px 10px;
 }
 }

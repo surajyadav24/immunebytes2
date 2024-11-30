@@ -18,6 +18,7 @@ function FeaturedAudit() {
           </p>
         </div>
         {/* Case Study Card */}
+        
         <div className="featured-card case-study-card">
           <h3>CASE <span>STUDY</span></h3>
           <button className="arrow-btn">

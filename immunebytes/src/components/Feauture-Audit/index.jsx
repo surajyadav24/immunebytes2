@@ -6,7 +6,7 @@ import profileImage from "../../assets/images/celo2.svg"; // Replace with actual
 import PrimaryBtn from "../Primarybutton";
 function FeaturedAudit() {
   return (
-<div className="container">
+<div className="container feature-wrapper">
       <div className="featured-audit-container">
       <h2 className="featured-audit-title">Featured Audit</h2>
       <div className="featured-audit-grid">

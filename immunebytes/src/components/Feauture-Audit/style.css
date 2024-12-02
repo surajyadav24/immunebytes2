@@ -349,3 +349,24 @@ padding: 50px 10px;
   padding: 0px 10px;
 }
 }
+@media (max-width:376px) {
+  .arrow-btn{
+   bottom: 5px;
+   right: -8px;
+   height: 35px;
+   width: 35px;
+  }
+  .featured-card.talk-card {
+   background: url("../../assets/images/services-main/talk-bg.svg") no-repeat center center / contain;
+   position: relative;
+   min-width: 44%;
+   max-width: 39%;
+   right: -56%;
+   top: -169px;
+   min-height: 134px !important;
+   padding: 0px 0px;
+   border: none;
+ 
+ 
+ }
+}

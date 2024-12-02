@@ -60,40 +60,6 @@ text-align: justify;
     color: #F9116C;
 }
 
-@media (max-width:425px){
-    .heading-why {
-        margin-top: 1.5rem;
-        font-size: 1.7rem;
-        margin-bottom: 1rem;
-        color: #ff4081; /* Pink color for the title */
-      }
-    .why-sec-feature {
-        background-color: #0f0f0feb;
-        padding: 0px 10px;
-    }
-      .why-sec-feature   .grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-2.gap-8.card-container{
-        padding: 0px 10px;
-      }
-      .card-container h3 {
-        font-family: Arvo-Regular;
-        text-transform: uppercase;
-        font-size: 13px;
-        margin-bottom: 0px !important;
-    }
-    .flex.items-center.space-x-6.border-b.border-gray-700.pb-4:nth-child(n) {
-        flex-direction: column;
-        display: flex;
-        justify-content: flex-start;
-        max-width: 480px;
-        margin: 0 auto;
-        align-items: flex-start;
-        gap: 10px 0px;
-    }
-    .flex.items-center.space-x-6.border-b.border-gray-700.pb-4:nth-child(n)>div{
-        margin-left: 0px;
-    }
-}
-
 /* TABLET VERSION */
 
 @media (max-width:768px){
@@ -139,3 +105,38 @@ text-align: justify;
         margin-left: 0px;
     }
 }
+
+@media (max-width:425px){
+    .heading-why {
+        margin-top: 1.5rem;
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+        color: #ff4081; /* Pink color for the title */
+      }
+    .why-sec-feature {
+        background-color: #0f0f0feb;
+        padding: 0px 10px;
+    }
+      .why-sec-feature   .grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-2.gap-8.card-container{
+        padding: 0px 10px;
+      }
+      .card-container h3 {
+        font-family: Arvo-Regular;
+        text-transform: uppercase;
+        font-size: 13px;
+        margin-bottom: 0px !important;
+    }
+    .flex.items-center.space-x-6.border-b.border-gray-700.pb-4:nth-child(n) {
+        flex-direction: column;
+        display: flex;
+        justify-content: flex-start;
+        max-width: 480px;
+        margin: 0 auto;
+        align-items: flex-start;
+        gap: 10px 0px;
+    }
+    .flex.items-center.space-x-6.border-b.border-gray-700.pb-4:nth-child(n)>div{
+        margin-left: 0px;
+    }
+}
+

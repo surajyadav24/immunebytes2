@@ -127,6 +127,9 @@ position: relative;
     }
 }
 @media (max-width:425px) {
+    .content{
+        padding: 1.9rem !important;
+    }
     .heading {
         text-align: left;
         color: #fff;

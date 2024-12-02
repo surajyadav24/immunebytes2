@@ -174,92 +174,7 @@
 .featured-card.talk-card .btn-primary svg path{
   fill: #000 !important;
 }
-@media(max-width:425px){
-  .featured-audit-title {
-    margin-top: 1.5rem;
-    font-size: 1.7rem;
-    margin-bottom: 1rem;
-    color: #ff4081; 
-  }
-  .case-study-card h3 {
-    gap: 10px 0px;
-    font-size: 22px;
-  }
-  .arrow-btn {
-    bottom: 0px;
-    right: -1px;
-    height: 35px;
-    width: 35px;
-}
-  .arrow-btn span {
-    margin-top: -3px;
-    font-size: 17px;
-  }
-  .audit-flex-sec {
-    flex-direction: column;
-  }
-  .audit-process-grid {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.featured-card.stader-card {
-  min-width: 100%;
-}
-.featured-audit-grid {
-  flex-direction: column;
-}
-.featured-card.talk-card button.btn.btn-primary {
-  font-size: 11px !important;
-  padding: 0px 0px !important;
-}
-.featured-card.talk-card {
-  background: url("../../assets/images/services-main/talk-bg.svg") no-repeat center center / contain;
-  position: relative;
-  min-width: -18%;
-  max-width: 40%;
-  right: -58%;
-  top: -189px;
-  min-height: 92px !important;
-  padding: 22px 0px;
-  border: none;
 
-}
-.featured-card.testimonial-card{
-  position: relative;
-  min-width: 100%;
-  top: -100px;
-}
-.featured-card.talk-card h3 {
-  font-size: 18px;
-  text-align: center;
-  justify-content: center;
-  margin-top: 30px;
-  padding: 10px 16px
-
-}
-.case-study-card{
-background:url("../../assets/images/services-main/case-mobile.svg") no-repeat center center/ contain;
-padding: 50px 10px;
-}
-.featured-card.testimonial-card {
-  position: relative;
-  min-width: 100%;
-  top: -160px;
-}
-.feature-wrapper {
-  max-height: 800px;
-  overflow: hidden;
-}
-.featured-card.case-study-card {
-  padding: 42px 10px !important;
-  min-width: 35%;
-}
-.why-sec-feature {
-  padding: 0px 10px;
-}
-}
 
 @media ((min-width: 426px) and (max-width: 768px)) {
   .featured-audit-title {
@@ -343,9 +258,98 @@ padding: 50px 10px;
 }
 .featured-card.case-study-card {
   padding: 42px 10px !important;
+  min-width:162px;
+}
+.why-sec-feature {
+  padding: 0px 10px;
+}
+
+}
+
+@media(max-width:425px){
+  .featured-audit-title {
+    margin-top: 1.5rem;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    color: #ff4081; 
+  }
+  .case-study-card h3 {
+    gap: 10px 0px;
+    font-size: 22px;
+  }
+  .arrow-btn {
+    bottom: 0px;
+    right: -1px;
+    height: 35px;
+    width: 35px;
+}
+  .arrow-btn span {
+    margin-top: -3px;
+    font-size: 17px;
+  }
+  .audit-flex-sec {
+    flex-direction: column;
+  }
+  .audit-process-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.featured-card.stader-card {
+  min-width: 100%;
+}
+.featured-audit-grid {
+  flex-direction: column;
+}
+.featured-card.talk-card button.btn.btn-primary {
+  font-size: 11px !important;
+  padding: 0px 0px !important;
+}
+.featured-card.talk-card {
+  background: url("../../assets/images/services-main/talk-bg.svg") no-repeat center center / contain;
+  position: relative;
+  min-width: -18%;
+  max-width: 40%;
+  right: -58%;
+  top: -189px;
+  min-height: 92px !important;
+  padding: 22px 0px;
+  border: none;
+
+}
+.featured-card.testimonial-card{
+  position: relative;
+  min-width: 100%;
+  top: -100px;
+}
+.featured-card.talk-card h3 {
+  font-size: 18px;
+  text-align: center;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 10px 16px
+
+}
+.case-study-card{
+background:url("../../assets/images/services-main/case-mobile.svg") no-repeat center center/ contain;
+padding: 50px 10px;
+}
+.featured-card.testimonial-card {
+  position: relative;
+  min-width: 100%;
+  top: -160px;
+}
+.feature-wrapper {
+  max-height: 968px;
+  overflow: hidden;
+}
+.featured-card.case-study-card {
+  padding: 42px 10px !important;
   min-width: 35%;
 }
 .why-sec-feature {
   padding: 0px 10px;
 }
 }
+

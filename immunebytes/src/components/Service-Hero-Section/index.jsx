@@ -15,7 +15,7 @@ const Serviceherosection = () => {
             </h1>
             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut  </p> */}
             <div className="row align-items-center py-5">
-              <div className="col-md-6 col-sm-6 d-flex justify-content-end">
+              <div className="col-md-6 col-sm-6 d-flex justify-content-center justify-content-md-end">
 
                 <div className="left-box">
                   {/* <img src={leftboximg} alt="" /> */}
@@ -27,7 +27,7 @@ const Serviceherosection = () => {
               </div>
 
               <div className="col-md-6 col-sm-6 d-flex justify-content-start">
-                <div className="right-box">
+                <div className="right-box-serv">
                   <img src={rightboximg} ></img>
                 </div>
               </div>

@@ -93,3 +93,9 @@ font-size: 14px !important;
   font-size: 11px;
 }
   }
+  @media (max-width:376px) {
+    .request-audit-container button.btn.btn-primary {
+        font-size: 6px !important;
+        padding: 5px 6px !important;
+      }
+}

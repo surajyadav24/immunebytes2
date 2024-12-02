@@ -252,7 +252,14 @@ footer .container-fluid{
   margin-top: 10px;
 }
 .social-icons.mobile-social {
-  display: block !important;
+  align-items: center;
+  justify-content: center;
+  display: flex !important;
+  gap: 0px 40px;
+}
+.social-icons.mobile-social img {
+  width: 48px;
+  opacity: 29%;
 }
 .social-icons.mobile-social a i{
   width: 50px;

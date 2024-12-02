@@ -4,7 +4,7 @@ import './style.css';
 
 const CaseStudyCard = ({ title, description, buttonText, imageSrc }) => {
   return (
-    <div className="case-study-card ">
+    <div className="case-study-card home-casestudy">
       <div className="card-content">
         <h2 className="card-title">{title}</h2>
         <p className="card-description">{description}</p>

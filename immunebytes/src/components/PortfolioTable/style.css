@@ -426,4 +426,17 @@ width: 100%;
 .portfolio-grid {
   grid-template-columns: repeat(3, 1fr); /* Show 3 items in mobile view */
 }
+.audit-content .audit-progress {
+  max-width: 88%;
+  width: 100%;
+  min-width: 338px;
+  margin: 0 auto;
+}
+.audit-details {
+  margin: 0 auto;
+  min-height: auto;
+  width: 88%;
+  padding: 15px 20px;
+  min-width: 338px;
+}
 }

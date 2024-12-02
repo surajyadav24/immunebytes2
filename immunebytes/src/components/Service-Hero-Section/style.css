@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     background: url(../../assets/images/hero-box.svg) no-repeat center right / contain;
-max-width:552px ;
+    max-width:552px ;
 }
 .content{
     padding: 1rem;
@@ -25,14 +25,7 @@ max-width:552px ;
     padding-left: 4px;
     color: #F9116C;
 }
-/* .content p{
-    font-size: 1rem;
-    color: #000;
-   } */
-.right-box{
-    background: url(../../assets/images/right-box.svg) no-repeat center left / contain;
-max-width: 600px;
-}
+
 .hero-wrapper p {
     max-width: 85%;
     color: #000;
@@ -91,6 +84,16 @@ position: relative;
         line-height: 27px;
         letter-spacing: 2.15px !important;
         margin: 0px;
+        line-height: 20px;
+        letter-spacing: 1px !important;
+
+
+    }
+    .hero-wrapper p {
+        text-align: justify;
+        font-style: normal;
+        font-weight: 400;
+        margin-bottom: 18px;
     }
     .left-box, .right-box {
         width: 100%;
@@ -103,6 +106,24 @@ position: relative;
         position: absolute;
         transform: scale(2);
         z-index: 99;
+    }
+    .left-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url(../../assets/images/hero-box.svg) no-repeat center right / contain;
+    max-width:552px ;
+    }
+    .content{
+        padding: 20px;
+    }
+    .content h2{
+     font-size: 2rem;
+     padding: 4px;
+    }
+    .content h2 span{
+        padding-left: 4px;
+        color: #F9116C;
     }
 }
 @media (max-width:425px) {

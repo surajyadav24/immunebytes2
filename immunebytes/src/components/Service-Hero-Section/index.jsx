@@ -15,23 +15,20 @@ const Serviceherosection = () => {
             </h1>
             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut  </p> */}
             <div className="row align-items-center py-5">
-            <div className="col-md-6 col-sm-6 d-flex justify-content-end">
+              <div className="col-md-6 col-sm-6 d-flex justify-content-end">
 
-<div className="left-box">
-{/* <img src={leftboximg} alt="" /> */}
-<div className='content'>
-  <h2>Smart <span>Contract Audit</span></h2>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the</p>
-</div>
-</div>
-</div>
+                <div className="left-box">
+                  {/* <img src={leftboximg} alt="" /> */}
+                  <div className='content'>
+                    <h2>Smart <br /> <span>Contract Audit</span></h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the</p>
+                  </div>
+                </div>
+              </div>
 
               <div className="col-md-6 col-sm-6 d-flex justify-content-start">
                 <div className="right-box">
-                  {/* <img src={rightboximg
-} alt="" /> */}
-                  <img  src={rightboximg} ></img>
-
+                  <img src={rightboximg} ></img>
                 </div>
               </div>
             </div>

@@ -142,10 +142,16 @@ button.open-popup-btn.btn.register-btn.text-white {
 li.nav-item {
   max-width: 238px;
 }
-ul.nav.flex-column{
+ul.nav.flex-column {
+  gap: 0px 0px;
   justify-content: center;
   flex-direction: column !important;
   align-items: center;
+  height: 262px;
+}
+.mobile-nav{
+  margin-top: 0px;
+  padding-top: 0px;
 }
 .mobile-nav ul .nav-item:last-child {
 display: none;

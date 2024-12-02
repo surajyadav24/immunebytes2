@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
-
+import github from "../../assets/images/github-white.svg"
+import linkedin from "../../assets/images/linkedin-white.svg"
 const Footer = () => {
   return (
     <footer className="footer">
@@ -25,10 +26,8 @@ const Footer = () => {
               <li><a href="#">Request audit</a></li>
             </ul>
             <div className="social-icons">
-              <a href="https://www.facebook.com/ImmuneBytes"><i className="fab fa-facebook-f"></i></a>
-              <a href="https://www.linkedin.com/company/immunebytes"><i className="fab fa-linkedin-in"></i></a>
-              <a href="https://www.instagram.com/immunebytes/"><i className="fab fa-instagram"></i></a>
-              <a href="https://github.com/ImmuneBytes"><i className="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/company/immunebytes"><img src={linkedin} alt="" /></a>
+              <a href="https://github.com/ImmuneBytes"><img src={github} alt="" /></a>
             </div>
           </div>
 
@@ -61,10 +60,8 @@ const Footer = () => {
           </div>
 
           <div className="social-icons mobile-social">
-          <a href="https://www.facebook.com/ImmuneBytes"><i className="fab fa-facebook-f"></i></a>
-              <a href="https://www.linkedin.com/company/immunebytes"><i className="fab fa-linkedin-in"></i></a>
-              <a href="https://www.instagram.com/immunebytes/"><i className="fab fa-instagram"></i></a>
-              <a href="https://github.com/ImmuneBytes"><i className="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/company/immunebytes"><img src={linkedin} alt="" /></a>
+          <a href="https://github.com/ImmuneBytes"><img src={github} alt="" /></a>
             </div>
 
           <div className="col-12 footer-bottom  d-flex justify-content-between align-items-center">

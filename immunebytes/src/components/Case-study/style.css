@@ -1,6 +1,6 @@
 /* src/components/CaseStudyCard.css */
 
-.case-study-card {
+.case-study-card.home-casestudy {
   background-color: #1c1c1e;
   border-radius: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -10,7 +10,7 @@
   max-width: max-content;
   justify-content: space-around;
   align-items: center;
-  min-height: 350px;
+  min-height: 327px;
 }
   .card-content {
     max-width: 60%;

@@ -114,7 +114,7 @@ transform: scale(0.5);
 }
 .service-discription button.btn.btn-primary {
     padding: 5px 6px !important;
-    font-size: 10px;
+    font-size: 10px !important;
 }
 
 .service-discription p {

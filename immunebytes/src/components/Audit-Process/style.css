@@ -103,7 +103,7 @@
 
     @media (min-width: 1381px) and (max-width: 1440px) {
         .first-audit {
-            gap: 0px 207px;
+            gap: 0px 178px;
             display: flex;
             justify-content: flex-start;
             align-items: center;

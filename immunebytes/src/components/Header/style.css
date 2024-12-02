@@ -131,6 +131,10 @@ button.open-popup-btn.btn.register-btn.text-white {
   color: #fff;
 }
 
+.dropdown-menu a{
+  font-family: 'Arame-Thin';
+  font-size: 14px;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {

@@ -62,21 +62,8 @@ max-width: 700px;
     fill: #000;
   }
 
-  @media (max-width:425px){
-    .request-audit-container {
-      padding: 30px;
-  }
-  .request-audit-container .text-content {
-    max-width: 208px;
-}
-.text-content p {
-  font-size: 15px;
-}
-.request-audit-container button.btn.btn-primary {
-  font-size: 11px;
-}
-  }
 
+  
   @media (max-width:768px) {
     .request-audit-container{
       padding: 31px;
@@ -92,3 +79,23 @@ font-size: 14px !important;
       
         }
   }
+  @media (max-width:425px){
+    .request-audit-container {
+      padding: 30px;
+  }
+  .request-audit-container .text-content {
+    max-width: 208px;
+}
+.text-content p {
+  font-size: 15px;
+}
+.request-audit-container button.btn.btn-primary {
+  font-size: 11px;
+}
+  }
+  @media (max-width:376px) {
+    .request-audit-container button.btn.btn-primary {
+        font-size: 6px !important;
+        padding: 5px 6px !important;
+      }
+}

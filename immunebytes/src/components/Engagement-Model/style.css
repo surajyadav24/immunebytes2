@@ -175,8 +175,8 @@ align-items: center;
     }
     .engagementmodel-yellow-box{
         width: 100%;
-        padding: 17px;
-        margin-top: 1rem;
+        padding: 0px;
+        margin-top: -0.5rem;
     }
 
     .engagementmodel-yellow-box h3 {
@@ -194,4 +194,7 @@ align-items: center;
         padding-right: 0.9rem !important;
         padding-left: 0.9rem !important;
     }
+}
+@media (max-width:375px) {
+   
 }

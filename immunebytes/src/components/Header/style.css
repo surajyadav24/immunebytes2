@@ -104,6 +104,34 @@ a.btn.register-btn.d-none.d-md-inline-block {
 button.open-popup-btn.btn.register-btn.text-white {
   color: #ff004c !important;
 }
+/* Dropdown Menu Styling */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: block !important; /* Ensure it's visible */
+  background-color: #000 !important;
+  z-index: 1050; /* Higher than other elements */
+  padding: 10px;
+  border: 1px solid #fff;
+  height: 100px;
+  width: 100px;
+}
+
+
+.dropdown-item {
+  color: #fff !important;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #f9116c !important;
+  color: #fff;
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
   header .container {
@@ -190,8 +218,6 @@ max-width: max-content;
   font-size: 13px;
   min-height: 38px;
   line-height: 26px;
-
-
 }
 header.text-white.p-3 {
   display: flex;

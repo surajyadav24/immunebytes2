@@ -6,10 +6,15 @@ import Formpopup from '../Formpopup';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false); // State to track menu open/close
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // For Services dropdown
 
   const toggleMenu = () => {
     setIsOpen(!isOpen); // Toggle menu on click
   };
+  const toggleDropdown = (state) => {
+   setIsDropdownOpen(state); // Add a slight delay
+  };
+  
 
   return (
     <>
@@ -22,8 +27,18 @@ function Header() {
           {/* Desktop Nav: Hidden on mobile/tablet */}
           <nav className="desktop-nav d-none d-lg-block">
             <ul className="nav">
-              <li className="nav-item">
-                <a href="/Home" className="nav-link text-white">Services</a>
+            <li
+                className="nav-item dropdown"
+                onMouseEnter={() => toggleDropdown(true)}
+                onMouseLeave={() => toggleDropdown(false)}
+              >
+                <a href="/smartcontract" className="nav-link text-white">Services</a>
+                {isDropdownOpen && (
+                  <ul className="dropdown-menu">
+                    <li><a href="/smartcontract" className="dropdown-item">Smart Contract</a></li>
+                    <li><a href="/smartcontract" className="dropdown-item">Penetration Testing</a></li>
+                  </ul>
+                )}
               </li>
               <li className="nav-item">
                 <a href="/portfolio" className="nav-link text-white">Portfolio</a>

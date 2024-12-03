@@ -48,7 +48,7 @@ const AuditProcess = () => {
   return (
 <>
 <div className="audit-wrapper">
-<div className="container">
+<div className="container-fluid">
       <div className="row">
         <div className="col-lg-12">
           <div className="audit-process">

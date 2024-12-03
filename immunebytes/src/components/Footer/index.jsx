@@ -5,7 +5,7 @@ import linkedin from "../../assets/images/linkedin-white.svg"
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
         <div className="col-lg-3 col-md-6  footer-section  footer-section-4 footer-mobile">
             <h3>Subscribe</h3>

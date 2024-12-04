@@ -11,7 +11,7 @@ function SmartContract() {
   return (
 <>
 <Serviceherosection/>
-<div className="container">
+<div className="container-fluid">
 
  <RequestAudit/>
  <AuditProcess/>

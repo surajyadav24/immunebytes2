@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css"; // Custom CSS file for this section
 import staderLogo from "../../assets/images/sliderlogo/staderlogo.svg"; // Replace with actual logo path
 import arrowIcon from "../../assets/images/arrow.svg"; // Replace with actual arrow icon path
-import profileImage from "../../assets/images/celo2.svg"; // Replace with actual profile image path
+import profileImage from "../../assets/images/testimonial/testimonial (4).png"; // Replace with actual profile image path
 import PrimaryBtn from "../Primarybutton";
 function FeaturedAudit() {
   return (

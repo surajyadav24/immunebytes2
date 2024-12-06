@@ -4,7 +4,6 @@
   "description": "immunebytes backend",
   "main": "server.js",
   "type": "module",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "NODE_ENV=development nodemon -r dotenv/config --experimental-json-modules Backend/server.js",
@@ -25,8 +24,6 @@
     "@heroicons/react": "^1.0.6",
     "@mui/icons-material": "^6.1.7",
     "@mui/material": "^6.1.7",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
@@ -39,16 +36,16 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.8.1",
+    "mongoose": "^8.8.4",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.16",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.14"
- 
   }
-  
 }

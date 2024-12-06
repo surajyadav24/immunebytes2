@@ -17,7 +17,10 @@ function AuditProgress( props) {
       try {
         const response = await axios.post('/api/v1/users/getseverity');
         if (response.data && response.data.data && response.data.data.percentages) {
-          setPercentages(response.data.data.percentages); // Use percentages from the response
+          setPercentages((prevPercentages) => ({
+            ...prevPercentages,
+            ...response.data.data.percentages, // Merge with existing percentages
+          }));
         } else {
           console.error('Invalid response data:', response.data);
         }
@@ -25,9 +28,10 @@ function AuditProgress( props) {
         console.error('Error fetching severity data', error);
       }
     };
-
+  
     fetchSeverityData();
   }, []);
+  
 
 
   return (

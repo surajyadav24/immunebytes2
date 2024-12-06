@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Logo from '../../../../assets/images/logos/Logo.svg'; // Adjust this import path to your project structure
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './style.css'
 
 function OtpForm() { // onOtpChange is now passed as a prop
   const [otp, setOtp] = useState('');

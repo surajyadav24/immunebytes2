@@ -8,11 +8,11 @@ const SeverityButtons = (props) => {
   const [error,setError]=useState('')
   const navigate = useNavigate()
   const [counts, setCounts] = useState({
-    critical: 5,
-    high: 2,
-    medium: 4,
-    low: 1,
-    informational: 6,
+    critical: 0,
+    high: 0,
+    medium: 0,
+    low: 0,
+    informational: 0,
   });
 
   // Function to handle input change

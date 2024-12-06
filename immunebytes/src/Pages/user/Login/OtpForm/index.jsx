@@ -60,7 +60,9 @@ function OtpForm() { // onOtpChange is now passed as a prop
     }
   };
   return (
-    <form
+<>
+<div className="form-wrapper">
+<form
       onSubmit={handleFormSubmit}
       className="flex flex-col items-center bg-gray-800 text-white p-6 rounded-lg max-w-sm mx-auto shadow-lg"
     >
@@ -94,6 +96,8 @@ function OtpForm() { // onOtpChange is now passed as a prop
         </button>
       </div>
     </form>
+</div>
+</>
   );
 }
 

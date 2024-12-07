@@ -3,13 +3,11 @@ import axios from "axios";
 import PlatformList from "../Platform-List"; 
 import "./style.css";
 
-
-const PlatformManagement = (props) => {
+const PlatformManagement = ({ headname, platformsPerPage = 20 }) => {
   const [platforms, setPlatforms] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
   const [editedPlatform, setEditedPlatform] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const platformsPerPage = 3;
   const [error, setError] = useState("");
   const [platformName, setAddPlatform] = useState("");
 
@@ -56,7 +54,6 @@ const PlatformManagement = (props) => {
         setPlatforms(updatedPlatforms);
         setEditIndex(null);
         setEditedPlatform("");
-        
       } else {
         setError(response.data.message || "Update failed");
       }
@@ -86,7 +83,6 @@ const PlatformManagement = (props) => {
           ...prevPlatforms,
         ]);
         setAddPlatform("");
-     
       } else {
         setError(response.data.message || "Add platform failed");
       }
@@ -101,6 +97,29 @@ const PlatformManagement = (props) => {
     setEditedPlatform(platforms[index].platformName);
   };
 
+  // New deletePlatform function
+  const deletePlatform = async (index) => {
+    try {
+      const platformId = platforms[index]._id;
+      const response = await axios.post(
+        `/api/v1/users/deleteplatform/${platformId}`,
+        { withCredentials: true }
+      );
+
+      if (response.data.statusCode === 200) {
+        const updatedPlatforms = platforms.filter(
+          (platform, idx) => idx !== index
+        );
+        setPlatforms(updatedPlatforms);
+      } else {
+        setError(response.data.message || "Delete failed");
+      }
+    } catch (error) {
+      console.error(error);
+      setError(error.response?.data?.message || "Failed to delete platform");
+    }
+  };
+
   const indexOfLastPlatform = currentPage * platformsPerPage;
   const indexOfFirstPlatform = indexOfLastPlatform - platformsPerPage;
   const currentPlatforms =
@@ -109,7 +128,7 @@ const PlatformManagement = (props) => {
   return (
     <>
       <div className="dashboard-header">
-        <h2>{props.headname}</h2>
+        <h2>{headname}</h2>
       </div>
       <div className="addplatform flex flex-col items-center min-h-screen text-white p-6">
         <div className="platform-widget w-full max-w-3xl bg-gray-800 rounded-lg p-4 shadow-lg mb-6">
@@ -137,7 +156,7 @@ const PlatformManagement = (props) => {
           setEditedPlatform={setEditedPlatform}
           savePlatform={savePlatform}
           startEditing={startEditing}
-          indexOfFirstPlatform={indexOfFirstPlatform}
+          deletePlatform={deletePlatform} // Pass deletePlatform prop
         />
 
         <div className="flex justify-center items-center mt-6 space-x-2">
@@ -163,3 +182,5 @@ const PlatformManagement = (props) => {
 };
 
 export default PlatformManagement;
+
+// ADD PLATFORM 

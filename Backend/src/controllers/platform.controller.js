@@ -1,3 +1,4 @@
+// -----------PLATFORM CONTROLLER ------
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { UserPlatform } from "../models/userPlatform.model.js";
@@ -53,5 +54,20 @@ const updatePlatform = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, { platform: updatedPlatform }, "Platform updated successfully"));
 });
 
+// Delete a platform
+const deletePlatform = asyncHandler(async (req, res) => {
+  const { id } = req.params;
 
-export { addPlatform, getPlatforms, updatePlatform };
+  const deletedPlatform = await UserPlatform.findByIdAndDelete(id)
+;
+
+  if (!deletedPlatform) {
+    throw new ApiError(404, "Platform not found");
+  }
+
+  return res
+    .status(200)
+    .json(new ApiResponse(200, { platform: deletedPlatform }, "Platform deleted successfully"));
+});
+
+export { addPlatform, getPlatforms, updatePlatform ,deletePlatform};

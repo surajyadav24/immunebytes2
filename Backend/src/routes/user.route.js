@@ -1,9 +1,10 @@
+// -----------USER ROUTE -----------BACKEND
 import { Router } from "express"
 import { signUp,logOut,logIn, forgotPassword,resetPassword,resendOtp ,getCurrentUser} from "../controllers/user.controller.js"
 import { verifyJwt } from "../middlewares/auth.middleware.js"
 import { verifyOTP } from "../controllers/user.controller.js"
 import { addPortfolio, getPortfolio ,selectPortfolio,updatePortfolio } from "../controllers/addPortfolio.controller.js"
-import { addPlatform, getPlatforms, updatePlatform } from "../controllers/platform.controller.js"
+import { addPlatform, deletePlatform, getPlatforms, updatePlatform } from "../controllers/platform.controller.js"
 import { cSigma } from "../controllers/cSigma.controller.js"
 import { upload } from "../middlewares/multer.middleware.js"
 import { severity,getseverity } from "../controllers/severityFound.controller.js"
@@ -26,6 +27,9 @@ router.route("/logout").post(verifyJwt, logOut)
 router.route("/resend-otp").post(verifyJwt, resendOtp);
 router.route("/updateplatform/:id").post(verifyJwt,updatePlatform);
 router.route("/Platform").post(verifyJwt,addPlatform);
+router.route("/deleteplatform/:id").post(verifyJwt,deletePlatform);
+
+
 router.route("/me").post(verifyJwt,getCurrentUser);
 router.route("/severity").post(verifyJwt,severity);
 router.route("/updateportfolio/:selectedItemId").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),verifyJwt,updatePortfolio);

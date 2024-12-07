@@ -176,7 +176,7 @@ const AddPortfolio = (props) => {
               </div>
 
               {/* Upload Image */}
-              <div>
+              <div className="image-upload">
                 <label htmlFor="image" className="block text-sm font-medium mb-1">Upload Image</label>
                 <input
                   type="file"

@@ -19,9 +19,9 @@ import AuditProcessSec from "../Audit-Process-sec"
 // Import images
 import img10 from "../../assets/images/img11.svg";
 import img14 from "../../assets/images/img14.svg";
-import serviceimg from "../../assets/images/services-img/services(1).svg";
-import serviceimg2 from "../../assets/images/services-img/services (2).svg";
-import serviceimg3 from "../../assets/images/services-img/services (3).svg";
+import serviceimg from "../../assets/images/services-img/service1.gif";
+import serviceimg2 from "../../assets/images/services-img/service2.gif";
+import serviceimg3 from "../../assets/images/services-img/service3.gif";
 import "./style.css";
 const Home = () => {
   return (

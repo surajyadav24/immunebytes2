@@ -87,8 +87,8 @@ const AuditProcessSec = () => {
             </div>
           ))}
         </div>
-        {/* Right Content Section */}
-        <div className="content">
+        {/* Right audit-content Section */}
+        <div className="audit-content">
           <img
             src={auditSteps[activeStep].image}
             alt={auditSteps[activeStep].title}

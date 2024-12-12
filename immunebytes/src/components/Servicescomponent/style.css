@@ -8,6 +8,7 @@
     font-weight: 700;
     line-height: normal;
 }
+
 .service-discription p {
     color: #fff;
     max-width: 470px;
@@ -16,6 +17,7 @@
     font-weight: 400;
     line-height: 25.06px;
     text-align: left;
+    margin-bottom: 20px;
 }
 .service-discription button.btn.btn-primary {
     padding: 9px 27px !important;

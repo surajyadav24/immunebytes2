@@ -1,0 +1,105 @@
+.audit-process {
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .audit-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    max-width: 1220px;
+    margin: 0 auto;
+}
+  
+  .steps {
+    flex: 1; /* Adjusts width of the steps section */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .step {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 28px 28px;
+    margin-bottom: 20px;
+}
+  
+  .step .circle::after{
+    content: url('../../assets/images/audit-process/pink-circle.svg');
+    position: absolute;
+    top: -15px;
+    left: -14px;
+transform: scale(0.8);
+  }
+  .audit-container .content {
+    display: flex;
+    max-width: 500px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.audit-container .content button {
+  margin-top: 20px;
+  padding-top: 8px ;
+} 
+.audit-container{
+  margin-top: 50px;
+}
+  .step .circle {
+    position: relative;
+    width: 13px;
+    height: 13px;
+    background-color: #fff;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  
+  .step.active .circle {
+    background-color: #ff007f;
+  }
+  
+  .step p {
+    margin: 0;
+    color: #ccc;
+    font-size: 1rem;
+  }
+  
+  .step.active p {
+    color: white;
+    font-weight: bold;
+  }
+  
+  .content {
+    flex: 2; /* Adjusts width of the content section */
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+  }
+  
+  .content img {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #ff007f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #d4006e;
+  }
+  

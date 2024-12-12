@@ -36,7 +36,7 @@ const Home = () => {
       <div className="services-wrapper">
         <h1 className="text-center py-5  pb-5 heading-h1">Our Services</h1>
         <Servicescomponent
-          imageSrc={serviceimg}
+          imageSrc={serviceimg2}
           heading="Smart Contract Audit"
           paragraphtext="An extensive evaluation of your smart contract code’s security, business functionality, and adherence to industry standards."
         />
@@ -49,14 +49,14 @@ const Home = () => {
         </div>
         <div className="service-3">
           <Servicescomponent
-            imageSrc={serviceimg2}
+            imageSrc={serviceimg}
             heading="Penetration Testing"
             paragraphtext="In light of increasing traditional security breaches impacting Web3, ImmuneBytes offers penetration testing for decentralized applications."
           />
         </div>
       </div>
       <h1 className="text-center py-5  pb-4 heading-h1">Audit Process</h1>
-      <AuditProcess />
+      {/* <AuditProcess /> */}
       <div className="container pb-4">
         <h1 className="text-center py-5  pb-4 heading-h1">Why Choose Us?</h1>
         {/* <Whychooseus /> */}

@@ -1,40 +1,50 @@
 import React, { useState } from "react";
 import "./style.css"; // Create this CSS file
-import close from '../../assets/images/portfolio/close-btn.svg';
-import axios from 'axios'; // Axios for API requests
+import close from "../../assets/images/portfolio/close-btn.svg";
+import axios from "axios";
 
 const PopupForm = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
-    projectWebsite: "",
-    github: "",
     username: "",
+    email: "",
+    projectwebsite: "",
+    githublink: "",
     services: "",
     timeline: "",
   });
-
   const [message, setMessage] = useState("");
 
-  // To toggle popup visibility
-  const togglePopup = () => {
-    setShowPopup(!showPopup);
-  };
+  const togglePopup = () => setShowPopup(!showPopup);
 
-  // Handle input change
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const response = await axios.post('http://localhost:5000/send-email', formData);
-      setMessage("Your request has been submitted successfully!");
+      const response = await axios.post("/api/v1/users/requestquote", formData);
+      console.log("response :: ",response)
+      const user = response.data.data
+      // setFormData(user)
+
+      if (response.status === 200) {
+        setMessage("Your request has been submitted successfully!");
+        setFormData({
+          name: user.name,
+          username: user.username,
+          email: user.email,
+          projectwebsite: user.projectwebsite,
+          githublink: user.githublink,
+          services: user.services,
+          timeline: user.timeline,
+        });
+      } else {
+        setMessage("Failed to submit. Please check the details!");
+      }
     } catch (error) {
       setMessage("Failed to submit the form. Please try again later.");
     }
@@ -79,22 +89,22 @@ const PopupForm = () => {
 
               <div className="form-group">
                 <div className="input-block">
-                  <label htmlFor="projectWebsite">Project Website</label>
+                  <label htmlFor="projectwebsite">Project Website</label>
                   <input
                     type="text"
-                    id="projectWebsite"
-                    value={formData.projectWebsite}
+                    id="projectwebsite"
+                    value={formData.projectwebsite}
                     onChange={handleChange}
                     placeholder="Enter your project website"
                     required
                   />
                 </div>
                 <div className="input-block">
-                  <label htmlFor="github">GitHub Link/Smart Contract Address</label>
+                  <label htmlFor="githublink">GitHub Link/Smart Contract Address</label>
                   <input
                     type="text"
-                    id="github"
-                    value={formData.github}
+                    id="githublink"
+                    value={formData.githublink}
                     onChange={handleChange}
                     placeholder="Enter GitHub/Smart Contract link"
                     required

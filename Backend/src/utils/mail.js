@@ -94,6 +94,48 @@ export const plainEmailTemplate = (heading,message) => {
    </html>
    `;
    };
+   export const requestQuoteEmailTemplate = ({name,
+    username,
+    email,
+    projectwebsite,
+    githublink,
+    services,
+    timeline,}) => {
+    return `<!DOCTYPE html>
+   <html lang="en">
+   <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Email Verification</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+   </head>
+   <body class="bg-gray-100">
+     <div class="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-md mt-10">
+       <div class="text-center mb-6">
+         <h2 class="text-2xl font-semibold text-gray-800">Request Quote</h2>
+       </div>
+   
+       <div class="bg-blue-50 p-4 rounded-lg mb-6">
+         <h3 class="text-xl font-semibold text-blue-600">${name}</h3>
+         <p class="text-sm text-gray-600">${username}.</p>
+         <p class="text-sm text-gray-600">${email}.</p>
+         <p class="text-sm text-gray-600">${projectwebsite}.</p>
+         <p class="text-sm text-gray-600">${githublink}.</p>
+         <p class="text-sm text-gray-600">${services}.</p>
+         <p class="text-sm text-gray-600">${timeline}.</p>
+
+       </div>
+   
+   
+   
+       <footer class="text-center text-sm text-gray-600 mt-6">
+         <p>Immunebytes</p>
+       </footer>
+     </div>
+   </body>
+   </html>
+   `;
+   };
 
 
    export const forgotPasswordTemplate=(heading,message)=>{

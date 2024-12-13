@@ -8,6 +8,7 @@ import { addPlatform, deletePlatform, getPlatforms, updatePlatform } from "../co
 import { cSigma } from "../controllers/cSigma.controller.js"
 import { upload } from "../middlewares/multer.middleware.js"
 import { severity,getseverity } from "../controllers/severityFound.controller.js"
+import {requestQuote}  from '../controllers/requestQuote.controller.js'
 
 
 const router = Router()
@@ -15,6 +16,8 @@ const router = Router()
 // UN SECURE ROUTES
 router.route("/SignUp").post(signUp)
 router.route("/login").post(logIn)
+router.route("/requestquote").post(requestQuote)
+
 router.route("/getportfolio/:selectedItemId").post(selectPortfolio);
 router.route("/getportfolio").post(getPortfolio);
 router.route("/getseverity").post(getseverity);

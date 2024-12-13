@@ -29,20 +29,25 @@ const requestQuote = asyncHandler(async(req,res)=>{
       }
 
       await newRequestQuote.save()
+      console.log("newRequestQuote",newRequestQuote)
+      
+
 
       mailTransport().sendMail({
         to: process.env.email_username,
         from: newRequestQuote.email,
         subject: "Request Quote",
-        html: requestQuoteEmailTemplate(     name,
+        html: requestQuoteEmailTemplate(name,
           username,
           email,
           projectwebsite,
           githublink,
           services,
-          timeline,),
+          timeline),
       });
     
+      console.log(typeof name, typeof username, typeof email, typeof projectwebsite, typeof githublink, typeof services, typeof timeline);
+
 
       return res
     .status(200)

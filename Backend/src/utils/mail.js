@@ -94,13 +94,13 @@ export const plainEmailTemplate = (heading,message) => {
    </html>
    `;
    };
-   export const requestQuoteEmailTemplate = ({name,
+   export const requestQuoteEmailTemplate = (name,
     username,
     email,
     projectwebsite,
     githublink,
     services,
-    timeline,}) => {
+    timeline,) => {
     return `<!DOCTYPE html>
    <html lang="en">
    <head>

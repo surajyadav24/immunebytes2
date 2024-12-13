@@ -6,10 +6,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay'; // Import Autoplay styles
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import testimonial1 from '../../assets/images/testimonial/testimonial (4).png'
-import testimonial2 from '../../assets/images/testimonial/testimonial (2).png'
-import testimonial3 from '../../assets/images/testimonial/testimonial (1).png'
-import testimonial4 from '../../assets/images/testimonial/testimonial (3).png'
+import testimonial1 from '../../assets/images/testimonial/testimonial (4).svg'
+import testimonial2 from '../../assets/images/testimonial/testimonial (2).svg'
+import testimonial3 from '../../assets/images/testimonial/testimonial (1).svg'
+import testimonial4 from '../../assets/images/testimonial/testimonial (3).svg'
 const TestimonialSlider = () => {
   const testimonials = [
     {

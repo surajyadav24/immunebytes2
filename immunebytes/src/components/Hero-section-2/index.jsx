@@ -2,6 +2,8 @@ import React from "react";
 import "./style.css";
 import PrimaryBtn from "../Primarybutton";
 
+import gif1 from "../../assets/images/Hero-section/hero-gif.gif"
+
 const HeroSection2 = () => {
   return (
 <div className="container">
@@ -20,16 +22,7 @@ const HeroSection2 = () => {
       </div>
       </div>
       <div className="hero-video">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="video-element"
-        >
-          <source src="your-video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+<img src={gif1} alt="immnunebytes" />
       </div>
     </div>
 </div>

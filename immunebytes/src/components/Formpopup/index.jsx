@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "./style.css"; // Create this CSS file
 import close from "../../assets/images/portfolio/close-btn.svg";
 import axios from "axios";
+import {useNavigate} from 'react-router-dom'
 
 const PopupForm = () => {
+const navigate = useNavigate()
   const [showPopup, setShowPopup] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -34,14 +36,15 @@ const PopupForm = () => {
       if (response.status === 200) {
         setMessage("Your request has been submitted successfully!");
         setFormData({
-          name: user.name,
-          username: user.username,
-          email: user.email,
-          projectwebsite: user.projectwebsite,
-          githublink: user.githublink,
-          services: user.services,
-          timeline: user.timeline,
+          name: "",
+          username: "",
+          email: "",
+          projectwebsite: "",
+          githublink: "",
+          services: "",
+          timeline: "",
         });
+        navigate('/')
       } else {
         setMessage("Failed to submit. Please check the details!");
       }

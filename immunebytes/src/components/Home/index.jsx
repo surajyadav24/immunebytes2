@@ -14,6 +14,8 @@ import Whychooseusec from "../WhychooseusSec";
 import CaseStudyCard from "../Case-study";
 import Community from "../Joinourcommunity";
 import Footer from "../Footer";
+
+import PortfolioTable from "../PortfolioTable";
 // import AuditProcess from "../Audit-Process";
 import AuditProcessSec from "../Audit-Process-sec"
 import HeroSection2 from "../Hero-section-2";
@@ -57,6 +59,7 @@ const Home = () => {
         </div>
       </div>
 </div>
+<PortfolioTable showEditButton={false} />
       <h1 className="text-center py-5  pb-4 heading-h1">Audit Process</h1>
 <AuditProcessSec/>
 

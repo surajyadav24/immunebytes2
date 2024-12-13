@@ -36,15 +36,15 @@ const PopupForm = () => {
       if (response.status === 200) {
         setMessage("Your request has been submitted successfully!");
         setFormData({
-          name: user.name,
-          username: user.username,
-          email: user.email,
-          projectwebsite: user.projectwebsite,
-          githublink: user.githublink,
-          services: user.services,
-          timeline: user.timeline,
+          name: "",
+          username: "",
+          email: "",
+          projectwebsite: "",
+          githublink: "",
+          services: "",
+          timeline: "",
         });
-        navigate('/')
+        navigate("/about")
       } else {
         setMessage("Failed to submit. Please check the details!");
       }

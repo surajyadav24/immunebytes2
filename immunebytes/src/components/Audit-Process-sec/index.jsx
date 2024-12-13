@@ -72,7 +72,6 @@ const AuditProcessSec = () => {
 
   return (
     <div className="audit-process">
-      <h2 className="heading">Audit Process</h2>
       <div className="audit-container">
         {/* Left Steps Section */}
         <div className="steps">

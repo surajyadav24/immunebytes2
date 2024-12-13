@@ -16,6 +16,7 @@ import Community from "../Joinourcommunity";
 import Footer from "../Footer";
 // import AuditProcess from "../Audit-Process";
 import AuditProcessSec from "../Audit-Process-sec"
+import HeroSection2 from "../Hero-section-2";
 // Import images
 import img10 from "../../assets/images/img11.svg";
 import img14 from "../../assets/images/img14.svg";
@@ -27,35 +28,38 @@ const Home = () => {
   return (
     <>
       <Header />
-      <Herosection />
-      <div className="btn-wrapper">
-        <PrimaryBtn text="Book Consultation" />
-      </div>
+      <HeroSection2/>
+      {/* <Herosection /> */}
+
       <LogoSlider />
       <Cta title="Leading the Wave of Web3 Security" />
-      <div className="services-wrapper">
+<div className="container">
+<div className="services-wrapper">
         <h1 className="text-center py-5  pb-5 heading-h1">Our Services</h1>
         <Servicescomponent
           imageSrc={serviceimg2}
           heading="Smart Contract Audit"
-          paragraphtext="An extensive evaluation of your smart contract code’s security, business functionality, and adherence to industry standards."
+          paragraphtext="An extensive evaluation of your smart contract code for security, verification of business specifications, and adherence to industry standards for code reusability"
         />
         <div className="service-2">
           <Servicescomponent
             imageSrc={serviceimg3}
-            heading="Blockchain Security Service"
-            paragraphtext="A thorough assessment of your blockchain’s security posture, encompassing smart contracts, architecture, and development framework."
+            heading="Blockchain Audit"
+            paragraphtext="A thorough assessment of your blockchain’s security posture, encompassing architecture, network layer, transaction layer, ledger layer, and other frameworks."
           />
         </div>
         <div className="service-3">
           <Servicescomponent
             imageSrc={serviceimg}
             heading="Penetration Testing"
-            paragraphtext="In light of increasing traditional security breaches impacting Web3, ImmuneBytes offers penetration testing for decentralized applications."
+            paragraphtext="Amid the rising incidence of traditional security breaches affecting Web3, ImmuneBytes provides penetration testing services explicitly tailored for Web3 applications."
           />
         </div>
       </div>
+</div>
       <h1 className="text-center py-5  pb-4 heading-h1">Audit Process</h1>
+<AuditProcessSec/>
+
       {/* <AuditProcess /> */}
       <div className="container pb-4">
         <h1 className="text-center py-5  pb-4 heading-h1">Why Choose Us?</h1>
@@ -68,7 +72,6 @@ const Home = () => {
       <div className="container testimonial-slider">
         <TestimonialSlider />
       </div>
-<AuditProcessSec/>
 
       <div className="container">
         <div className=" case-study-wrapper">

@@ -1,7 +1,5 @@
 .testimonial-slider .swiper-slide{
-    padding: 0px 70px;
-    min-height: 500px;
-    background:url(../../assets/images/slider/active-slide.svg) no-repeat center center/ contain ;
+
 }
 .testimonial-slider .swiper-slide-prev {
     padding: 20px 25px;
@@ -17,6 +15,9 @@
 
 }
 .testimonial-slider .swiper-slide.swiper-slide-active {
+    padding: 0px 70px;
+    min-height: 500px;
+    background:url(../../assets/images/slider/active-slide.svg) no-repeat center center/ contain ;
     transform: scale(1.04);
     position: relative;
     padding: 55px 10px;
@@ -24,8 +25,11 @@
     min-height: 541px;
     min-width: 346px;
 }
-.testimonial-wrapper h3{
+.testimonial-wrapper h3 {
+    color: #fff;
     font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 9px;
 }
 .testimonial-wrapper p{
     font-size: 12px;
@@ -52,15 +56,20 @@
 .testimonial-slider .swiper-slide p {
     margin: 0 auto;
     max-width: 340px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
     line-height: 20px;
     text-align: center;
     font-family: RobotoMono-Regular;
-    color: #F9116C;
+    color: #FFF;
     padding-top: 12px;
 }
+.testimonial-slider .swiper-slide.swiper-slide-active p{
+    font-size: 18px;
+    line-height: 21px !important;
+}
 .testimonial-slider .swiper-slide h5{
+    color: #fff;
     font-size: 14px;
     font-family: RobotoMono-Regular;
 }

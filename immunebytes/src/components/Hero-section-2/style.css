@@ -1,0 +1,79 @@
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000;
+    color: #fff;
+    min-height: 80vh;
+  }
+  
+  .hero-section button.btn.btn-primary{
+    margin-left: 0px;
+  }
+  .hero-content {
+    padding-top: 80px;
+    max-width: 50%;
+    padding-bottom: 30px    ;
+  }
+  
+  .hero-content h1 {
+    font-size: 60px;
+    line-height: 1.2;
+  }
+  
+  .hero-content .highlight {
+    color: #F9116C;
+  }
+  
+  .hero-content p {
+    margin-top: 1rem;
+    margin-bottom   : 3rem;
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .consultation-button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background: none;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+  }
+  
+  .consultation-button:hover {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .hero-video {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .video-element {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-section {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .hero-content {
+      max-width: 100%;
+      margin-bottom: 2rem;
+    }
+  
+    .video-element {
+      max-width: 90%;
+    }
+  }
+  

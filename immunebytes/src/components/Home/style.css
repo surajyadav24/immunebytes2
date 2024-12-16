@@ -90,6 +90,12 @@
     line-height: 24px;
     font-family: 'RobotoMono-Regular' !important;
   }
+
+.portfolio-container .btn-primary {
+  padding: 4px 13px !important;
+  margin-top: 30px !important;
+}
+
   @media (max-width:425px) {
     h1.text-center.py-5.pb-4.heading-h1 {
       padding-top: 0px !important;

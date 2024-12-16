@@ -1,0 +1,51 @@
+.why-choose-us {
+    text-align: center;
+    padding: 2rem;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e71e68; /* Pinkish color for heading */
+    margin-bottom: 2rem;
+    font-family: "Arvo-Bold";
+
+  }
+  
+  .cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    max-width: 300px;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 32px;
+    color: #fff;
+  }
+  .why-choose-us .cards-container .card{
+    min-width: 30%;
+    min-height: 200px;
+  }
+  .why-choose-us .cards-container .card:nth-child(1){
+    background: url("../../assets/images/whychoose/sec-bg1.svg") no-repeat center center / contain;
+  }
+  .why-choose-us .cards-container .card:nth-child(2){
+    background: url("../../assets/images/whychoose/sec-bg-2.svg") no-repeat center center / contain;
+  }
+  .why-choose-us .cards-container .card:nth-child(3){
+    background: url("../../assets/images/whychoose/sec-bg-3.svg") no-repeat center center / contain;
+  }
+  .card p{
+    font-family: Arvo-Bold;
+  }

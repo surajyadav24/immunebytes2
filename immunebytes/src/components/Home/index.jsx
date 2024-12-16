@@ -26,6 +26,7 @@ import serviceimg from "../../assets/images/services-img/service1.gif";
 import serviceimg2 from "../../assets/images/services-img/service2.gif";
 import serviceimg3 from "../../assets/images/services-img/service3.gif";
 import "./style.css";
+import WhyChooseUsSec from "../Why-choose-sec";
 const Home = () => {
   return (
     <>
@@ -59,7 +60,11 @@ const Home = () => {
         </div>
       </div>
 </div>
+
+<div className="portfolio-container">
 <PortfolioTable showEditButton={false} />
+<PrimaryBtn text="View More" />
+</div>
       <h1 className="text-center py-5  pb-4 heading-h1">Audit Process</h1>
 <AuditProcessSec/>
 
@@ -67,7 +72,10 @@ const Home = () => {
       <div className="container pb-4">
         <h1 className="text-center py-5  pb-4 heading-h1">Why Choose Us?</h1>
         {/* <Whychooseus /> */}
-        <Whychooseusec />
+        {/* <Whychooseusec /> */}
+
+<WhyChooseUsSec/>
+
       </div>
       <h1 className="text-center py-5  pb-4 heading-h1 testimonial-heading">
         Testimonials

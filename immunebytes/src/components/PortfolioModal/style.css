@@ -38,7 +38,7 @@ button.close-btn img {
   position: absolute;
   top: 9px;
   right: 10px;
-  background: #ff004c;
+  background: #F9116C;
   border: none;
   color: white;
   font-size: 18px;
@@ -89,13 +89,13 @@ button.close-btn img {
 .dot {
   height: 10px;
   width: 10px;
-  background-color: #ff004c;
+  background-color: #F9116C;
   border-radius: 50%;
   display: inline-block;
 }
 
 .final {
-  background-color: #ff004c;
+  background-color: #F9116C;
   max-width: 100px;
   border-radius: 5px;
 }
@@ -126,7 +126,7 @@ button.close-btn img {
 .severity{
   max-width: 100px;
   text-align: center;
-  background-color: #ff004c;
+  background-color: #F9116C;
   border-radius: 5px;
   color: #fff !important;
 }
@@ -173,7 +173,7 @@ button.close-btn img {
 .request-btn,
 .download-btn {
 font-family: Arame-Bold; 
-border:3px solid  #ff004c;
+border:3px solid  #F9116C;
   background: transparent;
   padding: 10px 20px;
   color: white;

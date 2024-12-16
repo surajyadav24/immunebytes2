@@ -156,7 +156,7 @@ border: none;
 
 }
 @media (max-width:768px) {
-  .right-serv::after {
+  /* .right-serv::after {
     content: url('../../assets/images/first-audit.svg');
     position: absolute;
     top: -135px !important;
@@ -165,7 +165,7 @@ border: none;
     transform: scale(0.4) !important;
     transition: opacity 0.3s ease-out, top 1s ease-out;
     opacity: 1 !important;
-}
+} */
 
   .service-2 .right-serv::after {
     left: 192px;
@@ -222,14 +222,14 @@ border: none;
 }
 
 /* Styles for the ::after pseudo-element */
-.right-serv::after {
+/* .right-serv::after {
   content: url('../../assets/images/first-audit.svg');
   position: absolute;
   top: -135px !important;
   left: -11px;
   right: 0;
   transform: scale(0.3) !important ;
-  opacity: 0; /* Initially hidden */
+  opacity: 0;
   transition: opacity 0.3s ease-out, top 1s ease-out;
   opacity: 1 !important;
 }
@@ -244,7 +244,7 @@ border: none;
   left: -7px;
   top: -94px !important;
   opacity: 1 !important;
-}
+} */
 .services-component .row {
   min-height: 185px;
   justify-content: center;

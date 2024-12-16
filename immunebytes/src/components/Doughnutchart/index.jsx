@@ -12,7 +12,7 @@ const chartRef = useRef(null);
         datasets: [
           {
             data: [data.final, data.resolved, data.open, data.acknowledged], // Data passed as props
-            backgroundColor: ['#ff004c', '#ffc107', '#17a2b8', '#28a745'],   // Segment colors
+            backgroundColor: ['#F9116C', '#ffc107', '#17a2b8', '#28a745'],   // Segment colors
             hoverOffset: 4
           }
         ]

@@ -87,8 +87,10 @@
         font-size: 13px;
         text-align: left;
     }
-    .hero-content .btn-wrapper .btn.btn-primary{
-        font-size: 9px !important;
+    .hero-content .btn-wrapper .btn.btn-primary {
+        min-width: 163px;
+        font-size: 11px !important;
         padding: 5px 6px;
+        min-height: 41px;
     }
   }

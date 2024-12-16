@@ -69,7 +69,7 @@ const Home = () => {
 <AuditProcessSec/>
 
       {/* <AuditProcess /> */}
-      <div className="container pb-4">
+      <div className="container pb-4 why-sec-choose">
         <h1 className="text-center py-5  pb-4 heading-h1">Why Choose Us?</h1>
         {/* <Whychooseus /> */}
         {/* <Whychooseusec /> */}

@@ -111,4 +111,8 @@ transform: scale(0.8);
   button:hover {
     background-color: #F9116C;
   }
-  
+  @media (max-width:425px){
+    .audit-container{
+      flex-direction: column;
+    }
+  }

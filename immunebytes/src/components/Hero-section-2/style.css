@@ -76,4 +76,19 @@
       max-width: 90%;
     }
   }
-  
+ 
+  @media (max-width:425px){
+    .hero-content h1 {
+        font-size: 34px;
+        line-height: 1.2;
+        text-align: left    ;
+    }
+    .hero-content p{
+        font-size: 13px;
+        text-align: left;
+    }
+    .hero-content .btn-wrapper .btn.btn-primary{
+        font-size: 9px !important;
+        padding: 5px 6px;
+    }
+  }

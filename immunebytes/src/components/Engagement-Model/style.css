@@ -21,7 +21,7 @@ gap: 3rem;
     padding: 39px 15px;
     padding-bottom: 10px;
     /* padding-top: 2rem; */
-    min-height: 239px;
+    min-height: 265px;
 }
 .engagementmodel-box:hover {
     background: url("../../assets/images/engagement/bg-hover.svg") no-repeat center center / contain;

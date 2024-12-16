@@ -19,13 +19,18 @@
   gap: 20px;
   justify-content: space-between; /* Ensures proper spacing */
 }
-.featured-card.stader-card p{
-  font-size: 14px;
+.featured-card.stader-card p {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 32.97px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 .featured-card {
   border: 1px solid #f9116ebe;
-
+background-color: #FFFFFF1A;
   border-radius: 10px;
   padding: 20px;
   text-align: left;
@@ -40,14 +45,14 @@
 }
 
 .case-study-card {
-  min-height: 244px;
+  min-height: 300px;
   background: url("../../assets/images/services-main/case-bg.svg") no-repeat center center / contain;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px 10px;
-  color: black;
+  color: #fff;
   font-weight: bold;
   border: none;
 
@@ -68,8 +73,8 @@
   gap: 20px 0px;
   justify-content: center;
   align-items: center;
-  background-color: #FFD5A7;
-  color: black;
+  background-color: #FFFFFF1A;
+  color: #fff;
 }
 
 .talk-card h3 span {
@@ -107,6 +112,13 @@
 }
 
 .testimonial-card blockquote {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32.97px;
+  letter-spacing: -0.01em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
   font-family: 'RobotoMono-Regular';
   color: #ccc;
 }
@@ -123,22 +135,23 @@
 }
 
 .arrow-btn {
-  display: flex;
+  display: flex
+;
   justify-content: center;
   align-items: center;
-  bottom: 10px;
-  right: 10px;
+  bottom: 6px;
+  right: 16px;
   position: absolute;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
-  background-color: #ff007f;
+  background-color: #FFFFFF1A;
 }
 
 .arrow-btn span {
   margin-top: -6px;
   font-size: 25px;
-  color: #fff;
+  color: #F9116C;
 }
 .featured-card.stader-card {
   min-width: 60%;
@@ -164,15 +177,15 @@
   text-align: center;
 }
 .featured-card.talk-card .btn-primary{
-  background: url("../../assets/images/services-main/button-bg.svg") no-repeat center center / contain !important; 
-  color: #000 !important;
+  background: url("../../assets/images/arrow.svg") no-repeat center center / contain !important; 
+  color: #fff !important;
 }
 .audit-flex-sec {
   display: flex;
   justify-content: space-between;
 }
 .featured-card.talk-card .btn-primary svg path{
-  fill: #000 !important;
+  fill: #fff !important;
 }
 
 @media ((min-width: 426px) and (max-width: 768px)) {

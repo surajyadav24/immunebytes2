@@ -1,18 +1,19 @@
 import React from "react";
 import "./style.css"; 
 import PrimaryBtn from '../Primarybutton'
-function RequestAudit() {
+function RequestAudit({buttonText}) {
   return (
 <>
 <div className="request-audit-container">
 <div className="text-content">
   <p>
-    Lorem Ipsum is simply dummy text of the printing and{" "}
-    <span className="highlight">typesetting industry</span>
+  Get your smart contracts audited today and build a 
+  {" "}
+    <span className="highlight">safer tomorrow.</span>
   </p>
 </div>
 <div className="button-container">
-<PrimaryBtn text="Request Audit"/>
+<PrimaryBtn text={buttonText} />
 </div>
 </div>
 </>

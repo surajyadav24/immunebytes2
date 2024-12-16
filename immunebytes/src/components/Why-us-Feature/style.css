@@ -7,6 +7,9 @@
 .flex.items-center.space-x-6.border-b.border-gray-700.pb-4:nth-child(n){
     display: flex;
     justify-content:space-evenly;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px 0px;
     max-width: 480px;
     margin: 0 auto;
 }
@@ -45,20 +48,30 @@
     border-radius: 10px;
     background-color: #D9D9D91A;
 }
-.card-container h3{
-font-family: Arvo-Regular;
-text-transform: uppercase;
-font-size: 17px;
+.card-container h3 {
+    margin-top: 10px;
+    font-family: Arvo-Regular;
+    text-transform: uppercase;
+    font-size: 17px;
+    margin-bottom: 20px !important;
 }
-.card-container p{
-font-family: Arvo-Regular;
-font-size: 12px;
-text-align: justify;
+.card-container p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 29.97px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
 }
 
 .heading-why{
     color: #F9116C;
 }
+.why-disc{
+    margin: 0px !important;
+}
+
 
 /* TABLET VERSION */
 

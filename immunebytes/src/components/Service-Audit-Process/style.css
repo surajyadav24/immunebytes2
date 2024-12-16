@@ -14,23 +14,24 @@
 }
 
 .audit-process-grid {
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 46px;
 }
 
 .audit-process-card {
-  background-color: #1a1a1a; /* Dark gray background for cards */
-  padding: 20px;
+  border: 1px solid #FFFFFF66;
+  background-color: #1a1a1a;
+  padding: 20px 90px 50px 20px;
   border-radius: 10px;
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
-
 .audit-process-card h3 {
-  font-size: 20px;
+  font-size: 30px;
   margin-bottom: 10px;
   color: #fff;
 }
@@ -47,7 +48,7 @@
   top: 0px;
 }
 
-.Preparatory.Stage {
+.Unveiling.Vulnerabilities {
     display: flex;
     padding: 2px;
     background: #53A5F8;
@@ -57,7 +58,7 @@
     justify-content: center;
     margin-bottom: 15px;
 }
-.Manual.Examination {
+.Scenario-Driven.Simulations{
     display: flex;
     padding: 2px;
     background: #FFD5A7;
@@ -67,7 +68,7 @@
     justify-content: center;
     margin-bottom: 15px;
 }
-.Final.Audit.Report {
+.Advanced.Automated.Tools{
     display: flex;
     padding: 2px;
     background: #FFE345;
@@ -77,7 +78,7 @@
     justify-content: center;
     margin-bottom: 15px;
 }
-.Testing.Automation {
+.Beyond.the.Code {
     display: flex;
     padding: 2px;
     background: #fff;
@@ -87,7 +88,7 @@
     justify-content: center;
     margin-bottom: 15px;
 }
-.Preliminary.Audit.Report{
+.Human.Expertise.Meets.Technology{
     display: flex;
     padding: 2px;
     background: #FFA747;
@@ -97,7 +98,7 @@
     justify-content: center;
     margin-bottom: 15px;
 }
-.Revisions{
+.Actionable.Insights{
     display: flex;
     padding: 2px;
     background: #FF0000;
@@ -107,6 +108,13 @@
     justify-content: center;
     margin-bottom: 15px;
 }
+.audit-process-card h5 {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+
+
 
 @media (max-width:425px){
   .audit-process-title {

@@ -41,6 +41,7 @@ transform: scale(0.8);
   .audit-container .audit-content {
     display: flex;
     max-width: 500px;
+    min-height: 465px;
     flex-direction: column;
     justify-content: center;
     align-items: center;

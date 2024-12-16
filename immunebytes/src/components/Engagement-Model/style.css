@@ -16,20 +16,30 @@ grid-template-columns: 1fr 1fr 1fr;
 gap: 3rem;
 }
 .engagementmodel-box {
-    /* background: linear-gradient(180deg, #A90545 0%, #F9116C 100%); */
-    background: linear-gradient(180deg, #F9116C 0%, #A90545 100%);
-
+    background: url("../../assets/images/engagement/bg-box.svg") no-repeat center center / contain;
     border-radius: 0.5rem;
-    padding: 3rem 1rem 3rem 1rem;
+    padding: 39px 15px;
+    padding-bottom: 10px;
     /* padding-top: 2rem; */
+    min-height: 239px;
 }
+.engagementmodel-box:hover {
+    background: url("../../assets/images/engagement/bg-hover.svg") no-repeat center center / contain;
+    border-radius: 0.5rem;
+    padding: 39px 15px;
+    padding-bottom: 10px;
+    /* padding-top: 2rem; */
+    min-height: 239px;
+}
+
+
 .engagementmodel-box h3{
     font-size: 2rem;
     color: #fff;
     padding-bottom: 1rem;
 }
-.engagementmodel-box p{
-    font-size: 1.3rem;
+.engagementmodel-box p {
+    font-size: 14px;
     color: #fff;
 }
 .engagementmodel-yellow-box{

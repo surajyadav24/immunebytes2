@@ -13,39 +13,42 @@ function AuditProcess() {
   const processSteps = [
     {
       icon:icon1 ,
-      title: "Preparatory Stage",
+      title: "Unveiling Vulnerabilities",
+      subTitleProcess:"Comprehensive Analysis of Your Smart Contract’s Functional and Logic Layers",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
+        "Discover unseen risks through deep dives into functional behaviors, logic workflows, and critical contract interdependencies.",
     },
     {
       icon:icon2 ,
-      title: "Manual Examination",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
+      title: "Scenario-Driven Simulations",
+      subTitleProcess:"Proactively Defending Against Exploitation",
+      description:"Simulate real-world attack scenarios to ensure your contracts withstand malicious exploits and operational stress.",
     },
     {
       icon: icon3,
-      title: "Final Audit Report",
+      title: "Advanced Automated Tools",
+      subTitleProcess:"Detecting Complex Risks Beyond the Surface",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
+        "Leverage state-of-the-art automation to identify intricate vulnerabilities like reentrancy, gas optimization flaws, and unchecked call risks.",
     },
     {
       icon: icon4,
-      title: "Testing Automation",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
+      title: "Beyond the Code",
+      subTitleProcess:"Evaluating Security Through Governance and Ecosystem Dependencies",
+      description: "Address multi-layered security risks across integrations, protocol governance, and external interactions for a holistic audit.",
     },
     {
       icon:icon5,
-      title: "Preliminary Audit Report",
+      title: "Human Expertise Meets Technology",
+      subTitleProcess:"Detailed Manual Code Audits",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
+        "Pair automation with meticulous human inspection to uncover logical loopholes and edge-case scenarios machines often miss.",
     },
     {
       icon: icon6,
-      title: "Audit Support & Revisions",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
+      title: "Actionable Insights",
+      subTitleProcess:"Delivering Transparent Reports with Clear Mitigation Steps",
+      description:"Transform findings into concise, actionable insights that strengthen your contract’s reliability and bolster stakeholder trust.",
     },
   ];
 
@@ -59,6 +62,7 @@ function AuditProcess() {
           <div key={index} className="audit-process-card">
             <div className={step.title}> <img src={step.icon}  /></div>
             <h3>{step.title}</h3>
+            <h5>{step.subTitleProcess}</h5>
             <p>{step.description}</p>
           </div>
         ))}

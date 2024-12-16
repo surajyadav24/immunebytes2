@@ -91,7 +91,7 @@ const FeatureSection = () => {
                 />
               </div>
               {/* Content */}
-              <div>
+              <div className="why-disc">
                 <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
                 <p className="text-sm text-gray-300">{feature.description}</p>
               </div>

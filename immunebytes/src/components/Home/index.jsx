@@ -25,13 +25,21 @@ import img14 from "../../assets/images/img14.svg";
 import serviceimg from "../../assets/images/services-img/service1.gif";
 import serviceimg2 from "../../assets/images/services-img/service2.gif";
 import serviceimg3 from "../../assets/images/services-img/service3.gif";
+import gif1 from "../../assets/images/Hero-section/hero-gif.gif";
 import "./style.css";
 import WhyChooseUsSec from "../Why-choose-sec";
 const Home = () => {
   return (
     <>
       <Header />
-      <HeroSection2/>
+      <HeroSection2
+        title="Threat Perspective,"
+        highlight="Defense Expertise!"
+        description="Securing the Web3 industry through rigorous code audits as we empower protocols with trust, transparency, and impenetrable defense."
+        buttonText="Book Consultation"
+        imageSrc={gif1}
+        altText="Immunebytes Hero GIF"
+      />
       {/* <Herosection /> */}
 
       <LogoSlider />

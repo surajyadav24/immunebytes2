@@ -8,7 +8,6 @@
 }
 .company-info{
 background: url('../../assets/images/portfolio/card-disc.svg')no-repeat center center / contain;
-
 padding: 20px 0px;
 flex-direction: column;
 display: flex;
@@ -77,3 +76,11 @@ align-items: center;
     border-radius: 8px;
   }
   
+  @media(max-width:425px){
+    .company-info .chart-container canvas{
+      max-height: 225px;
+    }
+    .modal-content {
+      top: -270px;
+    }
+  }

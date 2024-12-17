@@ -8,7 +8,7 @@ import ForgotPassword from "./Pages/Forgot-password";
 import ResetPassword from "./Pages/Reset-Password";
 import OtpForm from "./Pages/user/Login/OtpForm";
 import SeverityButtons from "./Pages/Savrity-Form";
-import Layout from "./Pages/Layout/layout"; // Import the Layout component
+import Layout from "./Pages/Layout/layout";
 import "./App.css";
 import DashboardMain from "./Pages/Dashboard-Main";
 import AddPortfolio from "./Pages/Add-Portfolio";
@@ -18,6 +18,7 @@ import PrivateRoute from "./components/Private-Route/PrivateRoutes.jsx";
 import Layout2 from "./components/Layout/";
 import SmartContract from "./components/Services/SmartContractAudit/index.jsx";
 import About from "./Pages/About/Index.jsx";
+import Penetration from "./components/Services/penetrationTesting"
 
 function App() {
   return (
@@ -50,6 +51,14 @@ function App() {
           element={
             <Layout2>
             <SmartContract/>
+            </Layout2>
+          }
+        />
+        <Route
+          path="/penetration"
+          element={
+            <Layout2>
+            <Penetration/>
             </Layout2>
           }
         />

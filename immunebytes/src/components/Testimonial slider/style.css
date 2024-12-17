@@ -108,6 +108,10 @@
         padding-bottom: 0px !important;
     }
     
+    .testimonial-slider .swiper-slide.swiper-slide-active p {
+        font-size: 14px;
+        line-height: 22px !important;
+    }
 }
 
 

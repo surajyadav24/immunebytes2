@@ -25,9 +25,9 @@ const EngagementModel = () => {
       </div>
       <div className='engagementmodel-yellow-box'>
      <div className="content">
-     <h3 className='engagementmodel-yellow-box-text'>WANT <span>AUDIT ?</span></h3>
+     <h3 className='engagementmodel-yellow-box-text'>Our security professionals are ready to guide you toward a safer future.</h3>
      <div className="button-container">
-     <PrimaryBtn text="Request Audit" />
+     <PrimaryBtn text="Let's Talk!" />
      </div>
      </div>
       </div>

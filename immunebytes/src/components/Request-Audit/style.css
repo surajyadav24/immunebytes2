@@ -83,10 +83,12 @@ font-size: 14px !important;
   }
   @media (max-width:425px){
     .request-audit-container {
+      flex-direction: column;
       padding: 30px;
   }
   .request-audit-container .text-content {
-    max-width: 208px;
+    max-width: 90%;
+    margin-bottom: 10px;
 }
 .text-content p {
   font-size: 15px;

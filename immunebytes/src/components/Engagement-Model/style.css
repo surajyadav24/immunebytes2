@@ -9,8 +9,7 @@
  font-size: 2rem;
 }
 .engagementmodel-boxes{
-    padding: 2rem;
-    margin: 1rem;
+margin: 1rem;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 gap: 3rem;
@@ -46,7 +45,7 @@ gap: 3rem;
     margin: 2rem;
     /* padding: 2rem; */
     /* align-items: center; */
-    background: url(../../assets/images/Subtract.png) ;
+    background: url("../../assets/images/engagement/bg-cta.svg");
     background-size: contain; /* Ensures the image covers the entire element */
     background-position: center; 
     background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -64,25 +63,28 @@ align-items: center;
     z-index: 1; /* Ensures content is above the background image */
 }
 .engagementmodel-yellow-box h3{
-    /* text-align: center; */
-    /* padding: 7rem 1rem 1rem 1rem; */
-    padding-top: 2rem;
-    padding-bottom: 1.5rem;
+    background: linear-gradient(272deg, #F96746 3.28%, #FFE500 56.57%, #C800C0 96.67%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   padding: 20px 50px;
     font-size: 2.5rem;
 }
-.engagementmodel-yellow-box h3 span{
+/* .engagementmodel-yellow-box h3 span{
     color: #F9116C;
     padding: 0rem 1rem 0rem 1rem;
-}
+} */
+
+
 
 .engagementmodel-yellow-box  .btn-primary svg path {
-    fill: #000;
+    fill: #fff;
 }
 .engagementmodel-yellow-box .btn-primary {
     font-size: 1.5rem !important;
     padding: 2rem !important;
-    
 }
+
 /* TABLET VERSION */
 @media (max-width: 768px) {
     .engagementmodel h2 {
@@ -125,7 +127,8 @@ align-items: center;
         padding: 0.5rem;
     }
     .engagementmodel-yellow-box h3 {
-        font-size: 1.4rem; /* Smaller heading font size */
+        font-size: 14px;
+        margin-bottom: 8px;
         padding: 0.3rem;
     }
 
@@ -164,6 +167,8 @@ align-items: center;
         font-size: 1.7rem;
     }
     .engagementmodel-box p{
+        padding-right: 15px;
+        text-align: justify;
         font-size: 1rem;
     }
     .engagementmodel{
@@ -171,7 +176,7 @@ align-items: center;
     }
     .engagementmodel-yellow-box {
       padding: 13px ;
-      background: url(../../assets/images/mobile-subtract.png);
+      background: url(../../assets/images/engagement/mob-bg-cta.svg);
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -190,8 +195,9 @@ align-items: center;
     }
 
     .engagementmodel-yellow-box h3 {
-        font-size: 1.4rem; /* Smaller heading font size */
-        padding: 0.3rem;
+        font-size: 14px;
+        margin-bottom: 8px;
+        padding: 0.3rem 20px;
     }
 
     .engagementmodel-yellow-box h3 span {

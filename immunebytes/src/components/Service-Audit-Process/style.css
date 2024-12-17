@@ -7,10 +7,10 @@
 }
 
 .audit-process-title {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   font-size: 32px;
-  margin-bottom: 1rem;
-  color: #ff4081; /* Pink color for the title */
+  margin-bottom: 3rem;
+  color: #F9116C;
 }
 
 .audit-process-grid {

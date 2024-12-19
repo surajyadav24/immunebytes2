@@ -1,15 +1,15 @@
 import React from "react";
 import "./style.css"; 
 import PrimaryBtn from '../Primarybutton'
-function RequestAudit({buttonText}) {
+function RequestAudit({buttonText , text, spantext}) {
   return (
 <>
 <div className="request-audit-container">
 <div className="text-content">
   <p>
-  Get your smart contracts audited today and build a 
+ {text}
   {" "}
-    <span className="highlight">safer tomorrow.</span>
+    <span className="highlight">{spantext}</span>
   </p>
 </div>
 <div className="button-container">

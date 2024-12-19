@@ -4,12 +4,13 @@
     min-width: 100px;
     border-radius: 20px;
 }
-.flex.items-center.space-x-6.border-b.border-gray-700.pb-4:nth-child(n){
+.flex.items-center.space-x-6.border-b.border-gray-700.pb-4:nth-child(n) {
     display: flex;
-    justify-content:space-evenly;
+    justify-content: flex-end;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px 0px;
+    min-height: 311px;
     max-width: 480px;
     margin: 0 auto;
 }
@@ -38,10 +39,21 @@
     background: #FFFFFF;
 }
 .why-sec-feature{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.why-sec-feature::after{
+    content: url('../../assets/images/engagement/line.svg');
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    max-height: 90%;
+    overflow: hidden;
+}
+
 .why-sec-feature .container{
     padding: 50px 0px;
     border: 1px solid #f9116ed8;
@@ -71,6 +83,27 @@
 .why-disc{
     margin: 0px !important;
 }
+
+.contain-why-us:nth-child(odd)::before{
+    content: url('../../assets/images/engagement/verticle-line.svg');
+    position: relative;
+    left: -39px;
+    bottom: 24px;
+    max-width: 252%;
+    overflow: hidden;
+}
+.contain-why-us:nth-child(1)::before{
+    content: url('../../assets/images/engagement/verticle-line.svg');
+    position: relative;
+    left: -39px;
+    bottom: -4px;
+    max-width: 252%;
+    overflow: hidden;
+    display: none;
+}
+
+
+
 
 
 /* TABLET VERSION */

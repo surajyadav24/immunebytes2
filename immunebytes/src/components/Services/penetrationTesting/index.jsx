@@ -1,15 +1,15 @@
-import React from 'react'
-import Serviceherosection from '../../Service-Hero-Section'
-import RequestAudit from '../../Request-Audit'
-import AuditProcess from '../../Service-Audit-Process'
-import FeaturedAudit from '../../Feauture-Audit'
-import FeatureSection from '../../Why-us-Feature'
-import OtherWeb3Services from '../../Other-Web3-Services'
-import EngagementModel from '../../Engagement-Model'
-import HeroSection2 from '../../Hero-section-2'
+import React from "react";
+import Serviceherosection from "../../Service-Hero-Section";
+import RequestAudit from "../../Request-Audit";
+import AuditProcess from "../../Service-Audit-Process";
+// import FeaturedAudit from '../../Feauture-Audit'
+// import FeatureSection from '../../Why-us-Feature'
+import OtherWeb3Services from "../../Other-Web3-Services";
+import EngagementModel from "../../Engagement-Model";
+import HeroSection2 from "../../Hero-section-2";
 import gif1 from "../../../assets/images/Hero-section/hero-gif.gif";
-import FAQ from '../../FAQ'
-import AuditProcessdummy from "./auditprocessdummy";
+import FAQ from "../../FAQ";
+import AuditProcessdummy from "../penetrationTesting/auditprocessdummy";
 
 import icon2 from "../../../assets/images/services-main/manual examination.gif";
 import icon3 from "../../../assets/images/services-main/audit-reprt.gif";
@@ -18,72 +18,260 @@ import icon4 from "../../../assets/images/services-main/search.gif";
 import icon5 from "../../../assets/images/services-main/PreliminaryAudit.gif";
 import icon6 from "../../../assets/images/services-main/auditRevision.gif";
 
-const processSteps = [
-    {
-      icon: icon1,
-      title: "Unveiling Vulnerabilities",
-      subTitleProcess: "Comprehensive Analysis of Your Smart Contract’s Functional and Logic Layers",
-      description: "Discover unseen risks through deep dives into functional behaviors, logic workflows, and critical contract interdependencies.",
-    },
-    {
-      icon: icon2,
-      title: "Scenario-Driven Simulations",
-      subTitleProcess: "Proactively Defending Against Exploitation",
-      description: "Simulate real-world attack scenarios to ensure your contracts withstand malicious exploits and operational stress.",
-    },
-    {
-      icon: icon3,
-      title: "Advanced Automated Tools",
-      subTitleProcess: "Detecting Complex Risks Beyond the Surface",
-      description: "Leverage state-of-the-art automation to identify intricate vulnerabilities like reentrancy, gas optimization flaws, and unchecked call risks.",
-    },
-    {
-      icon: icon4,
-      title: "Beyond the Code",
-      subTitleProcess: "Evaluating Security Through Governance and Ecosystem Dependencies",
-      description: "Address multi-layered security risks across integrations, protocol governance, and external interactions for a holistic audit.",
-    },
-    {
-      icon: icon5,
-      title: "Human Expertise Meets Technology",
-      subTitleProcess: "Detailed Manual Code Audits",
-      description: "Pair automation with meticulous human inspection to uncover logical loopholes and edge-case scenarios machines often miss.",
-    },
-    {
-      icon: icon6,
-      title: "Actionable Insights",
-      subTitleProcess: "Delivering Transparent Reports with Clear Mitigation Steps",
-      description: "Transform findings into concise, actionable insights that strengthen your contract’s reliability and bolster stakeholder trust.",
-    },
-  ];
+import FeaturedAudit from "../../Feauture-Audit";
+import staderLogo from "../../../assets/images/sliderlogo/staderlogo.svg";
+import profileImage from "../../../assets/images/testimonial/testimonial (4).png";
 
-function Penetration() {
+// FEATURE SECTION WHY US
+import FeatureSection from "../../Why-us-Feature";
+import team from "../../../assets/images/services-main/team.gif";
+import comp from "../../../assets/images/services-main/Comprehensive Audit Process.gif";
+import centric from "../../../assets/images/services-main/Client-Centric Approach.gif";
+import Post from "../../../assets/images/services-main/Post-Audit Support.gif";
+import Tailored from "../../../assets/images/services-main/Tailored Approach.gif";
+import Focus from "../../../assets/images/services-main/Focus on Innovation.gif";
+import Proven from "../../../assets/images/services-main/Proven Track Record.gif";
+import Seal from "../../../assets/images/services-main/ImmuneBytes Seal of Trust.gif";
+import downarrow from "../../../assets/images/services-main/down-arrow.svg";
+import downarrowmobile from "../../../assets/images/Down-Arrow-Mobile.svg";
+import rightarrowmobile from "../../../assets/images/Right-Arrow-Mobile.svg";
+import rightarrow from "../../../assets/images/services-main/right-arrow.svg";
+
+const processSteps = [
+  {
+    icon: icon1,
+    title: "Application Resilience",
+    subTitleProcess:
+      "Identifying Weak Spots in DApp Frontends and Smart Contracts",
+    description:
+      "Uncover vulnerabilities in your DApp’s interfaces, workflows, and underlying smart contracts to ensure seamless user experiences."
+  },
+  {
+    icon: icon2,
+    title: "Performance Under Pressure",
+    subTitleProcess: "Stress Testing Across Real-World Conditions",
+    description:
+      "Simulate high-traffic, heavy-load, and malicious-actor scenarios to validate your dApp’s robustness."
+  },
+  {
+    icon: icon3,
+    title: "Protocol and API Testing",
+    subTitleProcess: "Strengthening Backend Interactions Against Exploits",
+    description:
+      "Test APIs and protocols for flaws like injection attacks, cross-domain vulnerabilities, and improper validations."
+  },
+  {
+    icon: icon4,
+    title: "End-to-End Vulnerability Assessments",
+    subTitleProcess:
+      "Mapping Attack Surfaces from Users to Protocols",
+    description:
+      "Analyze potential attack surfaces through holistic, end-to-end penetration testing for maximum threat coverage."
+  },
+  {
+    icon: icon5,
+    title: "Security Through Integration",
+    subTitleProcess: "Ensuring Safe Interactions Across DApp Dependencies",
+    description:
+      "Evaluate how your DApp interacts with external contracts, oracles, and middleware for hidden security risks."
+  },
+  {
+    icon: icon6,
+    title: "Closing the Loop",
+    subTitleProcess:
+      "Comprehensive Reporting with Strategic Mitigation Recommendations",
+    description:
+      "Receive in-depth reports with clear fixes, empowering you to enhance security and build user confidence."
+  }
+];
+
+const auditCards = [
+  {
+    className: "stader-card",
+    logo: staderLogo,
+    logoClass: "stader-logo",
+    content:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+  },
+  {
+    className: "case-study-card",
+    title: "CASE",
+    subtitle: "STUDY",
+    button: {
+      className: "arrow-btn",
+      text: "→"
+    }
+  }
+];
+
+const testimonial = {
+  talkTitle: "TALK",
+  talkSubtitle: "WITH US",
+  talkButtonText: "Request Audit",
+  image: profileImage,
+  name: "DHEERAJ BORRA",
+  role: "Stader Labs, Co-Founder",
+  quote:
+    "“ImmuneBytes demonstrated the perfect blend of expertise, commitment, and accountability, resulting in an audit that surpassed expectations.”"
+};
+
+// const features = [
+//   {
+//     title: "Team of Highly Skilled Auditors",
+//     icon: team,
+//     description:
+//       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+//     backgroundColor: "bg-blue-500",
+//   },
+//   {
+//     title: "Client-Centric Approach",
+//     icon: centric,
+//     description:
+//       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+//     backgroundColor: "bg-green-500",
+//   },
+//   {
+//     title: "Comprehensive Audit Process",
+//     icon: comp,
+//     description:
+//       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+//     backgroundColor: "bg-red-500",
+//   },
+//   {
+//     title: "Post-Audit Support",
+//     icon: Post,
+//     description:
+//       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+//     backgroundColor: "bg-yellow-500",
+//   },
+// ];
+const features = [
+  {
+    title: "Expert Security Professionals",
+    icon: team, // Replace with your GIF URL
+    description:
+      "Our team of skilled penetration testers are experts in various attack vectors, providing detailed insights and strategies for securing your system.",
+    backgroundColor: "bg-blue-500" // Unique background color
+  },
+  {
+    title: "Client First Approach",
+    icon: centric, // Replace with your GIF URL
+    description:
+      "Your success is our priority. We work closely with you, maintaining transparent communication and focusing on your project’s long-term security needs. ",
+    backgroundColor: "bg-green-500" // Unique background color
+  },
+  {
+    title: "Cutting-Edge Testing Methodologies",
+    icon: comp, // Replace with your GIF URL
+    description:
+      "Our penetration tests use the latest industry-leading tools and techniques, ensuring accurate assessments of your system’s security.",
+    backgroundColor: "bg-red-500" // Unique background color
+  },
+  {
+    title: "Comprehensive Risk Assessment",
+    icon: Post, // Replace with your GIF URL
+    description:
+      "We perform in-depth penetration testing to identify and exploit vulnerabilities in your systems, ensuring all potential threats are discovered. ",
+    backgroundColor: "bg-yellow-500" // Unique background color
+  },
+  {
+    title: "Tailored Testing Approach",
+    icon: Tailored, // Replace with your GIF URL
+    description:
+      "We customize our approach to meet the requirements of your project, simulating attacks to identify threats specific to your environment.",
+    backgroundColor: "bg-purple-500" // Unique background color
+  },
+  {
+    title: "Transparent Reporting",
+    icon: Focus, // Replace with your GIF URL
+    description:
+      "We deliver actionable reports that outline discovered issues, potential impacts, and specific recommendations for enhancing your system's security. ",
+    backgroundColor: "bg-teal-500" // Unique background color
+  },
+  {
+    title: "Proven Track Record",
+    icon: Proven, // Replace with your GIF URL
+    description:
+      "Trusted by organizations across industries, we have a history of delivering successful penetration tests that provide valuable insights to our clients.",
+    backgroundColor: "bg-orange-500" // Unique background color
+  },
+  {
+    title: "Continuous Improvement",
+    icon: Seal, // Replace with your GIF URL
+    description:
+      "Our testing processes are continually updated to reflect emerging threats, ensuring your systems are protected against evolving attack methods.",
+    backgroundColor: "bg-pink-500" // Unique background color
+  }
+];
+// FAQ CONTENT
+const faqs = [
+  {
+    question: "How long does a smart contract audit take?",
+    answer:
+      "The time required for an audit depends on the complexity and size of the smart contract. Typically, audits take a few days to a few weeks. Once we assess the project, we provide a clear timeline."
+  },
+  {
+    question: "How confidential is the audit process?",
+    answer: "We adhere to strict confidentiality agreements and use secure channels to handle your code. We prioritize the privacy and security of your project throughout the entire audit process."
+  },
+  {
+    question: "What methodologies do you use for smart contract audits?",
+    answer: "We use a combination of manual reviews, static/dynamic analysis, symbolic execution, and scenario-based attack simulations based on the project’s needs."
+  },
+  {
+    question: "Can you audit contracts written in languages other than Solidity?",
+    answer: "Yes, we support multiple languages like Solidity, Vyper, Rust, and Cairo, using tailored tools and methodologies for each environment."
+  }
+];
+
+const icons = {
+  downArrowDesktop: downarrow,
+  downArrowMobile: downarrowmobile,
+  rightArrowDesktop: rightarrow,
+  rightArrowMobile: rightarrowmobile
+};
+
+function Penetration (){
   return (
-<>
-<HeroSection2
-        title="Smart Contract ,"
-        highlight="Audit"
-        description="Unlock the full potential of your decentralized projects with comprehensive smart contract audits — ensuring security, performance, and trust."
+    <>
+      <HeroSection2
+        title="Penetration  ,"
+        highlight="Testing"
+        description="Fortify your systems and achieve robust security with Penetration Testing as a Service (PTaaS), tailored for organizations that value speed and precision."
         buttonText="Book Consultation"
         imageSrc={gif1}
         altText="Immunebytes Hero GIF"
       />
-<div className="container-fluid">
+      <div className="container-fluid">
+        <RequestAudit
+          text="Get your smart contracts audited today and build a"
+          spantext="safer tomorrow."
+          buttonText="Request Audit"
+        />
 
- <RequestAudit buttonText="Request Audit"/>
+        <AuditProcessdummy
+          title="Elevating Protocol Safety Standards"
+          processSteps={processSteps}
+        />
+        {/* <AuditProcess/> */}
+        <FeaturedAudit
+          title="Featured Audit"
+          auditCards={auditCards}
+          testimonial={testimonial}
+        />
+        <FeatureSection title="Why Us?" features={features} />
+        {/* <FeatureSection/> */}
+        <EngagementModel />
+        <OtherWeb3Services />
 
- <AuditProcessdummy
-      title="Elevating Protocol Safety Standards"
-      processSteps={processSteps}
-    />
- <FeaturedAudit/>
- <FeatureSection/>
- <EngagementModel/>
- <OtherWeb3Services/>
- <FAQ/>
-</div>
-</>
-  )
+        <div>
+          <FAQ title="FAQs" faqs={faqs} icons={icons} />
+        </div>
+
+        {/* <FAQ/> */}
+      </div>
+    </>
+  );
 }
 
-export default Penetration
+export default Penetration;

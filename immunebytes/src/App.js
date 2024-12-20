@@ -56,7 +56,7 @@ function App() {
           }
         />
         <Route
-          path="/penetration"
+          path="/penetration-testing"
           element={
             <Layout2>
             <Penetration/>

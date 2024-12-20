@@ -20,6 +20,7 @@ import SmartContract from "./components/Services/SmartContractAudit/index.jsx";
 import About from "./Pages/About/Index.jsx";
 import Penetration from "./components/Services/penetrationTesting"
 import BlockchainAudit from './components/Services/BlockchainAudit/index.jsx'
+import Defi from './components/Services/Defi'
 
 function App() {
   return (
@@ -68,6 +69,14 @@ function App() {
           element={
             <Layout2>
             <BlockchainAudit/>
+            </Layout2>
+          }
+        />
+        <Route
+          path="/defi"
+          element={
+            <Layout2>
+            <Defi/>
             </Layout2>
           }
         />

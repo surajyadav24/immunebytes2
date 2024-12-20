@@ -235,7 +235,7 @@ const icons = {
   rightArrowMobile: rightarrowmobile
 };
 
-function SmartContract() {
+function Defi() {
   return (
     <>
       <HeroSection2
@@ -278,4 +278,4 @@ function SmartContract() {
   );
 }
 
-export default SmartContract;
+export default Defi;

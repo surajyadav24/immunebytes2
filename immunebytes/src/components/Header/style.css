@@ -128,13 +128,14 @@ button.open-popup-btn.btn.register-btn.text-white {
 }
 
 .dropdown-item:hover {
-background-color: #000;
+background-color: #000 !important;
   color: #F9116C !important;
 }
 
 .dropdown-menu a{
   font-family: 'Arame-Thin';
   font-size: 14px;
+  background-color: #000;
 }
 
 /* Responsive Design */
@@ -334,4 +335,10 @@ a.btn.register-btn.mobile-btn.text-white{
 .mobile-nav ul .nav-item:last-child {
   display: inline-block;
   }
+
+  .dropdown-menu {
+    position: relative !important;
+    top: 0px !important;
+  }
+
 }

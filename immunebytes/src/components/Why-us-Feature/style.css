@@ -184,5 +184,11 @@
     .flex.items-center.space-x-6.border-b.border-gray-700.pb-4:nth-child(n)>div{
         margin-left: 0px;
     }
+    .why-sec-feature::after{
+        display: none;
+    }
+    .contain-why-us:nth-child(odd)::before{
+        display: none;
+    }
 }
 

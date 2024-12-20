@@ -107,8 +107,8 @@ button.open-popup-btn.btn.register-btn.text-white {
 }
 /* Dropdown Menu Styling */
 .dropdown-menu {
-  position: absolute;
-  top: 100%;
+  position: absolute !important;
+  top: 40px;
   left: 0;
   display: block !important; /* Ensure it's visible */
   background-color: #000 !important;
@@ -128,8 +128,8 @@ button.open-popup-btn.btn.register-btn.text-white {
 }
 
 .dropdown-item:hover {
-  background-color: #f9116c !important;
-  color: #fff;
+background-color: #000;
+  color: #F9116C !important;
 }
 
 .dropdown-menu a{
@@ -180,7 +180,7 @@ ul.nav.flex-column {
   justify-content: center;
   flex-direction: column !important;
   align-items: center;
-  height: 262px;
+  height: auto;
 }
 .mobile-nav{
   margin-top: 0px;

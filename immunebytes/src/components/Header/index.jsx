@@ -6,37 +6,45 @@ import Formpopup from '../Formpopup';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false); // State to track menu open/close
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // For Services dropdown
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // For Services dropdown (desktop)
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false); // For Services dropdown (mobile)
 
   const toggleMenu = () => {
     setIsOpen(!isOpen); // Toggle menu on click
   };
+
   const toggleDropdown = (state) => {
-   setIsDropdownOpen(state); // Add a slight delay
+    setIsDropdownOpen(state);
   };
-  
+
+  const toggleMobileDropdown = () => {
+    setIsMobileDropdownOpen(!isMobileDropdownOpen);
+  };
 
   return (
     <>
       <header className="text-white p-3">
         <div className="container d-flex justify-content-between align-items-center p-0">
           <div className="h3 font-weight-bold logo">
-            <a href="/"><img src={Logo} alt="" /></a>
+            <a href="/">
+              <img src={Logo} alt="" />
+            </a>
           </div>
-          
+
           {/* Desktop Nav: Hidden on mobile/tablet */}
           <nav className="desktop-nav d-none d-lg-block">
             <ul className="nav">
-            <li
+              <li
                 className="nav-item dropdown"
                 onMouseEnter={() => toggleDropdown(true)}
                 onMouseLeave={() => toggleDropdown(false)}
               >
-                <a href="/smartcontract" className="nav-link text-white">Services</a>
+                <a href="#" className="nav-link text-white">Services</a>
                 {isDropdownOpen && (
                   <ul className="dropdown-menu">
                     <li><a href="/smartcontract" className="dropdown-item">Smart Contract</a></li>
-                    <li><a href="/smartcontract" className="dropdown-item">Penetration Testing</a></li>
+                    <li><a href="/penetration-testing" className="dropdown-item">Penetration Testing</a></li>
+                    <li><a href="/blockchainaudit" className="dropdown-item">Blockchain Audit</a></li>
                   </ul>
                 )}
               </li>
@@ -70,7 +78,14 @@ function Header() {
           <nav className="mobile-nav d-lg-none">
             <ul className="nav flex-column">
               <li className="nav-item">
-                <a href="/Home" className="nav-link text-white">Services</a>
+                <div className="nav-link text-white" onClick={toggleMobileDropdown}>Services</div>
+                {isMobileDropdownOpen && (
+                  <ul className="dropdown-menu">
+                    <li><a href="/smartcontract" className="dropdown-item">Smart Contract</a></li>
+                    <li><a href="/penetration-testing" className="dropdown-item">Penetration Testing</a></li>
+                    <li><a href="/blockchain-audit" className="dropdown-item">Blockchain Audit</a></li>
+                  </ul>
+                )}
               </li>
               <li className="nav-item">
                 <a href="/portfolio" className="nav-link text-white">Portfolio</a>

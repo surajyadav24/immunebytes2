@@ -19,6 +19,7 @@ import Layout2 from "./components/Layout/";
 import SmartContract from "./components/Services/SmartContractAudit/index.jsx";
 import About from "./Pages/About/Index.jsx";
 import Penetration from "./components/Services/penetrationTesting"
+import BlockchainAudit from './components/Services/BlockchainAudit/index.jsx'
 
 function App() {
   return (
@@ -62,6 +63,15 @@ function App() {
             </Layout2>
           }
         />
+        <Route
+          path="/blockchainaudit"
+          element={
+            <Layout2>
+            <BlockchainAudit/>
+            </Layout2>
+          }
+        />
+      
               <Route
           path="/about"
           element={

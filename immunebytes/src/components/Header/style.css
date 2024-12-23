@@ -141,11 +141,12 @@ a.nav-link.text-white {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 3px;
 }
 
-.nav-link span img{
-  padding-top: 8px;
+.nav-link span img {
+  transform: scale(0.7);
+  padding-top: 12px;
 }
 /* Responsive Design */
 @media (max-width: 768px) {

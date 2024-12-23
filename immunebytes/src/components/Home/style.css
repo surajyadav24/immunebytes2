@@ -95,6 +95,12 @@
   padding: 4px 13px !important;
   margin-top: 30px !important;
 }
+.homapage-prtfolio .portfolio-table-container {
+  max-height: 550px;
+  min-height: 595px !important;
+  border: 1px solid #F9116C;
+  background: none;
+}
 
   @media (max-width:425px) {
     h1.text-center.py-5.pb-4.heading-h1 {
@@ -108,4 +114,12 @@
   .why-sec-choose{
     margin-top: 40px;
   }
+
+  .homapage-prtfolio .portfolio-table-container {
+    max-height: auto;
+    min-height: auto !important;
+    border: none;
+    background: none;
+  }
+
   }

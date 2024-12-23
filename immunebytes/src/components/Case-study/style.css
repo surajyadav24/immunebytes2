@@ -1,6 +1,6 @@
 /* src/components/CaseStudyCard.css */
 .case-study-wrapper h1{
-  padding-bottom: 0px !important;
+  padding-bottom: 40px !important;
 }
 .case-study-card.home-casestudy {
   background-color: #1c1c1e;
@@ -152,7 +152,6 @@ border: none;
 
 @media (max-width:1440px) {
   .case-study-wrapper {
-    padding-top: 40px;
     margin: 0 auto;
 }
 

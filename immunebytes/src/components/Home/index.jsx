@@ -69,7 +69,7 @@ const Home = () => {
       </div>
 </div>
 
-<div className="portfolio-container">
+<div className="portfolio-container homapage-prtfolio">
 <PortfolioTable showEditButton={false} />
 <PrimaryBtn text="View More" />
 </div>

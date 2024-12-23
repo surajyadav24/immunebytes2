@@ -1,12 +1,18 @@
-.testimonial-slider .swiper-slide{
 
-}
 .testimonial-slider .swiper-slide-prev {
     padding: 20px 25px;
     min-height: 440px;
     max-height: 263px !important;
     background:url(../../assets/images/slider/prev-slide.svg) no-repeat center center/ contain ;
 }
+
+.testimonial-slider .swiper-slide.swiper-slide-prev p {
+    margin-top: 20px;
+}
+.testimonial-slider .swiper-slide.swiper-slide-next p {
+    margin-top: 20px;
+}
+
 .testimonial-slider .swiper-slide-next{
     padding: 20px 25px;
     min-height: 440px;
@@ -64,8 +70,9 @@
     color: #FFF;
     padding-top: 12px;
 }
-.testimonial-slider .swiper-slide.swiper-slide-active p{
-    font-size: 18px;
+.testimonial-slider .swiper-slide.swiper-slide-active p {
+    font-size: 17px;
+    margin-top: 20px;
     line-height: 21px !important;
 }
 .testimonial-slider .swiper-slide h5{

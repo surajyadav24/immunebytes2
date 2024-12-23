@@ -116,10 +116,16 @@
   }
 
   .homapage-prtfolio .portfolio-table-container {
-    max-height: auto;
-    min-height: auto !important;
+    max-height: 750px;
+    min-height: 700px !important;
     border: none;
     background: none;
   }
-
+  .homapage-prtfolio .btn-primary {
+    padding: 4px 13px !important;
+    margin-top: 59px !important;
+}
+.homapage-prtfolio .pagination {
+  bottom: -40px;
+}
   }

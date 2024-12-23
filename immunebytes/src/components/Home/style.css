@@ -77,10 +77,10 @@
   button.splide__arrow.splide__arrow--next {
     display: none;
   }
-  .case-study-wrapper{
-  
+  .case-study-wrapper {
+    max-width: 1440px;
     margin: 0 auto;
-  }
+}
   button.twit-x img {
     max-width: 23px !important;
   }
@@ -93,13 +93,20 @@
 
 .portfolio-container .btn-primary {
   padding: 4px 13px !important;
-  margin-top: 30px !important;
+  margin-top: 50px !important;
 }
 .homapage-prtfolio .portfolio-table-container {
   max-height: 550px;
   min-height: 595px !important;
   border: 1px solid #F9116C;
   background: none;
+}
+.homapage-prtfolio .portfolio-title{
+padding: 48px 0px;
+}
+.case-study-wrapper .btn-primary {
+  margin: 40px auto !important;
+  padding: 5px 12px !important;
 }
 
   @media (max-width:425px) {

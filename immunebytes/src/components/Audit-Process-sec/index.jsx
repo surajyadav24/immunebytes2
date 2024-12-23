@@ -82,7 +82,7 @@ const AuditProcessSec = () => {
               onMouseEnter={() => setActiveStep(index)}
             >
               <div className="circle"></div>
-              <p>{step.title}</p>
+              <h3>{step.title}</h3>
             </div>
           ))}
         </div>

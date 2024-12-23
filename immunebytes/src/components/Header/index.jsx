@@ -3,6 +3,7 @@ import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Logo from '../../assets/images/logos/Logo.svg';
 import Formpopup from '../Formpopup';
+import dropdown from '../../assets/images/dropdown.svg'
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false); // State to track menu open/close
@@ -39,7 +40,7 @@ function Header() {
                 onMouseEnter={() => toggleDropdown(true)}
                 onMouseLeave={() => toggleDropdown(false)}
               >
-                <a href="#" className="nav-link text-white">Services</a>
+                <a href="#" className="nav-link text-white">Services <span><img src={dropdown} alt="" /></span></a>
                 {isDropdownOpen && (
                   <ul className="dropdown-menu">
                     <li><a href="/smartcontract" className="dropdown-item">Smart Contract</a></li>

@@ -138,6 +138,7 @@ const Home = () => {
               </div>
             </div>
           </div>
+          <PrimaryBtn text="View More" />
         </div>
       </div>
 

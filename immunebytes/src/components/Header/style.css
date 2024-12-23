@@ -111,31 +111,37 @@ button.open-popup-btn.btn.register-btn.text-white {
   top: 40px;
   left: 0;
   display: block !important; /* Ensure it's visible */
-  background-color: #000 !important;
+  background-color: #D9D9D91A !important;
   z-index: 1050; /* Higher than other elements */
-  padding: 10px;
-  border: 1px solid #fff;
-  height: 100px;
-  width: 100px;
+  padding: 10px 5px !important;
+  border: 1px solid #fff !important;
+  min-width: 240px !important;
+
 }
 
 
 .dropdown-item {
   color: #fff !important;
-  padding: 8px 12px;
+  padding: 8px 12px !important;
   text-decoration: none;
   display: block;
+  margin-top: 0px !important;
+  
 }
 
 .dropdown-item:hover {
-background-color: #000 !important;
-  color: #F9116C !important;
+color: #fff !important;
+border-radius: 5px;
+background-color: #F9116C !important;
 }
 
 .dropdown-menu a{
   font-family: 'Arame-Thin';
   font-size: 14px;
-  background-color: #000;
+
+}
+.new-sub-menu{
+  left: 240px;
 }
 a.nav-link.text-white {
   display: flex;
@@ -143,10 +149,93 @@ a.nav-link.text-white {
   justify-content: center;
   gap: 3px;
 }
-
+.dropdown-menu{
+  padding: 10px  20px;
+  box-shadow: -27.37px 27.37px 27.37px 0px #A5A5A51A inset;
+backdrop-filter: blur(67.86933135986328px);
+border-radius:10px;
+background-color: #ffd5a7;
+}
 .nav-link span img {
   transform: scale(0.7);
   padding-top: 12px;
+}
+ul.dropdown-menu.sub-menu {
+  top: -10px;
+  left: 245px;
+  display: none;
+  padding: 5px 10px !important;
+}
+
+/* Show dropdown on hover */
+.nav-item.dropdown:hover > .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show sub-menu on hover */
+.dropdown-item:hover > .sub-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Hide sub-menu by default */
+.dropdown-menu, .sub-menu {
+  display: none;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Position sub-menu correctly */
+.sub-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px; /* Adjust as necessary */
+}
+
+
+ul.dropdown-menu.sub-menu a.dropdown-item{
+  width: 90px;
+  height: 90px;
+  border-radius: 15px ;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: -27.37px 27.37px 27.37px 0px #A5A5A51A inset;
+box-shadow: 27.37px -27.37px 27.37px 0px #A5A5A51A inset;
+backdrop-filter: blur(67.86933135986328px);
+border: 1px solid #fff;
+gap: 0px 10px;
+}
+
+
+
+ul.dropdown-menu.sub-menu {
+  min-width: 500px !important;
+  height: 400px;
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 10px;
+
+}
+span.dropdown-header {
+  position: absolute;
+}
+
+ul.dropdown-menu.sub-menu li{
+  height: 90px;
+}
+
+ul.dropdown-menu.sub-menu li {
+  padding-top: 40px !important;
+  padding-top: 38px;
 }
 /* Responsive Design */
 @media (max-width: 768px) {

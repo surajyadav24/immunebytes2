@@ -4,10 +4,21 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Logo from "../../assets/images/logos/Logo.svg";
 import Formpopup from "../Formpopup";
 import dropdown from "../../assets/images/dropdown.svg";
+import dapp from "../../assets/images/header/dapp.svg";
 import defi from "../../assets/images/header/defi.svg";
 import nft from "../../assets/images/header/crypto.svg";
 import token from "../../assets/images/header/token.svg";
-import dapp from "../../assets/images/header/dapp.svg";
+import Ethereum from "../../assets/images/header/Ethereum.svg";
+import Solana from "../../assets/images/header/Solana.svg";
+import BSC from "../../assets/images/header/BSC.svg";
+import Polygon from "../../assets/images/header/Polygon.svg";
+import Near from "../../assets/images/header/Near.svg";
+import Fantom from "../../assets/images/header/Fantom.svg";
+import Arbitrum from "../../assets/images/header/Arbitrum.svg";
+import Optimism from "../../assets/images/header/Optimism.svg";
+import zkSync from "../../assets/images/header/zkSync.svg";
+import BASE from "../../assets/images/header/BASE.svg";
+import Starknet from "../../assets/images/header/Starknet.svg";
 
 function DropdownMenu({ title, links }) {
   return (
@@ -78,10 +89,17 @@ function Header() {
       ],
       subLinksLabelServices: "By Services",
       subLinksByServices: [
-        { href: "/service-menu1", label: "Ethereum", icon: defi },
-        { href: "/service-menu2", label: "Solana", icon: nft },
-        { href: "/service-menu3", label: "Service 3", icon: token },
-        { href: "/service-menu4", label: "Service 4", icon: dapp },
+        { href: "/service-menu1", label: "Ethereum", icon: Ethereum },
+        { href: "/service-menu2", label: "Solana", icon: Solana},
+        { href: "/service-menu3", label: "BSC", icon: BSC},
+        { href: "/service-menu4", label: "Polygon", icon: Polygon },
+        { href: "/service-menu4", label: "Near", icon: Near},
+        { href: "/service-menu4", label: "Fantom", icon: Fantom },
+        { href: "/service-menu4", label: "Arbitrum", icon: Arbitrum },
+        { href: "/service-menu4", label: "Optimism", icon: Optimism },
+        { href: "/service-menu4", label: "zkSync ", icon: zkSync},
+        { href: "/service-menu4", label: "BASE", icon: BASE },
+        { href: "/service-menu4", label: "Starknet", icon: Starknet },
       ],
     },
     {

@@ -236,7 +236,7 @@ ul.dropdown-menu.sub-menu.submenu-services li {
 }
 
 ul.dropdown-menu.sub-menu {
-  min-width: 500px !important;
+  min-width: 480px !important;
   height: 520px;
   display: flex !important;
   flex-wrap: wrap;

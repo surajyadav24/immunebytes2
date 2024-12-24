@@ -545,7 +545,17 @@ ul.dropdown-menu.sub-menu {
   backdrop-filter: none !important;
   border: none !important;
   left: -88px;
+
 }
+
+li.nav-item.dropdown:hover ul.dropdown-menu {
+  display: block !important;
+}
+
+ul.dropdown-menu {
+  display: none !important;
+}
+
 a.dropdown-item img {
   min-width: 30px;
   max-width: 30px;
@@ -586,5 +596,14 @@ ul.dropdown-menu.sub-menu.submenu-services{
   display: flex;
   justify-content: center;
 }
+
+ul.dropdown-menu.sub-menu {
+  top: -10px;
+  left:-91px;
+  display: none;
+  padding: 5px 10px !important;
+}
+
+
 
 }

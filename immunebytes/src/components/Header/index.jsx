@@ -4,12 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Logo from "../../assets/images/logos/Logo.svg";
 import Formpopup from "../Formpopup";
 import dropdown from "../../assets/images/dropdown.svg";
-import defi from "../../assets/images/header/defi.svg"
-import nft from "../../assets/images/header/crypto.svg"
-import token from "../../assets/images/header/token.svg"
-import dapp from "../../assets/images/header/dapp.svg"
-
-
+import defi from "../../assets/images/header/defi.svg";
+import nft from "../../assets/images/header/crypto.svg";
+import token from "../../assets/images/header/token.svg";
+import dapp from "../../assets/images/header/dapp.svg";
 
 function DropdownMenu({ title, links }) {
   return (
@@ -25,11 +23,25 @@ function DropdownMenu({ title, links }) {
             </a>
             {link.subLinks && (
               <ul className="dropdown-menu sub-menu">
-                {/* Custom sublinks label */}
                 {link.subLinksLabel && (
                   <span className="dropdown-header">{link.subLinksLabel}</span>
                 )}
                 {link.subLinks.map((subLink, subIndex) => (
+                  <li key={subIndex}>
+                    <a href={subLink.href} className="dropdown-item">
+                      {subLink.icon && <img src={subLink.icon} alt={subLink.label} className="menu-icon" />}
+                      {subLink.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {link.subLinksByServices && (
+              <ul className="dropdown-menu sub-menu submenu-services">
+                {link.subLinksLabelServices && (
+                  <span className="dropdown-header">{link.subLinksLabelServices}</span>
+                )}
+                {link.subLinksByServices.map((subLink, subIndex) => (
                   <li key={subIndex}>
                     <a href={subLink.href} className="dropdown-item">
                       {subLink.icon && <img src={subLink.icon} alt={subLink.label} className="menu-icon" />}
@@ -47,29 +59,29 @@ function DropdownMenu({ title, links }) {
 }
 
 function Header() {
-  const [isOpen, setIsOpen] = useState(false); // State for mobile menu
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen); // Toggle menu on click
+    setIsOpen(!isOpen);
   };
 
   const dropdownLinks = [
     {
       href: "/smartcontract",
       label: "Smart Contract",
-      subLinksLabel: "By Type",  
+      subLinksLabel: "By Type",
       subLinks: [
-        { href: "/new-menu1", label: "Defi", icon:defi },
+        { href: "/new-menu1", label: "Defi", icon: defi },
         { href: "/new-menu2", label: "Nft", icon: nft },
         { href: "/new-menu3", label: "Token", icon: token },
         { href: "/new-menu4", label: "Dapp", icon: dapp },
       ],
-      subLinksLabelservice: "By Service",  
-      subLinksservice: [
-        { href: "/new-menu1", label: "Defi", icon:defi },
-        { href: "/new-menu2", label: "Nft", icon: nft },
-        { href: "/new-menu3", label: "Token", icon: token },
-        { href: "/new-menu4", label: "Dapp", icon: dapp },
+      subLinksLabelServices: "By Services",
+      subLinksByServices: [
+        { href: "/service-menu1", label: "Ethereum", icon: defi },
+        { href: "/service-menu2", label: "Solana", icon: nft },
+        { href: "/service-menu3", label: "Service 3", icon: token },
+        { href: "/service-menu4", label: "Service 4", icon: dapp },
       ],
     },
     {
@@ -81,7 +93,7 @@ function Header() {
       label: "Blockchain Audit",
     },
   ];
-  
+
   return (
     <header className="text-white p-3">
       <div className="container d-flex justify-content-between align-items-center p-0">
@@ -91,7 +103,6 @@ function Header() {
           </a>
         </div>
 
-        {/* Desktop Navigation */}
         <nav className="desktop-nav d-none d-lg-block">
           <ul className="nav">
             <DropdownMenu title="Services" links={dropdownLinks} />
@@ -113,12 +124,10 @@ function Header() {
           </ul>
         </nav>
 
-        {/* Request Button */}
         <div className="desktop-btn-request">
           <Formpopup />
         </div>
 
-        {/* Hamburger Menu for Mobile */}
         <div className="hamburger d-lg-none" onClick={toggleMenu}>
           <span className="bar"></span>
           <span className="bar"></span>
@@ -126,7 +135,6 @@ function Header() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {isOpen && (
         <nav className="mobile-nav d-lg-none">
           <ul className="nav flex-column">

@@ -156,20 +156,7 @@ function Header() {
       {isOpen && (
         <nav className="mobile-nav d-lg-none">
           <ul className="nav flex-column">
-            <li className="nav-item">
-              <a href="/services" className="nav-link text-white">
-                Services
-              </a>
-              <ul className="dropdown-menu">
-                {dropdownLinks.map((link, index) => (
-                  <li key={index}>
-                    <a href={link.href} className="dropdown-item">
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </li>
+          <DropdownMenu title="Services" links={dropdownLinks} />
             <li className="nav-item">
               <a href="/portfolio" className="nav-link text-white">
                 Portfolio

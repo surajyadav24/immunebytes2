@@ -138,7 +138,13 @@ background-color: #F9116C !important;
 .dropdown-menu a{
   font-family: 'Arame-Thin';
   font-size: 14px;
+}
 
+.dropdown-menu a:focus{
+  background-color: transparent;
+}
+.dropdown-menu a:active{
+  background-color: transparent;
 }
 .new-sub-menu{
   left: 240px;
@@ -180,8 +186,9 @@ ul.dropdown-menu.sub-menu {
   display: block;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.3s ease 0.2s, visibility 0.3s ease 0.2s;
 }
+
 
 /* Hide sub-menu by default */
 .dropdown-menu, .sub-menu {

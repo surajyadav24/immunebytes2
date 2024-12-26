@@ -8,8 +8,8 @@ import dapp from "../../assets/images/header/dapp.svg";
 import defi from "../../assets/images/header/defi.svg";
 import nft from "../../assets/images/header/crypto.svg";
 import token from "../../assets/images/header/token.svg";
-// import Ethereum from "../../assets/images/header/Ethereum.svg";
-// import Solana from "../../assets/images/header/Solana.svg";
+import ethereum from "../../assets/images/header/ethereum.svg";
+import solana from "../../assets/images/header/solana.svg";
 import BSC from "../../assets/images/header/BSC.svg";
 import Polygon from "../../assets/images/header/Polygon.svg";
 import Near from "../../assets/images/header/Near.svg";
@@ -90,8 +90,8 @@ function Header() {
       ],
       subLinksLabelServices: "By Services",
       subLinksByServices: [
-        // { href: "/service-menu1", label: "Ethereum", icon: Ethereum },
-        // { href: "/service-menu2", label: "Solana", icon: Solana},
+        { href: "/service-menu1", label: "Ethereum", icon: ethereum },
+        { href: "/service-menu2", label: "Solana", icon: solana},
         { href: "/service-menu3", label: "BSC", icon: BSC},
         { href: "/service-menu4", label: "Polygon", icon: Polygon },
         { href: "/service-menu4", label: "Near", icon: Near},

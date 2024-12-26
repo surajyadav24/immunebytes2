@@ -241,14 +241,12 @@ ul.dropdown-menu.sub-menu {
   display: flex !important;
   flex-wrap: wrap;
   gap: 0px 25px;
-  background-color: rgba(255, 255, 255, 0.06) !important;
-  -webkit-backdrop-filter: blur(15px)!important;
-  backdrop-filter: blur(15px)!important;
-  box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15)!important;
-border: 1px solid  #00000080!important;
-  
-  
-
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.65) !important;
+  background: rgb(91 75 75 / 75%) !important;
+  box-shadow: 27.367px -27.367px 27.367px 0px rgba(165, 165, 165, 0.10) inset, -27.367px 27.367px 27.367px 0px rgba(165, 165, 165, 0.10) inset;
+  -webkit-backdrop-filter: blur(33.93466567993164px);
+  backdrop-filter: blur(33.93466567993164px);
 }
 ul.dropdown-menu.sub-menu.submenu-services{
   height: 375px;

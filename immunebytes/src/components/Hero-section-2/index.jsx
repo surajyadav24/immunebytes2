@@ -15,7 +15,7 @@ const HeroSection2 = ({
       <div className="hero-section">
         <div className="hero-content">
           <h1>
-            <span>{title}</span> <br />
+            <span>{title}</span>
             <span className="highlight">{highlight}</span>
           </h1>
           <p>{description}</p>

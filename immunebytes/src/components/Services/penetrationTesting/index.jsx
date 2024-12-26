@@ -7,7 +7,8 @@ import AuditProcess from "../../Service-Audit-Process";
 import OtherWeb3Services from "../../Other-Web3-Services";
 import EngagementModel from "../../Engagement-Model";
 import HeroSection2 from "../../Hero-section-2";
-import gif1 from "../../../assets/images/Hero-section/hero-gif.gif";
+import serviceimg from "../../../assets/images/services-img/service1.gif";
+
 import FAQ from "../../FAQ";
 import AuditProcessdummy from "../penetrationTesting/auditprocessdummy";
 
@@ -234,14 +235,16 @@ const icons = {
 function Penetration (){
   return (
     <>
-      <HeroSection2
-        title="Penetration  ,"
+<div className="service-hero">
+<HeroSection2
+        title="Penetration"
         highlight="Testing"
         description="Fortify your systems and achieve robust security with Penetration Testing as a Service (PTaaS), tailored for organizations that value speed and precision."
         buttonText="Book Consultation"
-        imageSrc={gif1}
+        imageSrc={serviceimg}
         altText="Immunebytes Hero GIF"
       />
+</div>
       <div className="container-fluid">
         <RequestAudit
           text="Get your smart contracts audited today and build a"

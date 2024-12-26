@@ -16,11 +16,12 @@
   }
   
   .hero-content h1 {
-    font-size: 60px;
+    font-size: 54px;
     line-height: 1.2;
-  }
+}
   
   .hero-content .highlight {
+    padding-left: 10px;
     color: #F9116C;
   }
   

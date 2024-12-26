@@ -7,7 +7,8 @@ import AuditProcess from "../../Service-Audit-Process";
 import OtherWeb3Services from "../../Other-Web3-Services";
 import EngagementModel from "../../Engagement-Model";
 import HeroSection2 from "../../Hero-section-2";
-import gif1 from "../../../assets/images/Hero-section/hero-gif.gif";
+import serviceimg2 from "../../../assets/images/services-img/service2.gif";
+
 import FAQ from "../../FAQ";
 import AuditProcessdummy from "../penetrationTesting/auditprocessdummy";
 
@@ -238,14 +239,16 @@ const icons = {
 function SmartContract() {
   return (
     <>
-      <HeroSection2
-        title="Smart Contract ,"
+<div className="service-hero">
+<HeroSection2
+        title="Smart Contract"
         highlight="Audit"
         description="Unlock the full potential of your decentralized projects with comprehensive smart contract audits — ensuring security, performance, and trust."
         buttonText="Book Consultation"
-        imageSrc={gif1}
+        imageSrc={serviceimg2}
         altText="Immunebytes Hero GIF"
       />
+</div>
       <div className="container-fluid">
         <RequestAudit
           text="Get your smart contracts audited today and build a"

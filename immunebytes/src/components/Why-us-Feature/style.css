@@ -154,11 +154,12 @@
 
 @media (max-width:445px){
     .heading-why {
-        margin-top: 1.5rem;
+        color: #f9116c;
         font-size: 1.7rem;
-        margin-bottom: 1rem;
-        color: #F9116C; /* Pink color for the title */
-      }
+        margin-bottom: 0px;
+        margin-top: 0px;
+        padding-top: 0px !important;
+    }
     .why-sec-feature {
         background-color: #0f0f0feb;
         padding: 0px 10px;

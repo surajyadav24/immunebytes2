@@ -81,7 +81,7 @@ font-size: 14px !important;
       
         }
   }
-  @media (max-width:425px){
+  @media (max-width:430px){
     .request-audit-container {
       flex-direction: column;
       padding: 30px;

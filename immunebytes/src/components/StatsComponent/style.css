@@ -109,7 +109,7 @@ padding: 37px 0px;
       min-width: 353px !important;
   }
   }
-  @media (max-width:425px) {
+  @media (max-width:430px) {
     .stat-card {
         min-height: 230px;
         margin: 10px 0px;

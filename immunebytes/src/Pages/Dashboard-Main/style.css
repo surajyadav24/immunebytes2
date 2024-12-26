@@ -43,7 +43,7 @@
 }
 
 
-@media (max-width:425px){
+@media (max-width:430px){
     .flex.items-center.justify-between.p-4.header-wrap {
         display: flex;
         flex-direction: column;

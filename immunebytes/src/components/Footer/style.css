@@ -197,7 +197,7 @@ footer .container-fluid{
 
 }
 
-@media (max-width:425px) {
+@media (max-width:430px) {
   .col-lg-3.col-md-6.footer-section.footer-section-4 {
     display: none;
 }

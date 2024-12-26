@@ -119,7 +119,7 @@ button.close-popup-btn img {
         right: 6px;
     }
   }
-  @media (max-width:430px) {
+  @media (max-width:445px) {
     .form-group {
         flex-direction: column;
         margin-bottom: 13px;

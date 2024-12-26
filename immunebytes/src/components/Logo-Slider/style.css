@@ -41,7 +41,7 @@ ul.splide__pagination.splide__pagination--ltr {
 .logo-wrapper {
     padding-top: 40px;
 }
-@media (max-width:430px) {
+@media (max-width:445px) {
     .splide {
         padding: 0px 0;
     }

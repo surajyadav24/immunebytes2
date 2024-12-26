@@ -76,7 +76,7 @@ align-items: center;
     border-radius: 8px;
   }
   
-  @media(max-width:430px){
+  @media(max-width:445px){
     .company-info .chart-container canvas{
       max-height: 225px;
     }

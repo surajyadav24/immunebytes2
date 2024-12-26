@@ -3,7 +3,7 @@
     background: transparent !important;
     -webkit-text-fill-color: #F8126c !important;
 }
-@media (max-width:430px){
+@media (max-width:445px){
     .audit-section-description {
       max-width: 100%;
     }

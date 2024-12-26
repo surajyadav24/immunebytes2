@@ -280,7 +280,7 @@ padding: 50px 10px;
 
 }
 
-@media(max-width:430px){
+@media(max-width:445px){
   .featured-audit-title {
     margin-top: 1.5rem;
     font-size: 1.7rem;
@@ -366,7 +366,7 @@ padding: 50px 10px;
   padding: 0px 10px;
 }
 }
-@media(max-width:430px){
+@media(max-width:445px){
   .featured-audit-title {
     margin-top: 1.5rem;
     font-size: 1.7rem;

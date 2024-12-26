@@ -146,7 +146,7 @@ align-items: center;
 
 
 /* Mobile responsiveness */
-@media (max-width: 425px) {
+@media (max-width: 445px) {
     .engagementmodel h2 {
         margin-top: 1.5rem;
         font-size: 1.7rem;
@@ -175,7 +175,7 @@ align-items: center;
         padding: 10px;
     }
     .engagementmodel-yellow-box {
-      padding: 13px ;
+      padding: 13px 0px !important;
       background: url(../../assets/images/engagement/mob-bg-cta.svg);
         background-size: contain;
         background-position: center;
@@ -183,6 +183,10 @@ align-items: center;
         /* width: 90%; */
         min-height: 0;
         margin: auto;
+    }
+
+    .engagementmodel-yellow-box .button-container button.btn.btn-primary {
+        padding: 4px 13px !important;
     }
 
     .content {

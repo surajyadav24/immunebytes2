@@ -81,4 +81,40 @@
   font-size: 18px;
   margin-bottom: 10px;
 }
-  
+  @media (max-width:425px){
+    .audit-section-description {
+      max-width: 100%;
+    }
+    .audit-details h3 {
+      font-size: 24px;
+      margin-bottom: 6px;
+  }
+  .audit-details {
+    display: flex;
+    min-height: 180px;
+    width: 100%;
+    padding: 0px 21px;
+    flex-direction: column;
+}
+.progress-bar {
+  padding-left: 12px;
+  position: relative;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 5px;
+
+}
+.audit-progress h4 {
+  padding-left: 15px;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+.audit-progress {
+  min-height: 177px;
+  padding: 7px 8px;
+}
+.audit-progress .progress-bar::before {
+  top: 5px;
+  left: 16px;
+}
+  }

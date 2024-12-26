@@ -17,7 +17,7 @@ gap: 3rem;
 .engagementmodel-box {
     background: url("../../assets/images/engagement/bg-box.svg") no-repeat center center / contain;
     border-radius: 0.5rem;
-    padding: 39px 15px;
+    padding: 39px 20px;
     padding-bottom: 10px;
     /* padding-top: 2rem; */
     min-height: 265px;
@@ -25,7 +25,7 @@ gap: 3rem;
 .engagementmodel-box:hover {
     background: url("../../assets/images/engagement/bg-hover.svg") no-repeat center center / contain;
     border-radius: 0.5rem;
-    padding: 39px 15px;
+    padding: 39px 20px;
     padding-bottom: 10px;
     /* padding-top: 2rem; */
     min-height: 239px;
@@ -213,6 +213,17 @@ align-items: center;
         padding: 0.7rem !important;
         padding-right: 0.9rem !important;
         padding-left: 0.9rem !important;
+    }
+
+
+    .engagementmodel-box:hover{
+        padding: 39px 20px;
+    }
+    .engagementmodel-box{
+        padding: 39px 20px;
+    }
+    .engagementmodel-box p{
+        font-size: 14px;
     }
 }
 @media (max-width:375px) {

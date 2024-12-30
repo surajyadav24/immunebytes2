@@ -1,0 +1,65 @@
+/* style.css */
+
+
+  
+  .heading-thank {
+    background: #ffffff;
+    font-family: 'Arvo-Bold';
+    font-size: 182px;
+    font-weight: 700;
+    line-height: 259.32px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    filter: drop-shadow(8px 8px 4px #f9116ca3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: #fff;
+    text-shadow: 4px -1px 7px rgb(158 17 70);
+  }
+  
+  .highlight-you {
+
+    color: #F9116C;
+    background-clip: text;
+    text-shadow: 7px 2px 3px rgb(255, 255, 255);
+  }
+  
+  .description-thank {
+    max-width: 800px;
+    margin: 40px auto;
+    font-family: "RobotoMono-Bold";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32.97px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #fff;
+    
+  }
+  
+ 
+  
+  
+  .thank-btn button{
+    font-size: 12px;
+    padding:15px 20px !important;
+    font-family: "RobotoMono-Regular";
+    font-weight: 300 !important;
+  }
+
+  @media(max-width:440px){
+    .description-thank {
+        font-size: 14px;
+        margin: 20px auto;
+        line-height: 26px;
+    }
+
+    .heading-thank {
+        font-size: 56px;
+        line-height: 75px;
+    }
+  }

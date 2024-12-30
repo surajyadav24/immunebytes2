@@ -103,6 +103,12 @@ button.twit-x img {
   min-height: 90vh;
   align-items: center;
 }
+
+.sec-heading{
+  
+}
+
+
 @media (max-width:768px) {
   .container, .container-sm {
     max-width: 700px;

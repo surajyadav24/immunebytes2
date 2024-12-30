@@ -21,6 +21,8 @@ import About from "./Pages/About/Index.jsx";
 import Penetration from "./components/Services/penetrationTesting"
 import BlockchainAudit from './components/Services/BlockchainAudit/index.jsx'
 import Defi from './components/Services/Defi'
+import ThankYouSection from "./components/ThankYou/index.jsx";
+import Eror from './components/404Eror/'
 
 function App() {
   return (
@@ -77,6 +79,22 @@ function App() {
           element={
             <Layout2>
             <Defi/>
+            </Layout2>
+          }
+        />
+        <Route
+          path="/thankyou"
+          element={
+            <Layout2>
+            <ThankYouSection/>
+            </Layout2>
+          }
+        />
+        <Route
+          path="/eror"
+          element={
+            <Layout2>
+       <Eror/>
             </Layout2>
           }
         />

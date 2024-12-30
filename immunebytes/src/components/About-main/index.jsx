@@ -1,8 +1,18 @@
 import React from 'react'
 import './style.css'
-import main from '../../assets/images/About-main.png'
+// import main from '../../assets/images/About-main.png'
+import WhyChooseUsSec from '../../components/Why-choose-sec'
 
 const Main = () => {
+
+  const cardsData = [
+    { text: "5+ Experience in Web3 Security" },
+    { text: "315+ Happy Clients Globally" },
+    { text: "100+ Critical Issues Reported" }
+  ];
+
+
+
   return (
     <>
     <div className='About-main'>
@@ -11,9 +21,13 @@ const Main = () => {
       <p>A blockchain security audit firm with the goal of making the Web3 space more <p>secure to build through innovative and effective solutions.</p></p></div>
       <div className="">
 
-<div className="Image">
+{/* <div className="Image">
   <img src={main} alt="" />
-</div>
+</div> */}
+
+<WhyChooseUsSec cards={cardsData} />
+
+
 </div>
 </div>
     </>

@@ -28,7 +28,22 @@ import serviceimg3 from "../../assets/images/services-img/service3.gif";
 import gif1 from "../../assets/images/Hero-section/hero-gif.gif";
 import "./style.css";
 import WhyChooseUsSec from "../Why-choose-sec";
+
+
+
+
+
+
 const Home = () => {
+
+
+  const cardsData = [
+    { text: "5+ Experience in Web3 Security" },
+    { text: "315+ Happy Clients Globally" },
+    { text: "100+ Critical Issues Reported" }
+  ];
+
+
   return (
     <>
       <Header />
@@ -46,7 +61,7 @@ const Home = () => {
       <Cta title="Leading the Wave of Web3 Security" />
 <div className="container">
 <div className="services-wrapper">
-        <h1 className="text-center py-5  pb-5 heading-h1">Our Services</h1>
+        <h1 className="text-center py-5  pb-5 heading-h1 ">Our Services</h1>
         <Servicescomponent
           imageSrc={serviceimg2}
           heading="Smart Contract Audit"
@@ -82,7 +97,7 @@ const Home = () => {
         {/* <Whychooseus /> */}
         {/* <Whychooseusec /> */}
 
-<WhyChooseUsSec/>
+        <WhyChooseUsSec cards={cardsData} />
 
       </div>
       <h1 className="text-center py-5  pb-4 heading-h1 testimonial-heading">

@@ -46,6 +46,7 @@ const PlatformManagement = ({ headname, platformsPerPage = 20 }) => {
       );
 
       if (response.data.statusCode === 200) {
+        console.log(response,"response updatedplatform")
         const updatedPlatforms = [...platforms];
         updatedPlatforms[editIndex] = {
           ...updatedPlatforms[editIndex],

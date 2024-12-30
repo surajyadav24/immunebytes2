@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import Logo from '../../../../assets/images/logos/Logo.svg'; // Adjust this import path to your project structure
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+// import { useAuthContext } from '../../Context/AuthContext.jsx';
+// import { useAuthContext } from '../../../../Context/AuthContext';
+// improt useAuthContext
 import './style.css'
+import { useAuthContext } from '../../../../Context/AuthContext';
 
 function OtpForm() { // onOtpChange is now passed as a prop
   const [otp, setOtp] = useState('');
   const [isResending, setIsResending] = useState(false);
   const navigate = useNavigate();
   const [error, setError] = useState(null);  // State to hold error message
+  const { setAuthUser } = useAuthContext();
 
 
   const handleResendOtp = async () => {
@@ -51,6 +56,12 @@ function OtpForm() { // onOtpChange is now passed as a prop
       )
   
       if (response.data.statusCode === 200) {
+        localStorage.setItem("accessToken",response.data.data.accessToken)
+           
+        setAuthUser(response.data.data)
+        console.log(response.data.data,"response.data.data")
+        console.log(response.data,"response.data")
+
         navigate('/dashboard-main');
       } else {
         alert(response.data.message || 'Login failed');

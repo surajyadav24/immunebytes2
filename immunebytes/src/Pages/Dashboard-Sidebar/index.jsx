@@ -39,7 +39,9 @@ function Sidebar() {
 
 
       if (response.data.statusCode === 200) {
-        localStorage.removeItem('accessToken'); // or sessionStorage depending on your implementation
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('user'); // or sessionStorage depending on your implementation
+         // or sessionStorage depending on your implementation
         navigate("/dashboard"); 
       } else {
         alert(response.data.message || "Logout failed");

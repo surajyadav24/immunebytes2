@@ -21,8 +21,11 @@ import About from "./Pages/About/Index.jsx";
 import Penetration from "./components/Services/penetrationTesting"
 import BlockchainAudit from './components/Services/BlockchainAudit/index.jsx'
 import Defi from './components/Services/Defi'
+import { useAuthContext } from "./Context/AuthContext.jsx";
+import {Navigate} from 'react-router-dom'
 
 function App() {
+  const {authUser }= useAuthContext()
   return (
     <Router>
       <Routes>
@@ -31,12 +34,19 @@ function App() {
         {/* <Route path="/about" element={<About />} /> */}
 
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path='/' element={authUser ? <Home /> : <Navigate to={"/dashboard-main"} />} />
+        <Route path='/' element={authUser ? <Home /> : <Navigate to={"/severity"} />} />
+        <Route path='/' element={authUser ? <Home /> : <Navigate to={"/addportfolio"} />} />
+        <Route path='/' element={authUser ? <Home /> : <Navigate to={"/updateportfolio/:selectedItemId"} />} />
+        <Route path='/' element={authUser ? <Home /> : <Navigate to={"/addplatform"} />} />
+
+
         <Route
           path="/otpform"
           element={
-            <PrivateRoute>
-              <OtpForm />{" "}
-            </PrivateRoute>
+            // <PrivateRoute>
+              <OtpForm />
+            // </PrivateRoute>
           }
         />
         <Route path="/forgotpassword" element={<ForgotPassword />} />

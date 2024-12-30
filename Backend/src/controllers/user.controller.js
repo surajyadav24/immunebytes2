@@ -140,6 +140,8 @@ const logIn = asyncHandler(async (req, res) => {
   await verificationToken.save();
 
   
+
+  
 // MAIL--SMTP----->
   mailTransport().sendMail({
     from: process.env.EMAIL_USERNAME,
@@ -191,6 +193,7 @@ const logOut = asyncHandler(async (req, res) => {
     httpOnly: true,
     secure: true,
   };
+//  await localStorage.removeItem("user")
 
   return res
     .status(200)
@@ -265,21 +268,43 @@ const verifyOTP = asyncHandler(async (req, res) => {
   }
 
   const token = await VerificationToken.findOne({ owner: user._id });
+    // Always delete the token from the database after verification attempt (valid or invalid)
   if (!token) {
     throw new ApiError(401, "OTP not found or expired");
   }
+  console.log(token,"token")
+  console.log(token.token,"token.token")
+  console.log(typeof token.token ,"type of token ")
+  console.log(typeof otp ,"type of otp ")
+  console.log(otp,"otp")
+
   
 
   // Compare the hashed OTP stored in the token with the OTP provided by the user
-  const isOTPValid = await bcrypt.compare(otp, token.token);
+  const isOTPValid = await bcrypt.compare(otp,token.token);
+  await VerificationToken.findByIdAndDelete(token._id);
+
   if (!isOTPValid) {
     throw new ApiError(401, "Invalid OTP");
+  // await VerificationToken.findByIdAndDelete(token._id);
+
   }
 
   // OTP is valid, proceed with email verification or other actions
   user.verified = true;
   await VerificationToken.findByIdAndDelete(token._id);
   await user.save();
+
+  const { accessToken, refreshToken } = await generateAccessAndRefreshToken(user._id)
+
+  // console.log(accessToken, refreshToken)
+
+  const loggedInUser = await User.findById(user._id).select("-password -refreshToken ")
+
+  const options ={
+      httpOnly:true,
+      secure:true
+  }
 
   mailTransport().sendMail({
     from: process.env.EMAIL_USERNAME,
@@ -293,13 +318,9 @@ const verifyOTP = asyncHandler(async (req, res) => {
 
   return res
     .status(200)
-    .json(
-      new ApiResponse(
-        200,
-        { user },
-        "Email verified successfully"
-      )
-    );
+    .cookie("accessToken",accessToken,options)
+    .cookie("refreshToken",refreshToken,options)
+    .json(new ApiResponse(200, { user: loggedInUser, accessToken, refreshToken }, "User details fetched successfully"))
 });
 
 // FORGOT PASSWORD -------------->

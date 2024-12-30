@@ -12,7 +12,7 @@
 /* Default grid layout */
 .about-card {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* 3 columns for larger screens */
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr; /* 3 columns for larger screens */
     align-items: center;
     gap: 1rem;
     justify-content: center;
@@ -36,7 +36,27 @@
     margin-top: 1.5rem;
     text-align: center;
 }
+.about-card h3 {
+    font-size: 21px;
+}
+.about-card p {
+    font-size: 14px;
+    font-family: "RobotoMono-Regular";
+    margin-top: 10px;
+}
+.about-card h3 {
+    font-size: 21px;
+}
 
+.social-links-team{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 0px 10px;
+}
+.social-links-team img{
+    max-width: 25px;
+}
 /* Media Query for Tablet Screens */
 @media screen and (max-width: 768px) {
     .about-card {

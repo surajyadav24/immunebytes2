@@ -7,9 +7,15 @@ import Success from '../../components/About-success'
 
 
 const About = () => {
+
+
+  
   return (
     <>
     <div className='about'>
+
+    
+      
     <Main/>
     <Vision/>
     <Map/>

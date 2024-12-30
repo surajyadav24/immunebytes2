@@ -1,0 +1,36 @@
+.description-thank-eror{
+    color: #fff;
+    text-align: center;
+font-size: 44px;
+font-weight: 700;
+line-height: 54.41px;
+letter-spacing: -0.01em;    
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+max-width: 600px;
+margin: 0 auto;
+margin-bottom: 20px;
+}
+@media(max-width:440px){
+    .description-thank-eror{
+        color: #fff;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 40.41px;
+        letter-spacing: -0.01em;
+        text-align: center;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        max-width: 340px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .eror-thank {
+        font-size: 121px;
+        line-height: 79px;
+        margin-bottom: 51px;
+    }
+
+}

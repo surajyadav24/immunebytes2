@@ -4,11 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import './style.css';
 
-const PrimaryBtn = ({text}) => {
+const PrimaryBtn = ({text, onClick }) => {
   return (
     <>
       <Button 
-        style={{ backgroundColor: 'transparent', color: 'white' }} 
+        style={{ backgroundColor: 'transparent', color: 'white' }}
+        onClick={onClick} 
       >
         {text}
         <span>

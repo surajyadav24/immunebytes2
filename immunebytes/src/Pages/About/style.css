@@ -14,6 +14,7 @@
 
 
 .view-more-btn {
+    background-color: transparent;
     margin-top: 20px;
     padding: 2px 13px !important;
     color: #fff;
@@ -24,5 +25,23 @@
   }
   
   button.view-more-btn.btn.btn-primary {
+    background-color: transparent;
     margin-top: 30px;
+}
+
+.about-process 
+button.btn.btn-primary {
+    margin: 30px auto;
+    padding: 4px 10px !important;
+    font-weight: 400;
+}
+
+.about-process .audit-process-title{
+    font-size: 42px;
+    margin-bottom: 40px;
+}
+
+.about-process .sub-heading-section{
+    max-width: 100%;
+    padding-bottom: 60px;
 }

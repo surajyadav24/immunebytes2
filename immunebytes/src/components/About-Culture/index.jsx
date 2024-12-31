@@ -12,8 +12,10 @@ import culture7 from '../../assets/images/about-culture/culture7.png'
 const Culture = () => {
   return (
     <>
-      <div className='about-culture'>
-        <h2>Our Culture</h2>
+<div className="container">
+<div className='about-culture'>
+        <h2 className='section-heading'>Our Culture</h2>
+        <p className='sub-heading-section'>We are a closely-knitted team of Web3 nerds based in India, constantly looking for ways to improve the overall security model of decentralized finance and blockchain.</p>
         <div className='image-slidder'>
         <div className='image-slidder-one'>
           <img src={culture1} alt="culture1" />
@@ -36,6 +38,7 @@ const Culture = () => {
 
         </div>
       </div>
+</div>
     </>
   )
 }

@@ -110,6 +110,31 @@ button.twit-x img {
   color: #F9116C;
 padding: 40px 0px;
 }
+.smart-contract-process .audit-process-card img {
+  background: #000;
+  max-width: 100px;
+  border-radius: 15px;
+  padding: 10px;
+}
+.smart-contract-process .audit-process-card:nth-child(1) img {
+  background-color: #53A5F8;
+}
+.smart-contract-process .audit-process-card:nth-child(2) img {
+  background-color: #FFA747;
+}
+.smart-contract-process .audit-process-card:nth-child(3) img {
+  background-color: #fff;
+}
+.smart-contract-process .audit-process-card:nth-child(4) img {
+  background-color: #FFE345;
+}
+.smart-contract-process .audit-process-card:nth-child(5) img {
+  background-color: #FFD5A7;
+}
+.smart-contract-process .audit-process-card:nth-child(6) img {
+  background-color: #F9116C;
+}
+
 
 
 @media (max-width:768px) {

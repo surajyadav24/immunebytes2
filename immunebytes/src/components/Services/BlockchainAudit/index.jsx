@@ -9,12 +9,13 @@ import FAQ from "../../FAQ";
 import AuditProcessdummy from "../penetrationTesting/auditprocessdummy";
 import serviceimg3 from "../../../assets/images/services-img/service3.gif";
 
-import icon2 from "../../../assets/images/services-main/manual examination.gif";
-import icon3 from "../../../assets/images/services-main/audit-reprt.gif";
-import icon1 from "../../../assets/images/services-main/Preparatory stage.gif";
-import icon4 from "../../../assets/images/services-main/search.gif";
-import icon5 from "../../../assets/images/services-main/PreliminaryAudit.gif";
-import icon6 from "../../../assets/images/services-main/auditRevision.gif";
+import icon1 from "../../../assets/images/services-main/block-chain-first/Layer-by-Layer-Defense.gif";
+import icon2 from "../../../assets/images/services-main/block-chain-first/Data-Integrity-Assurance.gif";
+import icon3 from "../../../assets/images/services-main/block-chain-first/Protocol-Stability-and-Consensus-Security.gif";
+import icon4 from "../../../assets/images/services-main/block-chain-first/Validator-Infrastructure-Security.gif";
+import icon5 from "../../../assets/images/services-main/block-chain-first/Fortifying-Networks.gif";
+import icon6 from "../../../assets/images/services-main/block-chain-first/Custom-Security-Solutions.gif";
+
 
 import FeaturedAudit from "../../Feauture-Audit";
 import staderLogo from "../../../assets/images/sliderlogo/staderlogo.svg";
@@ -22,14 +23,19 @@ import profileImage from "../../../assets/images/testimonial/testimonial (4).png
 
 // FEATURE SECTION WHY US
 import FeatureSection from "../../Why-us-Feature";
-import team from "../../../assets/images/services-main/team.gif";
-import comp from "../../../assets/images/services-main/Comprehensive Audit Process.gif";
-import centric from "../../../assets/images/services-main/Client-Centric Approach.gif";
-import Post from "../../../assets/images/services-main/Post-Audit Support.gif";
-import Tailored from "../../../assets/images/services-main/Tailored Approach.gif";
-import Focus from "../../../assets/images/services-main/Focus on Innovation.gif";
-import Proven from "../../../assets/images/services-main/Proven Track Record.gif";
-import Seal from "../../../assets/images/services-main/ImmuneBytes Seal of Trust.gif";
+
+
+
+import team from "../../../assets/images/services-main/feature-icon/Team-of-Highly-Skilled-Auditors.gif"
+import centric from "../../../assets/images/services-main/feature-icon/Client-Centric-Approach.gif";
+import comp from "../../../assets/images/services-main/feature-icon/Comprehensive-Audit-Process.gif";
+import Post from "../../../assets/images/services-main/feature-icon/Post-Audit-Support.gif";
+import Tailored from "../../../assets/images/services-main/feature-icon/Tailored-Approach.gif";
+import Focus from "../../../assets/images/services-main/feature-icon/TR.gif";
+import Proven from "../../../assets/images/services-main/feature-icon/Post-Audit-Support.gif";
+import Seal from "../../../assets/images/services-main/feature-icon/Cost-Effective Security.gif";
+
+
 import downarrow from "../../../assets/images/services-main/down-arrow.svg";
 import downarrowmobile from "../../../assets/images/Down-Arrow-Mobile.svg";
 import rightarrowmobile from "../../../assets/images/Right-Arrow-Mobile.svg";
@@ -251,17 +257,20 @@ function BlockchainAudit() {
           spantext="safer tomorrow."
           buttonText="Request Audit"
         />
-
-        <AuditProcessdummy
-          title="Elevating Protocol Safety Standards"
+<div className="smart-contract-process">
+<AuditProcessdummy
+          title="Secure Every Layer
+"
           processSteps={processSteps}
         />
+</div>
         {/* <AuditProcess/> */}
         <FeaturedAudit
           title="Featured Audit"
           auditCards={auditCards}
           testimonial={testimonial}
         />
+
         <FeatureSection title="Why Us?" features={features} />
         {/* <FeatureSection/> */}
         <EngagementModel />

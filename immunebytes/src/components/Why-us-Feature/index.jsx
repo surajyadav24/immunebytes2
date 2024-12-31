@@ -17,12 +17,12 @@ const FeatureSection = ({ title, features }) => {
               >
                 {/* Icon with Unique Background */}
                 <div
-                  className={`${feature.backgroundColor} icon-why rounded-full p-4 flex items-center justify-center`}
+                  className={`${feature.backgroundColor} icon-why rounded-full  flex items-center justify-center`}
                 >
                   <img
                     src={feature.icon}
                     alt={feature.title}
-                    className="h-16 w-16 object-contain"
+                    className=""
                   />
                 </div>
                 {/* Content */}

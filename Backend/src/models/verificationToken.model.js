@@ -28,9 +28,4 @@ verificationTokenSchema.methods.generateVerificationToken = function () {
   this.token = verificationToken;
   return verificationToken;
 };
-
-
-
-
-
 export const VerificationToken = new mongoose.model("VerificationToken",verificationTokenSchema)

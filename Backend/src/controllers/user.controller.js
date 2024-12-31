@@ -131,6 +131,8 @@ const logIn = asyncHandler(async (req, res) => {
   
   // Hash the OTP before saving in the database
   const hashedOTP = await bcrypt.hash(OTP, 10);
+  await VerificationToken.deleteMany({ owner: user._id });
+
 
   // Save the hashed OTP in VerificationToken collection
   const verificationToken = new VerificationToken({
@@ -282,7 +284,9 @@ const verifyOTP = asyncHandler(async (req, res) => {
 
   // Compare the hashed OTP stored in the token with the OTP provided by the user
   const isOTPValid = await bcrypt.compare(otp,token.token);
-  await VerificationToken.findByIdAndDelete(token._id);
+  // await VerificationToken.findByIdAndDelete(token._id);
+    // Remove any existing verification tokens for this user
+    await VerificationToken.deleteMany({ owner: user._id });
 
   if (!isOTPValid) {
     throw new ApiError(401, "Invalid OTP");
@@ -292,7 +296,9 @@ const verifyOTP = asyncHandler(async (req, res) => {
 
   // OTP is valid, proceed with email verification or other actions
   user.verified = true;
-  await VerificationToken.findByIdAndDelete(token._id);
+  // await VerificationToken.findByIdAndDelete(token._id);
+  await VerificationToken.deleteMany({ owner: user._id });
+
   await user.save();
 
   const { accessToken, refreshToken } = await generateAccessAndRefreshToken(user._id)
@@ -430,8 +436,12 @@ const resendOtp = asyncHandler(async (req, res) => {
   // Hash the OTP before saving it in the database
   const hashedOTP = await bcrypt.hash(OTP, 10);
 
-  // Remove any existing token for this user (optional cleanup)
-  await VerificationToken.findOneAndDelete({ owner: user._id });
+  // // Remove any existing token for this user (optional cleanup)
+  // await VerificationToken.findOneAndDelete({ owner: user._id });
+
+
+   // Remove any existing verification tokens for this user
+   await VerificationToken.deleteMany({ owner: user._id });
 
   // Create a new verification token
   const verificationToken = new VerificationToken({

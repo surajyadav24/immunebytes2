@@ -9,7 +9,10 @@ import icon1 from '../../assets/images/about-team/icon-1.svg'
 import icon2 from '../../assets/images/about-team/icon-2.svg'
 import icon3 from '../../assets/images/about-team/icon-3.svg'
 import './style.css'
-import { icon } from "@fortawesome/fontawesome-svg-core";
+import PrimaryBtn from "../../components/Primarybutton";
+import Cta from "../../components/Cta-components";
+import VideoTestimonial from "../../components/Video-Testimonial";
+
 const About = () => {
   const processSteps = [
     {
@@ -94,38 +97,84 @@ const About = () => {
 
   ];
 
+
+
   const [visibleSteps, setVisibleSteps] = useState(6); // Initially display six steps
 
   const handleViewMore = () => {
+    console.log("View More clicked");
     setVisibleSteps(processSteps.length); // Show all steps
   };
 
   const handleViewLess = () => {
+    console.log("View Less clicked");
     setVisibleSteps(6); // Show only the initial six steps
   };
+
+// Video Testimonial 
+const testimonialsData = [
+  {
+    name: 'Adam Boudjemaa',
+    position: 'Lead Blockchain Developer',
+    company: 'Polytrade Finance',
+    videoLink: 'IhFuCwL-VJg', 
+  },
+  {
+    name: 'Jérémie Lepetit',
+    position: 'Co-founder & CEO',
+    company: 'Metaweb',
+    videoLink: 'JD_rpOmeaZk', // Replace with an actual YouTube video ID
+  },
+  {
+    name: 'Dr. Gabriel Allred',
+    position: 'Founder',
+    company: 'Biketter Labs',
+    videoLink: 'aoQHInAOQCU', // Replace with an actual YouTube video ID
+  },
+  {
+    name: 'Ebrahim Mohamed',
+    position: 'Founder',
+    company: 'Ethereum STK',
+    videoLink: 'oxry0sps1zQ', // No video link provided
+  },
+];
+
+
+
 
   return (
     <div className="about">
       <Main />
+      <Cta title="Leading the Wave of Web3 Security" />
+
       <Vision />
-      <Map />
+
+
       <div className="about-process">
         <AuditProcessdummy
+subheading="We are a closely-knitted team of Web3 nerds based in India, constantly looking for ways to improve the overall security model of decentralized finance and blockchain. Our team comprises security experts"
           title="Elevating Protocol Safety Standards"
           processSteps={processSteps.slice(0, visibleSteps)} // Display limited steps
         />
         {visibleSteps < processSteps.length ? (
-          <button className="view-more-btn btn btn-primary" onClick={handleViewMore}>
-            View More
-          </button>
+          <PrimaryBtn className='view-more-btn' text="View More" onClick={handleViewMore} />
         ) : (
-          <button className="view-more-btn btn btn-primary" onClick={handleViewLess}>
-            View Less
-          </button>
+          <PrimaryBtn text="View Less" onClick={handleViewLess} />
         )}
       </div>
       <Success />
+      <Map />
+      <VideoTestimonial
+      title="Video Testimonial"
+      description="We are a closely-knitted team of Web3 nerds based in India, constantly looking for ways to improve the overall security model of decentralized finance and blockchain."
+      testimonials={testimonialsData}
+    />
       <Culture />
+      <div className="secure-audit">
+<h2>
+Stay Ahead of the Security Curve.
+</h2>
+</div>
     </div>
   );
 };

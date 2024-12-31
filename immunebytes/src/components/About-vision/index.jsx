@@ -4,8 +4,10 @@ import './style.css'
 const Vision = () => {
   return (
     <>
-    <div className='about-vision'>
-      <h2>Our Vision</h2>
+<div className="container">
+<div className='about-vision'>
+      <h2 className='section-heading'>Our Vision</h2>
+      <p className='sub-heading-section'>We are a closely-knitted team of Web3 nerds based in India, constantly looking for ways to improve the overall security model of decentralized finance and blockchain. Our team comprises security experts</p>
       <div className='table'>
       <table>
         <tbody>
@@ -30,6 +32,7 @@ const Vision = () => {
 
       </div>
     </div>
+</div>
       {/* Mobile version */}
       <div className="mobile-version">
             <div className="vision-item">

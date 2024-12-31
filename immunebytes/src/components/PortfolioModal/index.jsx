@@ -3,6 +3,7 @@ import axios from 'axios';
 import DoughnutChart from '../Doughnutchart'; // Import the DoughnutChart component
 import './style.css';
 import close from '../../assets/images/portfolio/close-btn.svg';
+// import Modal from './Modal.js'
 
 const PortfolioModal = ({ selectedItemId, closeModal }) => {
   const [selectedMonth, setSelectedMonth] = useState('January');
@@ -38,14 +39,9 @@ const PortfolioModal = ({ selectedItemId, closeModal }) => {
     setSelectedMonth(e.target.value);
   };
 
-
   // If portfolio data is loaded, extract the error entries
   const { errorEntries = [], auditData, name, image, platform, auditDate, companyDescription, pdf } = portfolioData || {};
   console.log(pdf,"pdf in portfolio modal")
-
-  // const downloadUrl = pdf.replace('/raw/', '/fl_attachment/raw/');
-  // const downloadUrl = pdf ? pdf.replace('/raw/', '/fl_attachment/raw/') : null;
-
 
 
   const formatAuditDate = (date) => {
@@ -150,10 +146,10 @@ const errorStatusClasses = {
             </button>
             {pdf ? (
               <a
-                href={pdf}
-                download="Report.pdf"
+                href={pdf || "#" }
                 className="download-btn"
                 aria-label="Download Report"
+                download={true}
               >
                 Download Report
               </a>

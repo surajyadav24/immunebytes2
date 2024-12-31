@@ -15,7 +15,8 @@ const uploadOnCloudinary = async (localFilePath) => {
             resource_type: "raw",
             type: "upload" ,
             overwrite: true,
-             access_mode: 'public'
+             access_mode: 'public',
+             flags: 'attachment', // Forces the download
         })
         // file has been uploaded successfull
         //console.log("file is uploaded on cloudinary ", response.url);

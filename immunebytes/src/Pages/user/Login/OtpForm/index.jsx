@@ -57,8 +57,10 @@ function OtpForm() { // onOtpChange is now passed as a prop
   
       if (response.data.statusCode === 200) {
         localStorage.setItem("accessToken",response.data.data.accessToken)
+        localStorage.setItem("user",JSON.stringify(response.data.data.user))
            
-        setAuthUser(response.data.data)
+        // setAuthUser(response.data.data)
+        console.log(JSON.stringify(response.data.data.user),"JSON.stringify(response.data.data.user)")
         console.log(response.data.data,"response.data.data")
         console.log(response.data,"response.data")
 

@@ -21,27 +21,27 @@ import About from "./Pages/About/Index.jsx";
 import Penetration from "./components/Services/penetrationTesting"
 import BlockchainAudit from './components/Services/BlockchainAudit/index.jsx'
 import Defi from './components/Services/Defi'
-
-import { useAuthContext } from "./Context/AuthContext.jsx";
-import {Navigate} from 'react-router-dom'
+// import { useAuthContext } from "./Context/AuthContext.jsx";
+// import {Navigate} from 'react-router-dom'
 import ThankYouSection from "./components/ThankYou/index.jsx";
 import Eror from './components/404Eror/'
+// >>>>>>> 464e7d7a874a6069ef60a2293d884e51159885a4
 
 function App() {
-  const {authUser }= useAuthContext()
+  // const {authUser }= useAuthContext()
   return (
     <Router>
       <Routes>
         {/* Routes without Layout */}
         <Route path="/" element={<Home />} />
         {/* <Route path="/about" element={<About />} /> */}
-
+{/* 
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path='/' element={authUser ? <Home /> : <Navigate to={"/dashboard-main"} />} />
         <Route path='/' element={authUser ? <Home /> : <Navigate to={"/severity"} />} />
         <Route path='/' element={authUser ? <Home /> : <Navigate to={"/addportfolio"} />} />
         <Route path='/' element={authUser ? <Home /> : <Navigate to={"/updateportfolio/:selectedItemId"} />} />
-        <Route path='/' element={authUser ? <Home /> : <Navigate to={"/addplatform"} />} />
+        <Route path='/' element={authUser ? <Home /> : <Navigate to={"/addplatform"} />} /> */}
 
 
         <Route
@@ -90,22 +90,6 @@ function App() {
           element={
             <Layout2>
             <Defi/>
-            </Layout2>
-          }
-        />
-        <Route
-          path="/thankyou"
-          element={
-            <Layout2>
-            <ThankYouSection/>
-            </Layout2>
-          }
-        />
-        <Route
-          path="/eror"
-          element={
-            <Layout2>
-       <Eror/>
             </Layout2>
           }
         />

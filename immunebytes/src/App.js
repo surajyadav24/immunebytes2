@@ -21,8 +21,16 @@ import About from "./Pages/About/Index.jsx";
 import Penetration from "./components/Services/penetrationTesting"
 import BlockchainAudit from './components/Services/BlockchainAudit/index.jsx'
 import Defi from './components/Services/Defi'
+<<<<<<< HEAD
 // import { useAuthContext } from "./Context/AuthContext.jsx";
 import {Navigate} from 'react-router-dom'
+=======
+
+import { useAuthContext } from "./Context/AuthContext.jsx";
+import {Navigate} from 'react-router-dom'
+import ThankYouSection from "./components/ThankYou/index.jsx";
+import Eror from './components/404Eror/'
+>>>>>>> 464e7d7a874a6069ef60a2293d884e51159885a4
 
 function App() {
   // const {authUser }= useAuthContext()

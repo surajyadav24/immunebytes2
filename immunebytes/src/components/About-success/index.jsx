@@ -1,60 +1,76 @@
-import React from 'react'
-import './style.css'
-import Aabhas from '../../assets/images/about-team/Aabhas-Sood-hvr.png'
-import Naveen from '../../assets/images/about-team/Naveen-Rawat-hvr.png'
-
-import Zaryab from '../../assets/images/about-team/Zaryab-Afser-hvr.png'
-
-import Shubhi from '../../assets/images/about-team/Shubhi-Saran-hvr.png'
-
-import Sheetal from '../../assets/images/about-team/Sheetal-Sinha-hvr.png'
-
+import React from "react";
+import "./style.css";
+import Aabhas from "../../assets/images/about-team/Aabhas-Sood-hvr.png";
+import Naveen from "../../assets/images/about-team/Naveen-Rawat-hvr.png";
+import Zaryab from "../../assets/images/about-team/Zaryab-Afser-hvr.png";
+import Shubhi from "../../assets/images/about-team/Shubhi-Saran-hvr.png";
+import Sheetal from "../../assets/images/about-team/Sheetal-Sinha-hvr.png";
+import linkedin from "../../assets/images/about-team/Linkedin.svg"
+import telegram from "../../assets/images/about-team/telegram.svg"
 
 const Success = () => {
+  const team = [
+    {
+      name: "Aabhas Sood",
+      designation: "Founder & CEO",
+      image: Aabhas,
+      linkedin: "https://www.linkedin.com/in/aabhas-sood",
+      telegram: "https://t.me/aabhassood",
+    },
+    {
+      name: "Zaryab Afser",
+      designation: "Lead Auditor",
+      image: Zaryab,
+      linkedin: "https://www.linkedin.com/in/zaryab-afser",
+      telegram: "https://t.me/zaryabafser",
+    },
+    {
+      name: "Naveen Rawat",
+      designation: "Marketing Lead",
+      image: Naveen,
+      linkedin: "https://www.linkedin.com/in/naveen-rawat",
+      telegram: "https://t.me/naveenrawat",
+    },
+    {
+      name: "Shubhi Saran",
+      designation: "Security Engineer",
+      image: Shubhi,
+      linkedin: "https://www.linkedin.com/in/shubhi-saran",
+      telegram: "https://t.me/shubhisaran",
+    },
+    {
+      name: "Sheetal Sinha",
+      designation: "Business Development",
+      image: Sheetal,
+      linkedin: "https://www.linkedin.com/in/sheetal-sinha",
+      telegram: "https://t.me/sheetalsinha",
+    },
+  ];
+
   return (
-    <>
-      <div className='about-success'>
-        <h2>Our Success Team</h2>
-        <div className='about-card'>
-            <div className='card'>
-                <img src={Aabhas} alt="" />
-               <div className="content">
-               <h3>Aabhas Sood</h3>
-               <p>Founder & CEO</p>
-               </div>
-            </div>
-            <div className='card'>
-                <img src={Zaryab} alt="" />
+    <div className="about-success">
+      <h2>Our Success Team</h2>
+      <div className="about-card">
+        {team.map((member, index) => (
+          <div className="card" key={index}>
+            <img src={member.image} alt={member.name} />
             <div className="content">
-            <h3>Zaryab Afser</h3>
-            <p>Lead Auditor</p>
+              <h3>{member.name}</h3>
+              <p>{member.designation}</p>
+              <div className="social-links-team">
+                <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                  <img src={linkedin} alt="" />
+                </a>
+                <a href={member.telegram} target="_blank" rel="noopener noreferrer">
+                <img src={telegram} alt="" />
+                </a>
+              </div>
             </div>
-            </div>
-            <div className='card'>
-                <img src={Naveen} alt="" />
-         <div className="content">
-         <h3>Naveen Rawat</h3>
-         <p>Marketing Lead</p>
-         </div>
-            </div>
-            <div className='card'>
-                <img src={Shubhi} alt="" />
-                <div className='content'>
-                    <h3>Shubhi Saran</h3>
-                <p>Security Engineer</p></div>
-            </div>
-            <div className='card'>
-                <img src={Sheetal} alt="" />
-               <div className="content">
-               <h3>Sheetal Sinha</h3>
-               <p>Business Development</p>
-               </div>
-            </div>
-        </div>
-
+          </div>
+        ))}
       </div>
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default Success
+export default Success;

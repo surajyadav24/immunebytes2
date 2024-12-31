@@ -19,7 +19,7 @@
     text-align: center;
 }
 .main h2{
-    font-size: 2.5rem;
+    font-size: 50px;
     padding: 2rem;
 }
 .main span{
@@ -78,4 +78,12 @@
       padding: 1rem;
       min-height: 50vh; /* Further reduce height for smaller devices */
     }
+    .main h2{
+      font-size: 44px;
+      padding: 2rem;
+  }
+
+  .main p {
+    font-size: 18px;
+  }
   }

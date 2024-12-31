@@ -71,7 +71,7 @@
     }
     .about-card {
         padding: 1rem ;
-        grid-template-columns: 1fr 1fr; /* 1 column for mobile screens */
+        grid-template-columns: 1fr; /* 1 column for mobile screens */
     }
 
     /* If there's only one card left at the end of the grid, center it */
@@ -93,6 +93,6 @@
     }
     
     .card img {
-        max-width: 100%;  /* Ensure images do not exceed the container width */
+        max-width: auto;  /* Ensure images do not exceed the container width */
     }
 }

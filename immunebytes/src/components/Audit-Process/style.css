@@ -217,7 +217,7 @@
         .audit-process-container p {
             max-width: 277px;
             color: #fff;
-            font-size: 12px;
+            font-size: 18px;
         }
         .first-audit .item:nth-child(1)::after {
             top: -138px;

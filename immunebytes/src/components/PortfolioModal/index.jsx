@@ -38,8 +38,15 @@ const PortfolioModal = ({ selectedItemId, closeModal }) => {
     setSelectedMonth(e.target.value);
   };
 
+
   // If portfolio data is loaded, extract the error entries
   const { errorEntries = [], auditData, name, image, platform, auditDate, companyDescription, pdf } = portfolioData || {};
+  console.log(pdf,"pdf in portfolio modal")
+
+  // const downloadUrl = pdf.replace('/raw/', '/fl_attachment/raw/');
+  // const downloadUrl = pdf ? pdf.replace('/raw/', '/fl_attachment/raw/') : null;
+
+
 
   const formatAuditDate = (date) => {
     if (date) {
@@ -63,6 +70,20 @@ const PortfolioModal = ({ selectedItemId, closeModal }) => {
   if (error) {
     return <div className="error-message">{error}</div>;
   }
+  // Define mappings
+const errorTypeClasses = {
+  validation: 'validation',
+  server: 'server',
+  authentication: 'authentication',
+  network: 'network',
+};
+
+const errorStatusClasses = {
+  active: 'active',
+  resolve: 'resolve',
+  pending: 'pending',
+  close: 'close',
+};
 
   return (
     <div className="modal-overlay">
@@ -78,10 +99,10 @@ const PortfolioModal = ({ selectedItemId, closeModal }) => {
             <div className="company-name">{name}</div>
             <div className="platform-name">{platform}</div>
             {/* Add the DoughnutChart based on audit data */}
-            <DoughnutChart data={auditData?.progress || {}} />
+            <DoughnutChart data={auditData?.progress || "hey"} />
             <div className="developer-response">Developer Response</div>
           </div>
-        </div>
+        </div>                    
         <div className="modal-right">
           <div className="company-description">
             <h3>Company Description</h3>
@@ -104,17 +125,21 @@ const PortfolioModal = ({ selectedItemId, closeModal }) => {
           {/* Error entries rendering */}
           {errorEntries.length > 0 ? (
             <div className="error-list">
-              {errorEntries.map((error, index) => (
-                <div key={index} className="error-row">
-                  <div className={`severity ${error.errorType.toLowerCase()}`}>
-                    {error.errorType}
-                  </div>
-                  <div className="error-msg">{error.errorDescription}</div>
-                  <div className={`status ${error.errorStatus.toLowerCase()}`}>
-                    {error.errorStatus}
-                  </div>
-                </div>
-              ))}
+              {errorEntries.map((error, index) => {
+                  const errorTypeClass = errorTypeClasses[error.errorType.toLowerCase()] || 'unknown';
+                  const errorStatusClass = errorStatusClasses[error.errorStatus.toLowerCase()] || 'unknown';
+                  return ( // Add a return here
+                    <div key={index} className="error-row">
+                      <div className={`severity ${errorTypeClass}`}>
+                        {error.errorType}
+                      </div>
+                      <div className="error-msg">{error.errorDescription}</div>
+                      <div className={`status ${errorStatusClass}`}>
+                        {error.errorStatus}
+                      </div>
+                    </div>
+                  );
+})}
             </div>
           ) : (
             <p>No errors to display for {selectedMonth}.</p>
@@ -126,7 +151,7 @@ const PortfolioModal = ({ selectedItemId, closeModal }) => {
             {pdf ? (
               <a
                 href={pdf}
-                download
+                download="Report.pdf"
                 className="download-btn"
                 aria-label="Download Report"
               >

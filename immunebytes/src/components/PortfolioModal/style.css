@@ -141,7 +141,7 @@ button.close-btn img {
   text-align: left;
 }
 
-.severity.high {
+/* .severity.high {
   color: red;
 }
 .severity.medium {
@@ -159,6 +159,92 @@ button.close-btn img {
 .status.pending {
   color: red;
 }
+ */
+
+
+/* FOR ERROR AND STATUS COLORS  */
+
+/* style.css */
+
+/* Severity Styles */
+.severity {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Error Types */
+.severity.High {
+  background-color: #C70000; /* Light Red */
+}
+
+.severity.Critical {
+  background-color: #FF0000; /* Light Blue */
+}
+
+.severity.Medium {
+  background-color: #FF5C00; /* Light Yellow */
+}
+
+.severity.Informational {
+  background-color: #00D22E; /* Light Green */
+  color: #155724;            /* Dark Green */
+}
+
+.severity.unknown {
+  background-color: #e2e3e5; /* Light Gray */
+  color: #41464b;            /* Dark Gray */
+}
+
+/* Status Styles */
+.status {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+/* Status Types */
+.status.Fixed {
+  background-color: #008A1E;
+   /* Light Green */
+  /* color: #fff;            Dark Green */
+}
+
+.status.Open {
+  background-color: #980000 /* Light Blue */
+
+}
+
+.status.Acknowledged {
+  background-color:#FF5A45; /* Light Yellow */
+}
+
+.status.Redacted {
+  background-color: #8F00FF; /* Light Red */
+}
+
+.status.unknown {
+  background-color: #e2e3e5; /* Light Gray */
+  color: #41464b;            /* Dark Gray */
+}
+
+/* Additional Styling for Error Rows */
+.error-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.error-msg {
+  flex: 1;
+  margin-right: 10px;
+}
+/* END HERE FOR COLOR  */
 
 .modal-actions {
   position: absolute;

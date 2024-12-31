@@ -297,10 +297,10 @@ const AddPortfolio = (props) => {
             className="w-full p-3 border border-gray-600 rounded-md"
           >
             <option value="">Select Error Type</option>
-            <option value="Validation">Validation</option>
-            <option value="Server">Server</option>
-            <option value="Network">Network</option>
-            <option value="Authentication">Authentication</option>
+            <option value="Validation">High</option>
+            <option value="Server">Medium</option>
+            <option value="Network">Critical</option>
+            <option value="Authentication">Informational</option>
           </select>
         </div>
 
@@ -313,10 +313,10 @@ const AddPortfolio = (props) => {
             className="w-full p-3 border border-gray-600 rounded-md"
           >
             <option value="">Select Error Status</option>
-            <option value="Active">Active</option>
-            <option value="Resolved">Resolved</option>
-            <option value="Pending">Pending</option>
-            <option value="Closed">Closed</option>
+            <option value="Active">Fixed</option>
+            <option value="Resolved">Open</option>
+            <option value="Pending">Acknowledged</option>
+            <option value="Closed">Redacted</option>
           </select>
         </div>
 

@@ -27,10 +27,10 @@ export const Menus = [
         name: "Design",
         desc: "Responsive design",
         icon: PanelsTopLeft,
-        // subSubMenu: [
-        //     { name: "Sub-Submenu 1" },
-        //     { name: "Sub-Submenu 2" },
-        //   ],
+        subSubMenu: [
+          { name: "Sub-Submenu 1" },
+          { name: "Sub-Submenu 2" },
+        ],
       },
       {
         name: "Management",

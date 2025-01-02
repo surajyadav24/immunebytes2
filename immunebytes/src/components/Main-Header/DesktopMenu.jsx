@@ -3,26 +3,21 @@ import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function DesktopMenu({ menu }) {
-  // Hover state for each menu item
   const [isHovered, setIsHovered] = useState(false);
+  const [hoveredSubMenuIndex, setHoveredSubMenuIndex] = useState(null);
+
   const subMenuAnimate = {
     enter: {
       opacity: 1,
       rotateX: 0,
-      transition: {
-        duration: 0.5,
-      },
+      transition: { duration: 0.5 },
       display: "block",
     },
     exit: {
       opacity: 0,
       rotateX: -15,
-      transition: {
-        duration: 0.5,
-      },
-      transitionEnd: {
-        display: "none",
-      },
+      transition: { duration: 0.5 },
+      transitionEnd: { display: "none" },
     },
   };
 
@@ -32,8 +27,11 @@ export default function DesktopMenu({ menu }) {
     <motion.li
       className="group/link"
       key={menu.name}
-      onMouseEnter={() => setIsHovered(true)} // Set hover state to true on hover
-      onMouseLeave={() => setIsHovered(false)} // Set hover state to false on hover leave
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        setHoveredSubMenuIndex(null);
+      }}
     >
       <span className="flex-center gap-1 hover:bg-white/5 cursor-pointer px-3 py-1 rounded-xl">
         {menu.name}
@@ -45,7 +43,7 @@ export default function DesktopMenu({ menu }) {
         <motion.div
           className="sub-menu"
           initial="exit"
-          animate={isHovered ? "enter" : "exit"} // Show or hide submenu based on hover state
+          animate={isHovered ? "enter" : "exit"}
           variants={subMenuAnimate}
         >
           <div
@@ -58,7 +56,12 @@ export default function DesktopMenu({ menu }) {
             }`}
           >
             {menu.subMenu.map((submenu, i) => (
-              <div className="relative cursor-pointer" key={i}>
+              <div
+                className="relative cursor-pointer group/submenu"
+                key={submenu.name || i}
+                onMouseEnter={() => setHoveredSubMenuIndex(i)}
+                onMouseLeave={() => setHoveredSubMenuIndex(null)}
+              >
                 {menu.gridCols > 1 && menu?.subMenuHeading?.[i] && (
                   <p className="text-sm mb-4 text-gray-500">
                     {menu?.subMenuHeading?.[i]}
@@ -73,6 +76,26 @@ export default function DesktopMenu({ menu }) {
                     <p className="text-sm text-gray-400">{submenu.desc}</p>
                   </div>
                 </div>
+
+                {/* Sub-submenu */}
+                {submenu.subSubMenu && hoveredSubMenuIndex === i && (
+                  <motion.div
+                    className="absolute left-full top-0 sub-submenu bg-gray-800 rounded-lg shadow-lg"
+                    initial="exit"
+                    animate="enter"
+                    exit="exit"
+                    variants={subMenuAnimate}
+                  >
+                    {submenu.subSubMenu.map((subSubItem, j) => (
+                      <div
+                        className="px-4 py-2 hover:bg-gray-700 text-white cursor-pointer"
+                        key={subSubItem.name || j}
+                      >
+                        {subSubItem.name}
+                      </div>
+                    ))}
+                  </motion.div>
+                )}
               </div>
             ))}
           </div>

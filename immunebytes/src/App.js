@@ -21,13 +21,15 @@ import About from "./Pages/About/Index.jsx";
 import Penetration from "./components/Services/penetrationTesting"
 import BlockchainAudit from './components/Services/BlockchainAudit/index.jsx'
 import Defi from './components/Services/Defi';
-import HeaderComponent from "./components/Main-Header/HeaderComponent.jsx";
+// import HeaderComponent from "./components/Main-Header/HeaderComponent.jsx";
 
 
 import { useAuthContext } from "./Context/AuthContext.jsx";
 import {Navigate} from 'react-router-dom'
 import ThankYouSection from "./components/ThankYou/index.jsx";
 import Eror from './components/404Eror/'
+
+import HeaderComponent from "./components/Main-Header/HeaderComponent.jsx"
 
 function App() {
   const {authUser }= useAuthContext()

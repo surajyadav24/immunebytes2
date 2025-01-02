@@ -6,7 +6,7 @@ export default function DesktopMenu({ menu }) {
   // Hover state for menu and submenus
   const [isHovered, setIsHovered] = useState(false);
   const [hoveredSubMenuIndex, setHoveredSubMenuIndex] = useState(null);
-
+// console.log("hey")
   const subMenuAnimate = {
     enter: {
       opacity: 1,

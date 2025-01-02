@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
+import "./DesktopMenu.css"
 
 export default function DesktopMenu({ menu }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -14,10 +15,10 @@ export default function DesktopMenu({ menu }) {
       display: "block",
     },
     exit: {
-      opacity: 0,
+      opacity: 1,
       rotateX: -15,
       transition: { duration: 0.5 },
-      transitionEnd: { display: "none" },
+      transitionEnd: { display: "block" },
     },
   };
 
@@ -41,7 +42,7 @@ export default function DesktopMenu({ menu }) {
       </span>
       {hasSubMenu && (
         <motion.div
-          className="sub-menu"
+          className="sub-menu "
           initial="exit"
           animate={isHovered ? "enter" : "exit"}
           variants={subMenuAnimate}
@@ -68,7 +69,7 @@ export default function DesktopMenu({ menu }) {
                   </p>
                 )}
                 <div className="flex-center gap-x-4 group/menubox">
-                  <div className="bg-white/5 w-fit p-2 rounded-md group-hover/menubox:bg-white group-hover/menubox:text-gray-900 duration-300">
+                  <div className=" duration-300">
                     {submenu.icon && <submenu.icon />}
                   </div>
                   <div>
@@ -79,16 +80,17 @@ export default function DesktopMenu({ menu }) {
 
                 {/* Sub-submenu */}
                 {submenu.subSubMenu && hoveredSubMenuIndex === i && (
-                  <motion.div
-                    className="absolute left-full top-0 sub-submenu bg-gray-800 rounded-lg shadow-lg"
-                    initial="exit"
+   <div className="subsubmenu-wrapper sub-menu">
+                   <motion.div
+                    className="absolute left-full top-0 sub-submenu bg-gray-800 rounded-lg shadow-lg subsubmenu"
+                    initial="enter"
                     animate="enter"
-                    exit="exit"
+                    // exit="exit"
                     variants={subMenuAnimate}
                   >
                     {submenu.subSubMenu.map((subSubItem, j) => (
                       <div
-                        className="px-4 py-2 hover:bg-gray-700 text-white cursor-pointer"
+                        className="px-4 py-2 hover:bg-gray-700 text-white cursor-pointer submenuitem"
                         key={subSubItem.name || j}
                       >
                         {subSubItem.name}
@@ -100,6 +102,7 @@ export default function DesktopMenu({ menu }) {
                       
                     ))}
                   </motion.div>
+   </div>
                 )}
               </div>
             ))}

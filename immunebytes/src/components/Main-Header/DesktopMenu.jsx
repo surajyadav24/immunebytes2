@@ -80,7 +80,7 @@ export default function DesktopMenu({ menu }) {
 
                 {/* Sub-submenu */}
                 {submenu.subSubMenu && hoveredSubMenuIndex === i && (
-   <div className="subsubmenu-wrapper sub-menu">
+   <div className="subsubmenu-wrapper ">
                    <motion.div
                     className="absolute left-full top-0 sub-submenu bg-gray-800 rounded-lg shadow-lg subsubmenu"
                     initial="enter"

@@ -34,8 +34,8 @@ export const Menus = [
       },
       {
         name: "Management",
-        desc: "Site control",
-        icon: Bolt,
+        // desc: "Site control",
+        // icon: Bolt,
       },
       {
         name: "Navigation",

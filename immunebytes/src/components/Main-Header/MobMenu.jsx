@@ -61,7 +61,7 @@ export default function MobMenu({ Menus }) {
                         key={name}
                         className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
                       >
-                        <Icon size={17} />
+                         {Icon && <Icon size={17} />} {/* Render icon only if it exists */}
                         {name}
                       </li>
                     ))}

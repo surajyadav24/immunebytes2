@@ -259,9 +259,8 @@ function Penetration (){
 
 <div className="smart-contract-process">
 <AuditProcessdummy
-          title="Secure Every Layer
-"
-          processSteps={processSteps}
+          title="Shield Your DApp"
+          processSteps={processSteps} 
         />
 </div>
         {/* <AuditProcess/> */}

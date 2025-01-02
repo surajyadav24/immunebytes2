@@ -1,4 +1,4 @@
-* {
+/* * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
@@ -57,7 +57,7 @@ header .nav-item .nav-link:hover {
 }
 
 /* Hamburger Menu */
-.hamburger {
+/* .hamburger {
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -68,10 +68,10 @@ header .nav-item .nav-link:hover {
   width: 25px;
   height: 3px;
   background-color: #fff;
-}
+} */
 
 /* Mobile Menu */
-.mobile-nav {
+/* .mobile-nav {
   background-color: #000;
   padding: 10px 20px;
 }
@@ -104,15 +104,15 @@ a.btn.register-btn.d-none.d-md-inline-block {
 button.open-popup-btn.btn.register-btn.text-white {
   background-color: #F9116C !important;
   color: #fff !important;
-}
+} */
 /* Dropdown Menu Styling */
-.dropdown-menu {
+/* .dropdown-menu {
   position: absolute !important;
   top: 40px;
   left: 0;
-  display: block !important; /* Ensure it's visible */
+  display: block !important; 
   background-color: #D9D9D91A !important;
-  z-index: 1050; /* Higher than other elements */
+  z-index: 1050; 
   padding: 10px 5px !important;
   border: 1px solid #fff !important;
   min-width: 240px !important;
@@ -171,42 +171,41 @@ ul.dropdown-menu.sub-menu {
   left: 236px;
   display: none;
   padding: 5px 10px !important;
-}
+} */
 
 /* Show dropdown on hover */
-.nav-item.dropdown:hover > .dropdown-menu {
+/* .nav-item.dropdown:hover > .dropdown-menu {
   display: block;
   opacity: 1;
   visibility: visible;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-}
+} */
 
 /* Show sub-menu on hover */
-.dropdown-item:hover > .sub-menu {
+/* .dropdown-item:hover > .sub-menu {
   display: block;
   opacity: 1;
   visibility: visible;
   transition: opacity 0.3s ease 0.2s, visibility 0.3s ease 0.2s;
-}
+} */
 
 
 /* Hide sub-menu by default */
-.dropdown-menu, .sub-menu {
+/* .dropdown-menu, .sub-menu {
   display: none;
   position: absolute;
   opacity: 0;
   visibility: hidden;
-}
+} */
 
 /* Position sub-menu correctly */
-.sub-menu {
+/* .sub-menu {
   top: 0;
   left: 100%;
   margin-top: -1px; /* Adjust as necessary */
-}
 
 
-ul.dropdown-menu.sub-menu a.dropdown-item{
+/* ul.dropdown-menu.sub-menu a.dropdown-item{
   width: 90px;
   height: 90px;
   border-radius: 15px ;
@@ -222,9 +221,9 @@ backdrop-filter: blur(67.86933135986328px);
 border: 1px solid #fff;
 gap: 0px 10px;
 
-}
+} */ 
 
-ul.dropdown-menu.sub-menu.submenu-services li:nth-child(2) {
+/* ul.dropdown-menu.sub-menu.submenu-services li:nth-child(2) {
   margin-top: 41px !important;
   padding: 0px !important;
 }
@@ -287,9 +286,9 @@ ul.dropdown-menu.sub-menu.submenu-services {
   backdrop-filter: none !important;
   background: none !important;
   box-shadow: none !important;
-}
+} */
 /* Responsive Design */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   header .container {
     flex-direction: column;
   }
@@ -484,8 +483,8 @@ a.btn.register-btn.mobile-btn.text-white{
 }
 .mobile-nav ul .nav-item:last-child {
   display: inline-block;
-  }
-
+  } */ 
+/* 
   .dropdown-menu {
     position: relative !important;
     top: 0px !important;
@@ -607,8 +606,7 @@ ul.dropdown-menu.sub-menu {
   left:-91px;
   display: none;
   padding: 5px 10px !important;
-}
+} */
 
 
 
-}

@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 export default function DesktopMenu({ menu }) {
   // Hover state for each menu item
   const [isHovered, setIsHovered] = useState(false);
-
   const subMenuAnimate = {
     enter: {
       opacity: 1,

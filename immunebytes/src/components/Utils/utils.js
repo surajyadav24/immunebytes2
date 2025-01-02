@@ -28,7 +28,9 @@ export const Menus = [
         desc: "Responsive design",
         icon: PanelsTopLeft,
         subSubMenu: [
-          { name: "Sub-Submenu 1" },
+          { name: "Sub-Submenu 1" ,
+            icon: PanelsTopLeft,
+          },
           { name: "Sub-Submenu 2" },
         ],
       },

@@ -5,9 +5,12 @@ import { Menu, X, ChevronDown } from "lucide-react";
 export default function MobMenu({ Menus }) {
   const [isOpen, setIsOpen] = useState(false);
   const [clicked, setClicked] = useState(null);
+  const [subClicked, setSubClicked] = useState(null); // State for subsubmenu
+
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
     setClicked(null);
+    setSubClicked(null);
   };
 
   const subMenuDrawer = {
@@ -37,15 +40,18 @@ export default function MobMenu({ Menus }) {
             const isClicked = clicked === i;
             const hasSubMenu = subMenu?.length;
             return (
-              <li key={name} className="">
+              <li key={name}>
                 <span
                   className="flex-center-between p-4 hover:bg-white/5 rounded-md cursor-pointer relative"
-                  onClick={() => setClicked(isClicked ? null : i)}
+                  onClick={() => {
+                    setClicked(isClicked ? null : i);
+                    setSubClicked(null); // Reset subsubmenu when toggling submenu
+                  }}
                 >
                   {name}
                   {hasSubMenu && (
                     <ChevronDown
-                      className={`ml-auto ${isClicked && "rotate-180"} `}
+                      className={`ml-auto ${isClicked ? "rotate-180" : ""}`}
                     />
                   )}
                 </span>
@@ -56,15 +62,50 @@ export default function MobMenu({ Menus }) {
                     variants={subMenuDrawer}
                     className="ml-5"
                   >
-                    {subMenu.map(({ name, icon: Icon }) => (
-                      <li
-                        key={name}
-                        className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
-                      >
-                         {Icon && <Icon size={17} />} {/* Render icon only if it exists */}
-                        {name}
-                      </li>
-                    ))}
+                    {subMenu.map(({ name, icon: Icon, subSubMenu }, j) => {
+                      const isSubClicked = subClicked === j;
+                      const hasSubSubMenu = subSubMenu?.length;
+                      return (
+                        <li key={name} className="relative">
+                          <span
+                            className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
+                            onClick={() =>
+                              setSubClicked(isSubClicked ? null : j)
+                            }
+                          >
+                            {Icon && <Icon size={17} />}
+                            {name}
+                            {hasSubSubMenu && (
+                              <ChevronDown
+                                className={`ml-auto ${
+                                  isSubClicked ? "rotate-180" : ""
+                                }`}
+                              />
+                            )}
+                          </span>
+                          {hasSubSubMenu && (
+                            <motion.ul
+                              initial="exit"
+                              animate={isSubClicked ? "enter" : "exit"}
+                              variants={subMenuDrawer}
+                              className="ml-5 pl-4 border-l border-gray-600"
+                            >
+                              {subSubMenu.map(({ name, icon: SubIcon }, k) => (
+                                <li
+                                  key={name}
+                                  className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
+                                >
+                                  {SubIcon && (
+                                    <SubIcon size={16} className="text-gray-400" />
+                                  )}
+                                  {name}
+                                </li>
+                              ))}
+                            </motion.ul>
+                          )}
+                        </li>
+                      );
+                    })}
                   </motion.ul>
                 )}
               </li>

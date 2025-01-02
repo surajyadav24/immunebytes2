@@ -92,7 +92,12 @@ export default function DesktopMenu({ menu }) {
                         key={subSubItem.name || j}
                       >
                         {subSubItem.name}
+                        {subSubItem.icon && (
+          <subSubItem.icon size={16} className="text-gray-400" />
+        )}
+                        
                       </div>
+                      
                     ))}
                   </motion.div>
                 )}

@@ -6,7 +6,7 @@ export default function MobMenu({ Menus }) {
   const [isOpen, setIsOpen] = useState(false);
   const [clicked, setClicked] = useState(null);
   const [subClicked, setSubClicked] = useState(null);
-  const [subSubClicked, setSubSubClicked] = useState(null); // State for sub-submenus
+  const [subSubClicked, setSubSubClicked] = useState(null);
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
@@ -32,7 +32,7 @@ export default function MobMenu({ Menus }) {
         animate={{ x: isOpen ? "0%" : "-100%" }}
       >
         <ul>
-          {Menus.map(({ name, subMenu }, i) => {
+          {Menus.map(({ name, link, subMenu }, i) => {
             const isClicked = clicked === i;
             const hasSubMenu = subMenu?.length;
 
@@ -41,12 +41,20 @@ export default function MobMenu({ Menus }) {
                 <span
                   className="flex-center-between p-4 hover:bg-white/5 rounded-md cursor-pointer relative"
                   onClick={() => {
-                    setClicked(isClicked ? null : i);
-                    setSubClicked(null);
-                    setSubSubClicked(null);
+                    if (hasSubMenu) {
+                      setClicked(isClicked ? null : i);
+                      setSubClicked(null);
+                      setSubSubClicked(null);
+                    }
                   }}
                 >
-                  {name}
+                  {link ? (
+                    <a href={link} className="w-full">
+                      {name}
+                    </a>
+                  ) : (
+                    name
+                  )}
                   {hasSubMenu && (
                     <ChevronDown
                       className={`ml-auto ${isClicked ? "rotate-180" : ""}`}
@@ -61,7 +69,7 @@ export default function MobMenu({ Menus }) {
                     className="ml-5"
                   >
                     {subMenu.map(
-                      ({ name, icon: Icon, subSubMenu1, subSubMenu2, subSubHeading1, subSubHeading2 }, j) => {
+                      ({ name, link, icon: Icon, subSubMenu1, subSubMenu2, subSubHeading1, subSubHeading2 }, j) => {
                         const isSubClicked = subClicked === j;
                         const hasSubSubMenu = subSubMenu1 || subSubMenu2;
 
@@ -69,10 +77,23 @@ export default function MobMenu({ Menus }) {
                           <li key={name} className="relative">
                             <span
                               className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
-                              onClick={() => setSubClicked(isSubClicked ? null : j)}
+                              onClick={() => {
+                                if (hasSubSubMenu) {
+                                  setSubClicked(isSubClicked ? null : j);
+                                }
+                              }}
                             >
-                              {Icon && <Icon size={17} />}
-                              {name}
+                              {link ? (
+                                <a href={link} className="w-full flex items-center gap-x-2">
+                                  {Icon && <Icon size={17} />}
+                                  {name}
+                                </a>
+                              ) : (
+                                <>
+                                  {Icon && <Icon size={17} />}
+                                  {name}
+                                </>
+                              )}
                               {hasSubSubMenu && (
                                 <ChevronDown
                                   className={`ml-auto ${
@@ -99,14 +120,19 @@ export default function MobMenu({ Menus }) {
                                     key={item.name}
                                     className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
                                   >
-                                    {item.icon && (
-                                      <img
-                                        src={item.icon}
-                                        alt={item.name}
-                                        className="rounded-full object-cover"
-                                      />
-                                    )}
-                                    {item.name}
+                                    <a
+                                      href={item.link}
+                                      className="flex items-center gap-x-2 w-full"
+                                    >
+                                      {item.icon && (
+                                        <img
+                                          src={item.icon}
+                                          alt={item.name}
+                                          className="rounded-full object-cover"
+                                        />
+                                      )}
+                                      {item.name}
+                                    </a>
                                   </li>
                                 ))}
 
@@ -121,14 +147,19 @@ export default function MobMenu({ Menus }) {
                                     key={item.name}
                                     className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
                                   >
-                                    {item.icon && (
-                                      <img
-                                        src={item.icon}
-                                        alt={item.name}
-                                        className="rounded-full object-cover"
-                                      />
-                                    )}
-                                    {item.name}
+                                    <a
+                                      href={item.link}
+                                      className="flex items-center gap-x-2 w-full"
+                                    >
+                                      {item.icon && (
+                                        <img
+                                          src={item.icon}
+                                          alt={item.name}
+                                          className="rounded-full object-cover"
+                                        />
+                                      )}
+                                      {item.name}
+                                    </a>
                                   </li>
                                 ))}
                               </motion.ul>

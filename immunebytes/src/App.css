@@ -141,9 +141,27 @@ padding: 40px 0px;
   background-color: #F9116C;
 }
 
+.register-btn{
+  margin-top: 0px;
+  background-color: #f9116c !important;
+gap: 0px;
+border-radius:10px;
+opacity: 0px;
+font-family: Arame-Bold;
+}
 
-
-
+.desktop-menu  li span{
+  color: #fff;
+  font-size: 18px !important;
+  font-family: Arame-Bold !important;
+}
+.subsubmenu-wrapper li span{
+  font-family: Roboto-Regular !important;
+}
+.logo-wrapper img{
+  padding: 0px;
+  width: 200px
+}
 .logo {
   height: 6em;
   padding: 1.5em;

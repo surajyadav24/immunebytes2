@@ -47,12 +47,19 @@ export const Menus = [
           { name: "Token", icon: token,     link:"/dashboard" },
           { name: "dApp", icon: dapp,     link:"/dashboard" },
         ],
-        subSubHeading2: ["By Type"],
+        subSubHeading2: ["By Service"],
         subSubMenu2: [
           { name: "Ethereum", icon: ethereum, link:"/dashboard" },
           { name: "Solana", icon: solana , link:"/dashboard"},
           { name: "BSC", icon: BSC, link:"/dashboard" },
-          { name: "Polygon", icon: Polygon , link:"/dashboard"}
+          { name: "Polygon", icon: Polygon , link:"/dashboard"},
+          { name: "Near", icon: Near, link:"/dashboard" },
+          { name: "Fantom", icon: Fantom , link:"/dashboard"},
+          { name: "Arbitrum", icon: Arbitrum, link:"/dashboard" },
+          { name: "Optimism", icon: Optimism , link:"/dashboard"},
+          { name: "zkSync", icon: zkSync , link:"/dashboard"},
+          { name: "BASE", icon: BASE , link:"/dashboard"},
+          { name: "Starknet", icon: Starknet , link:"/dashboard"},
         ]
       },
       {
@@ -66,6 +73,14 @@ export const Menus = [
   },
   {
     name: "Portfolio",
+    gridCols: 1
+  },
+  {
+    name: "About Us",
+    gridCols: 1
+  },
+  {
+    name: "Blog",
     gridCols: 1
   }
 ];

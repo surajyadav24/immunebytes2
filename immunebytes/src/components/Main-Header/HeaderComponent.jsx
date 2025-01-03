@@ -1,15 +1,15 @@
 import { Menus } from "../Utils/utils.js";
-
+import logo from '../../assets/images/logos/Logo.svg'
 import DesktopMenu from "./DesktopMenu";
 import MobMenu from "./MobMenu";
 export default function HeaderComponent() {
   return (
     <div>
-      <header className="h-16 text-[15px] fixed inset-0 flex-center bg-[#2ce93c] ">
+      <header className="h-16 text-[15px] fixed inset-0 flex-center ">
         <nav className=" px-3.5 flex-center-between w-full max-w-7xl mx-auto">
-          <div className="flex-center gap-x-3 z-[999] relative">
+          <div className="flex-center  relative logo-wrapper">
            
-            <h3 className="text-lg font-semibold">Framer</h3>
+            <img src={logo} alt="" />
           </div>
 
           <ul className="gap-x-1 lg:flex-center sm:hidden desktop-menu d-flex">
@@ -20,9 +20,9 @@ export default function HeaderComponent() {
           <div className="flex-center gap-x-5">
             <button
               aria-label="sign-in"
-              className="bg-white/5 z-[999] relative px-3 py-1.5 shadow rounded-xl flex-center"
+              className=" open-popup-btn btn register-btn text-white"
             >
-              Sign In
+             Request Audit
             </button>
             <div className="lg:hidden md:hidden xl:hidden mobile-menu">
               <MobMenu Menus={Menus} />

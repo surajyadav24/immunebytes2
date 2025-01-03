@@ -38,9 +38,7 @@ ul.splide__pagination.splide__pagination--ltr {
 .splide__slide:hover {
     box-shadow: 5px 5px 8px #f9116c;
 }
-.logo-wrapper {
-    padding-top: 40px;
-}
+
 @media (max-width:445px) {
     .splide {
         padding: 0px 0;

@@ -36,7 +36,7 @@ function DropdownMenu({ title, links }) {
             {link.subLinks && (
               <ul className="dropdown-menu sub-menu">
                 {link.subLinksLabel && (
-                  <span className="dropdown-header">{link.subLinksLabel}</span>
+                  <p className="dropdown-header">{link.subLinksLabel}</p>
                 )}
                 {link.subLinks.map((subLink, subIndex) => (
                   <li key={subIndex}>

@@ -108,7 +108,7 @@ export default function DesktopMenu({ menu }) {
                 className="rounded-full object-cover"
               />
             )}
-            <span>{subSubItem.name}</span>
+            <p className="sub-item-name">{subSubItem.name}</p>
           </a>
         ))}
       </div>
@@ -116,7 +116,8 @@ export default function DesktopMenu({ menu }) {
 
 {/* subsub menu 2 ---  */}
 
-      {submenu.subSubHeading2 && (
+<div className="subsubmenu-2">
+{submenu.subSubHeading2 && (
         <p className="px-4 py-2 text-sm font-bold text-white">
           {submenu.subSubHeading2}
         </p>
@@ -136,10 +137,11 @@ export default function DesktopMenu({ menu }) {
                 className="rounded-full object-cover"
               />
             )}
-            <span>{subSubItem.name}</span>
+                 <p className="sub-item-name">{subSubItem.name}</p>
           </a>
         ))}
       </div>
+</div>
     </motion.ul>
   </div>
 )}

@@ -16,12 +16,12 @@ export default function MobMenu({ Menus }) {
   const subMenuDrawer = {
     enter: {
       height: "auto",
-      overflow: "hidden",
+      overflow: "hidden"
     },
     exit: {
       height: 0,
-      overflow: "hidden",
-    },
+      overflow: "hidden"
+    }
   };
 
   return (
@@ -85,28 +85,27 @@ export default function MobMenu({ Menus }) {
                           </span>
                           {hasSubSubMenu && (
                             <motion.ul
-  initial="exit"
-  animate={isSubClicked ? "enter" : "exit"}
-  variants={subMenuDrawer}
-  className="ml-5 pl-4 border-l border-gray-600"
->
-  {subSubMenu.map(({ name, icon }, k) => (
-    <li
-      key={name}
-      className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
-    >
-      {icon && (
-        <img
-          src={icon}
-          alt={name}
-          className=" rounded-full object-cover"
-        />
-      )}
-      {name}
-    </li>
-  ))}
-</motion.ul>
-
+                              initial="exit"
+                              animate={isSubClicked ? "enter" : "exit"}
+                              variants={subMenuDrawer}
+                              className="ml-5 pl-4 border-l border-gray-600"
+                            >
+                              {subSubMenu.map(({ name, icon }, k) => (
+                                <li
+                                  key={name}
+                                  className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
+                                >
+                                  {icon && (
+                                    <img
+                                      src={icon}
+                                      alt={name}
+                                      className=" rounded-full object-cover"
+                                    />
+                                  )}
+                                  {name}
+                                </li>
+                              ))}
+                            </motion.ul>
                           )}
                         </li>
                       );

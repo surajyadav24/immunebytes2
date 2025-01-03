@@ -17,39 +17,44 @@ import { MapPin } from "lucide-react";
 import { Database } from "lucide-react";
 import { PanelsTopLeft } from "lucide-react";
 import { PanelTop } from "lucide-react";
+import dapp from "../../assets/images/header/dapp.svg";
+import defi from "../../assets/images/header/defi.svg";
+import nft from "../../assets/images/header/crypto.svg";
+import token from "../../assets/images/header/token.svg";
+import ethereum from "../../assets/images/header/ethereum.svg";
+import solana from "../../assets/images/header/solana.svg";
+import BSC from "../../assets/images/header/BSC.svg";
+import Polygon from "../../assets/images/header/Polygon.svg";
+import Near from "../../assets/images/header/Near.svg";
+import Fantom from "../../assets/images/header/Fantom.svg";
+import Arbitrum from "../../assets/images/header/Arbitrum.svg";
+import Optimism from "../../assets/images/header/Optimism.svg";
+import zkSync from "../../assets/images/header/zkSync.svg";
+import BASE from "../../assets/images/header/BASE.svg";
+import Starknet from "../../assets/images/header/Starknet.svg";
+
 
 export const Menus = [
   {
-    name: "Features",
+    name: "services",
     subMenuHeading: ["Design", "Scale"],
     subMenu: [
       {
-        name: "Design",
-        desc: "Responsive design",
-        icon: PanelsTopLeft,
+        name: "Smart Contract Audit",
         subSubMenu: [
-          { name: "Sub-Submenu 1" ,
-            icon: Database,
+          { name: "DeFi" ,
+            icon: defi,
           },
-          { name: "Sub-Submenu 2" ,
-            icon: Database ,
+          { name: "NFT" ,
+            icon: nft ,
           },
-        ],
+        ]
       },
       {
-        name: "Management",
-        // desc: "Site control",
-        // icon: Bolt,
+        name: "Blockchain Security Services",
       },
       {
-        name: "Navigation",
-        desc: "Link pages",
-        icon: PanelTop,
-      },
-      {
-        name: "CMS",
-        desc: "Management content",
-        icon: Database,
+        name: "Penetration Testing",
       },
     ],
     gridCols: 1,

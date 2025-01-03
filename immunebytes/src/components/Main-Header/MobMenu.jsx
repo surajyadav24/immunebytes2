@@ -85,23 +85,28 @@ export default function MobMenu({ Menus }) {
                           </span>
                           {hasSubSubMenu && (
                             <motion.ul
-                              initial="exit"
-                              animate={isSubClicked ? "enter" : "exit"}
-                              variants={subMenuDrawer}
-                              className="ml-5 pl-4 border-l border-gray-600"
-                            >
-                              {subSubMenu.map(({ name, icon: SubIcon }, k) => (
-                                <li
-                                  key={name}
-                                  className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
-                                >
-                                  {SubIcon && (
-                                    <SubIcon size={16} className="text-gray-400" />
-                                  )}
-                                  {name}
-                                </li>
-                              ))}
-                            </motion.ul>
+  initial="exit"
+  animate={isSubClicked ? "enter" : "exit"}
+  variants={subMenuDrawer}
+  className="ml-5 pl-4 border-l border-gray-600"
+>
+  {subSubMenu.map(({ name, icon }, k) => (
+    <li
+      key={name}
+      className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
+    >
+      {icon && (
+        <img
+          src={icon}
+          alt={name}
+          className=" rounded-full object-cover"
+        />
+      )}
+      {name}
+    </li>
+  ))}
+</motion.ul>
+
                           )}
                         </li>
                       );

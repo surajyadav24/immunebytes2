@@ -1,12 +1,30 @@
-.subsubmenu{
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
+.submenuitem {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: -27.37px 27.37px 27.37px 0px #a5a5a51a inset;
+  box-shadow: 27.37px -27.37px 27.37px 0px #a5a5a51a inset;
+  backdrop-filter: blur(67.86933135986328px);
+  border: 1px solid #ffffffa6;
+  border-radius: 10px;
+  background: #d9d9d91a;
+}
+.submenuitem:hover {
+  background-color: #f9116c;
+}
+.submenuitem img{
+    min-width: 50px;
 }
 
-.subsubmenu-wrapper{
-    display: flex;
-    width: 100%;
-    background-color: #fff;
-    padding: 20px;
+.subsubmenu {
+  display: flex;
+  flex-direction: column !important;
+  padding: 15px;
+  gap: 10px;
+}
+.li-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }

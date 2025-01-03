@@ -33,7 +33,6 @@ import zkSync from "../../assets/images/header/zkSync.svg";
 import BASE from "../../assets/images/header/BASE.svg";
 import Starknet from "../../assets/images/header/Starknet.svg";
 
-
 export const Menus = [
   {
     name: "services",
@@ -43,60 +42,30 @@ export const Menus = [
         name: "Smart Contract Audit",
         subSubHeading: ["By Type"],
         subSubMenu: [
-          { name: "DeFi" ,
-            icon: defi,
-          },
-          { name: "NFT" ,
-            icon: nft ,
-          },
-          { name: "Token" ,
-            icon: token ,
-          },
-          { name: "dApp" ,
-            icon: dapp ,
-          },
-        ]
-      },
-      {
-        name: "Blockchain Security Services",
-      },
-      {
-        name: "Penetration Testing",
-      },
-    ],
-    gridCols: 1,
-  },
-  {
-    name: "services",
-    subMenuHeading: ["Design", "Scale"],
-    subMenu: [
-      {
-        name: "Smart Contract Audit",
+          { name: "DeFi", icon: defi },
+          { name: "NFT", icon: nft },
+          { name: "Token", icon: token },
+          { name: "dApp", icon: dapp },
+        ],
         subSubHeading: ["By Type"],
         subSubMenu: [
-          { name: "DeFi" ,
-            icon: defi,
-          },
-          { name: "NFT" ,
-            icon: nft ,
-          },
-          { name: "Token" ,
-            icon: token ,
-          },
-          { name: "dApp" ,
-            icon: dapp ,
-          },
+          { name: "Ethereum", icon: ethereum },
+          { name: "Solana", icon: solana },
+          { name: "BSC", icon: BSC },
+          { name: "Polygon", icon: Polygon }
         ]
       },
       {
-        name: "Blockchain Security Services",
+        name: "Blockchain Security Services"
       },
       {
-        name: "Penetration Testing",
-      },
+        name: "Penetration Testing"
+      }
     ],
-    gridCols: 1,
+    gridCols: 1
   },
-
-  
+  {
+    name: "Portfolio",
+    gridCols: 1
+  }
 ];

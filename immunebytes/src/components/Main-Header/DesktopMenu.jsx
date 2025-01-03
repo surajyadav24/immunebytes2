@@ -17,7 +17,7 @@ export default function DesktopMenu({ menu }) {
     exit: {
       opacity: 0,
       rotateX: -15,
-      transition: { duration: 0.5 },
+      transition: { duration: 0.9 },
       transitionEnd: { display: "none" },
     },
   };
@@ -73,7 +73,7 @@ export default function DesktopMenu({ menu }) {
                     {submenu.icon && <submenu.icon />}
                   </div>
                   <div>
-                    <h6 className="font-semibold">{submenu.name}</h6>
+                    <h6 className="font-semibold text-white">{submenu.name}</h6>
                     <p className="text-sm text-gray-400">{submenu.desc}</p>
                   </div>
                 </div>

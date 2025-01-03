@@ -1,7 +1,7 @@
 .submenuitem {
-  padding: 10px;
+  padding: 5px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   box-shadow: -27.37px 27.37px 27.37px 0px #a5a5a51a inset;
   box-shadow: 27.37px -27.37px 27.37px 0px #a5a5a51a inset;
@@ -9,22 +9,32 @@
   border: 1px solid #ffffffa6;
   border-radius: 10px;
   background: #d9d9d91a;
+  max-width: 90px;
 }
 .submenuitem:hover {
   background-color: #f9116c;
 }
-.submenuitem img{
-    min-width: 50px;
+.submenuitem img {
+  min-width: 50px;
+  max-width: 50px;
 }
 
 .subsubmenu {
   display: flex;
   flex-direction: column !important;
+  justify-content: flex-start;
   padding: 15px;
+  min-width: 100%;
   gap: 10px;
+  min-width: 100% !important;
+  box-shadow: -27.37px 27.37px 27.37px 0px #a5a5a51a inset;
+  backdrop-filter: blur(67.86933135986328px);
+  background: #d9d9d91a;
+  border: 1px solid #ffffffa6;
 }
 .li-wrapper {
   display: flex;
   justify-content: center;
   gap: 10px;
+  width: 100%;
 }

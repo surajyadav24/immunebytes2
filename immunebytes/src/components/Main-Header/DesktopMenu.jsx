@@ -11,14 +11,14 @@ export default function DesktopMenu({ menu }) {
     enter: {
       opacity: 1,
       rotateX: 0,
-    //   transition: { duration: 0.5 },
+      transition: { duration: 0.5 },
       display: "block",
     },
     exit: {
-      opacity: 1,
+      opacity: 0,
       rotateX: -15,
-    //   transition: { duration: 0.5 },
-      transitionEnd: { display: "block" },
+      transition: { duration: 0.5 },
+      transitionEnd: { display: "none" },
     },
   };
 
@@ -79,36 +79,42 @@ export default function DesktopMenu({ menu }) {
                 </div>
 
                 {/* Sub-submenu */}
- {submenu.subSubMenu && hoveredSubMenuIndex === i && (
-    <div className="subsubmenu-wrapper">
-  <motion.ul
-    className="absolute left-full top-0 sub-submenu bg-gray-800 rounded-lg shadow-lg subsubmenu"
-    initial="enter"
-    animate="enter"
-    variants={subMenuAnimate}
-  >
-    <div className="li-wrapper">
-      {submenu.subSubMenu.map((subSubItem, j) => (
-        <li
-          className="px-4 py-2 hover:bg-gray-700 text-white cursor-pointer submenuitem flex items-center gap-2"
-          key={subSubItem.name || j}
-        >
-          {/* Display Image */}
-          {subSubItem.icon && (
-            <img
-              src={subSubItem.icon}
-              alt={subSubItem.name}
-              className="rounded-full object-cover"
-            />
-          )}
-          <span>{subSubItem.name}</span>
-        </li>
-      ))}
-    </div>
-  </motion.ul>
-</div>
-
+                {submenu.subSubMenu && hoveredSubMenuIndex === i && (
+  <div className="subsubmenu-wrapper">
+    <motion.ul
+      className="absolute   left-full top-0 sub-submenu  rounded-lg shadow-lg subsubmenu"
+      initial="exit"
+      animate="enter"
+      variants={subMenuAnimate}
+    >
+      {/* Add a heading for the sub-submenu */}
+      {submenu.subSubHeading && (
+        <p className="px-4 py-2 text-sm font-bold text-white ">
+          {submenu.subSubHeading}
+        </p>
+      )}
+      <div className="li-wrapper">
+        {submenu.subSubMenu.map((subSubItem, j) => (
+          <li
+            className="px-4 py-2  hover:bg-gray-700 text-white cursor-pointer submenuitem flex items-center gap-2"
+            key={subSubItem.name || j}
+          >
+            {/* Display Image */}
+            {subSubItem.icon && (
+              <img
+                src={subSubItem.icon}
+                alt={subSubItem.name}
+                className="rounded-full object-cover"
+              />
+            )}
+            <span>{subSubItem.name}</span>
+          </li>
+        ))}
+      </div>
+    </motion.ul>
+  </div>
 )}
+
               </div>
             ))}
           </div>

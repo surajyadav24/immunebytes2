@@ -41,12 +41,19 @@ export const Menus = [
     subMenu: [
       {
         name: "Smart Contract Audit",
+        subSubHeading: ["By Type"],
         subSubMenu: [
           { name: "DeFi" ,
             icon: defi,
           },
           { name: "NFT" ,
             icon: nft ,
+          },
+          { name: "Token" ,
+            icon: token ,
+          },
+          { name: "dApp" ,
+            icon: dapp ,
           },
         ]
       },
@@ -58,108 +65,38 @@ export const Menus = [
       },
     ],
     gridCols: 1,
-//   },
-//   {
-//     name: "Resources",
-//     subMenuHeading: ["Get started", "Programs", "Recent"],
-//     subMenu: [
-//       {
-//         name: "Markplace",
-//         desc: "Browse templates",
-//         icon: ShoppingBag,
+  },
+  {
+    name: "services",
+    subMenuHeading: ["Design", "Scale"],
+    subMenu: [
+      {
+        name: "Smart Contract Audit",
+        subSubHeading: ["By Type"],
+        subSubMenu: [
+          { name: "DeFi" ,
+            icon: defi,
+          },
+          { name: "NFT" ,
+            icon: nft ,
+          },
+          { name: "Token" ,
+            icon: token ,
+          },
+          { name: "dApp" ,
+            icon: dapp ,
+          },
+        ]
+      },
+      {
+        name: "Blockchain Security Services",
+      },
+      {
+        name: "Penetration Testing",
+      },
+    ],
+    gridCols: 1,
+  },
 
-//       },
-//       {
-//         name: "Meetups",
-//         desc: "Upcoming events",
-//         icon: MapPin,
-//       },
-//       {
-//         name: "Updates",
-//         desc: "Changelog",
-//         icon: BellDot,
-//       },
-//       {
-//         name: "Academy",
-//         desc: "Watch lessions",
-//         icon: Play,
-//       },
-//       {
-//         name: "Blog",
-//         desc: "Posts",
-//         icon: BookOpenText,
-//       },
-//       {
-//         name: "Figma",
-//         desc: "Plugin",
-//         icon: Figma,
-//       },
-//       {
-//         name: "Experts",
-//         desc: "Jobs",
-//         icon: BriefcaseBusiness,
-//       },
-//       {
-//         name: "Gallery",
-//         desc: "Images",
-//         icon: Images,
-//       },
-//     ],
-//     gridCols: 3,
-//   },
-//   {
-//     name: "Support",
-//     subMenu: [
-//       {
-//         name: "Help",
-//         desc: "Center",
-//         icon: CircleHelp,
-//       },
-//       {
-//         name: "Community",
-//         desc: "Project help",
-//         icon: MessageCircle,
-//       },
-//       {
-//         name: "Emergency",
-//         desc: "Urgent issues",
-//         icon: TriangleAlert,
-//       },
-//     ],
-//     gridCols: 1,
-//   },
-//   {
-//     name: "Enterprise",
-//     subMenuHeading: ["Overview", "Features"],
-//     subMenu: [
-//       {
-//         name: "Enterprise",
-//         desc: "Overview",
-//         icon: ShieldPlus,
-//       },
-//       {
-//         name: "Collaboration",
-//         desc: "Design together",
-//         icon: Users,
-//       },
-//       {
-//         name: "Customers",
-//         desc: "Stories",
-//         icon: Dessert,
-//       },
-//       {
-//         name: "Security",
-//         desc: "Your site secured",
-//         icon: Lock,
-//       },
-//     ],
-//     gridCols: 2,
-//   },
-//   {
-//     name: "Pricing",
-//   },
-//   {
-//     name: "Contact",
-//   },
-  }
+  
 ];

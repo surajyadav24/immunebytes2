@@ -37,7 +37,10 @@ function App() {
     <Router>
       <Routes>
         {/* Routes without Layout */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={
+          <Home />
+        } 
+          />
         {/* <Route path="/about" element={<About />} /> */}
 
         <Route path="/portfolio" element={<Portfolio />} />

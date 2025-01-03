@@ -2,6 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 
+import "./DesktopMenu.css";
+
 export default function MobMenu({ Menus }) {
   const [isOpen, setIsOpen] = useState(false);
   const [clicked, setClicked] = useState(null);
@@ -17,7 +19,7 @@ export default function MobMenu({ Menus }) {
 
   const subMenuDrawer = {
     enter: { height: "auto", overflow: "hidden" },
-    exit: { height: 0, overflow: "hidden" },
+    exit: { height: 0, overflow: "hidden" }
   };
 
   return (
@@ -27,11 +29,11 @@ export default function MobMenu({ Menus }) {
       </button>
 
       <motion.div
-        className="fixed left-0 right-0 top-16 overflow-y-auto h-full bg-[#18181A] backdrop-blur text-white p-6 pb-20"
+        className="fixed left-0 right-0 top-16 overflow-y-auto h-full   text-white p-6 pb-20 mobile-fixed-bg"
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? "0%" : "-100%" }}
       >
-        <ul>
+        <ul className="main-mobile-wrapper">
           {Menus.map(({ name, link, subMenu }, i) => {
             const isClicked = clicked === i;
             const hasSubMenu = subMenu?.length;
@@ -39,7 +41,7 @@ export default function MobMenu({ Menus }) {
             return (
               <li key={name}>
                 <span
-                  className="flex-center-between p-4 hover:bg-white/5 rounded-md cursor-pointer relative"
+                  className="flex-center-between p-4 rounded-md cursor-pointer relative"
                   onClick={() => {
                     if (hasSubMenu) {
                       setClicked(isClicked ? null : i);
@@ -66,17 +68,28 @@ export default function MobMenu({ Menus }) {
                     initial="exit"
                     animate={isClicked ? "enter" : "exit"}
                     variants={subMenuDrawer}
-                    className="ml-5"
+                    className="ml-5 mob-menu-ul"
                   >
                     {subMenu.map(
-                      ({ name, link, icon: Icon, subSubMenu1, subSubMenu2, subSubHeading1, subSubHeading2 }, j) => {
+                      (
+                        {
+                          name,
+                          link,
+                          icon: Icon,
+                          subSubMenu1,
+                          subSubMenu2,
+                          subSubHeading1,
+                          subSubHeading2
+                        },
+                        j
+                      ) => {
                         const isSubClicked = subClicked === j;
                         const hasSubSubMenu = subSubMenu1 || subSubMenu2;
 
                         return (
                           <li key={name} className="relative">
                             <span
-                              className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
+                              className="p-2 flex-center  rounded-md gap-x-2 cursor-pointer "
                               onClick={() => {
                                 if (hasSubSubMenu) {
                                   setSubClicked(isSubClicked ? null : j);
@@ -84,7 +97,10 @@ export default function MobMenu({ Menus }) {
                               }}
                             >
                               {link ? (
-                                <a href={link} className="w-full flex items-center gap-x-2">
+                                <a
+                                  href={link}
+                                  className="w-full flex items-center gap-x-2"
+                                >
                                   {Icon && <Icon size={17} />}
                                   {name}
                                 </a>
@@ -102,66 +118,69 @@ export default function MobMenu({ Menus }) {
                                 />
                               )}
                             </span>
+
                             {hasSubSubMenu && (
                               <motion.ul
                                 initial="exit"
                                 animate={isSubClicked ? "enter" : "exit"}
                                 variants={subMenuDrawer}
-                                className="ml-5 pl-4 border-l border-gray-600"
+                                className=" border-l border-gray-600"
                               >
-                                {/* Sub-Submenu 1 */}
-                                {subSubHeading1 && (
-                                  <p className="px-4 py-2 text-sm font-bold text-white">
-                                    {subSubHeading1}
-                                  </p>
-                                )}
-                                {subSubMenu1?.map((item, k) => (
-                                  <li
-                                    key={item.name}
-                                    className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
-                                  >
-                                    <a
-                                      href={item.link}
-                                      className="flex items-center gap-x-2 w-full"
+                                <div className="mobilemenu-ul">
+                                  {/* Sub-Submenu 1 */}
+                                  {subSubHeading1 && (
+                                    <p className="px-4 py-2 text-sm font-bold text-white">
+                                      {subSubHeading1}
+                                    </p>
+                                  )}
+                                  {subSubMenu1?.map((item, k) => (
+                                    <li
+                                      key={item.name}
+                                      className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer menu-ul-mobile"
                                     >
-                                      {item.icon && (
-                                        <img
-                                          src={item.icon}
-                                          alt={item.name}
-                                          className="rounded-full object-cover"
-                                        />
-                                      )}
-                                      {item.name}
-                                    </a>
-                                  </li>
-                                ))}
+                                      <a
+                                        href={item.link}
+                                        className="flex items-center gap-x-2 w-full"
+                                      >
+                                        {item.icon && (
+                                          <img
+                                            src={item.icon}
+                                            alt={item.name}
+                                            className="rounded-full object-cover"
+                                          />
+                                        )}
+                                        {item.name}
+                                      </a>
+                                    </li>
+                                  ))}
 
-                                {/* Sub-Submenu 2 */}
-                                {subSubHeading2 && (
-                                  <p className="px-4 py-2 text-sm font-bold text-white">
-                                    {subSubHeading2}
-                                  </p>
-                                )}
-                                {subSubMenu2?.map((item, k) => (
-                                  <li
-                                    key={item.name}
-                                    className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
-                                  >
-                                    <a
-                                      href={item.link}
-                                      className="flex items-center gap-x-2 w-full"
+                                  {/* Sub-Submenu 2 */}
+                                  {subSubHeading2 && (
+                                    <p className="px-4 py-2 text-sm font-bold text-white">
+                                      {subSubHeading2}
+                                    </p>
+                                  )}
+                                  {subSubMenu2?.map((item, k) => (
+                                    <li
+                                      key={item.name}
+                                      className="p-2 flex-center  rounded-md gap-x-2 cursor-pointer"
                                     >
-                                      {item.icon && (
-                                        <img
-                                          src={item.icon}
-                                          alt={item.name}
-                                          className="rounded-full object-cover"
-                                        />
-                                      )}
-                                      {item.name}
-                                    </a>
-                                  </li>
-                                ))}
+                                      <a
+                                        href={item.link}
+                                        className="flex items-center gap-x-2 w-full"
+                                      >
+                                        {item.icon && (
+                                          <img
+                                            src={item.icon}
+                                            alt={item.name}
+                                            className="rounded-full object-cover"
+                                          />
+                                        )}
+                                        {item.name}
+                                      </a>
+                                    </li>
+                                  ))}
+                                </div>
                               </motion.ul>
                             )}
                           </li>

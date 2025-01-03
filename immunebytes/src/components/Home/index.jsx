@@ -1,6 +1,6 @@
 // Home.jsx
 import React from "react";
-import Header from "../Header";
+import Header from "../Main-Header/HeaderComponent";
 import PrimaryBtn from "../Primarybutton";
 import Herosection from "../Herosection";
 import Cta from "../Cta-components";

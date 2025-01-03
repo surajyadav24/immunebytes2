@@ -140,6 +140,11 @@ padding: 40px 0px;
 .smart-contract-process .audit-process-card:nth-child(6) img {
   background-color: #F9116C;
 }
+header {
+  position: relative;
+  z-index: 9999999;
+  background: #000;
+}
 
 .register-btn{
   margin-top: 0px;
@@ -228,6 +233,36 @@ font-family: Arame-Bold;
 .desktop-menu{
   display: none !important;
 }
+.register-btn{
+  color: #fff !important;
+}
+
+.mobilemenu-ul p {
+  display: block;
+  padding-left: 10px !important;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #f9116c !important;
+}
+.mob-menu-ul li:hover{
+  color: #F9116C !important;
+}
+.main-mobile-wrapper span{
+  padding: 10px 5px !important;
+}
+ .main-mobile-wrapper span:hover{
+  color: #F9116C !important;
+}
+.mob-menu-ul {
+  margin-left: 0px !important;
+}
+.mob-menu-ul li a{
+  color: #fff !important;
+}
+.mob-menu-ul li a:hover{
+  background-color: #F9116C !important;
+}
+
 }
 .row {
   margin: 0 auto;

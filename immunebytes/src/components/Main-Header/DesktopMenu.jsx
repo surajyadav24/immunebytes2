@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
-import "./DesktopMenu.css"
+import "./DesktopMenu.css";
 
 export default function DesktopMenu({ menu }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -12,14 +12,14 @@ export default function DesktopMenu({ menu }) {
       opacity: 1,
       rotateX: 0,
       transition: { duration: 0.5 },
-      display: "block",
+      display: "block"
     },
     exit: {
       opacity: 0,
       rotateX: -15,
       transition: { duration: 0.9 },
-      transitionEnd: { display: "none" },
-    },
+      transitionEnd: { display: "none" }
+    }
   };
 
   const hasSubMenu = menu?.subMenu?.length;
@@ -78,76 +78,76 @@ export default function DesktopMenu({ menu }) {
                   </div>
                 </div>
 
-            {/* Sub-submenu */}
-{submenu.subSubMenu1 && submenu.subSubMenu2 && hoveredSubMenuIndex === i && (
-  <div className="subsubmenu-wrapper">
-    <motion.ul
-      className="absolute left-full top-0 sub-submenu rounded-lg shadow-lg subsubmenu"
-      initial="exit"
-      animate="enter"
-      variants={subMenuAnimate}
-    >
-      {/* Add a heading for the sub-submenu */}
-      {submenu.subSubHeading1 && (
-        <p className="px-4 py-2 text-sm font-bold text-white">
-          {submenu.subSubHeading1}
-        </p>
-      )}
-      <div className="li-wrapper">
-        {submenu.subSubMenu1.map((subSubItem, j) => (
-          <a
-            href={subSubItem.link || "#"}
-            key={subSubItem.name || j}
-            className="block px-4 py-2 hover:bg-gray-700 text-white cursor-pointer submenuitem flex items-center gap-2"
-          >
-            {/* Display Image */}
-            {subSubItem.icon && (
-              <img
-                src={subSubItem.icon}
-                alt={subSubItem.name}
-                className="rounded-full object-cover"
-              />
-            )}
-            <p className="sub-item-name">{subSubItem.name}</p>
-          </a>
-        ))}
-      </div>
+                {/* Sub-submenu */}
+                {submenu.subSubMenu1 &&
+                  submenu.subSubMenu2 &&
+                  hoveredSubMenuIndex === i && (
+                    <div className="subsubmenu-wrapper">
+                      <motion.ul
+                        className="absolute left-full top-0 sub-submenu rounded-lg shadow-lg subsubmenu"
+                        initial="exit"
+                        animate="enter"
+                        variants={subMenuAnimate}
+                      >
+                        {/* Add a heading for the sub-submenu */}
+                        {submenu.subSubHeading1 && (
+                          <p className="px-4 py-2 text-sm font-bold text-white">
+                            {submenu.subSubHeading1}
+                          </p>
+                        )}
+                        <div className="li-wrapper">
+                          {submenu.subSubMenu1.map((subSubItem, j) => (
+                            <a
+                              href={subSubItem.link || "#"}
+                              key={subSubItem.name || j}
+                              className="block px-4 py-2 hover:bg-gray-700 text-white cursor-pointer submenuitem flex items-center gap-2"
+                            >
+                              {/* Display Image */}
+                              {subSubItem.icon && (
+                                <img
+                                  src={subSubItem.icon}
+                                  alt={subSubItem.name}
+                                  className="rounded-full object-cover"
+                                />
+                              )}
+                              <p className="sub-item-name">{subSubItem.name}</p>
+                            </a>
+                          ))}
+                        </div>
 
+                        {/* subsub menu 2 ---  */}
 
-{/* subsub menu 2 ---  */}
-
-<div className="subsubmenu-2">
-{submenu.subSubHeading2 && (
-        <p className="px-4 py-2 text-sm font-bold text-white">
-          {submenu.subSubHeading2}
-        </p>
-      )}
-      <div className="li-wrapper">
-        {submenu.subSubMenu2.map((subSubItem, j) => (
-          <a
-            href={subSubItem.link || "#"}
-            key={subSubItem.name || j}
-            className="block px-4 py-2 hover:bg-gray-700 text-white cursor-pointer submenuitem flex items-center gap-2"
-          >
-            {/* Display Image */}
-            {subSubItem.icon && (
-              <img
-                src={subSubItem.icon}
-                alt={subSubItem.name}
-                className="rounded-full object-cover"
-              />
-            )}
-                 <p className="sub-item-name">{subSubItem.name}</p>
-          </a>
-        ))}
-      </div>
-</div>
-    </motion.ul>
-  </div>
-)}
-
-
-
+                        <div className="subsubmenu-2">
+                          {submenu.subSubHeading2 && (
+                            <p className="px-4 py-2 text-sm font-bold text-white">
+                              {submenu.subSubHeading2}
+                            </p>
+                          )}
+                          <div className="li-wrapper">
+                            {submenu.subSubMenu2.map((subSubItem, j) => (
+                              <a
+                                href={subSubItem.link || "#"}
+                                key={subSubItem.name || j}
+                                className="block px-4 py-2 hover:bg-gray-700 text-white cursor-pointer submenuitem flex items-center gap-2"
+                              >
+                                {/* Display Image */}
+                                {subSubItem.icon && (
+                                  <img
+                                    src={subSubItem.icon}
+                                    alt={subSubItem.name}
+                                    className="rounded-full object-cover"
+                                  />
+                                )}
+                                <p className="sub-item-name">
+                                  {subSubItem.name}
+                                </p>
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.ul>
+                    </div>
+                  )}
               </div>
             ))}
           </div>

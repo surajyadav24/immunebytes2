@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../Header'
+import Header from '../Main-Header/HeaderComponent'
 import AuditSection from '../Audit-Section'
 import PortfolioTable from '../PortfolioTable'
 import Ctacomponents from '../Cta-components'

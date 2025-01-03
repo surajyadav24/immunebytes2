@@ -1,5 +1,5 @@
 import React from 'react';
-import LandingPageHeader from '../Header'; // Replace with the correct path
+import LandingPageHeader from '../Main-Header/HeaderComponent'; 
 import LandingPageFooter from '../Footer'; // Replace with the correct path
 // import './style.css';
 

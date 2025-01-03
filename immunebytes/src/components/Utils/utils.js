@@ -73,6 +73,7 @@ export const Menus = [
   },
   {
     name: "Portfolio",
+      link:"/portfolio",
     gridCols: 1
   },
   {

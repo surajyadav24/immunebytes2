@@ -12,6 +12,7 @@ function Layout({ children }) {
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col">
         {/* Header */}
+
         <DashboardHeader />
         {/* Page Content */}
         <div className="layout-wrapper p-8 bg-gray-900 flex-1">

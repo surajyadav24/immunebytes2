@@ -40,19 +40,19 @@ export const Menus = [
     subMenu: [
       {
         name: "Smart Contract Audit",
-        subSubHeading: ["By Type"],
-        subSubMenu: [
-          { name: "DeFi", icon: defi },
-          { name: "NFT", icon: nft },
-          { name: "Token", icon: token },
-          { name: "dApp", icon: dapp },
+        subSubHeading1: ["By Type"],
+        subSubMenu1: [
+          { name: "DeFi", icon: defi,     link:"/dashboard" },
+          { name: "NFT", icon: nft,     link:"/dashboard" },
+          { name: "Token", icon: token,     link:"/dashboard" },
+          { name: "dApp", icon: dapp,     link:"/dashboard" },
         ],
-        subSubHeading: ["By Type"],
-        subSubMenu: [
-          { name: "Ethereum", icon: ethereum },
-          { name: "Solana", icon: solana },
-          { name: "BSC", icon: BSC },
-          { name: "Polygon", icon: Polygon }
+        subSubHeading2: ["By Type"],
+        subSubMenu2: [
+          { name: "Ethereum", icon: ethereum, link:"/dashboard" },
+          { name: "Solana", icon: solana , link:"/dashboard"},
+          { name: "BSC", icon: BSC, link:"/dashboard" },
+          { name: "Polygon", icon: Polygon , link:"/dashboard"}
         ]
       },
       {

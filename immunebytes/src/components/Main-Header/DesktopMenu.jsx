@@ -78,26 +78,27 @@ export default function DesktopMenu({ menu }) {
                   </div>
                 </div>
 
-                {/* Sub-submenu */}
-                {submenu.subSubMenu && hoveredSubMenuIndex === i && (
+            {/* Sub-submenu */}
+{submenu.subSubMenu1 && hoveredSubMenuIndex === i && (
   <div className="subsubmenu-wrapper">
     <motion.ul
-      className="absolute   left-full top-0 sub-submenu  rounded-lg shadow-lg subsubmenu"
+      className="absolute left-full top-0 sub-submenu rounded-lg shadow-lg subsubmenu"
       initial="exit"
       animate="enter"
       variants={subMenuAnimate}
     >
       {/* Add a heading for the sub-submenu */}
-      {submenu.subSubHeading && (
-        <p className="px-4 py-2 text-sm font-bold text-white ">
-          {submenu.subSubHeading}
+      {submenu.subSubHeading1 && (
+        <p className="px-4 py-2 text-sm font-bold text-white">
+          {submenu.subSubHeading1}
         </p>
       )}
       <div className="li-wrapper">
-        {submenu.subSubMenu.map((subSubItem, j) => (
-          <li
-            className="px-4 py-2  hover:bg-gray-700 text-white cursor-pointer submenuitem flex items-center gap-2"
+        {submenu.subSubMenu1.map((subSubItem, j) => (
+          <a
+            href={subSubItem.link || "#"}
             key={subSubItem.name || j}
+            className="block px-4 py-2 hover:bg-gray-700 text-white cursor-pointer submenuitem flex items-center gap-2"
           >
             {/* Display Image */}
             {subSubItem.icon && (
@@ -108,7 +109,46 @@ export default function DesktopMenu({ menu }) {
               />
             )}
             <span>{subSubItem.name}</span>
-          </li>
+          </a>
+        ))}
+      </div>
+    </motion.ul>
+  </div>
+)}
+
+
+ {/* Sub-submenu */}
+{submenu.subSubMenu2 && hoveredSubMenuIndex === i && (
+  <div className="subsubmenu-wrapper">
+    <motion.ul
+      className="absolute bg-yellow-200 left-full top-0 sub-submenu rounded-lg shadow-lg subsubmenu"
+      initial="exit"
+      animate="enter"
+      variants={subMenuAnimate}
+    >
+      {/* Add a heading for the sub-submenu */}
+      {submenu.subSubHeading2 && (
+        <p className="px-4 py-2 text-sm font-bold text-white">
+          {submenu.subSubHeading2}
+        </p>
+      )}
+      <div className="li-wrapper">
+        {submenu.subSubMenu2.map((subSubItem, j) => (
+          <a
+            href={subSubItem.link || "#"}
+            key={subSubItem.name || j}
+            className="block px-4 py-2 hover:bg-gray-700 text-white cursor-pointer submenuitem flex items-center gap-2"
+          >
+            {/* Display Image */}
+            {subSubItem.icon && (
+              <img
+                src={subSubItem.icon}
+                alt={subSubItem.name}
+                className="rounded-full object-cover"
+              />
+            )}
+            <span>{subSubItem.name}</span>
+          </a>
         ))}
       </div>
     </motion.ul>

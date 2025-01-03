@@ -79,7 +79,7 @@ export default function DesktopMenu({ menu }) {
                 </div>
 
             {/* Sub-submenu */}
-{submenu.subSubMenu1 && hoveredSubMenuIndex === i && (
+{submenu.subSubMenu1 && submenu.subSubMenu2 && hoveredSubMenuIndex === i && (
   <div className="subsubmenu-wrapper">
     <motion.ul
       className="absolute left-full top-0 sub-submenu rounded-lg shadow-lg subsubmenu"
@@ -112,21 +112,10 @@ export default function DesktopMenu({ menu }) {
           </a>
         ))}
       </div>
-    </motion.ul>
-  </div>
-)}
 
 
- {/* Sub-submenu */}
-{submenu.subSubMenu2 && hoveredSubMenuIndex === i && (
-  <div className="subsubmenu-wrapper">
-    <motion.ul
-      className="absolute bg-yellow-200 left-full top-0 sub-submenu rounded-lg shadow-lg subsubmenu"
-      initial="exit"
-      animate="enter"
-      variants={subMenuAnimate}
-    >
-      {/* Add a heading for the sub-submenu */}
+{/* subsub menu 2 ---  */}
+
       {submenu.subSubHeading2 && (
         <p className="px-4 py-2 text-sm font-bold text-white">
           {submenu.subSubHeading2}
@@ -154,6 +143,8 @@ export default function DesktopMenu({ menu }) {
     </motion.ul>
   </div>
 )}
+
+
 
               </div>
             ))}

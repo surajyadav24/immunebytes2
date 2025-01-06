@@ -80,7 +80,7 @@ p{
   background-color: #F9116C ;
 }
 .heading-h1{
-  /* font-size: 40px; */
+  font-size: 40px;
   color: #F9116C;
 }
 button.splide__arrow.splide__arrow--prev {
@@ -262,6 +262,7 @@ font-family: Arame-Bold;
 .mob-menu-ul li a:hover{
   background-color: #F9116C !important;
 }
+
 
 }
 .row {

@@ -215,7 +215,7 @@
         }
     
         .audit-process-container p {
-            max-width: 277px;
+            max-width: 100%;
             color: #fff;
             font-size: 18px;
         }

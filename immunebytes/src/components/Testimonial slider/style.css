@@ -111,8 +111,8 @@
     }
     h1.text-center.py-5.pb-4.heading-h1.testimonial-heading {
         padding-top: 10px !important;
-        margin-bottom: -18px;
-        padding-bottom: 0px !important;
+        /* margin-bottom: -18px; */
+        padding-bottom: 10px !important;
     }
     
     .testimonial-slider .swiper-slide.swiper-slide-active p {

@@ -113,12 +113,22 @@ padding: 48px 0px;
 }
 
   @media (max-width:445px) {
+    .homapage-prtfolio .portfolio-title{
+      padding: 10px 10px;
+      margin-bottom: 2px;
+      }
     h1.text-center.py-5.pb-4.heading-h1 {
       padding-top: 0px !important;
       padding-bottom: 20px !important;
+      font-size: 17px !important;
+      font-weight: 700 !important;
   }
   .portfolio-container{
     margin-bottom: 50px;
+  }
+  .portfolio-title{
+    font-size: 17px;
+    font-weight:700
   }
   
   .why-sec-choose{

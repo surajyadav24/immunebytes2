@@ -479,7 +479,9 @@ padding: 50px 10px;
   font-size: 9px !important;
   padding: 5px 6px !important;
 }
+
 .case-study-card{
-max-height: 172px ;
+  max-height: 189px;
 }
+
 }

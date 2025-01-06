@@ -257,7 +257,7 @@ function Penetration (){
           buttonText="Request Audit"
         />
 
-<div className="smart-contract-process">
+<div className="smart-contract-process homepage-heading">
 <AuditProcessdummy
           title="Shield Your DApp"
           processSteps={processSteps} 

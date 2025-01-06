@@ -27,7 +27,7 @@ const FeatureSection = ({ title, features }) => {
                 </div>
                 {/* Content */}
                 <div className="why-disc">
-                  <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                  <h3 className="text-xl font-bold mb-2 feauture-title">{feature.title}</h3>
                   <p className="text-sm text-gray-300">{feature.description}</p>
                 </div>
               </div>

@@ -147,4 +147,7 @@ padding-left: 10px;
     border: none;
     box-shadow: none;
 }
+.desktop-navigation{
+  display: none;
+}
 }

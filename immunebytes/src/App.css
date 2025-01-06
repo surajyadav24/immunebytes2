@@ -277,6 +277,9 @@ font-family: Arame-Bold;
   padding: 0px;
   width: 154px;
 }
+.desktop-navigation{
+  display: none;
+}
 
 }
 .row {

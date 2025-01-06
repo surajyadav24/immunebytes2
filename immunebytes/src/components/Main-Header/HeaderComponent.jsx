@@ -16,18 +16,21 @@ export default function HeaderComponent() {
             {Menus.map((menu) => (
               <DesktopMenu menu={menu} key={menu.name} />
             ))}
+
           </ul>
+
           <div className="flex-center gap-x-5">
-            <button
-              aria-label="sign-in"
-              className=" open-popup-btn btn register-btn text-white"
-            >
-             Request Audit
-            </button>
+          
             <div className="lg:hidden md:hidden xl:hidden mobile-menu">
               <MobMenu Menus={Menus} />
             </div>
           </div>
+          <button
+              aria-label="sign-in"
+              className=" open-popup-btn btn register-btn text-white desktop-navigation"
+            >
+             Request Audit
+            </button>
         </nav>
       </header>
     </div>

@@ -61,6 +61,8 @@
     border-radius: 8px;
   }
   
+ 
+
   @media (max-width: 768px) {
     .hero-section {
       flex-direction: column;
@@ -70,6 +72,8 @@
     .hero-content {
       max-width: 100%;
       margin-bottom: 2rem;
+      margin-top: 2rem;
+
     }
   
     .video-element {
@@ -79,10 +83,16 @@
  
   @media (max-width:445px){
     .hero-content h1 {
-        font-size: 34px;
+        font-size: 30px;
         line-height: 1.2;
         text-align: left    ;
     }
+    .hero-content h1 span{
+      /* font-size: 34px;
+      line-height: 1.2;
+      text-align: left    ; */
+      display: flex;
+  }
     .hero-content p{
         font-size: 13px;
         text-align: left;

@@ -273,6 +273,10 @@ font-family: Arame-Bold;
 .service-hero img {
   max-width: 100%;
 }
+.logo-wrapper img {
+  padding: 0px;
+  width: 154px;
+}
 
 }
 .row {

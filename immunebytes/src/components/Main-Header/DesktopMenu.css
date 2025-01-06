@@ -119,6 +119,7 @@ padding-left: 10px;
     font-family: Arame-Bold;
   }
   .register-btn {
+    font-size: 13px;
     color: #fff !important;
   }
   .mobile-menu button svg path {

@@ -270,6 +270,9 @@ font-family: Arame-Bold;
 .case-study-wrapper .col-lg-6.md-6.col-sm-12 {
   padding: 0px;
 }
+.service-hero img {
+  max-width: 100%;
+}
 
 }
 .row {

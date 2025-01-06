@@ -96,7 +96,7 @@ const LogoSliders = () => {
 
     return (
         <div className='logo-wrapper'>
-              <h1 className="text-center py-5  pb-4 heading-h1">Trusted by Partners</h1>
+              <h1 className="text-center py-5  pb-4 heading-h1 homepage-heading">Trusted by Partners</h1>
             <div className="splide" id="splide1">
                 <div className="splide__track">
                     <ul className="splide__list">

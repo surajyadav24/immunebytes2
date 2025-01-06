@@ -123,4 +123,9 @@ transform: scale(0.8);
       letter-spacing: 0px;
       font-size: 17px;
   }
+  .steps::before{
+    
+    max-height: 405px;
+    
+  }
   }

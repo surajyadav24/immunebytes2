@@ -135,7 +135,7 @@ padding-left: 10px;
   }
   .mob-menu-ul li span>a {
     width: 100%;
-    min-width: 300px;
+    min-width: 270px;
     justify-content: flex-start;
     align-items: flex-start;
     height: 40px;

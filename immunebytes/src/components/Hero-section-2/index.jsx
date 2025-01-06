@@ -14,7 +14,7 @@ const HeroSection2 = ({
     <div className="container">
       <div className="hero-section">
         <div className="hero-content">
-          <h1>
+          <h1 className="homepage-heading">
             <span>{title}</span>
             <span className="highlight">{highlight}</span>
           </h1>

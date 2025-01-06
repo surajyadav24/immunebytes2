@@ -80,12 +80,12 @@ p{
   background-color: #F9116C ;
 }
 .heading-h1{
-  /* font-size: 40px; */
+  font-size: 40px;
   color: #F9116C;
 }
 button.splide__arrow.splide__arrow--prev {
   display: none;
-}
+} 
 button.splide__arrow.splide__arrow--next {
   display: none;
 }
@@ -262,8 +262,17 @@ font-family: Arame-Bold;
 .mob-menu-ul li a:hover{
   background-color: #F9116C !important;
 }
+.homepage-heading{
+  font-size: 26px !important;
+  margin-top: 30px !important;
+  margin-bottom: 20px !important;
+}
 
 }
 .row {
   margin: 0 auto;
-}
+}  
+
+
+
+

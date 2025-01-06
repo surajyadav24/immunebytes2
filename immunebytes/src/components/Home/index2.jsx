@@ -30,7 +30,7 @@
 <Cta />
 
 <div className="services-wrapper">
-<h1 className="text-center py-5  pb-5 heading-h1">Our Services</h1>
+<h1 className="text-center py-5  pb-5 heading-h1 homepage-heading">Our Services</h1>
 <Servicescomponent className="service-1"
   imageSrc={serviceimg}
   heading="Smart Contract Audit"
@@ -50,16 +50,16 @@
 </div>
 
 
-<h1 className="text-center py-5  pb-4 heading-h1">Audit Process</h1>
+<h1 className="text-center py-5  pb-4 heading-h1 homepage-heading">Audit Process</h1>
 <AuditProcess/>
 <div className="container pb-4">
-<h1 className="text-center py-5  pb-4 heading-h1">Why Choose Us ?</h1>
+<h1 className="text-center py-5  pb-4 heading-h1 homepage-heading">Why Choose Us ?</h1>
 <Whychooseus/>
 <Whychooseusec/>
 </div>
 
 
-<h1 className="text-center py-5  pb-4 heading-h1 testimonial-heading">Testimonials</h1>
+<h1 className="text-center py-5  pb-4 heading-h1 testimonial-heading homepage-heading">Testimonials</h1>
 <div className="container testimonial-slider">
 <TestimonialSlider />
 </div>
@@ -68,7 +68,7 @@
 
 
 <div className=" case-study-wrapper">
-<h1 className="text-center py-5  pb-4 heading-h1">Case Studies</h1>
+<h1 className="text-center py-5  pb-4 heading-h1 homepage-heading">Case Studies</h1>
 
 
 <div className="row">

@@ -12,14 +12,14 @@ export default function DesktopMenu({ menu }) {
       opacity: 1,
       rotateX: 0,
       transition: { duration: 0.5 },
-      display: "block"
+      display: "block",
     },
     exit: {
       opacity: 0,
       rotateX: -15,
       transition: { duration: 0.9 },
-      transitionEnd: { display: "none" }
-    }
+      transitionEnd: { display: "none" },
+    },
   };
 
   const hasSubMenu = menu?.subMenu?.length;
@@ -34,15 +34,18 @@ export default function DesktopMenu({ menu }) {
         setHoveredSubMenuIndex(null);
       }}
     >
-      <span className="flex-center gap-1 hover:bg-white/5 cursor-pointer px-3 py-1 rounded-xl">
+      <a
+        href={menu.link || "#"}
+        className="flex-center gap-1 hover:bg-white/5 cursor-pointer px-3 py-1 rounded-xl"
+      >
         {menu.name}
         {hasSubMenu && (
           <ChevronDown className="mt-[0.6px] group-hover/link:rotate-180 duration-200" />
         )}
-      </span>
+      </a>
       {hasSubMenu && (
         <motion.div
-          className="sub-menu "
+          className="sub-menu"
           initial="exit"
           animate={isHovered ? "enter" : "exit"}
           variants={subMenuAnimate}
@@ -68,15 +71,18 @@ export default function DesktopMenu({ menu }) {
                     {menu?.subMenuHeading?.[i]}
                   </p>
                 )}
-                <div className="flex-center gap-x-4 group/menubox">
-                  <div className=" duration-300">
+                <a
+                  href={submenu.link || "#"}
+                  className="flex-center gap-x-4 group/menubox"
+                >
+                  <div className="duration-300">
                     {submenu.icon && <submenu.icon />}
                   </div>
                   <div>
                     <h6 className="font-semibold text-white">{submenu.name}</h6>
                     <p className="text-sm text-gray-400">{submenu.desc}</p>
                   </div>
-                </div>
+                </a>
 
                 {/* Sub-submenu */}
                 {submenu.subSubMenu1 &&
@@ -84,12 +90,11 @@ export default function DesktopMenu({ menu }) {
                   hoveredSubMenuIndex === i && (
                     <div className="subsubmenu-wrapper">
                       <motion.ul
-                        className="absolute left-full top-0 sub-submenu rounded-lg shadow-lg subsubmenu"
+                        className="absolute left-full top-0 sub-submenu bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg subsubmenu"
                         initial="exit"
                         animate="enter"
                         variants={subMenuAnimate}
                       >
-                        {/* Add a heading for the sub-submenu */}
                         {submenu.subSubHeading1 && (
                           <p className="px-4 py-2 text-sm font-bold text-white">
                             {submenu.subSubHeading1}
@@ -102,7 +107,6 @@ export default function DesktopMenu({ menu }) {
                               key={subSubItem.name || j}
                               className="block px-4 py-2 hover:bg-gray-700 text-white cursor-pointer submenuitem flex items-center gap-2"
                             >
-                              {/* Display Image */}
                               {subSubItem.icon && (
                                 <img
                                   src={subSubItem.icon}
@@ -114,8 +118,6 @@ export default function DesktopMenu({ menu }) {
                             </a>
                           ))}
                         </div>
-
-                        {/* subsub menu 2 ---  */}
 
                         <div className="subsubmenu-2">
                           {submenu.subSubHeading2 && (
@@ -130,7 +132,6 @@ export default function DesktopMenu({ menu }) {
                                 key={subSubItem.name || j}
                                 className="block px-4 py-2 hover:bg-gray-700 text-white cursor-pointer submenuitem flex items-center gap-2"
                               >
-                                {/* Display Image */}
                                 {subSubItem.icon && (
                                   <img
                                     src={subSubItem.icon}

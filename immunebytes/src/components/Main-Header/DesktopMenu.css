@@ -46,10 +46,18 @@ padding-left: 10px;
   min-width: 480px;
   max-width: 480px;
   gap: 15px 10px;
-  box-shadow: -27.37px 27.37px 27.37px 0px #a5a5a51a inset;
+  /* box-shadow: -27.37px 27.37px 27.37px 0px #a5a5a51a inset;
   backdrop-filter: blur(67.86933135986328px);
-  background: #d9d9d91a;
-  border: 1px solid #ffffffa6;
+  background: #d9d9d91a;*/
+  border: 1px solid #ffffffa6; 
+  background-color: rgb(255 255 255 / 0.04);
+    padding: 15px;
+    --tw-backdrop-blur: blur(8px) !important;
+}
+.desktop-menu a.flex-center.gap-1.hover\:bg-white\/5.cursor-pointer.px-3.py-1.rounded-xl{
+    font-size: 18px;
+    font-family: 'Arame-Bold';
+    color: #fff;
 }
 
 .li-wrapper {
@@ -83,7 +91,7 @@ padding-left: 10px;
     box-shadow: 27.37px -27.37px 27.37px 0px #a5a5a51a inset;
     backdrop-filter: blur(67.86933135986328px);
     border: 1px solid #ffffffa6;
-    gap: 10px;
+    gap: 5px;
   }
   .mob-menu-ul img {
     min-width: 40px;
@@ -97,10 +105,13 @@ padding-left: 10px;
     flex-wrap: wrap;
     padding: 0px;
     box-shadow: -27.37px 27.37px 27.37px 0px #a5a5a51a inset;
+    -webkit-backdrop-filter: blur(67.86933135986328px);
     backdrop-filter: blur(67.86933135986328px);
     background: #d9d9d91a;
     border: 1px solid #ffffffa6;
     border-radius: 10px;
+    gap: 10px 20px;
+    padding: 0px 11px;
   }
   .mobilemenu-ul p {
     display: block;

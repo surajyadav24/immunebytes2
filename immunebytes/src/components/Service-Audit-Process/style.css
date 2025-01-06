@@ -122,5 +122,21 @@
     margin-bottom: 1rem;
     color: #ff4081; /* Pink color for the title */
   }
+  .audit-process-card h3{
+    font-size: 20px;
+  }
+  .audit-process-card h5 {
+    font-size: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  .audit-process-card h5 {
+    font-size: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  .audit-process-card {
+    padding: 20px 31px 20px 20px;
+  }
 
 }

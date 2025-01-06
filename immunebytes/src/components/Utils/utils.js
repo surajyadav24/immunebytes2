@@ -46,10 +46,13 @@ export const Menus = [
         ]
       },
       {
-        name: "Blockchain Security Services"
+        name: "Blockchain Security Services",
+        link:"/blockchainaudit",
       },
       {
-        name: "Penetration Testing"
+        name: "Penetration Testing",
+        link:"/penetration"
+
       }
     ],
     gridCols: 1

@@ -164,11 +164,15 @@ transform: scale(0.5);
     padding-bottom: 0px !important;
 }
 }
-@media (max-width:375px){
+@media (max-width:376px){
     .service-discription h2 {
         padding-top: 9px;
     }
     .case-study-card {
         max-height: 172px;
+    }
+    .service-discription p {
+        font-size: 10px;
+        margin-bottom: 8px;
     }
 }

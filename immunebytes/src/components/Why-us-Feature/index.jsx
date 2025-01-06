@@ -9,7 +9,7 @@ const FeatureSection = ({ title, features }) => {
       </h2>
       <section className="why-sec-feature text-white p-8">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 card-container">
+          <div className="grid  sm:grid-cols-2 lg:grid-cols-2 gap-8 card-container">
             {features.map((feature, index) => (
               <div
                 key={index}

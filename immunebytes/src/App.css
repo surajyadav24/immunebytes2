@@ -187,6 +187,7 @@ font-family: Arame-Bold;
 button.telegram-fixed {
   position: fixed;
   bottom: 14px;
+  right: 10px;  
   border-radius: 50%;
   padding: 10px;
   height: 50px;

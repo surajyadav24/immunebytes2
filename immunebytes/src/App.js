@@ -192,9 +192,12 @@ function App() {
         />
       </Routes>
     </Router>
-    <button className="telegram-fixed">
-      <img src={Telegram} alt="" />
-    </button>
+    <a href="https://t.me/immunebytes" target="_blank" rel="noopener noreferrer">
+  <button className="telegram-fixed">
+    <img src={Telegram} alt="Telegram" />
+  </button>
+</a>
+
     </>
   );
 }

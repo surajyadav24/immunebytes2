@@ -15,10 +15,10 @@ export default function DesktopMenu({ menu }) {
       display: "block",
     },
     exit: {
-      opacity: 0,
+      opacity: 1,
       rotateX: -15,
       transition: { duration: 0.9 },
-      transitionEnd: { display: "none" },
+      transitionEnd: { display: "block" },
     },
   };
 
@@ -46,7 +46,7 @@ export default function DesktopMenu({ menu }) {
       {hasSubMenu && (
         <motion.div
           className="sub-menu"
-          initial="exit"
+          initial="enter"
           animate={isHovered ? "enter" : "exit"}
           variants={subMenuAnimate}
         >
@@ -90,8 +90,8 @@ export default function DesktopMenu({ menu }) {
                   hoveredSubMenuIndex === i && (
                     <div className="subsubmenu-wrapper">
                       <motion.ul
-                        className="absolute left-full top-0 sub-submenu bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg subsubmenu"
-                        initial="exit"
+                        className="absolute left-full top-0 sub-submenu subsubmenu"
+                        initial="enter"
                         animate="enter"
                         variants={subMenuAnimate}
                       >

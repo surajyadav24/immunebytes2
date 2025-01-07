@@ -22,7 +22,7 @@ export const Menus = [
     subMenu: [
       {
         name: "Smart Contract Audit",
-        link:"/smartcontract",
+   
         subSubHeading1: ["By Type"],
         subSubMenu1: [
           { name: "DeFi", icon: defi,     link:"/dashboard" },

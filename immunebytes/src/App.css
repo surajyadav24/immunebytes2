@@ -154,13 +154,13 @@ header {
 gap: 0px;
 border-radius:10px;
 opacity: 1;
-font-family: Arame-Bold;
+font-family: Arvo-Regular;
 }
 
 .desktop-menu  li span{
   color: #fff;
   font-size: 18px !important;
-  font-family: Arame-Bold !important;
+  font-family: Arvo-Regular !important;
 }
 .subsubmenu-wrapper li span{
   font-family: Roboto-Regular !important;

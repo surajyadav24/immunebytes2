@@ -30,10 +30,12 @@ import ThankYouSection from "./components/ThankYou/index.jsx";
 import Eror from './components/404Eror/'
 
 import HeaderComponent from "./components/Main-Header/HeaderComponent.jsx"
+import  Telegram  from "./assets/images/telegram.svg";
 
 function App() {
   const {authUser }= useAuthContext()
   return (
+    <>
     <Router>
       <Routes>
         {/* Routes without Layout */}
@@ -190,6 +192,10 @@ function App() {
         />
       </Routes>
     </Router>
+    <button className="telegram-fixed">
+      <img src={Telegram} alt="" />
+    </button>
+    </>
   );
 }
 

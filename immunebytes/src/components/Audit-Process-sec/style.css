@@ -101,6 +101,7 @@ transform: scale(0.8);
   .audit-container .audit-content img {
     width: 100%;
     max-width: 300px;
+    /* min-width: 200px; */
     margin-bottom: 20px;
   }
   

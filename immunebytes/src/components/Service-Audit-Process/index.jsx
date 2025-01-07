@@ -56,7 +56,7 @@ function AuditProcess() {
 <>
 <div className="container">
     <div className="audit-process-container">
-      <h2 className="audit-process-title">Elevating Protocol Safety Standards</h2>
+      <h2 className="audit-process-title ">Elevating Protocol Safety Standards</h2>
       <div className="audit-process-grid">
         {processSteps.map((step, index) => (
           <div key={index} className="audit-process-card">

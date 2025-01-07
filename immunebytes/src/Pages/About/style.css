@@ -1,5 +1,6 @@
 .about{
     overflow-x: hidden;
+    padding-top: 100px;
 }
 .about-process .audit-process-grid {
     display: grid;

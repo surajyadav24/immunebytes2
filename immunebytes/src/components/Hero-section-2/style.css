@@ -4,6 +4,7 @@
     justify-content: space-between;
     color: #fff;
     min-height: 80vh;
+    padding-top: 70px;
   }
   
   .hero-section button.btn.btn-primary{

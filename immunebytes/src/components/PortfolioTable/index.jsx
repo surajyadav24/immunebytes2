@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 const PortfolioTable = ({ showEditButton }) => {
   const [search, setSearch] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(9);
+  const [itemsPerPage, setItemsPerPage] = useState(8);
   const [portfolios, setPortfolios] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const navigate = useNavigate()
@@ -40,7 +40,7 @@ const PortfolioTable = ({ showEditButton }) => {
   useEffect(() => {
     const updateItemsPerPage = () => {
       const isMobile = window.innerWidth <= 768;
-      setItemsPerPage(isMobile ? 2 : 9);
+      setItemsPerPage(isMobile ? 2 : 8);
     };
 
     updateItemsPerPage();

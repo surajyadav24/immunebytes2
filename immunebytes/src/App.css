@@ -82,6 +82,8 @@ p{
 .heading-h1{
   font-size: 40px;
   color: #F9116C;
+  padding: 80px 0px;
+  padding-bottom: 20px;
 }
 button.splide__arrow.splide__arrow--prev {
   display: none;
@@ -179,6 +181,22 @@ font-family: Arame-Bold;
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+
+
+
+button.telegram-fixed {
+  position: fixed;
+  bottom: 14px;
+  border-radius: 50%;
+  padding: 10px;
+  height: 50px;
+  border: 1px solid #fff;
+  width: 50px;
+}
+button.telegram-fixed:hover{
+  box-shadow: 1px 1px 20px #fff;
+}
+
 
 @keyframes logo-spin {
   from {
@@ -281,6 +299,27 @@ font-family: Arame-Bold;
   display: none;
 }
 
+.heading-h1 {
+ 
+  color: #F9116C;
+  padding: 0px;
+  padding-bottom: 20px;
+}
+
+.hero-section {
+  padding-top: 15px;
+}
+.why-sec-choose .heading-h1{
+  padding: 0px;
+  margin-top: 0px !important;
+}
+h1.text-center.heading-h1.testimonial-heading.homepage-heading {
+  margin: 0px !important;
+  padding-bottom: 0px;
+}
+.case-study-wrapper h1 {
+  padding-bottom: 30px !important;
+}
 }
 .row {
   margin: 0 auto;

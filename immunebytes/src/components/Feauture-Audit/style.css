@@ -4,10 +4,9 @@
 }
 
 .featured-audit-title {
-  font-size: 2rem;
+font-size: 40px;
   color: #F9116C;
-  margin-bottom: 40px;
-  margin-top: 4rem;
+padding: 80px;
 }
 
 .featured-audit-grid {
@@ -187,6 +186,14 @@ background-color: #FFFFFF1A;
 }
 .featured-card.talk-card .btn-primary svg path{
   fill: #fff !important;
+}
+.why-sec-feature {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 @media ((min-width: 426px) and (max-width: 768px)) {
@@ -372,6 +379,7 @@ padding: 50px 10px;
     font-size: 1.7rem;
     margin-bottom: 1rem;
     color: #ff4081; 
+    padding: 30px 0px;
   }
   .case-study-card h3 {
     gap: 10px 0px;
@@ -441,7 +449,7 @@ padding: 50px 10px;
   top: -160px;
 }
 .feature-wrapper {
-  max-height: 858px;
+  max-height: 916px;
   overflow: hidden;
 }
 .featured-card.case-study-card {
@@ -484,4 +492,10 @@ padding: 50px 10px;
   max-height: 182px;
 }
 
+}
+@media(max-width:375px){
+  .feature-wrapper {
+    max-height: 970px;
+    overflow: hidden;
+  }
 }

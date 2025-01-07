@@ -50,7 +50,7 @@
 </div>
 
 
-<h1 className="text-center py-5  pb-4 heading-h1 homepage-heading">Audit Process</h1>
+<h1 className="text-center heading-h1 homepage-heading">Audit Process</h1>
 <AuditProcess/>
 <div className="container pb-4">
 <h1 className="text-center py-5  pb-4 heading-h1 homepage-heading">Why Choose Us ?</h1>

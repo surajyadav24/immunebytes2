@@ -1,9 +1,10 @@
 /* AuditSection.css */
 .audit-section {
-    padding: 40px 0px;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
+  padding: 40px 0px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding-top: 100px;
   }
   .progress-bar{
     color: #fff;

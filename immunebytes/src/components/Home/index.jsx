@@ -61,7 +61,7 @@ const Home = () => {
       <Cta title="Leading the Wave of Web3 Security" />
 <div className="container">
 <div className="services-wrapper">
-        <h1 className="text-center py-5  pb-5 heading-h1 homepage-heading">Our Services</h1>
+        <h1 className="text-center  heading-h1 homepage-heading">Our Services</h1>
         <Servicescomponent
           imageSrc={serviceimg2}
           heading="Smart Contract Audit"
@@ -88,19 +88,19 @@ const Home = () => {
 <PortfolioTable showEditButton={false} />
 <PrimaryBtn text="View More" />
 </div>
-      <h1 className="text-center py-5  pb-4 heading-h1 homepage-heading ">Audit Process</h1>
+      <h1 className="text-center  heading-h1 homepage-heading ">Audit Process</h1>
 <AuditProcessSec/>
 
       {/* <AuditProcess /> */}
       <div className="container pb-4 why-sec-choose">
-        <h1 className="text-center py-5  pb-4 heading-h1 homepage-heading">Why Choose Us?</h1>
+        <h1 className="text-center  heading-h1 homepage-heading">Why Choose Us?</h1>
         {/* <Whychooseus /> */}
         {/* <Whychooseusec /> */}
 
         <WhyChooseUsSec cards={cardsData} />
 
       </div>
-      <h1 className="text-center py-5  pb-4 heading-h1 testimonial-heading homepage-heading">
+      <h1 className="text-center  heading-h1 testimonial-heading homepage-heading">
         Testimonials
       </h1>
       <div className="container testimonial-slider">
@@ -109,7 +109,7 @@ const Home = () => {
 
       <div className="container">
         <div className=" case-study-wrapper">
-          <h1 className="text-center py-5  pb-4 heading-h1 homepage-heading">Case Studies</h1>
+          <h1 className="text-center  heading-h1 homepage-heading">Case Studies</h1>
 
           <div className="row">
             <div className="col-lg-6 md-6 col-sm-12">

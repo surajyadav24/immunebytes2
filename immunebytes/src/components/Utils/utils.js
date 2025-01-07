@@ -51,8 +51,14 @@ export const Menus = [
       },
       {
         name: "Penetration Testing",
-        link:"/penetration"
-
+        link:"/penetration",
+        subSubHeading1: ["By Type"],
+        subSubMenu1: [
+          { name: "DeFi", icon: defi,     link:"/dashboard" },
+          { name: "NFT", icon: nft,     link:"/dashboard" },
+          { name: "Token", icon: token,     link:"/dashboard" },
+          { name: "dApp", icon: dapp,     link:"/dashboard" },
+        ],
       }
     ],
     gridCols: 1
@@ -64,6 +70,7 @@ export const Menus = [
   },
   {
     name: "About Us",
+    link:"/about",
     gridCols: 1
   },
   {

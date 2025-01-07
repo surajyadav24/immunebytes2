@@ -24,7 +24,8 @@
 }
 .faq-container h2{
     color: #F9116C;
-    font-size: 1.8rem;
+ font-size: 40px;
+ padding: 80px 0px;
 }
 /* Default: Show desktop arrow and hide mobile arrow */
 .desktop-arrow {
@@ -52,6 +53,8 @@
     .faq-container h2{
         color: #F9116C;
         font-size: 1.5rem;
+        padding: 0px;
+        padding-bottom: 20px;
     }
     .faq-btn button span{
         font-size: 0.9rem;

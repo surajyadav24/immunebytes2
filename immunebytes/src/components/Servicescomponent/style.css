@@ -2,7 +2,7 @@
     padding-bottom: 30px;
     color: #FFF;
     text-align: left;
-    font-family: "RobotoMono-Regular";
+    font-family: "Arvo-Regular";
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
@@ -11,29 +11,29 @@
 
 .service-discription p {
     color: #fff;
-    max-width: 470px;
-    font-family: RobotoMono-Regular;
+    max-width: 550px;
     font-size: 18px;
     font-weight: 400;
     line-height: 25.06px;
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    margin-top: 20px;
 }
 .service-discription button.btn.btn-primary {
-    padding: 9px 27px !important;
-    font-size: 12px;
+    padding: 11px 27px !important;
+    font-size: 16px;
 }
 .service-discription button.btn.btn-primary span {
 padding-left: 2px;
 }
 .service-discription button.btn.btn-primary span svg{
-transform: scale(0.5);
+transform: scale(0.8);
 }
 .service-discription button.btn.btn-primary {
     background: url(../../assets/images/immunebytes/red-bg-btn.svg);
     margin-left: 0px;
     padding: 9px 13px !important;
-    font-size: 12px;
+    font-size: 16px;
     background-size: contain;
     background-repeat: no-repeat;
 }

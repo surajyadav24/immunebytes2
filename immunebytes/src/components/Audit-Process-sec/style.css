@@ -40,7 +40,7 @@
     position: absolute;
     top: -15px;
     left: -14px;
-transform: scale(0.8);
+    transform: scale(0.8);
   }
   .audit-container .audit-content {
     display: flex;
@@ -56,7 +56,7 @@ transform: scale(0.8);
   padding-top: 8px ;
 } 
 .audit-container{
-  margin-top: 50px;
+  margin: 0px 50px;
 }
   .step .circle {
     position: relative;

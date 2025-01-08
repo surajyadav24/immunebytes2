@@ -20,8 +20,8 @@
 }
 
 @font-face {
-  font-family: 'RobotoMono-Regular';
-  src: url('./assets/Fonts/RobotoMono-Regular.ttf')  ;
+  font-family: 'Arvo-Regular';
+  src: url('./assets/Fonts/Arvo-Regular.ttf')  ;
 }
 
 @font-face {
@@ -67,8 +67,9 @@ h1,h2,h3,h4,h5,h6{
   font-family: Arvo-Bold;
 }
 p{
-  font-family: RobotoMono-Regular;
-
+  font-family: "Arvo-Regular" !important;
+  font-size: 18px !important;
+font-weight: 400;
 }
 .btn-wrapper{
   display: flex;
@@ -83,7 +84,7 @@ p{
   font-size: 40px;
   color: #F9116C;
   padding: 80px 0px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 button.splide__arrow.splide__arrow--prev {
   display: none;
@@ -102,7 +103,7 @@ button.twit-x img {
   padding: 4px 12px !important;
   font-size: 16px !important;
   line-height: 24px;
-  font-family: 'RobotoMono-Regular' !important;
+  font-family: 'Arvo-Regular' !important;
 }
 .service-hero img {
   max-width: 500px;
@@ -197,6 +198,10 @@ button.telegram-fixed {
 }
 button.telegram-fixed:hover{
   box-shadow: 1px 1px 20px #fff;
+}
+
+.services-wrapper h1 {
+  padding-bottom: 0px;
 }
 
 

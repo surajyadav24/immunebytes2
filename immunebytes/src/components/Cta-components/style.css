@@ -20,6 +20,7 @@ border: 1px solid #C700BF;
 background: rgba(255, 77, 0, 0.10);
 box-shadow: 37.067px -37.067px 37.067px -16px rgba(208, 35, 162, 0.10) inset, -37.067px 37.067px 37.067px -16px rgba(250, 131, 54, 0.10) inset;
 backdrop-filter: blur(37.06666564941406px);
+margin-bottom: 0px;
 }
 .cta-wrapper button {
     margin-top: 40px !important;

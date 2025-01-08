@@ -30,6 +30,7 @@
 }
 
 .footer-section ul li a {
+  font-family: "Arvo-Regular";
   color: white;
   text-decoration: none;
 }
@@ -68,7 +69,7 @@
   border: none;
   border-radius: 10px;
   background-color: #ff4d00;
-  font-family: RobotoMono-Regular;
+  font-family: Arvo-Regular;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -106,14 +107,14 @@
 }
 .footer-section form::placeholder {
   color: #928b8b;
-  font-family: "RobotoMono-Regular";
+  font-family: "Arvo-Regular";
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
 }
 .footer-section form label {
   color: #928b8b;
-  font-family: "RobotoMono-Regular";
+  font-family: "Arvo-Regular";
   font-size: 14px;
   font-style: normal;
   font-weight: 400;

@@ -17,8 +17,8 @@
   }
   
   @font-face {
-    font-family: 'RobotoMono-Regular';
-    src: url('../../assets/Fonts/RobotoMono-Regular.ttf')  ;
+    font-family: 'Arvo-Regular';
+    src: url('../../assets/Fonts/Arvo-Regular.ttf')  ;
   }
   
   @font-face {
@@ -62,7 +62,7 @@
     font-family: Arvo-Bold;
   }
   p{
-    font-family: RobotoMono-Regular;
+    font-family: Arvo-Regular;
   }
   .btn-wrapper{
     display: flex;
@@ -91,12 +91,12 @@
     padding: 4px 12px !important;
     font-size: 16px !important;
     line-height: 24px;
-    font-family: 'RobotoMono-Regular' !important;
+    font-family: 'Arvo-Regular' !important;
   }
 
-.portfolio-container .btn-primary {
-  padding: 4px 13px !important;
-  margin-top: 50px !important;
+  .portfolio-container .btn-primary {
+    padding: 8px 19px !important;
+    margin-top: 50px !important;
 }
 .homapage-prtfolio .portfolio-table-container {
   max-height: 550px;

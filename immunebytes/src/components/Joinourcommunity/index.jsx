@@ -7,7 +7,7 @@ const Community = () => {
   <>
   <div className="container">
     <div className="row">
-        <div className="join-wrapper py-5">
+        <div className="join-wrapper pt-5">
             <h2>Join Our Community</h2>
             <p>
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do   

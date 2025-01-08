@@ -46,9 +46,11 @@
   .why-choose-us .cards-container .card:nth-child(3){
     background: url("../../assets/images/whychoose/sec-bg-3.svg") no-repeat center center / contain;
   }
-  .card p{
+  .card p {
+    font-size: 32px !important;
     font-family: Arvo-Bold;
-  }
+    font-weight: 700;
+}
 
   @media (max-width:445px){
     .cards-container{

@@ -11,10 +11,10 @@ button.btn.btn-primary {
     background-size: contain;
     background-repeat: no-repeat;
     color: #FFF;
-    font-family: "RobotoMono-regular";
+    font-family: "Arvo-Regular";
    
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     text-align: center;
 }
 button.btn.btn-primary span {

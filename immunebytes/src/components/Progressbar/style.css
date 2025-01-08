@@ -7,7 +7,8 @@
   margin-bottom: 10px;
 }
 .company-info{
-background: url('../../assets/images/portfolio/card-disc.svg')no-repeat center center / contain;
+/* background: url('../../assets/images/portfolio/card-disc.svg')no-repeat center center / contain; */
+background-color: PINK;
 padding: 20px 0px;
 flex-direction: column;
 display: flex;

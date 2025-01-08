@@ -297,7 +297,7 @@ const UpdatePortfolio = (props) => {
                   name="platform"
                   value={formData.platform}
                   onChange={handleChange}
-                  className="w-full p-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  className="w-full p-3 border bg-black border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
                 >
                   <option value="">Select Platform</option>
                   {platforms.map((platform) => (
@@ -345,12 +345,12 @@ const UpdatePortfolio = (props) => {
                   name="status"
                   value={formData.status}
                   onChange={handleChange}
-                  className="w-full p-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  className="w-full p-3 border border-gray-600 bg-black rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
                 >
                   <option value="">Select Status</option>
                   <option value="In Progress">In Progress</option>
                   <option value="Completed">Completed</option>
-                  <option value="Pending">Pending</option>
+                  {/* <option value="Pending">Pending</option> */}
                 </select>
                 {formErrors.status && <p className="text-red-500 mt-1">{formErrors.status}</p>}
               </div>
@@ -403,13 +403,14 @@ const UpdatePortfolio = (props) => {
           <select
             value={entry.errorType}
             onChange={(e) => handleDynamicChange(index, "errorType", e.target.value)}
-            className="w-full p-3 border border-gray-600 rounded-md"
+            className="w-full p-3 border border-gray-600 rounded-md bg-black"
           >
             <option value="">Select Error Type</option>
-            <option value="Validation">Validation</option>
-            <option value="Server">Server</option>
-            <option value="Network">Network</option>
-            <option value="Authentication">Authentication</option>
+            <option value="Low">Low</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Critical">Critical</option>
+            <option value="Informational">Informational</option>
           </select>
         </div>
 
@@ -419,7 +420,7 @@ const UpdatePortfolio = (props) => {
           <select
             value={entry.errorStatus}
             onChange={(e) => handleDynamicChange(index, "errorStatus", e.target.value)}
-            className="w-full p-3 border border-gray-600 rounded-md"
+            className="w-full p-3 border border-gray-600 rounded-md bg-black"
           >
             <option value="">Select Error Status</option>
             <option value="Active">Active</option>

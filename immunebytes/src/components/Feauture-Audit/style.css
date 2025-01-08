@@ -459,6 +459,14 @@ padding: 50px 10px;
 .why-sec-feature {
   padding: 0px 10px;
 }
+
+.case-study-card {
+  padding: 38px 24px !important;
+  max-height: 220px !important;
+  min-height: 220px !important;
+}
+
+
 }
 
 
@@ -488,8 +496,8 @@ padding: 50px 10px;
   padding: 5px 6px !important;
 }
 
-.case-study-card{
-  max-height: 182px;
+.case-study-card {
+  max-height: 192px;
 }
 
 }

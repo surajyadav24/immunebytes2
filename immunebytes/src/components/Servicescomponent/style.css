@@ -139,6 +139,7 @@ transform: scale(0.8);
 
 .service-discription {
     padding-bottom: 0px;
+    margin-bottom: 15px;
 }
 
 .service-img {
@@ -160,9 +161,13 @@ transform: scale(0.8);
 }
 
 .services-wrapper h1 {
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
+    padding-top: 40px !important;
+    padding-bottom: 20px !important;
 }
+.audit-container {
+    margin: 0px 10px;
+}
+
 }
 @media (max-width:376px){
     .service-discription h2 {

@@ -306,7 +306,7 @@ button.telegram-fixed:hover{
   display: flex;
   font-size: 32px !important;
   margin-top: 0px !important;
-  margin-bottom: 15px !important;
+  margin-bottom: 0px !important;
 }
 
 .highlight{
@@ -338,6 +338,8 @@ button.telegram-fixed:hover{
 }
 .why-sec-choose .heading-h1{
   padding: 0px;
+  padding-top: 40px;
+  padding-bottom: 20px;
   margin-top: 0px !important;
 }
 h1.text-center.heading-h1.testimonial-heading.homepage-heading {
@@ -345,7 +347,8 @@ h1.text-center.heading-h1.testimonial-heading.homepage-heading {
   padding-bottom: 0px;
 }
 .case-study-wrapper h1 {
-  padding-bottom: 30px !important;
+  padding-top: 40px;
+  padding-bottom: 20px !important;
 }
 
 .col-lg-7.md-6.col-sm-8.col-xs-8.left-serv {

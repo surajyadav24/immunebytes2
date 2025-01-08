@@ -25,7 +25,7 @@
   
   .card-description {
     font-size: 0.9em;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   .card-button {
@@ -44,9 +44,9 @@ border: none;
   }
   
   .card-image img {
-    max-width: 100px;
+    max-width: 90px;
     border-radius: 5px;
-  }
+}
   
 .card-bg-1 
 .case-study-card{
@@ -257,7 +257,7 @@ border: none;
 
 /* Hover state to trigger animation */
 .case-study-card {
-  padding: 30px 20px !important;
+  padding: 15px 10px !important;
   max-height: auto !important;
   min-height: auto !important;
 }
@@ -279,4 +279,10 @@ footer .container-fluid {
   width: 100%;
   min-width: 100%;
 }
+.case-study-card button {
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+
 }

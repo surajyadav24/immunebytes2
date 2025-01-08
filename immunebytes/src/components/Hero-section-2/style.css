@@ -118,6 +118,7 @@
     }
     .mobile-hidden{
       margin: 10px 0px;
+      display: block !important;
     }
 
     .hero-video img {

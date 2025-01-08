@@ -52,9 +52,7 @@ input.w-full.text-center.text-2xl.border.border-gray-500.rounded-md.bg-gray-900.
   border: 1px solid #DCDCDC80;
 }
 
-  .submit-btn{
-    background: #F9116C;
-  }
+
 
   .otp-input:focus {
     border-color: #e0e0e0;

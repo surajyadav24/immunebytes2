@@ -86,17 +86,20 @@ button.close-popup-btn img {
 }
   
 .close-popup-btn {
-    background: #F9116C;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    position: absolute;
-    text-align: center;
-    top: -9px;
-    right: -11px;
+  display: flex;
+  background: #F9116C;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  text-align: center;
+  top: -9px;
+  right: -10px;
+  justify-content: center;
+  align-items: center;
 }
   @media (max-width:768px) {
     .form-group {

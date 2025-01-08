@@ -74,7 +74,7 @@ p.px-4.py-2.text-sm.font-bold.text-white {
 .desktop-menu a.flex-center.gap-1.hover\:bg-white\/5.cursor-pointer.px-3.py-1.rounded-xl{
     font-size: 18px;
     font-family: 'Arvo-Regular';
-    text-transform: capitalize;
+    text-transform: uppercase;
     color: #fff;
 }
 

@@ -67,11 +67,11 @@ const UpdatePortfolio = (props) => {
               errorBags: portfolio.errorBags,
               companyDescription: portfolio.companyDescription,
               image: portfolio.image, // Assuming you might want to pre-load the image URL for display
-              pdf: portfolio.pdf, // Assuming you might want to pre-load the PDF URL for display
+              pdf: portfolio.pdf || null, // Assuming you might want to pre-load the PDF URL for display
             });
 
             setPreviewImage(portfolio.image);
-            setPreviewPDF(portfolio.pdf);
+            setPreviewPDF(portfolio.pdf || null);
             // Set the dynamic error entries
             setErrorEntries(portfolio.errorEntries || []);
           } else {
@@ -84,6 +84,9 @@ const UpdatePortfolio = (props) => {
           setError('Error fetching portfolio details');
         }
       };
+      // console.log(portfolio.pdf ,"portfolio.pdf")
+      console.log(formData.pdf ,"FormData.pdf")
+
   
       // if (selectedItemId) {
       //   fetchPortfolioDetails();
@@ -108,7 +111,7 @@ const UpdatePortfolio = (props) => {
       }
     };
     fetchPlatforms();
-  }, []);
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -138,9 +141,9 @@ const UpdatePortfolio = (props) => {
     if (!formData.status) errors.status = "Status is required.";
     // if (!formData.errorType) errors.errorType = "Error Type is required.";
     if (!formData.companyDescription) errors.companyDescription = "Company Description is required.";
-    if (!formData.errorBags || isNaN(formData.errorBags)) {
-      errors.errorBags = "Error Bags must be a number.";
-    }
+    // if (!formData.errorBags || isNaN(formData.errorBags)) {
+    //   errors.errorBags = "Error Bags must be a number.";
+    // }
     if (!formData.image) errors.image = "Image is required.";
     
       // Validate error entries
@@ -151,10 +154,10 @@ const UpdatePortfolio = (props) => {
       entry.errorDescription.trim() !== ""
   );
 
-  if (!validErrorEntry) {
-    errors.errorEntries = "At least one valid error entry is required.";
-  }
-  console.log("Valid Error Entries:", validErrorEntry);
+  // if (!validErrorEntry) {
+  //   errors.errorEntries = "At least one valid error entry is required.";
+  // }
+  // console.log("Valid Error Entries:", validErrorEntry);
 
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
@@ -182,9 +185,21 @@ const UpdatePortfolio = (props) => {
     // Append PDF or retain existing PDF URL
     if (formData.pdf instanceof File) {
       form.append("pdf", formData.pdf);
-    } else {
-      form.append("existingPDF", formData.pdf); // Send existing URL
+    console.log(formData.pdf,"formData.pdf -- 185 ")
     }
+      
+    // } else {
+    //   form.append("existingPDF", formData.pdf); // Send existing URL
+    // }
+    if (!formData.pdf) {
+      form.append("existingPDF", null); // Explicitly remove the PDF
+    console.log(formData.pdf,"formData.pdf -- 185 ")
+
+    }
+    
+
+  
+
 
     
 
@@ -356,29 +371,24 @@ const UpdatePortfolio = (props) => {
 
               {/* Upload PDF */}
               <div>
-                <label htmlFor="pdf" className="block text-sm font-medium mb-1">Upload PDF</label>
-               {previewPDF && (
-    <a
-      href={previewPDF}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-blue-500 underline mb-2 block"
-    >
-      View Existing PDF
-    </a>
-  )}
+              {(formData.pdf !== "null") ? (
+  <a href={formData.pdf} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline mb-2 block">
+    View Existing PDF 
+  </a>
+):(<label htmlFor="uploadPdf" className="block text-sm font-medium mb-1">Upload pdf</label>)}
+ 
+
   <input
     type="file"
     id="pdf"
     name="pdf"
+    // value={formData.pdf || null}
     onChange={handleFileChange}
     className="w-full p-3 border border-gray-600 rounded-md"
   />
-  {!formData.pdf && (
-    <p className="text-gray-500 text-sm mt-1">Existing: {formData.pdf}</p>
-  )}
   {formErrors.pdf && <p className="text-red-500 mt-1">{formErrors.pdf}</p>}
-              </div>
+</div>
+
             </div>
 
 {/* Dynamic Error Entries */}

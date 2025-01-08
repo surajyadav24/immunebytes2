@@ -5,10 +5,12 @@ import './style.css';
 import forward from '../../assets/images/portfolio/forward.svg';
 import backward from '../../assets/images/portfolio/backward.svg';
 import eye from '../../assets/images/portfolio/eye.svg';
+import close from '../../assets/images/cross.svg';
+
 import red from '../../assets/images/portfolio/red-svg.svg';
 import { useNavigate } from 'react-router-dom';
 
-const PortfolioTable = ({ showEditButton ,showDeleteButton}) => {
+const PortfolioTable = ({ showEditButton, showDeleteButton }) => {
   const [search, setSearch] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(9);
@@ -41,7 +43,7 @@ const PortfolioTable = ({ showEditButton ,showDeleteButton}) => {
       await axios.delete(`/api/v1/users/deleteportfolio/${id}`);
       setPortfolios((prev) => prev.filter((item) => item._id !== id));
       setSelectedItem(null);
-      alert('Portfolio deleted successfully');
+      // alert('Portfolio deleted successfully');
       navigate('/dashboard-main');
     } catch (error) {
       console.error('Error deleting portfolio', error);
@@ -138,16 +140,17 @@ const PortfolioTable = ({ showEditButton ,showDeleteButton}) => {
                     Edit
                   </button>
                 )}
-              {showDeleteButton &&   ( 
- <button
- onClick={(e) => {
-   e.stopPropagation();
-   openDeleteConfirmation(item._id);
- }}
->
- <img src={red} alt="Delete Report" />
-</button>
-              )} 
+                {showDeleteButton && (
+                  <button
+                    className='delete-btn'
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      openDeleteConfirmation(item._id);
+                    }}
+                  >
+                    <img src={red} alt="Delete Report" />
+                  </button>
+                )}
               </div>
             </div>
           ))}
@@ -177,24 +180,30 @@ const PortfolioTable = ({ showEditButton ,showDeleteButton}) => {
           )}
 
         {deleteConfirmation.isOpen && (
-          <div className="modal-overlay">
-            <div className="modal-content">
-              <p>Are you sure you want to delete this portfolio?</p>
-              <button
-                className="confirm-btn"
-                onClick={() => {
-                  handleDelete(deleteConfirmation.portfolioId);
-                  closeDeleteConfirmation();
-                }}
-              >
-                Yes
+          <div className="modal-overlay-delete">
+            <div className="modal-content-delete  bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg">
+              <button className="close-btn-delete" onClick={closeDeleteConfirmation}>
+                <img src={close} alt="Close" />
               </button>
-              <button className="cancel-btn" onClick={closeDeleteConfirmation}>
-                No
-              </button>
+              <p className='text-white pt-3'>Are you sure you want to delete this portfolio?</p>
+              <div className="modal-actions-delete">
+                <button
+                  className="confirm-btn-delete"
+                  onClick={() => {
+                    handleDelete(deleteConfirmation.portfolioId);
+                    closeDeleteConfirmation();
+                  }}
+                >
+                  Yes, Delete
+                </button>
+                <button className="cancel-btn-delete" onClick={closeDeleteConfirmation}>
+                  Cancel
+                </button>
+              </div>
             </div>
           </div>
         )}
+
       </div>
     </div>
   );

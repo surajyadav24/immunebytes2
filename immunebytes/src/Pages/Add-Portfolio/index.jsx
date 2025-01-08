@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect ,useRef} from "react";
 import axios from "axios";
 import './style.css';
 import {useNavigate} from 'react-router-dom'
@@ -9,6 +9,12 @@ const AddPortfolio = (props) => {
   const [errorEntries, setErrorEntries] = useState([
     { errorType: "", errorStatus: "", errorDescription: "" },
   ]);
+
+
+  const inputRef = useRef(null);
+
+ 
+
 
   // Handle changes in dynamic error entry fields
   const handleDynamicChange = (index, field, value) => {
@@ -81,9 +87,9 @@ const AddPortfolio = (props) => {
     if (!formData.status) errors.status = "Status is required.";
     // if (!formData.errorType) errors.errorType = "Error Type is required.";
     if (!formData.companyDescription) errors.companyDescription = "Company Description is required.";
-    if (!formData.errorBags || isNaN(formData.errorBags)) {
-      errors.errorBags = "Error Bags must be a number.";
-    }
+    // if (!formData.errorBags || isNaN(formData.errorBags)) {
+    //   errors.errorBags = "Error Bags must be a number.";
+    // }
     if (!formData.image) errors.image = "Image is required.";
       // Validate error entries
   const validErrorEntry = errorEntries.some(
@@ -93,10 +99,10 @@ const AddPortfolio = (props) => {
       entry.errorDescription.trim() !== ""
   );
 
-  if (!validErrorEntry) {
-    errors.errorEntries = "At least one valid error entry is required.";
-  }
-  console.log("Valid Error Entries:", validErrorEntry);
+  // if (!validErrorEntry) {
+  //   errors.errorEntries = "At least one valid error entry is required.";
+  // }
+  // console.log("Valid Error Entries:", validErrorEntry);
 
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
@@ -147,6 +153,12 @@ const AddPortfolio = (props) => {
     }
   };
 
+  useEffect(() => {
+    if (error && inputRef.current) {
+      inputRef.current.focus(); // Focus the input when an error occurs
+    }
+  }, [error]); // Dependency array triggers focus when error state changes
+
   return (
     <>
     <div className="dashboard-header">
@@ -165,6 +177,7 @@ const AddPortfolio = (props) => {
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
                 <input
+                ref={inputRef}
                   type="text"
                   id="name"
                   name="name"
@@ -179,6 +192,8 @@ const AddPortfolio = (props) => {
               <div className="image-upload">
                 <label htmlFor="image" className="block text-sm font-medium mb-1">Upload Image</label>
                 <input
+                ref={inputRef}
+
                   type="file"
                   id="image"
                   name="image"
@@ -192,6 +207,8 @@ const AddPortfolio = (props) => {
               <div>
                 <label htmlFor="platform" className="block text-sm font-medium mb-1">Platform</label>
                 <select
+                ref={inputRef}
+
                   id="platform"
                   name="platform"
                   value={formData.platform}
@@ -212,6 +229,8 @@ const AddPortfolio = (props) => {
               <div>
                 <label htmlFor="auditDate" className="block text-sm font-medium mb-1">Audit Date</label>
                 <input
+                ref={inputRef}
+
                   type="date"
                   id="auditDate"
                   name="auditDate"
@@ -226,6 +245,8 @@ const AddPortfolio = (props) => {
               <div>
                 <label htmlFor="errorBags" className="block text-sm font-medium mb-1">Error / Bags</label>
                 <input
+                ref={inputRef}
+
                   type="number"
                   id="errorBags"
                   name="errorBags"
@@ -240,6 +261,8 @@ const AddPortfolio = (props) => {
               <div>
                 <label htmlFor="status" className="block text-sm font-medium mb-1">Status</label>
                 <select
+                ref={inputRef}
+
                   id="status"
                   name="status"
                   value={formData.status}
@@ -249,7 +272,7 @@ const AddPortfolio = (props) => {
                   <option value="">Select Status</option>
                   <option value="In Progress">In Progress</option>
                   <option value="Completed">Completed</option>
-                  <option value="Pending">Pending</option>
+                  {/* <option value="Pending">Pending</option> */}
                 </select>
                 {formErrors.status && <p className="text-red-500 mt-1">{formErrors.status}</p>}
               </div>
@@ -258,6 +281,8 @@ const AddPortfolio = (props) => {
               <div>
                 <label htmlFor="companyDescription" className="block text-sm font-medium mb-1">Company Description</label>
                 <textarea
+                ref={inputRef}
+
                   id="companyDescription"
                   name="companyDescription"
                   value={formData.companyDescription}
@@ -272,6 +297,7 @@ const AddPortfolio = (props) => {
               <div>
                 <label htmlFor="pdf" className="block text-sm font-medium mb-1">Upload PDF</label>
                 <input
+                ref={inputRef}
                   type="file"
                   id="pdf"
                   name="pdf"
@@ -297,6 +323,7 @@ const AddPortfolio = (props) => {
             className="w-full p-3 border border-gray-600 rounded-md"
           >
             <option value="">Select Error Type</option>
+            <option value="Low">Low</option>
             <option value="Validation">High</option>
             <option value="Server">Medium</option>
             <option value="Network">Critical</option>
@@ -324,6 +351,8 @@ const AddPortfolio = (props) => {
         <div>
           <label htmlFor="errorDescription" className="block text-sm font-medium mb-1">Error Description</label>
           <textarea
+                ref={inputRef}
+
             id="errorDescription"
             name="errorDescription"
             value={entry.errorDescription}

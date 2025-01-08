@@ -162,6 +162,7 @@ header{
     gap: 10px 10px;
     padding: 0px 11px;
     padding-bottom: 10px;
+    width: 100vw;
   }
   .mobilemenu-ul p {
     display: block;
@@ -197,6 +198,7 @@ header{
     background: none;
     border: none;
     box-shadow: none;
+    font-size: 15px;
 }
 .desktop-navigation{
   display: none;
@@ -210,18 +212,19 @@ header{
 }
 .mob-menu-ul li {
   padding: 0px !important;
-  min-width: 62px;
+  min-width: 74px;
 }
 .mob-menu-ul li a {
   font-size: 15px;
   color: #fff !important;
 }
 .mob-menu-ul li a {
-font-size: 15px;
-color: #fff !important;
-padding: 2px;
-max-width: 61px;
-min-width: 61px;
+  min-width: 63px;
+  font-size: 11px;
+  color: #fff;
+  max-width: 71px;
+  min-width: 71px;
+  min-width: 61px;
 }
 
 .mob-menu-ul img {

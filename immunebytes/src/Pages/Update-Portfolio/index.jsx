@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './style.css';
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
 
 
 const UpdatePortfolio = (props) => {
+  const navigate = useNavigate()
+
   const {selectedItemId} =useParams()
   const [errorEntries, setErrorEntries] = useState([
     { errorType: "", errorStatus: "", errorDescription: "" },
@@ -205,7 +208,8 @@ const UpdatePortfolio = (props) => {
       });
 
       if (response.data.statusCode === 200) {
-        alert('Portfolio added successfully!');
+        // alert('Portfolio added successfully!');
+        navigate('/dashboard-main')
       } else {
         setError(response.data.message || 'Add portfolio failed');
       }

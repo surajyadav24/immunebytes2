@@ -14,3 +14,35 @@
     border: 0.5px solid #dcdcdc56 !important;
     outline: none;
 }
+/* Platform widget input */
+.input-error{
+    border: #DC2626  !important; /* Red border when error occurs */
+    /* background-color: #DC2626 !important ;  */
+  }
+  .input-error:focus {
+    outline: none; /* Remove the default focus outline */
+    border: 2px solid #DC2626 !important; /* Change border color to pink when focused */
+    box-shadow: 0 0 0 4px rgba(249, 17, 108, 0.4); /* Add a glow around the input */
+  } 
+  /* Styling for the error message */
+  .error-message {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #DC2626 ; /* Red background */
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    animation: fadeOut 5s ease-out forwards; /* Fade out effect after 3 seconds */
+  }
+  
+  /* Keyframe animation to fade out the error message */
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  

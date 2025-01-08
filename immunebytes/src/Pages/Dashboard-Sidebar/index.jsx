@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 import axios from "axios";
 import "./style.css";
 import dasboardIcon from "../../../src/assets/images/Dashboard/dashboard-icon.svg";
@@ -11,10 +11,36 @@ import menuicon from "../../../src/assets/images/Dashboard/menu-icon.svg";
 
 function Sidebar() {
   const navigate = useNavigate();
-  const [activeLink, setActiveLink] = useState("Dashboard");
+  const location = useLocation();  // Hook to get current location
+  // const [activeLink, setActiveLink] = useState("Dashboard");
   const [isSidebarVisible, setIsSidebarVisible] = useState(
     window.innerWidth > 1024 // Sidebar visible by default on desktop
   );
+
+
+
+
+  // Active link state updated based on the URL path
+  const [activeLink, setActiveLink] = useState(() => {
+    const path = location.pathname;
+    if (path.includes("dashboard-main")) return "Dashboard";
+    if (path.includes("severity")) return "Severity Found";
+    if (path.includes("addportfolio")) return "Portfolio";
+    if (path.includes("addplatform")) return "Platform";
+    return "Dashboard"; // Default
+  });
+
+  useEffect(() => {
+    // Update activeLink whenever the URL changes
+    const path = location.pathname;
+    if (path.includes("dashboard-main")) setActiveLink("Dashboard");
+    else if (path.includes("severity")) setActiveLink("Severity Found");
+    else if (path.includes("addportfolio")) setActiveLink("Portfolio");
+    else if (path.includes("addplatform")) setActiveLink("Platform");
+  }, [location]);  // Run this effect whenever the URL changes
+
+
+
 
   useEffect(() => {
     const handleResize = () => {

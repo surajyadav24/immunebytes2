@@ -72,13 +72,13 @@
   
   /* Forgot password */
   .forgot-password {
-    display: block;
-    text-align: right;
-    font-size: 0.8rem;
-    color: #888;
-    margin-top: 5px;
+    display: inline;
+    text-align: right !important;
+    font-size: 1rem !important;
+    color: #F9116C !important;
+    margin-top: 17px !important;
     text-decoration: none;
-  }
+    margin-left: 293px !important;}
   
   /* Button */
   .button {

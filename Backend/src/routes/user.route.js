@@ -3,7 +3,7 @@ import { Router } from "express"
 import { signUp,logOut,logIn, forgotPassword,resetPassword,resendOtp ,getCurrentUser} from "../controllers/user.controller.js"
 import { verifyJwt } from "../middlewares/auth.middleware.js"
 import { verifyOTP } from "../controllers/user.controller.js"
-import { addPortfolio, getPortfolio ,selectPortfolio,updatePortfolio } from "../controllers/addPortfolio.controller.js"
+import { addPortfolio, getPortfolio ,selectPortfolio,updatePortfolio,deletePortfolio } from "../controllers/addPortfolio.controller.js"
 import { addPlatform, deletePlatform, getPlatforms, updatePlatform } from "../controllers/platform.controller.js"
 import { cSigma } from "../controllers/cSigma.controller.js"
 import { upload } from "../middlewares/multer.middleware.js"
@@ -37,6 +37,8 @@ router.route("/me").post(verifyJwt,getCurrentUser);
 router.route("/severity").post(verifyJwt,severity);
 router.route("/updateportfolio/:selectedItemId").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),verifyJwt,updatePortfolio);
 router.route("/Add-Portfolio").post(upload.fields([{ name: 'image' }, { name: 'pdf' }]),verifyJwt,addPortfolio);
+router.route("/deleteportfolio/:id").delete(verifyJwt, deletePortfolio);
+
 router.route("/Reset-Password/:resetPasswordToken").post(resetPassword)
 router.route("/email-verify").post(verifyJwt,verifyOTP)
 

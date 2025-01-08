@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import axios from "axios";
 import PlatformList from "../Platform-List"; 
 import "./style.css";
@@ -12,6 +12,16 @@ const PlatformManagement = ({ headname, platformsPerPage = 20 }) => {
   const [platformName, setAddPlatform] = useState("");
 
   // Fetch platforms on component mount
+
+    // Reference for the input element
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+      if (error && inputRef.current) {
+        inputRef.current.focus(); // Focus the input when an error occurs
+      }
+    }, [error]); // Dependency array triggers focus when error state changes
+
   useEffect(() => {
     const fetchPlatforms = async () => {
       try {
@@ -79,10 +89,15 @@ const PlatformManagement = ({ headname, platformsPerPage = 20 }) => {
       );
 
       if (response.data.statusCode === 200) {
-        setPlatforms((prevPlatforms) => [
-          { platformName: platformName.trim(), createdAt: new Date() },
-          ...prevPlatforms,
-        ]);
+        // setPlatforms((prevPlatforms) => [
+        //   { platformName: platformName.trim(), createdAt: new Date() },
+        //   ...prevPlatforms,
+        // ]);
+
+        const { newPlatform } = response.data.data;
+        console.log(response.data.data,"response.data.data")
+        console.log(newPlatform,"newPlatform")
+        setPlatforms((prevPlatforms) => [newPlatform, ...prevPlatforms]);
         setAddPlatform("");
       } else {
         setError(response.data.message || "Add platform failed");
@@ -126,6 +141,17 @@ const PlatformManagement = ({ headname, platformsPerPage = 20 }) => {
   const currentPlatforms =
     platforms?.slice(indexOfFirstPlatform, indexOfLastPlatform) || [];
 
+    // Auto hide error message after 3 seconds
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => {
+        setError("");
+        console.log("No error checking just ")
+      }, 5000); // Error disappears after 3 seconds
+      return () => clearTimeout(timer); // Cleanup timeout on component unmount
+    }
+  }, [error]);
+
   return (
     <>
       <div className="dashboard-header">
@@ -136,11 +162,12 @@ const PlatformManagement = ({ headname, platformsPerPage = 20 }) => {
           <h3 className="text-xl font-semibold mb-4">Add Platform</h3>
           <form onSubmit={handlesubmit} className="flex items-center gap-4">
             <input
+             ref={inputRef}
               type="text"
               value={platformName}
               onChange={(e) => setAddPlatform(e.target.value)}
               placeholder="Enter new platform"
-              className="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+              className={`w-full p-2 bg-gray-700 border border-gray-600 rounded-md  focus:ring-2 focus:ring-pink-500  ${error ? "input-error" : ""}`}
             />
             <button className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-md transition">
               Submit

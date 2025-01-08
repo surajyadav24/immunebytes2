@@ -131,4 +131,18 @@ const updatePortfolio = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, { updatedPortfolio }, "Portfolio updated successfully"));
 });
 
-export { addPortfolio, getPortfolio, selectPortfolio, updatePortfolio };
+
+const deletePortfolio = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+
+  const portfolio = await AddPortfolio.findById(id);
+  if (!portfolio) {
+    throw new ApiError(404, 'Portfolio not found');
+  }
+
+  await portfolio.deleteOne();
+  res.status(200).json(new ApiResponse(200, {}, 'Portfolio deleted successfully'));
+});
+
+
+export { addPortfolio, getPortfolio, selectPortfolio, updatePortfolio,deletePortfolio };

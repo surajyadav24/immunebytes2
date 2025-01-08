@@ -31,7 +31,7 @@ function LoginForm() {
       }
     } catch (error) {
       console.error(error);
-      setError(error.response?.data?.message || 'Username and Password id invalid');
+      setError(error.response?.data?.message || 'Username and Password is invalid');
     }
   };
 

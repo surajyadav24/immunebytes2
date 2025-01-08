@@ -39,7 +39,7 @@ function DashboardMain() {
         <PlatformManagement headname="Manage Platforms" platformsPerPage={3} />
       </div>
       <div className="dashboard-table-container">
-        <PortfolioTable showEditButton={true} />
+        <PortfolioTable showEditButton={true} showDeleteButton={true} />
       </div>
     </div>
   );

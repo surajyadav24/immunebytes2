@@ -134,7 +134,7 @@ const AddPortfolio = (props) => {
       });
 
       if (response.data.statusCode === 200) {
-        alert('Portfolio added successfully!');
+        // alert('Portfolio added successfully!');
        navigate('/dashboard-main')
       } else {
         setError(response.data.message || 'Add portfolio failed');

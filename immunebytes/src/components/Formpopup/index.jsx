@@ -138,8 +138,9 @@ const PopupForm = () => {
                     <option value="" disabled>
                       Select a service
                     </option>
-                    <option value="Service 1">Service 1</option>
-                    <option value="Service 2">Service 2</option>
+                    <option value="Service 1">Smart Contract Audit</option>
+                    <option value="Service 2">Blockchain Security Services</option>
+                    <option value="Service 3">Penetration Testing</option>
                   </select>
                 </div>
               </div>

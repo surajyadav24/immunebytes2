@@ -32,7 +32,7 @@ export const Menus = [
           { name: "Token", icon: token,     link:"/dashboard" },
           { name: "dApp", icon: dapp,     link:"/dashboard" },
         ],
-        subSubHeading2: ["By Service"],
+        subSubHeading2: ["By Ecosystem"],
         subSubMenu2: [
           { name: "Ethereum", icon: ethereum, link:"/dashboard" },
           { name: "Solana", icon: solana , link:"/dashboard"},

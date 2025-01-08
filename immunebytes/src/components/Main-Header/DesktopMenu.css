@@ -13,7 +13,7 @@
   border-radius: 10px;
   min-width: 90px;
   max-width: 90px;
-  padding: 0px !important;
+  padding: 5px 0px !important;
   margin: 0px !important;
   text-align: center;
 }
@@ -21,6 +21,7 @@
 padding-left: 10px;
 }
 .li-wrapper a p{
+  font-family: "Arvo-Regular";
   padding-left: 0px !important;
 }
 .li-wrapper a  {
@@ -38,8 +39,9 @@ padding: 0px !important;
   background-color: #f9116c !important;
 }
 .submenuitem img {
-  min-width: 50px;
-  max-width: 50px;
+width: 64%;
+border-radius: 0px  !important;
+object-fit: contain !important;
 }
 
 .subsubmenu-2 {
@@ -99,14 +101,26 @@ p.px-4.py-2.text-sm.font-bold.text-white {
   margin: 0 auto;
 }
 .sub-menu .relative.cursor-pointer.group\/submenu:hover{
-padding: 5px 5px;
+padding: 10px 5px;
 background: #f9116c;
 }
-.sub-menu .relative.cursor-pointer.group\/submenu{
+.sub-menu .relative.cursor-pointer.group\/submenu {
   border-radius: 5px;
-padding: 5px 0px;
-
+  padding: 10px 5px;
 }
+.sub-menu a h6 {
+  font-weight: 400;
+  font-family: "Arvo-Regular" !important;
+}
+
+header{
+  height: 100px;
+}
+
+.sub-menu  li {
+  font-family: Arvo-Regular !important;
+}
+
 @media (max-width: 440px) {
   .mob-menu-ul li {
     min-width: 80px;

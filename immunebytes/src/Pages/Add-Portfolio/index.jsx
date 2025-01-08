@@ -213,7 +213,8 @@ const AddPortfolio = (props) => {
                   name="platform"
                   value={formData.platform}
                   onChange={handleChange}
-                  className="w-full p-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  className="w-full p-3 border border-gray-600 rounded-md focus:outline-none bg-black  focus:ring-2 focus:ring-pink-500"
+                 
                 >
                   <option value="">Select Platform</option>
                   {platforms.map((platform) => (
@@ -267,7 +268,7 @@ const AddPortfolio = (props) => {
                   name="status"
                   value={formData.status}
                   onChange={handleChange}
-                  className="w-full p-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  className="w-full p-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 bg-black focus:ring-pink-500"
                 >
                   <option value="">Select Status</option>
                   <option value="In Progress">In Progress</option>
@@ -320,7 +321,7 @@ const AddPortfolio = (props) => {
           <select
             value={entry.errorType}
             onChange={(e) => handleDynamicChange(index, "errorType", e.target.value)}
-            className="w-full p-3 border border-gray-600 rounded-md"
+            className="w-full p-3 border border-gray-600 rounded-md bg-black"
           >
             <option value="">Select Error Type</option>
             <option value="Low">Low</option>
@@ -337,7 +338,7 @@ const AddPortfolio = (props) => {
           <select
             value={entry.errorStatus}
             onChange={(e) => handleDynamicChange(index, "errorStatus", e.target.value)}
-            className="w-full p-3 border border-gray-600 rounded-md"
+            className="w-full p-3 border border-gray-600 rounded-md bg-black"
           >
             <option value="">Select Error Status</option>
             <option value="Active">Fixed</option>

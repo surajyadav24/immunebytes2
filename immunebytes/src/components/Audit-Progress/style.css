@@ -46,15 +46,7 @@
     padding: 0px 29px;
     flex-direction: column;
 }
-  .audit-progress {
-    min-height: 290px;
-    width: 45%;
-    text-align: left;
-    background: url(../../assets/images/portfolio/card-sc-2.png) no-repeat center center / contain;
-    padding: 0px 29px;
-      padding: 34px 0px;
 
-  }
 .dasaupro{
   margin-left: 20px;
   width: 65%;
@@ -83,7 +75,21 @@
     background-color: #ff3366;
   }
 
-  
+  .audit-progress-dashboard{
+    width: 100%;
+    padding: 20px;
+  }
+  .audit-progress-dashboard .audit-progress {
+    /* margin: 28px !important; */
+    min-height: 290px;
+    width: 100% !important;
+    text-align: left;
+    /* background: url(../../assets/images/portfolio/card-sc-2.png) no-repeat center center / contain; */
+    border: 2px solid #DCDCDC80;
+    border-radius: 10px;
+    padding: 34px 29px;
+      text-align: left;
+  } 
 .audit-progress h4 {
   padding-left: 40px;
   font-size: 18px;
@@ -120,6 +126,19 @@ margin-bottom: 4px;
 .audit-progress {
 min-height: 177px;
 padding: 7px 8px;
+}
+ .audit-progress {
+  margin: 28px !important;
+  min-height: 290px;
+  width: 45%;
+  text-align: left;
+  /* background: url(../../assets/images/portfolio/card-sc-2.png) no-repeat center center / contain; */
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 0px 29px;
+    padding: 34px 0px;
+    width: 50%;
+    text-align: left;
 }
 .audit-progress .progress-bar::before {
 top: 5px;

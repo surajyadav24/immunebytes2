@@ -36,7 +36,7 @@ function DashboardMain() {
       <AuditStats />
       <div className="audit-edit-wrapper">
         <AuditProgress className="dasboard-progressbar additional-class" />
-        <PlatformManagement headname="Manage Platforms" platformsPerPage={3} />
+        {/* <PlatformManagement headname="Manage Platforms" platformsPerPage={3} /> */}
       </div>
       <div className="dashboard-table-container">
         <PortfolioTable showEditButton={true} showDeleteButton={true} />

@@ -40,15 +40,19 @@
     padding: 0px 29px;
     flex-direction: column;
 }
-  .audit-progress {
-    min-height: 290px;
-    width: 45%;
+ 
+.audit-content .audit-progress {
+  /* margin: 28px !important; */
+  min-height: 290px;
+  width: 45%;
+  text-align: left;
+  background: url(../../assets/images/portfolio/card-sc-2.png) no-repeat center center / contain;
+  /* border: 2px solid white; */
+  border-radius: 10px;
+  padding: 0px 29px;
+    padding: 34px 0px;
+    width: 50%;
     text-align: left;
-    background: url(../../assets/images/portfolio/card-sc-2.png) no-repeat center center / contain;
-    padding: 0px 29px;
-      padding: 34px 0px;
-      width: 50%;
-      text-align: left;
 }
   
   .audit-details h3 {

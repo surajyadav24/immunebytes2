@@ -129,7 +129,7 @@ export default function MobMenu({ Menus }) {
                                 <div className="mobilemenu-ul">
                                   {/* Sub-Submenu 1 */}
                                   {subSubHeading1 && (
-                                    <p className="px-4 py-2 text-sm font-bold text-white">
+                                    <p className="py-2 text-sm font-bold text-white">
                                       {subSubHeading1}
                                     </p>
                                   )}
@@ -156,7 +156,7 @@ export default function MobMenu({ Menus }) {
 
                                   {/* Sub-Submenu 2 */}
                                   {subSubHeading2 && (
-                                    <p className="px-4 py-2 text-sm font-bold text-white">
+                                    <p className="py-2 text-sm font-bold text-white">
                                       {subSubHeading2}
                                     </p>
                                   )}

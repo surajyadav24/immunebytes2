@@ -96,7 +96,7 @@ export default function DesktopMenu({ menu }) {
                         variants={subMenuAnimate}
                       >
                         {submenu.subSubHeading1 && (
-                          <p className="px-4 py-2 text-sm font-bold text-white">
+                          <p className="py-2 text-sm font-bold text-white">
                             {submenu.subSubHeading1}
                           </p>
                         )}
@@ -121,7 +121,7 @@ export default function DesktopMenu({ menu }) {
 
                         <div className="subsubmenu-2">
                           {submenu.subSubHeading2 && (
-                            <p className="px-4 py-2 text-sm font-bold text-white">
+                            <p className="py-2 text-sm font-bold text-white">
                               {submenu.subSubHeading2}
                             </p>
                           )}

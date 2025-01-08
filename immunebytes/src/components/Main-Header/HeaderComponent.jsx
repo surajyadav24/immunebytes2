@@ -21,14 +21,14 @@ export default function HeaderComponent() {
           </ul>
 
           <div className="flex-center gap-x-5">
-          
+          <div className="desktop-btn-request md:hidden sm:hidden">
+          <Formpopup />
+        </div>
             <div className="lg:hidden md:hidden xl:hidden mobile-menu">
               <MobMenu Menus={Menus} />
             </div>
           </div>
-          <div className="desktop-btn-request">
-          <Formpopup />
-        </div>
+         
         </nav>
       </header>
     </div>

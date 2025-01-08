@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
-
+import Formpopup from "../Formpopup"
 import "./DesktopMenu.css";
 
 export default function MobMenu({ Menus }) {
@@ -193,12 +193,9 @@ export default function MobMenu({ Menus }) {
             );
           })}
         </ul>
-          <button
-              aria-label="sign-in"
-              className=" open-popup-btn btn register-btn text-white"
-            >
-             Request Audit
-            </button>
+        <div className="desktop-btn-request mob-request-btn">
+          <Formpopup />
+        </div>
       </motion.div>
     </div>
   );

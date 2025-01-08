@@ -190,6 +190,12 @@ padding: 5px 0px;
 .desktop-navigation{
   display: none;
 }
-
+.desktop-btn-request.md\:hidden.sm\:hidden {
+  display: none;
+}
+.popup-container {
+  display: flex;
+  justify-content: flex-start;
+}
 
 }

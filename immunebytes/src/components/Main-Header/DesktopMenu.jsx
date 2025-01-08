@@ -111,7 +111,7 @@ export default function DesktopMenu({ menu }) {
                                 <img
                                   src={subSubItem.icon}
                                   alt={subSubItem.name}
-                                  className="rounded-full object-cover"
+                                  className=" "
                                 />
                               )}
                               <p className="sub-item-name">{subSubItem.name}</p>
@@ -136,7 +136,7 @@ export default function DesktopMenu({ menu }) {
                                   <img
                                     src={subSubItem.icon}
                                     alt={subSubItem.name}
-                                    className="rounded-full object-cover"
+                                    className=""
                                   />
                                 )}
                                 <p className="sub-item-name">

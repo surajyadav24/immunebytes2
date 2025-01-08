@@ -266,8 +266,10 @@ button.telegram-fixed:hover{
 .mob-menu-ul li:hover{
   color: #F9116C !important;
 }
-.main-mobile-wrapper span{
+.main-mobile-wrapper span {
+  justify-content: space-between;
   padding: 10px 5px !important;
+  width: 100%;
 }
  .main-mobile-wrapper span:hover{
   color: #F9116C !important;

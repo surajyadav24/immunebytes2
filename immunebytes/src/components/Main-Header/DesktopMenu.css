@@ -218,16 +218,18 @@ header{
 @media (max-width:375px) {
   .mob-menu-ul li {
     padding: 0px !important;
-    min-width: 65px;
+    min-width: 62px;
 }
   .mob-menu-ul li a {
     font-size: 15px;
     color: #fff !important;
 }
 .mob-menu-ul li a {
-  padding: 5px;
-  max-width: 64px;
-  min-width: 64px;
+  font-size: 15px;
+  color: #fff !important;
+  padding: 2px;
+  max-width: 61px;
+  min-width: 61px;
 }
 
 .mob-menu-ul img {

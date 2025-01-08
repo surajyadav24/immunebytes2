@@ -261,7 +261,8 @@ button.telegram-fixed:hover{
   display: block;
   padding-left: 10px !important;
   width: 100%;
-  margin-bottom: 10px;
+  padding-bottom: 0px !important;
+  margin-bottom: 0px;
   color: #f9116c !important;
 }
 .mob-menu-ul li:hover{
@@ -269,9 +270,12 @@ button.telegram-fixed:hover{
 }
 .main-mobile-wrapper span {
   justify-content: space-between;
-  padding: 10px 5px !important;
+  padding: 5px 5px !important;
   width: 100%;
+  font-family: "Arvo-Regular" !important;
 }
+
+
  .main-mobile-wrapper span:hover{
   color: #F9116C !important;
 }

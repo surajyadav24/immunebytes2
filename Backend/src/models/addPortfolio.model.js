@@ -30,7 +30,8 @@ const addPortfolioSchema = new Schema(
     },
     pdf: {
       type: String,
-      required: true,
+      default:null
+      // required: true,
     },
     companyDescription: {
       type: String,
@@ -41,15 +42,15 @@ const addPortfolioSchema = new Schema(
       {
         errorType: {
           type: String,
-          required: true,
+          // required: false,
         },
         errorStatus: {
           type: String,
-          required: true,
+          // required: true,
         },
         errorDescription: {
           type: String,
-          required: true,
+          // required: true,
         },
       },
     ],

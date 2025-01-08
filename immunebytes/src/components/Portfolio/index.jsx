@@ -11,7 +11,7 @@ function Portfolio() {
 <>
 <Header/>
 <AuditSection/>
-<PortfolioTable showEditButton={false} />
+<PortfolioTable showEditButton={false} showDeleteButton={false} />
 <div className="por-cta">
 <StatsSection/>
 <Ctacomponents title="Leading the Wave of Web3 Security"/>

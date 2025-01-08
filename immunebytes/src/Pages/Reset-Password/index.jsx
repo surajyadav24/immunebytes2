@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect ,useRef} from 'react'
 import './style.css'
 import Logo from '../../assets/images/logos/Logo.svg'
 import { useNavigate } from 'react-router-dom';
@@ -12,6 +12,13 @@ function ResetPassword() {
   const [confirmpassword,setConfirmpassword]=useState('')
   const navigate = useNavigate()
   const [error, setError] = useState('');
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (error && inputRef.current) {
+      inputRef.current.focus(); // Focus the input when an error occurs
+    }
+  }, [error]); // Dependency array triggers focus when error state changes
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,7 +26,7 @@ function ResetPassword() {
   
     // Check if the password fields are empty
     if (!password || !confirmpassword) {
-      setError('Password and Confirm Password cannot be empty');
+      setError('Both password fields are required.');
       return;
     }
   
@@ -31,12 +38,12 @@ function ResetPassword() {
   
     // Check password strength (example: minimum length of 6)
     if (password.length < 6) {
-      setError('Password should be at least 6 characters');
+      setError('Password must be at least 6 characters long.');
       return;
     }
   
     if(!resetPasswordToken){
-      console.log("Reset password token is not accessible")
+      console.log("Reset password token is missing. Please try again later.")
       return;
     }
   
@@ -54,10 +61,20 @@ function ResetPassword() {
       }
     } catch (error) {
       console.error(error);
-      setError(error.response?.data?.message || 'Password or Confirm Password is invalid');
+      setError(error.response?.data?.message || 'An unexpected error occurred. Please try again.');
     }
   
   };
+
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => {
+        setError("");
+        console.log("No error checking just ")
+      }, 5000); // Error disappears after 3 seconds
+      return () => clearTimeout(timer); // Cleanup timeout on component unmount
+    }
+  }, [error]);
 
   return (
     <div className="form-container">
@@ -71,6 +88,7 @@ function ResetPassword() {
           <div className="input-group">
             <label className="label">New Password</label>
             <input
+            ref={inputRef}
               type="password"
               placeholder="Enter New Password"
               className="input"
@@ -81,13 +99,14 @@ function ResetPassword() {
           <div className="input-group">
             <label className="label">Confirm Password</label>
             <input
+            ref={inputRef}
               type="password"
               placeholder="Confirm New Password"
               className="input"
               value={confirmpassword}
               onChange={(e)=>{setConfirmpassword(e.target.value)}}
             />
-            <a href="/" className="forgot-password resend-code">Resend Code</a>
+            {/* <a href="/" className="forgot-password resend-code">Resend Code</a> */}
           </div>
 
           <button type="submit" className="button">Submit</button>

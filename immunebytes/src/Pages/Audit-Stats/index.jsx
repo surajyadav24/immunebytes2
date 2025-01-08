@@ -1,22 +1,44 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
+import axios from 'axios';
 import "./style.css"
 const AuditStats = () => {
-  const stats = [
+
+
+  const [stats, setStats] = useState({
+    completed: 0,
+    inProgress: 0,
+  });
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const response = await axios.post('/api/v1/users/audit-stats');
+        if (response.data) {
+          setStats(response.data.data);
+        }
+      } catch (error) {
+        console.error("Error fetching stats:", error);
+      }
+    };
+
+    fetchStats();
+  }, []);
+  const statData = [
     {
-      title: "Total Audits",
-      value: "230+",
+      title: "Completed Audits",
+      value: `${stats.completed}`,
       color: "from-pink-500 to-pink-700",
     },
     {
-      title: "Pending Audits",
-      value: "10+",
+      title: "In Progress Audits",
+      value: `${stats.inProgress}`,
       color: "from-green-500 to-green-700",
     },
   ];
 
   return (
     <div className="flex space-x-4 p-4 bg-black">
-      {stats.map((stat, index) => (
+      {statData.map((stat, index) => (
         <div
           key={index}
           className={` audit-wrap flex flex-col justify-center items-center  rounded-lg bg-gradient-to-b ${stat.color} shadow-md sm:flex-col`}

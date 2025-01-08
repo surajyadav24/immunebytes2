@@ -20,9 +20,9 @@ const addPortfolio = asyncHandler(async (req, res) => {
   if (!imageLocalPath) {
     throw new ApiError(401, "Image is required");
   }
-  if (!pdfLocalPath) {
-    throw new ApiError(401, "PDF is required");
-  }
+  // if (!pdfLocalPath) {
+  //   throw new ApiError(401, "PDF is required");
+  // }
 
   const image = await uploadOnCloudinary(imageLocalPath);
   const pdf = await uploadOnCloudinary(pdfLocalPath);
@@ -31,19 +31,19 @@ const addPortfolio = asyncHandler(async (req, res) => {
   if (pdf) data.pdf = pdf.secure_url;
 
   // Validate and parse errorEntries
-  if (!Array.isArray(data.errorEntries) || data.errorEntries.length === 0) {
-    throw new ApiError(400, "Error entries are required");
-  }
+  // if (!Array.isArray(data.errorEntries) || data.errorEntries.length === 0) {
+  //   throw new ApiError(400, "Error entries are required");
+  // }
 
-  data.errorEntries = data.errorEntries.map((entry) => {
-    if (!entry.errorType || !entry.errorStatus || !entry.errorDescription) {
-      throw new ApiError(
-        400,
-        "Each error entry must include errorType, errorStatus, and errorDescription"
-      );
-    }
-    return entry;
-  });
+  // data.errorEntries = data.errorEntries.map((entry) => {
+  //   if (!entry.errorType || !entry.errorStatus || !entry.errorDescription) {
+  //     throw new ApiError(
+  //       400,
+  //       "Each error entry must include errorType, errorStatus, and errorDescription"
+  //     );
+  //   }
+  //   return entry;
+  // });
 
   const result = await AddPortfolio.create(data);
 
@@ -131,4 +131,48 @@ const updatePortfolio = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, { updatedPortfolio }, "Portfolio updated successfully"));
 });
 
-export { addPortfolio, getPortfolio, selectPortfolio, updatePortfolio };
+
+const deletePortfolio = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+
+  const portfolio = await AddPortfolio.findById(id);
+  if (!portfolio) {
+    throw new ApiError(404, 'Portfolio not found');
+  }
+
+  await portfolio.deleteOne();
+  res.status(200).json(new ApiResponse(200, {}, 'Portfolio deleted successfully'));
+});
+
+
+// Fetch audit stats
+const getAuditStats = asyncHandler(async (req, res) => {
+  const completedCount = await AddPortfolio.countDocuments({ status: "Completed" });
+  const inProgressCount = await AddPortfolio.countDocuments({ status: "In Progress" });
+
+  res.status(200).json(
+    new ApiResponse(200, { completed: completedCount, inProgress: inProgressCount }, "Stats fetched successfully")
+  );
+});
+
+// Update portfolio status
+const updatePortfolioStatus = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const { status } = req.body;
+
+  if (!["Completed", "In Progress"].includes(status)) {
+    return res.status(400).json({ error: "Invalid status value" });
+  }
+
+  const portfolio = await AddPortfolio.findByIdAndUpdate(id, { status }, { new: true });
+
+  if (!portfolio) {
+    throw new ApiError(404, "Portfolio not found");
+  }
+
+  res.status(200).json(
+    new ApiResponse(200, { portfolio }, "Portfolio status updated successfully")
+  );
+});
+
+export { addPortfolio, getPortfolio, selectPortfolio, updatePortfolio,deletePortfolio ,getAuditStats,updatePortfolioStatus};

@@ -185,7 +185,7 @@ function App() {
           element={
             <PrivateRoute>
               <Layout>
-                <PlatformManagement headname="Add Portfolio" />
+                <PlatformManagement headname="Add Platform" />
               </Layout>
             </PrivateRoute>
           }

@@ -339,7 +339,7 @@ const forgotPassword = asyncHandler(async (req, res) => {
   const user = await User.findOne({ email });
 
   if (!user) {
-    throw new ApiError(401, "username and password is required");
+    throw new ApiError(401, "Email Id  is not valid");
   }
 
   // Generate reset token

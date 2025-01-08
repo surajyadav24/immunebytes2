@@ -182,6 +182,76 @@ input[type="text"]:focus-visible {
   max-width: 50%;
 }
 
+/* Add this to your CSS file */
+.modal-overlay-delete {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content-delete {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.modal-content-delete p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.confirm-btn-delete, .cancel-btn-delete {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 0 10px;
+}
+
+.confirm-btn-delete {
+  background-color: #F9116C;
+  color: #fff;
+}
+
+.cancel-btn-delete {
+  background-color: #ddd;
+  color: #333;
+}
+
+.close-btn-delete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.close-btn-delete img {
+  width: 20px;
+  height: 20px;
+}
+.delete-btn{
+  padding-left: 7px;
+}
+
+
+
+
+
 @media (min-width: 1320px) and (max-width: 1366px) {
   .portfolio-table-container {
     min-height: 770px !important;

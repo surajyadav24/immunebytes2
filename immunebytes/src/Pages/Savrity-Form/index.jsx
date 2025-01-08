@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import './style.css'
 
 const SeverityButtons = (props) => {
   // Initial count for each severity level
-  const [error,setError]=useState('')
+  const [error, setError] = useState('')
   const navigate = useNavigate()
+  const [loading, setLoading] = useState(true);
+  const [fetchedCounts, setFetchedCounts] = useState({
+    critical: 0,
+    high: 0,
+    medium: 0,
+    low: 0,
+    informational: 0,
+  });
   const [counts, setCounts] = useState({
     critical: 0,
     high: 0,
@@ -14,6 +22,37 @@ const SeverityButtons = (props) => {
     low: 0,
     informational: 0,
   });
+
+
+
+    // Fetch the latest severity data on component mount
+    useEffect(() => {
+      const fetchSeverityData = async () => {
+        try {
+          const response = await axios.post('/api/v1/users/getseverity', { withCredentials: true });
+          if (response.data.statusCode === 200) {
+            const { severityRecord } = response.data.data;
+            setFetchedCounts({
+              critical: severityRecord.critical || 0,
+              high: severityRecord.high || 0,
+              medium: severityRecord.medium || 0,
+              low: severityRecord.low || 0,
+              informational: severityRecord.informational || 0,
+            });
+          } else {
+            setError(response.data.message || 'Failed to fetch severity data');
+          }
+        } catch (error) {
+          console.error(error);
+          setError(error.response?.data?.message || 'Error fetching severity data');
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      fetchSeverityData();
+    }, []);
+  
 
   // Function to handle input change
   const handleInputChange = (e, severity) => {
@@ -25,7 +64,7 @@ const SeverityButtons = (props) => {
   };
 
   // Function to handle submit
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     // alert(`Submitted counts: ${JSON.stringify(counts)}`);   
     e.preventDefault();
     setError(null);  // Reset the error message before each request
@@ -33,7 +72,7 @@ const SeverityButtons = (props) => {
     try {
       const response = await axios.post(
         '/api/v1/users/severity',
-        {  counts},
+        { counts },
         { withCredentials: true }
       );
       console.log("response-data", response.data);
@@ -50,48 +89,58 @@ const SeverityButtons = (props) => {
 
   };
 
+  
+
 
 
 
   return (
 
     <>
-<div className="dashboard-header">
-  <h2>
-    {props.headname}
-  </h2>
-</div>
-    <div className="sverity-form bg-gray-800 p-6 rounded-lg flex flex-col items-center border-2 border-blue-400">
-      <div className=" flex space-x-4 mb-6">
-        {Object.keys(counts).map((severity) => (
-          <div key={severity} className="flex flex-col items-center sevrity-wrapper">
-            <button
-              className={`py-2 px-4 font-bold text-white rounded 
+      <div className="dashboard-header">
+        <h2>
+          {props.headname}
+        </h2>
+      </div>
+      <div className="sverity-form bg-gray-800 p-6 rounded-lg flex flex-col items-center border-2 border-blue-400">
+        <div className=" flex space-x-4 mb-6">
+          {Object.keys(fetchedCounts).map((severity) => (
+            <div key={severity} className="flex flex-col items-center sevrity-wrapper">
+              <button
+                className={`py-2 px-4 font-bold text-white rounded 
                 ${severity === "critical" && "bg-red-600"} 
                 ${severity === "high" && "bg-red-700"} 
                 ${severity === "medium" && "bg-orange-500"} 
                 ${severity === "low" && "bg-yellow-400 text-black"} 
                 ${severity === "informational" && "bg-green-600"}`}
-            >
-              {severity.charAt(0).toUpperCase() + severity.slice(1)}
-            </button>
-            <input
+              >
+                {severity.charAt(0).toUpperCase() + severity.slice(1)}
+              </button>
+              <input
 
-              type="number"
-              value={counts[severity]}
-              onChange={(e) => handleInputChange(e, severity)}
-              className="mt-2 sevrity-input text-lg font-bold text-center w-16 p-1 rounded bg-gray-700 text-white border border-gray-500"
-            />
-          </div>
-        ))}
+                type="number"
+                value={fetchedCounts[severity]}
+                // onChange={(e) => handleInputChange(e, severity)}
+                readOnly
+                className="mt-2 sevrity-input text-lg font-bold text-center w-16 p-1 rounded bg-gray-700 text-white border border-gray-500"
+              />
+              <input
+
+                type="number"
+                value={counts[severity]}
+                onChange={(e) => handleInputChange(e, severity)}
+                className="mt-2 sevrity-input text-lg font-bold text-center w-16 p-1 rounded bg-gray-700 text-white border border-gray-500"
+              />
+            </div>
+          ))}
+        </div>
+        <button
+          className="bg-pink-600 text-white py-2 px-6 rounded font-bold"
+          onClick={handleSubmit}
+        >
+          SUBMIT
+        </button>
       </div>
-      <button
-        className="bg-pink-600 text-white py-2 px-6 rounded font-bold"
-        onClick={handleSubmit}
-      >
-        SUBMIT
-      </button>
-    </div>
     </>
   );
 };

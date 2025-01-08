@@ -85,7 +85,7 @@ const Home = () => {
 </div>
 
 <div className="portfolio-container homapage-prtfolio">
-<PortfolioTable showEditButton={false} />
+<PortfolioTable showEditButton={false} showDeleteButton={false} />
 <PrimaryBtn text="View More" />
 </div>
       <h1 className="text-center  heading-h1 homepage-heading ">Audit Process</h1>

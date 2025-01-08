@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import { SearchIcon, BellIcon } from '@heroicons/react/solid';
 import axios from "axios"
+import use from '../../assets/images/user.svg'
+// import " " from '../../assets/images/user.svg'
 import './style.css'
 
 
@@ -71,7 +73,7 @@ function DashboardHeader() {
         </div>
         <BellIcon className="h-6 w-6 text-white" />
         <span className='text-yellow-300'>{user ? user.username : 'Loading...'}</span>
-        <img src="path_to_profile_picture" alt="profile" className="h-8 w-8 rounded-full" />
+        <img src={use} alt="profile" className="h-8 w-8 rounded-full border-2 p-1 "  style={{borderColor: '#F9116C', boxShadow: '0 0 0 4px #f43f5e' }} />
       </div>
     </div>
 </div>

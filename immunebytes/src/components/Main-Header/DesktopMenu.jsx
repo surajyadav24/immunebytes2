@@ -85,8 +85,8 @@ export default function DesktopMenu({ menu }) {
                 </a>
 
                 {/* Sub-submenu */}
-                {submenu.subSubMenu1 &&
-                  submenu.subSubMenu2 &&
+                {(submenu.subSubMenu1 ||
+                  submenu.subSubMenu2) &&
                   hoveredSubMenuIndex === i && (
                     <div className="subsubmenu-wrapper">
                       <motion.ul
@@ -101,7 +101,7 @@ export default function DesktopMenu({ menu }) {
                           </p>
                         )}
                         <div className="li-wrapper">
-                          {submenu.subSubMenu1.map((subSubItem, j) => (
+                          {submenu.subSubMenu1?.map((subSubItem, j) => (
                             <a
                               href={subSubItem.link || "#"}
                               key={subSubItem.name || j}
@@ -126,7 +126,7 @@ export default function DesktopMenu({ menu }) {
                             </p>
                           )}
                           <div className="li-wrapper">
-                            {submenu.subSubMenu2.map((subSubItem, j) => (
+                            {submenu.subSubMenu2?.map((subSubItem, j) => (
                               <a
                                 href={subSubItem.link || "#"}
                                 key={subSubItem.name || j}

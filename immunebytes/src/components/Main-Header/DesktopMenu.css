@@ -139,9 +139,7 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    box-shadow: -27.37px 27.37px 27.37px 0px #a5a5a51a inset;
-    box-shadow: 27.37px -27.37px 27.37px 0px #a5a5a51a inset;
-    backdrop-filter: blur(67.86933135986328px);
+    backdrop-filter: blur(8.86933135986328px);
     border: 1px solid #ffffffa6;
     gap: 5px;
     font-size: 10px;

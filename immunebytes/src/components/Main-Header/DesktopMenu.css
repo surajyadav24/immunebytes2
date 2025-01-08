@@ -142,7 +142,7 @@ header{
     backdrop-filter: blur(8.86933135986328px);
     border: 1px solid #ffffffa6;
     gap: 5px;
-    font-size: 10px;
+    font-size: 15px;
   }
   .mob-menu-ul img {
     min-width: 34px;
@@ -195,7 +195,6 @@ header{
     justify-content: flex-start;
     align-items: flex-start;
     justify-content: flex-start;
-
     padding-left: 0px;
     background: none;
     border: none;
@@ -211,7 +210,26 @@ header{
   display: flex;
   justify-content: flex-start;
 }
+.mob-menu-ul li {
+  padding: 0px !important;
+  min-width: 62px;
+}
+.mob-menu-ul li a {
+  font-size: 15px;
+  color: #fff !important;
+}
+.mob-menu-ul li a {
+font-size: 15px;
+color: #fff !important;
+padding: 2px;
+max-width: 61px;
+min-width: 61px;
+}
 
+.mob-menu-ul img {
+min-width: 34px;
+max-width: 34px;
+}
 
 }
 

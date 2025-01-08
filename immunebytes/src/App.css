@@ -348,6 +348,9 @@ h1.text-center.heading-h1.testimonial-heading.homepage-heading {
   padding-bottom: 30px !important;
 }
 
+.col-lg-7.md-6.col-sm-8.col-xs-8.left-serv {
+  padding: 0px;
+}
 
 }
 .row {

@@ -62,7 +62,7 @@
     border-radius: 8px;
   }
   .mobile-hidden{
-    display: none;
+    display: none !important;
   }
  
 
@@ -123,4 +123,10 @@
     .hero-video img {
       max-width: 75%;
   }
+  .hero-section{
+    padding-bottom: 40px;
+  }
+  .col-lg-7.md-6.col-sm-6.col-xs-6.left-serv {
+    padding: 0px;
+}
   }

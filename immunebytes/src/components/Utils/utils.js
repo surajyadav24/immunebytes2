@@ -14,6 +14,8 @@ import Optimism from "../../assets/images/header/Optimism.svg";
 import zkSync from "../../assets/images/header/zkSync.svg";
 import BASE from "../../assets/images/header/BASE.svg";
 import Starknet from "../../assets/images/header/Starknet.svg";
+import Mobile from "../../assets/images/header/mobile.svg";
+import web from "../../assets/images/header/web.svg";
 
 export const Menus = [
   {
@@ -54,25 +56,12 @@ export const Menus = [
         link:"/penetration",
         subSubHeading1: ["By Type"],
         subSubMenu1: [
-          { name: "DeFi", icon: defi,     link:"/dashboard" },
-          { name: "NFT", icon: nft,     link:"/dashboard" },
-          { name: "Token", icon: token,     link:"/dashboard" },
-          { name: "dApp", icon: dapp,     link:"/dashboard" },
+          { name: "Mobile", icon: Mobile,     link:"/dashboard" },
+          { name: "Web", icon: web,     link:"/dashboard" },
+
         ],
-        subSubHeading2: ["By Service"],
-        subSubMenu2: [
-          { name: "Ethereum", icon: ethereum, link:"/dashboard" },
-          { name: "Solana", icon: solana , link:"/dashboard"},
-          { name: "BSC", icon: BSC, link:"/dashboard" },
-          { name: "Polygon", icon: Polygon , link:"/dashboard"},
-          { name: "Near", icon: Near, link:"/dashboard" },
-          { name: "Fantom", icon: Fantom , link:"/dashboard"},
-          { name: "Arbitrum", icon: Arbitrum, link:"/dashboard" },
-          { name: "Optimism", icon: Optimism , link:"/dashboard"},
-          { name: "zkSync", icon: zkSync , link:"/dashboard"},
-          { name: "BASE", icon: BASE , link:"/dashboard"},
-          { name: "Starknet", icon: Starknet , link:"/dashboard"},
-        ]
+ 
+     
       }
     ],
     gridCols: 1

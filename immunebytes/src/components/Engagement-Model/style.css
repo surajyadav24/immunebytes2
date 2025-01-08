@@ -1,12 +1,12 @@
 .engagementmodel{
-    padding: 1rem;
+    padding: 0 1rem;
 }
 
 .engagementmodel h2{
     text-align: center;
-    padding: 1rem;
+    padding: 80px 0px;
  color: #F9116C ;
- font-size: 2rem;
+ font-size: 40px;
 }
 .engagementmodel-boxes{
 margin: 1rem;
@@ -42,9 +42,8 @@ gap: 3rem;
     color: #fff;
 }
 .engagementmodel-yellow-box{
-    margin: 2rem;
-    /* padding: 2rem; */
-    /* align-items: center; */
+    margin: 0 auto;
+    padding: 0px 20px;
     background: url("../../assets/images/engagement/bg-cta.svg");
     background-size: contain; /* Ensures the image covers the entire element */
     background-position: center; 

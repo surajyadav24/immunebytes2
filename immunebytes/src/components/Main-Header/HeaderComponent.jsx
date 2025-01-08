@@ -2,6 +2,7 @@ import { Menus } from "../Utils/utils.js";
 import logo from '../../assets/images/logos/Logo.svg'
 import DesktopMenu from "./DesktopMenu";
 import MobMenu from "./MobMenu";
+import Formpopup from "../Formpopup"
 export default function HeaderComponent() {
   return (
     <div>
@@ -16,18 +17,18 @@ export default function HeaderComponent() {
             {Menus.map((menu) => (
               <DesktopMenu menu={menu} key={menu.name} />
             ))}
+
           </ul>
+
           <div className="flex-center gap-x-5">
-            <button
-              aria-label="sign-in"
-              className=" open-popup-btn btn register-btn text-white"
-            >
-             Request Audit
-            </button>
+          <div className="desktop-btn-request md:hidden sm:hidden">
+          <Formpopup />
+        </div>
             <div className="lg:hidden md:hidden xl:hidden mobile-menu">
               <MobMenu Menus={Menus} />
             </div>
           </div>
+         
         </nav>
       </header>
     </div>

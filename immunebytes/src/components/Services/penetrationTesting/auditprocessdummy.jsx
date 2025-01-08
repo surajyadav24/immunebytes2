@@ -4,8 +4,8 @@ import React from "react";
 function AuditProcessdummy({ title, processSteps,subheading }) {
   return (
     <div className="container">
-      <div className="audit-process-container">
-        <h2 className="audit-process-title">{title}</h2>
+      <div className="audit-process-container desktop-heading">
+        <h2 className="audit-process-title ">{title}</h2>
         <p className="sub-heading-section">{subheading}</p>
         <div className="audit-process-grid">
           {processSteps.map((step, index) => (

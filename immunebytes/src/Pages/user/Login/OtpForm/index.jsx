@@ -93,7 +93,7 @@ function OtpForm() { // onOtpChange is now passed as a prop
       />
       <button
         type="submit"
-        className="w-full py-2 bg-blue-600 text-lg rounded-md hover:bg-blue-700 transition duration-300"
+        className="submit-btn w-full py-2  text-lg rounded-md  transition duration-300"
       >
         Submit
       </button>

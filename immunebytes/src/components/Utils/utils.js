@@ -14,9 +14,8 @@ import Optimism from "../../assets/images/header/Optimism.svg";
 import zkSync from "../../assets/images/header/zkSync.svg";
 import BASE from "../../assets/images/header/BASE.svg";
 import Starknet from "../../assets/images/header/Starknet.svg";
+import Mobile from "../../assets/images/header/mobile.svg";
 import web from "../../assets/images/header/web.svg";
-import mobile from "../../assets/images/header/mobile.svg";
-
 
 export const Menus = [
   {
@@ -25,7 +24,7 @@ export const Menus = [
     subMenu: [
       {
         name: "Smart Contract Audit",
-        link:"/smartcontract",
+   
         subSubHeading1: ["By Type"],
         subSubMenu1: [
           { name: "DeFi", icon: defi,     link:"/dashboard" },
@@ -57,11 +56,12 @@ export const Menus = [
         link:"/penetration",
         subSubHeading1: ["By Type"],
         subSubMenu1: [
+          { name: "Mobile", icon: Mobile,     link:"/dashboard" },
           { name: "Web", icon: web,     link:"/dashboard" },
-          { name: "Mobile", icon: mobile,     link:"/dashboard" },
-         
-        ],
 
+        ],
+ 
+     
       }
     ],
     gridCols: 1
@@ -73,6 +73,7 @@ export const Menus = [
   },
   {
     name: "About Us",
+    link:"/about",
     gridCols: 1
   },
   {

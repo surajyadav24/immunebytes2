@@ -77,9 +77,13 @@
     text-decoration-skip-ink: none;
 }
 
-.heading-why{
+.heading-why {
     color: #F9116C;
+    padding: 80px 0px !important;
+    font-size: 40px;
+    margin: 0px;
 }
+
 .why-disc{
     margin: 0px !important;
 }
@@ -161,6 +165,7 @@
         margin-bottom: 0px;
         margin-top: 0px;
         padding-top: 0px !important;
+        padding-bottom: 15px !important;
     }
     .why-sec-feature {
         background-color: #0f0f0feb;

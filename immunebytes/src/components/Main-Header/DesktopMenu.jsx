@@ -46,12 +46,12 @@ export default function DesktopMenu({ menu }) {
       {hasSubMenu && (
         <motion.div
           className="sub-menu"
-          initial="exit"
+          initial="enter"
           animate={isHovered ? "enter" : "exit"}
           variants={subMenuAnimate}
         >
           <div
-            className={`grid gap-7 ${
+            className={`grid  ${
               menu.gridCols === 3
                 ? "grid-cols-3"
                 : menu.gridCols === 2
@@ -90,13 +90,13 @@ export default function DesktopMenu({ menu }) {
                   hoveredSubMenuIndex === i && (
                     <div className="subsubmenu-wrapper">
                       <motion.ul
-                        className="absolute left-full top-0 sub-submenu bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg subsubmenu"
-                        initial="exit"
+                        className="absolute left-full top-0 sub-submenu subsubmenu sub-menu"
+                        initial="enter"
                         animate="enter"
                         variants={subMenuAnimate}
                       >
                         {submenu.subSubHeading1 && (
-                          <p className="px-4 py-2 text-sm font-bold text-white">
+                          <p className="py-2 text-sm font-bold text-white">
                             {submenu.subSubHeading1}
                           </p>
                         )}
@@ -111,7 +111,7 @@ export default function DesktopMenu({ menu }) {
                                 <img
                                   src={subSubItem.icon}
                                   alt={subSubItem.name}
-                                  className="rounded-full object-cover"
+                                  className=" "
                                 />
                               )}
                               <p className="sub-item-name">{subSubItem.name}</p>
@@ -121,7 +121,7 @@ export default function DesktopMenu({ menu }) {
 
                         <div className="subsubmenu-2">
                           {submenu.subSubHeading2 && (
-                            <p className="px-4 py-2 text-sm font-bold text-white">
+                            <p className="py-2 text-sm font-bold text-white">
                               {submenu.subSubHeading2}
                             </p>
                           )}
@@ -136,7 +136,7 @@ export default function DesktopMenu({ menu }) {
                                   <img
                                     src={subSubItem.icon}
                                     alt={subSubItem.name}
-                                    className="rounded-full object-cover"
+                                    className=""
                                   />
                                 )}
                                 <p className="sub-item-name">

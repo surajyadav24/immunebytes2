@@ -3,7 +3,9 @@
     flex-direction: column;
     align-items: center;
     color: #fff;
-    background-color: #1a1a1a;
+    box-shadow: -27.37px 27.37px 27.37px 0px #A5A5A51A inset;
+    box-shadow: 27.37px -27.37px 27.37px 0px #A5A5A51A inset;
+    backdrop-filter: blur(67.86933135986328px);
     padding: 20px;
     border-radius: 8px;
     max-width: 300px;
@@ -41,7 +43,19 @@ display: block;
     outline: none;
     transition: border-color 0.3s ease;
   }
-  
+
+  form.flex.flex-col.items-center.bg-gray-800.text-white.p-6.rounded-lg.max-w-sm.mx-auto.shadow-lg {
+    background: #201e1ea1;
+}
+input.w-full.text-center.text-2xl.border.border-gray-500.rounded-md.bg-gray-900.text-white.p-2.mb-5.focus\:outline-none.focus\:border-blue-500 {
+  background: #D9D9D91A;
+  border: 1px solid #DCDCDC80;
+}
+
+  .submit-btn{
+    background: #F9116C;
+  }
+
   .otp-input:focus {
     border-color: #e0e0e0;
   }

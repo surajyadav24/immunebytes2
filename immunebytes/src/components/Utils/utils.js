@@ -27,24 +27,24 @@ export const Menus = [
    
         subSubHeading1: ["By Type"],
         subSubMenu1: [
-          { name: "DeFi", icon: defi,     link:"/dashboard" },
-          { name: "NFT", icon: nft,     link:"/dashboard" },
-          { name: "Token", icon: token,     link:"/dashboard" },
-          { name: "dApp", icon: dapp,     link:"/dashboard" },
+          { name: "DeFi", icon: defi,     link:"#" },
+          { name: "NFT", icon: nft,     link:"#" },
+          { name: "Token", icon: token,     link:"#" },
+          { name: "dApp", icon: dapp,     link:"#" },
         ],
-        subSubHeading2: ["By Service"],
+        subSubHeading2: ["By Ecosystem"],
         subSubMenu2: [
-          { name: "Ethereum", icon: ethereum, link:"/dashboard" },
-          { name: "Solana", icon: solana , link:"/dashboard"},
-          { name: "BSC", icon: BSC, link:"/dashboard" },
-          { name: "Polygon", icon: Polygon , link:"/dashboard"},
-          { name: "Near", icon: Near, link:"/dashboard" },
-          { name: "Fantom", icon: Fantom , link:"/dashboard"},
-          { name: "Arbitrum", icon: Arbitrum, link:"/dashboard" },
-          { name: "Optimism", icon: Optimism , link:"/dashboard"},
-          { name: "zkSync", icon: zkSync , link:"/dashboard"},
-          { name: "BASE", icon: BASE , link:"/dashboard"},
-          { name: "Starknet", icon: Starknet , link:"/dashboard"},
+          { name: "Ethereum", icon: ethereum, link:"#" },
+          { name: "Solana", icon: solana , link:"#"},
+          { name: "BSC", icon: BSC, link:"#" },
+          { name: "Polygon", icon: Polygon , link:"#"},
+          { name: "Near", icon: Near, link:"#" },
+          { name: "Fantom", icon: Fantom , link:"#"},
+          { name: "Arbitrum", icon: Arbitrum, link:"#" },
+          { name: "Optimism", icon: Optimism , link:"#"},
+          { name: "zkSync", icon: zkSync , link:"#"},
+          { name: "BASE", icon: BASE , link:"#"},
+          { name: "Starknet", icon: Starknet , link:"#"},
         ]
       },
       {
@@ -56,8 +56,8 @@ export const Menus = [
         link:"/penetration",
         subSubHeading1: ["By Type"],
         subSubMenu1: [
-          { name: "Mobile", icon: Mobile,     link:"/dashboard" },
-          { name: "Web", icon: web,     link:"/dashboard" },
+          { name: "Mobile", icon: Mobile,     link:"#" },
+          { name: "Web", icon: web,     link:"#" },
 
         ],
  

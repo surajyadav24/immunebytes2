@@ -259,7 +259,6 @@ button.telegram-fixed:hover{
 
 .mobilemenu-ul p {
   display: block;
-  padding-left: 10px !important;
   width: 100%;
   padding-bottom: 0px !important;
   margin-bottom: 0px;
@@ -269,6 +268,7 @@ button.telegram-fixed:hover{
   color: #F9116C !important;
 }
 .main-mobile-wrapper span {
+  text-transform: capitalize;
   justify-content: space-between;
   padding: 5px 5px !important;
   width: 100%;

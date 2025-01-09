@@ -1,5 +1,5 @@
 .join-wrapper h2{
-    font-family: RobotoMono-Regular;
+    font-family: Arvo-Regular;
 font-size: 54px;
 font-weight: 700;
 line-height: 71.22px;
@@ -8,7 +8,7 @@ color: #fff;
 }
 .join-wrapper p{
     color: #fff;
-font-family: RobotoMono-Regular;
+font-family: Arvo-Regular;
 font-size: 21px;
 font-weight: 400;
 line-height: 27.7px;
@@ -60,7 +60,7 @@ text-align: center;
     line-height: 101.329%;
 }
 .secure-audit {
-    padding: 80px 0px;
+    padding: 40px 0px;
 }
 .telegram-btn{
     background: url(../../assets/images/tele-bg.svg)no-repeat center center / contain;
@@ -113,7 +113,7 @@ text-align: center;
     }
     .join-wrapper p {
         color: #fff;
-        font-family: RobotoMono-Regular;
+        font-family: Arvo-Regular;
         font-size: 12px;
     }  
 }
@@ -149,7 +149,7 @@ text-align: center;
     .join-wrapper h2 {
         padding: 0px 0px;
         font-family: 'RobotoMono-Bold';
-        font-size: 29px;
+        font-size: 26px;
         line-height: 45px;
         text-transform: uppercase;
         font-weight: 800;
@@ -160,7 +160,7 @@ text-align: center;
     }
     .join-wrapper p {
         color: #fff;
-        font-family: RobotoMono-Regular;
+        font-family: Arvo-Regular;
         font-size: 12px;
     }  
 }

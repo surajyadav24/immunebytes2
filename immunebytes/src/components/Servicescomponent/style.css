@@ -2,7 +2,7 @@
     padding-bottom: 30px;
     color: #FFF;
     text-align: left;
-    font-family: "RobotoMono-Regular";
+    font-family: "Arvo-Regular";
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
@@ -11,29 +11,29 @@
 
 .service-discription p {
     color: #fff;
-    max-width: 470px;
-    font-family: RobotoMono-Regular;
+    max-width: 550px;
     font-size: 18px;
     font-weight: 400;
     line-height: 25.06px;
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    margin-top: 20px;
 }
 .service-discription button.btn.btn-primary {
-    padding: 9px 27px !important;
-    font-size: 12px;
+    padding: 11px 27px !important;
+    font-size: 16px;
 }
 .service-discription button.btn.btn-primary span {
 padding-left: 2px;
 }
 .service-discription button.btn.btn-primary span svg{
-transform: scale(0.5);
+transform: scale(0.8);
 }
 .service-discription button.btn.btn-primary {
     background: url(../../assets/images/immunebytes/red-bg-btn.svg);
     margin-left: 0px;
     padding: 9px 13px !important;
-    font-size: 12px;
+    font-size: 16px;
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -53,7 +53,7 @@ transform: scale(0.5);
 }
 @media (max-width:768px) {
     .left-serv{
-        width: 50% !important;
+        width: 70% !important;
     }
     .col-lg-8.md-6.col-sm-6.col-xs-6.left-serv {
         max-width: 50%;
@@ -94,19 +94,16 @@ transform: scale(0.5);
 }
 }
 @media (max-width:445px) {
-    .left-serv{
-        width: 50% !important;
-    }
+
     .col-lg-8.md-6.col-sm-6.col-xs-6.left-serv {
-        max-width: 50%;
+        max-width: 70%;
     }
     .col-lg-4.md-6.col-sm-6.col-xs-6.right-serv {
-        max-width: 50%;
+        max-width: 30%;
     }
     .service-discription h2 {
-       font-size: 17px;
-
-}
+        font-size: 20px;
+    }
 .service-discription p {
     max-width: 145px;
 
@@ -120,31 +117,35 @@ transform: scale(0.5);
 }
 
 .service-discription p {
-    font-size: 9px;
-    max-width: 165px;
-    line-height: 13px;
+    font-size: 14px !important;
+    margin-bottom: 12px;
+    max-width: 95%;
+    line-height: 17px;
+    margin-top: 0px;
 }
+
 
 .service-img img {
-    margin-right: 0px;
-    max-width: 80%;
+    margin-right: 20px;
+    max-width: 100%;
+    min-width: 134px;
 }
 
-.service-img {
-    display: flex;
-    justify-content: flex-end;
-}
+    .service-img {
+        display: flex;
+        justify-content: flex-start;
+      
+    }
 
 .service-discription {
     padding-bottom: 0px;
+    margin-bottom: 15px;
 }
-.service-img img{
-    width: 200px;
-}
+
 .service-img {
     display: flex;
     justify-content: center;
-    min-width: 180px;
+    min-width: 100px;
 }
 
 .services-component .row {
@@ -155,14 +156,18 @@ transform: scale(0.5);
     flex-wrap: nowrap;
 }
 .services-wrapper .right-serv {
-    max-width: 200px !important;
+    max-width: 36% !important;
     position: relative;
 }
 
 .services-wrapper h1 {
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
+    padding-top: 40px !important;
+    padding-bottom: 20px !important;
 }
+.audit-container {
+    margin: 0px 10px !important;
+}
+
 }
 @media (max-width:376px){
     .service-discription h2 {
@@ -172,7 +177,11 @@ transform: scale(0.5);
         max-height: 172px;
     }
     .service-discription p {
-        font-size: 10px;
-        margin-bottom: 8px;
+        font-size: 14px !important;
+        margin-bottom: 12px;
+        max-width: 95%;
+        line-height: 17px;
+        margin-top: 0px;
     }
+    
 }

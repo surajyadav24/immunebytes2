@@ -118,7 +118,7 @@ background-color: #FFFFFF1A;
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  font-family: 'RobotoMono-Regular';
+  font-family: 'Arvo-Regular';
   color: #ccc;
 }
 
@@ -459,6 +459,15 @@ padding: 50px 10px;
 .why-sec-feature {
   padding: 0px 10px;
 }
+
+.case-study-card {
+  padding: 19px 9px !important;
+  max-height: 238px !important;
+  min-height: 238px !important;
+}
+.services-component.undefined {
+  margin-bottom: 25px;
+}
 }
 
 
@@ -488,8 +497,8 @@ padding: 50px 10px;
   padding: 5px 6px !important;
 }
 
-.case-study-card{
-  max-height: 182px;
+.case-study-card {
+  max-height: 192px;
 }
 
 }

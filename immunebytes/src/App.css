@@ -20,8 +20,8 @@
 }
 
 @font-face {
-  font-family: 'RobotoMono-Regular';
-  src: url('./assets/Fonts/RobotoMono-Regular.ttf')  ;
+  font-family: 'Arvo-Regular';
+  src: url('./assets/Fonts/Arvo-Regular.ttf')  ;
 }
 
 @font-face {
@@ -67,8 +67,9 @@ h1,h2,h3,h4,h5,h6{
   font-family: Arvo-Bold;
 }
 p{
-  font-family: RobotoMono-Regular;
-
+  font-family: "Arvo-Regular" !important;
+  font-size: 18px !important;
+font-weight: 400;
 }
 .btn-wrapper{
   display: flex;
@@ -83,7 +84,7 @@ p{
   font-size: 40px;
   color: #F9116C;
   padding: 80px 0px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 button.splide__arrow.splide__arrow--prev {
   display: none;
@@ -102,7 +103,7 @@ button.twit-x img {
   padding: 4px 12px !important;
   font-size: 16px !important;
   line-height: 24px;
-  font-family: 'RobotoMono-Regular' !important;
+  font-family: 'Arvo-Regular' !important;
 }
 .service-hero img {
   max-width: 500px;
@@ -199,6 +200,10 @@ button.telegram-fixed:hover{
   box-shadow: 1px 1px 20px #fff;
 }
 
+.services-wrapper h1 {
+  padding-bottom: 0px;
+}
+
 
 @keyframes logo-spin {
   from {
@@ -236,6 +241,14 @@ button.telegram-fixed:hover{
 
 }
 @media (max-width:445px) {
+
+  p {
+    font-family: "Arvo-Regular" !important;
+    font-size: 14px !important;
+    font-weight: 400;
+}
+
+
   h1.text-center.py-5.pb-4.heading-h1 {
     padding-top: 0px !important;
     padding-bottom: 20px !important;
@@ -286,12 +299,18 @@ button.telegram-fixed:hover{
   color: #fff !important;
 }
 .mob-menu-ul li a:hover{
-  background-color: #F9116C !important;
+  background: none !important;
 }
-.homepage-heading{
-  font-size: 26px !important;
-  margin-top: 30px !important;
-  margin-bottom: 20px !important;
+.homepage-heading {
+  flex-direction: column;
+  display: flex;
+  font-size: 32px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.highlight{
+  padding-left: 0px !important;
 }
 .case-study-wrapper .col-lg-6.md-6.col-sm-12 {
   padding: 0px;
@@ -308,9 +327,8 @@ button.telegram-fixed:hover{
 }
 
 .heading-h1 {
- 
   color: #F9116C;
-  padding: 0px;
+  padding: 15px 0px;
   padding-bottom: 20px;
 }
 
@@ -319,6 +337,8 @@ button.telegram-fixed:hover{
 }
 .why-sec-choose .heading-h1{
   padding: 0px;
+  padding-top: 40px;
+  padding-bottom: 20px;
   margin-top: 0px !important;
 }
 h1.text-center.heading-h1.testimonial-heading.homepage-heading {
@@ -326,7 +346,20 @@ h1.text-center.heading-h1.testimonial-heading.homepage-heading {
   padding-bottom: 0px;
 }
 .case-study-wrapper h1 {
-  padding-bottom: 30px !important;
+  padding-top: 40px;
+  padding-bottom: 20px !important;
+}
+
+.col-lg-7.md-6.col-sm-8.col-xs-8.left-serv {
+  padding: 0px;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic{
+  top: 89% ;
+}
+
+.footer .container .row{
+  justify-content: center;
 }
 }
 .row {

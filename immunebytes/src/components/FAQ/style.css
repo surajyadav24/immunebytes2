@@ -15,7 +15,7 @@
 .answer {
     background-color: #D9D9D91A;
     font-size: 15px;
-    font-family: 'RobotoMono-Regular';
+    font-family: 'Arvo-Regular';
 }
 .faq-btn button span img{
     max-width: 10px;
@@ -76,7 +76,7 @@
     .answer {
         background-color: #D9D9D91A;
         font-size: 11px;
-        font-family: 'RobotoMono-Regular';
+        font-family: 'Arvo-Regular';
         padding-top: 2px !important;
     }
   }

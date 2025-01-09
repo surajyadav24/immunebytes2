@@ -33,6 +33,7 @@
 .step h3 {
   letter-spacing: 2px;
   font-size: 25px;
+  text-align: left;
 }
 
   .step .circle::after{
@@ -40,7 +41,7 @@
     position: absolute;
     top: -15px;
     left: -14px;
-transform: scale(0.8);
+    transform: scale(0.8);
   }
   .audit-container .audit-content {
     display: flex;
@@ -56,7 +57,7 @@ transform: scale(0.8);
   padding-top: 8px ;
 } 
 .audit-container{
-  margin-top: 50px;
+  margin: 0px 50px;
 }
   .step .circle {
     position: relative;
@@ -122,7 +123,7 @@ transform: scale(0.8);
     }
     .step h3 {
       letter-spacing: 0px;
-      font-size: 17px;
+      font-size: 16px;
   }
   .steps::before{
     

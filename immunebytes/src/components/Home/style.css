@@ -17,8 +17,8 @@
   }
   
   @font-face {
-    font-family: 'RobotoMono-Regular';
-    src: url('../../assets/Fonts/RobotoMono-Regular.ttf')  ;
+    font-family: 'Arvo-Regular';
+    src: url('../../assets/Fonts/Arvo-Regular.ttf')  ;
   }
   
   @font-face {
@@ -62,7 +62,7 @@
     font-family: Arvo-Bold;
   }
   p{
-    font-family: RobotoMono-Regular;
+    font-family: Arvo-Regular;
   }
   .btn-wrapper{
     display: flex;
@@ -91,12 +91,12 @@
     padding: 4px 12px !important;
     font-size: 16px !important;
     line-height: 24px;
-    font-family: 'RobotoMono-Regular' !important;
+    font-family: 'Arvo-Regular' !important;
   }
 
-.portfolio-container .btn-primary {
-  padding: 4px 13px !important;
-  margin-top: 50px !important;
+  .portfolio-container .btn-primary {
+    padding: 8px 19px !important;
+    margin-top: 50px !important;
 }
 .homapage-prtfolio .portfolio-table-container {
   max-height: 550px;
@@ -113,10 +113,11 @@ padding: 48px 0px;
 }
 
   @media (max-width:445px) {
-    .homapage-prtfolio .portfolio-title{
-      padding: 0px 10px;
-      margin-bottom: 2px;
-      }
+    .homapage-prtfolio .portfolio-title {
+      padding-top: 40px !important;
+      padding-bottom: 20px !important;
+
+  }
     h1.text-center.py-5.pb-4.heading-h1 {
       padding-top: 0px !important;
       padding-bottom: 20px !important;
@@ -147,5 +148,6 @@ padding: 48px 0px;
 }
 .homapage-prtfolio .pagination {
   bottom: -40px;
+  right: 0px;
 }
   }

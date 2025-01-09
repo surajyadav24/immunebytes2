@@ -33,6 +33,7 @@
 .step h3 {
   letter-spacing: 2px;
   font-size: 25px;
+  text-align: left;
 }
 
   .step .circle::after{
@@ -122,7 +123,7 @@
     }
     .step h3 {
       letter-spacing: 0px;
-      font-size: 17px;
+      font-size: 16px;
   }
   .steps::before{
     

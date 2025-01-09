@@ -461,12 +461,13 @@ padding: 50px 10px;
 }
 
 .case-study-card {
-  padding: 38px 24px !important;
-  max-height: 220px !important;
-  min-height: 220px !important;
+  padding: 19px 9px !important;
+  max-height: 238px !important;
+  min-height: 238px !important;
 }
-
-
+.services-component.undefined {
+  margin-bottom: 25px;
+}
 }
 
 

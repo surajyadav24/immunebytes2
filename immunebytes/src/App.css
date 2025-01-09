@@ -299,7 +299,7 @@ button.telegram-fixed:hover{
   color: #fff !important;
 }
 .mob-menu-ul li a:hover{
-  background-color: #F9116C !important;
+  background: none !important;
 }
 .homepage-heading {
   flex-direction: column;
@@ -327,9 +327,8 @@ button.telegram-fixed:hover{
 }
 
 .heading-h1 {
- 
   color: #F9116C;
-  padding: 0px;
+  padding: 15px 0px;
   padding-bottom: 20px;
 }
 
@@ -355,6 +354,13 @@ h1.text-center.heading-h1.testimonial-heading.homepage-heading {
   padding: 0px;
 }
 
+.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic{
+  top: 89% ;
+}
+
+.footer .container .row{
+  justify-content: center;
+}
 }
 .row {
   margin: 0 auto;

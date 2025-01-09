@@ -218,9 +218,11 @@ footer .container-fluid{
   display: none;
 }
 .footer-section {
-  margin-bottom: 20px;
   min-width: 40%;
   text-align: left;
+  margin: 0px;
+  margin-top: 25px;
+  padding: 0px;
 }
 .footer-section form {
   gap: 8px;
@@ -253,6 +255,7 @@ footer .container-fluid{
   margin-top: 10px;
 }
 .social-icons.mobile-social {
+  padding-top: 30px;
   align-items: center;
   justify-content: center;
   display: flex !important;

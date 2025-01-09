@@ -27,10 +27,11 @@ import Defi from './components/Services/Defi';
 import { useAuthContext } from "./Context/AuthContext.jsx";
 import {Navigate} from 'react-router-dom'
 import ThankYouSection from "./components/ThankYou/index.jsx";
-import Eror from './components/404Eror/'
+import Error from './components/404Eror/'
 
 import HeaderComponent from "./components/Main-Header/HeaderComponent.jsx"
 import  Telegram  from "./assets/images/telegram.svg";
+// import MyComponent from "./components/ThankYou/index.jsx";
 
 function App() {
   const {authUser }= useAuthContext()
@@ -52,7 +53,8 @@ function App() {
         <Route path='/' element={authUser ? <Home /> : <Navigate to={"/updateportfolio/:selectedItemId"} />} />
         <Route path='/' element={authUser ? <Home /> : <Navigate to={"/addplatform"} />} />
 
-
+  {/* Catch-All Route */}
+  <Route path="*" element={<Navigate to="/error" />} />
         <Route
           path="/otpform"
           element={
@@ -103,7 +105,7 @@ function App() {
           }
         />
         <Route
-          path="/thankyou"
+          path="/thankyoupage"
           element={
             <Layout2>
             <ThankYouSection/>
@@ -111,10 +113,10 @@ function App() {
           }
         />
         <Route
-          path="/eror"
+          path="/error"
           element={
             <Layout2>
-       <Eror/>
+       <Error/>
             </Layout2>
           }
         />
@@ -127,6 +129,16 @@ function App() {
             </Layout2>
           }
         />
+                    {/* <Route
+          path="/thankyou"
+          element={
+            <Layout2>
+            <MyComponent/>
+             </Layout2>
+          }
+        /> */}
+
+        {/* MyComponent */}
               <Route
           path="/mainheader"
           element={

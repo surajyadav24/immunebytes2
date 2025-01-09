@@ -19,7 +19,7 @@
     border: #DC2626  !important; /* Red border when error occurs */
     /* background-color: #DC2626 !important ;  */
   }
-  .input-error:focus {
+  .input-error:focus,select:focus,textarea:focus {
     outline: none; /* Remove the default focus outline */
     border: 2px solid #DC2626 !important; /* Change border color to pink when focused */
     box-shadow: 0 0 0 4px rgba(249, 17, 108, 0.4); /* Add a glow around the input */
@@ -45,4 +45,61 @@
       opacity: 0;
     }
   }
+
+
+  /* General responsiveness for smaller screens */
+@media (max-width: 768px) {
+  /* Adjust the container for the platform widget */
+  .platform-widget {
+    padding: 1rem; /* Reduce padding */
+    width: 90%; /* Fit within the screen */
+    margin: 1rem auto; /* Center the widget */
+  }
+
+  .platform-widget form {
+    flex-direction: column; /* Stack input and button vertically */
+    gap: 10px; /* Reduce gap between elements */
+  }
+
+  .platform-widget input {
+    width: 100%; /* Full width input */
+  }
+
+  .platform-widget button {
+    width: 100%; /* Full width button */
+  }
+
+  /* Adjust the pagination buttons for smaller screens */
+  .flex.justify-center.items-center.mt-6.space-x-2 button {
+    width: 36px; /* Reduce button size */
+    height: 36px;
+    font-size: 14px; /* Smaller font size */
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  .platform-widget {
+    padding: 0.5rem; /* Minimal padding */
+    width: 95%; /* Almost full width */
+  }
+
+  .platform-widget input {
+    font-size: 14px; /* Smaller font size for input */
+    padding: 8px; /* Adjust padding for smaller screens */
+  }
+
+  .platform-widget button {
+    font-size: 14px; /* Smaller font size for button */
+    padding: 10px; /* Adjust padding for button */
+  }
+
+  /* Reduce font size for error message */
+  .error-message {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
   

@@ -7,8 +7,8 @@
   margin-bottom: 10px;
 }
 .company-info{
-/* background: url('../../assets/images/portfolio/card-disc.svg')no-repeat center center / contain; */
-background-color: PINK;
+background: url('../../assets/images/portfolio/card-disc.svg')no-repeat center center / contain;
+/* background-color: PINK; */
 padding: 20px 0px;
 flex-direction: column;
 display: flex;
@@ -27,25 +27,25 @@ align-items: center;
   content: '';
   height: 10px;
   width: 10px;
-  background-color: red;
+  background-color: #B22222;
   position: absolute;
   top: 8px;
   left: 40px;
   z-index: 9;
 }
 .audit-progress .progress-bar:nth-child(3)::before {
-  background: #C70000;
+  background: #DC143C;
 }
 .audit-progress .progress-bar:nth-child(4)::before {
-  background: #FF5C00;
+  background: #FF8C00;
 
 }
 .audit-progress .progress-bar:nth-child(5)::before {
-  background: #F2CE00;
+  background: #DAA520;
 
 }
 .audit-progress .progress-bar:nth-child(6)::before {
-  background: #00D22E;
+  background: #228B22;
 
 }
   .progress-bar-label {

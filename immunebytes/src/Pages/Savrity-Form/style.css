@@ -1,23 +1,104 @@
-
-.sverity-form input{
+.sverity-form input {
     min-width: 150px !important;
     border: 0.5px solid #dcdcdc56 !important;
-}
-.sverity-form button{
+  }
+  
+  .sverity-form button {
     min-width: 150px !important;
-}
-
-.sverity-form.bg-gray-800.p-6.rounded-lg.flex.flex-col.items-center.border-2.border-blue-400 {
+  }
+  
+  .sverity-form.bg-gray-800.p-6.rounded-lg.flex.flex-col.items-center.border-2.border-blue-400 {
     padding: 80px 0px;
     margin: 50px;
-}
-.dashboard-header {
+  }
+  
+  .dashboard-header {
     border-bottom: 1px solid #fff;
-    margin:0px 50px;
-}
-.dashboard-header h2 {
+    margin: 0px 50px;
+  }
+  
+  .dashboard-header h2 {
     font-size: 30px;
     color: #fff;
     padding-left: 0px;
     padding-bottom: 10px;
-}
+  }
+  .severity-button{
+    width: 10vw !important;
+  }
+   
+  .sverity-form {
+    padding: 40px 20px;
+    margin: 20px;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .dashboard-header h2 {
+      font-size: 24px;
+      text-align: center;
+    }
+  
+    .sverity-form {
+      padding: 40px 20px;
+      margin: 20px;
+    }
+  
+    .sevrity-wrapper {
+      width: 10%;
+      margin-bottom: 20px;
+      margin: auto;
+    }
+  
+    .sverity-form input {
+      min-width: 100px;
+    }
+  
+    .sverity-form button {
+      width: 10vw;
+      min-width: unset;
+    }
+     
+    .sverity-form {
+        padding: 40px 20px;
+        margin: 20px;
+      }
+  }
+  @media (max-width: 426px){
+    .sevrity-wrapper {
+        width: 30vw;
+        margin-bottom: 20px;
+        margin: auto;
+      }
+      .sverity-form  {
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr;
+             }
+
+  }
+  @media (max-width: 375px){
+    .sevrity-wrapper {
+        width: 100%;
+        margin-bottom: 20px;
+        margin: auto;
+      }
+      .sverity-form  {
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr;
+             }
+
+  }
+  @media (max-width: 320px){
+    .sevrity-wrapper {
+        width: 100%;
+        margin-bottom: 20px;
+        margin: auto;
+      }
+      .sverity-form  {
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr;
+             }
+
+  }
+
+  

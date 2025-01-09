@@ -39,11 +39,11 @@ function AuditProgress( props) {
 <div className='audit-progress-dashboard'>
 <div className="audit-progress"  >
     <h4>Severity Found</h4>
-    <ProgressBar label="Critical" color="#ff4d4d" percentage={percentages.critical} />
-            <ProgressBar label="High" color="#ff9966" percentage={percentages.high} />
-            <ProgressBar label="Medium" color="#ffcc66" percentage={percentages.medium} />
-            <ProgressBar label="Low" color="#66ff66" percentage={percentages.low} />
-            <ProgressBar label="Informational" color="#66cc66" percentage={percentages.informational} />
+    <ProgressBar label="Critical" color="#B22222" percentage={percentages.critical} />
+            <ProgressBar label="High" color="#DC143C" percentage={percentages.high} />
+            <ProgressBar label="Medium" color="#FF8C00" percentage={percentages.medium} />
+            <ProgressBar label="Low" color="#DAA520" percentage={percentages.low} />
+            <ProgressBar label="Informational" color="#228B22" percentage={percentages.informational} />
   </div>
   </div>
 </> 

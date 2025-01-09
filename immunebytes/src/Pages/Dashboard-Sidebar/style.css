@@ -49,7 +49,10 @@ button.mt-8.w-full.p-2.logout-btn.text-white.rounded.cursor-pointer.hover\:bg-bl
 .logout-btn img{
     max-width: 25px;
 }
-
+.dashboard-logo{
+  padding-bottom: 35px;
+    padding-top: 46px;
+}
 
 /* For desktop */
 @media (min-width: 1025px) {
@@ -76,9 +79,10 @@ button.mt-8.w-full.p-2.logout-btn.text-white.rounded.cursor-pointer.hover\:bg-bl
         right: 16px;
         position: absolute;
         z-index: 99;
+        margin-left: 10px;
     }
     .sidebar-container {
-        max-width: 30vw;
+        max-width: 35vw;
         min-width: 20vw;
         position: absolute;
         top: 0px;
@@ -102,4 +106,52 @@ button.mt-8.w-full.p-2.logout-btn.text-white.rounded.cursor-pointer.hover\:bg-bl
       }
 
 }
+
+/* Mobile screen adjustments */
+@media (max-width: 768px) {
+    button.toggle-sidebar-btn.p-2.bg-pink-600.text-white.rounded {
+        top: 18px;
+        right: 16px;
+        position: absolute;
+        z-index: 99;
+        margin-left: 10px;
+    }
+    .sidebar-wrapper {
+      padding: 0.5rem !important; /* Adjust padding for smaller screens */
+    }
+  
+    .sidebar-wrapper ul li {
+      font-size: 12px; /* Reduce font size */
+      gap: 8px; /* Reduce gap between icon and text */
+    }
+  
+    .sidebar-wrapper ul li img {
+      max-width: 16px; /* Scale down icons */
+    }
+  
+    button.logout-btn {
+      font-size: 14px; /* Smaller font size for Logout */
+      padding: 0.8rem; /* Adjust padding */
+    }
+  }
+
+  @media (max-width:426px) {
+    .sidebar-wrapper {
+        padding: 0.5rem !important; /* Adjust padding for smaller screens */
+      }
+  }
+  @media (max-width:375px) {
+    .sidebar-wrapper {
+        padding: 0.5rem !important; /* Adjust padding for smaller screens */
+      }
+  }
+  @media (max-width:360px) {
+    .sidebar-wrapper {
+        padding: 0.5rem !important; /* Adjust padding for smaller screens */
+      }
+       .sidebar-container{
+        width: 35vw !important;
+       }
+  }
+  
 

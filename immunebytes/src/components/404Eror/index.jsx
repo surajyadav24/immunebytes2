@@ -1,9 +1,14 @@
 import "./style.css";
 import PrimaryBtn from "../Primarybutton";
+import { useNavigate } from "react-router-dom";
 function Eror4o4() {
+  const navigate = useNavigate()
+  const handleBackToHome = () => {
+    navigate("/");
+  };
   return (
     <div className="container">
-      <h1 className="heading-thank eror-thank">
+      <h1 className="heading-thank heading-error eror-thank">
       404 <span className="highlight-you"></span>
       </h1>
       <p className="description-thank-eror ">
@@ -11,7 +16,7 @@ function Eror4o4() {
       took a wrong turn.
       </p>
       <div className="thank-btn">
-        <PrimaryBtn text="Explore Services" />
+        <PrimaryBtn text="Back To Home" onClick={handleBackToHome}  />
       </div>
 
       <div className="secure-audit">

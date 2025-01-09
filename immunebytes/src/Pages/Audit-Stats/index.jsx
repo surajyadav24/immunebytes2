@@ -22,6 +22,12 @@ const AuditStats = () => {
     };
 
     fetchStats();
+
+       // Set up polling to fetch stats every 5 seconds (5000 milliseconds)
+       const intervalId = setInterval(fetchStats, 5000);
+
+       // Cleanup function to clear the interval when the component unmounts
+       return () => clearInterval(intervalId);
   }, []);
   const statData = [
     {
@@ -37,7 +43,7 @@ const AuditStats = () => {
   ];
 
   return (
-    <div className="flex space-x-4 p-4 bg-black">
+    <div className="flex space-x-4 p-4 bg-black audit-status">
       {statData.map((stat, index) => (
         <div
           key={index}

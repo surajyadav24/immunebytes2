@@ -3,7 +3,7 @@ import axios from "axios";
 import PlatformList from "../Platform-List"; 
 import "./style.css";
 
-const PlatformManagement = ({ headname, platformsPerPage = 20 }) => {
+const PlatformManagement = ({ headname, platformsPerPage = 5 }) => {
   const [platforms, setPlatforms] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
   const [editedPlatform, setEditedPlatform] = useState("");
@@ -19,6 +19,9 @@ const PlatformManagement = ({ headname, platformsPerPage = 20 }) => {
     useEffect(() => {
       if (error && inputRef.current) {
         inputRef.current.focus(); // Focus the input when an error occurs
+        console.log(inputRef.current.focus(),"inputRef.current.focus() --- platform")
+        console.log(inputRef.current,"inputRef.current --- platform")
+
       }
     }, [error]); // Dependency array triggers focus when error state changes
 
@@ -140,6 +143,7 @@ const PlatformManagement = ({ headname, platformsPerPage = 20 }) => {
   const indexOfFirstPlatform = indexOfLastPlatform - platformsPerPage;
   const currentPlatforms =
     platforms?.slice(indexOfFirstPlatform, indexOfLastPlatform) || [];
+    
 
     // Auto hide error message after 3 seconds
   useEffect(() => {
@@ -169,7 +173,7 @@ const PlatformManagement = ({ headname, platformsPerPage = 20 }) => {
               placeholder="Enter new platform"
               className={`w-full p-2 bg-gray-700 border border-gray-600 rounded-md  focus:ring-2 focus:ring-pink-500  ${error ? "input-error" : ""}`}
             />
-            <button className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-md transition">
+            <button className="bg-[#F9116C] hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-md transition">
               Submit
             </button>
           </form>
@@ -196,14 +200,16 @@ const PlatformManagement = ({ headname, platformsPerPage = 20 }) => {
               onClick={() => setCurrentPage(pageIndex + 1)}
               className={`w-8 h-8 rounded-full ${
                 currentPage === pageIndex + 1
-                  ? "bg-pink-500 text-white"
+                  ? "bg-[#F9116C] text-white"
                   : "bg-gray-700 text-gray-400"
-              } hover:bg-pink-500 hover:text-white transition`}
+              } hover:bg-pink-600 hover:text-white transition`}
             >
               {pageIndex + 1}
             </button>
           ))}
         </div>
+
+        
       </div>
     </>
   );

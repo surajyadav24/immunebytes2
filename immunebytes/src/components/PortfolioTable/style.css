@@ -258,7 +258,7 @@ input[type="text"]:focus-visible {
   }
 }
   /* Add headers for mobile view */
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .portfolio-grid-row {
     display: flex;
     flex-direction: column;
@@ -364,6 +364,7 @@ input[type="text"]:focus-visible {
 .portfolio-table-container {
   padding: 10px 0px;
   width: 100%;
+  min-height: 454px !important;
 }
 .portfolio-grid-row {
 width: 100%;
@@ -381,8 +382,11 @@ width: 100%;
 .portfolio-grid {
   grid-template-columns: repeat(3, 1fr); /* Show 3 items in mobile view */
 }
+.portfolio-table-container {
+background: none;
 }
-@media (max-width: 425px) {
+}
+@media (max-width: 426px) {
   .portfolio-grid-row {
     display: flex;
     flex-direction: column;
@@ -484,6 +488,7 @@ width: 100%;
   background: none !important;
   padding: 10px 0px;
   width: 100%;
+  min-height: 454px !important;
 }
 .portfolio-grid-row {
 width: 100%;

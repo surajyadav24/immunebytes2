@@ -90,7 +90,7 @@ const PortfolioTable = ({ showEditButton, showDeleteButton }) => {
 
   return (
     <div className="container">
-      <h2 className="portfolio-title homepage-heading">Our Portfolio</h2>
+      <h2 className="portfolio-title homepage-heading ">Our Portfolio</h2>
       <div className="portfolio-table-container">
         <div className="search-bar">
           <input

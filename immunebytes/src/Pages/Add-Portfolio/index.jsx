@@ -12,8 +12,16 @@ const AddPortfolio = (props) => {
 
 
   const inputRef = useRef(null);
+  const nameRef = useRef(null);
 
- 
+  const imageRef = useRef(null);
+  const errorRef = useRef(null);
+  const statusRef = useRef(null);
+  const platformsRef = useRef(null);
+  const auditDateRef = useRef(null);
+  const companyDesRef = useRef(null);
+
+
 
 
   // Handle changes in dynamic error entry fields
@@ -48,6 +56,8 @@ const AddPortfolio = (props) => {
   const [formErrors, setFormErrors] = useState({});
   const [platforms, setPlatforms] = useState([]);
 
+
+
   useEffect(() => {
     const fetchPlatforms = async () => {
       try {
@@ -81,32 +91,30 @@ const AddPortfolio = (props) => {
 
   const validateForm = () => {
     let errors = {};
+  
     if (!formData.name) errors.name = "Name is required.";
     if (!formData.platform) errors.platform = "Platform is required.";
     if (!formData.auditDate) errors.auditDate = "Audit Date is required.";
     if (!formData.status) errors.status = "Status is required.";
-    // if (!formData.errorType) errors.errorType = "Error Type is required.";
     if (!formData.companyDescription) errors.companyDescription = "Company Description is required.";
-    // if (!formData.errorBags || isNaN(formData.errorBags)) {
-    //   errors.errorBags = "Error Bags must be a number.";
-    // }
     if (!formData.image) errors.image = "Image is required.";
-      // Validate error entries
-  const validErrorEntry = errorEntries.some(
-    (entry) =>
-      entry.errorType.trim() !== "" ||
-      entry.errorStatus.trim() !== "" ||
-      entry.errorDescription.trim() !== ""
-  );
-
-  // if (!validErrorEntry) {
-  //   errors.errorEntries = "At least one valid error entry is required.";
-  // }
-  // console.log("Valid Error Entries:", validErrorEntry);
-
+  
+    // Optional: Validate dynamic error entries
+    const validErrorEntry = errorEntries.some(
+      (entry) =>
+        entry.errorType.trim() !== "" ||
+        entry.errorStatus.trim() !== "" ||
+        entry.errorDescription.trim() !== ""
+    );
+  
+    // if (!validErrorEntry) {
+    //   errors.errorEntries = "At least one valid error entry is required.";
+    // }
+  
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -153,11 +161,51 @@ const AddPortfolio = (props) => {
     }
   };
 
+  const hasFocusedOnce = useRef(false);
+
   useEffect(() => {
-    if (error && inputRef.current) {
-      inputRef.current.focus(); // Focus the input when an error occurs
+    const errorFields = [
+      { key: 'name', ref: nameRef },
+      { key: 'image', ref: imageRef },
+      { key: 'platform', ref: platformsRef },
+      { key: 'auditDate', ref: auditDateRef },
+      { key: 'errorBags', ref: errorRef },
+      { key: 'status', ref: statusRef },
+      { key: 'companyDescription', ref: companyDesRef },
+    ];
+  
+    for (const field of errorFields) {
+      if (formErrors[field.key] && field.ref.current) {
+        // Only focus the field if it hasn't been focused once or if errors change
+        if (!hasFocusedOnce.current) {
+          field.ref.current.focus();
+          field.ref.current.scrollIntoView({ behavior: "smooth", block: "center" }); // Ensure it’s visible
+          hasFocusedOnce.current = true;
+        }
+        break;
+      }
     }
-  }, [error]); // Dependency array triggers focus when error state changes
+  
+    // Reset the focus tracker if all errors are cleared
+    if (Object.keys(formErrors).length === 0) {
+      hasFocusedOnce.current = false;
+    }
+  }, [formErrors]);
+  
+  
+  
+  
+
+
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => {
+        setError("");
+        console.log("No error checking just ")
+      }, 5000); // Error disappears after 3 seconds
+      return () => clearTimeout(timer); // Cleanup timeout on component unmount
+    }
+  }, [error]);
 
   return (
     <>
@@ -177,28 +225,27 @@ const AddPortfolio = (props) => {
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
                 <input
-                ref={inputRef}
+                ref={nameRef}
                   type="text"
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full p-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  className={`w-full p-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 ${error ? "input-error" : ""}`}
                 />
-                {formErrors.name && <p className="text-red-500 mt-1">{formErrors.name}</p>}
+                {formErrors.name && <p className="text-red-500 text-sm mt-1">{formErrors.name}</p>}
               </div>
 
               {/* Upload Image */}
               <div className="image-upload">
                 <label htmlFor="image" className="block text-sm font-medium mb-1">Upload Image</label>
                 <input
-                ref={inputRef}
-
+                ref={imageRef}
                   type="file"
                   id="image"
                   name="image"
                   onChange={handleFileChange}
-                  className="w-full p-3 border border-gray-600 rounded-md focus:outline-none"
+                  className={`w-full p-3 border text-sm border-gray-600 rounded-md focus:outline-none  focus:ring-2 focus:ring-pink-500 ${error ? "input-error" : ""}`}
                 />
                 {formErrors.image && <p className="text-red-500 mt-1">{formErrors.image}</p>}
               </div>
@@ -207,13 +254,13 @@ const AddPortfolio = (props) => {
               <div>
                 <label htmlFor="platform" className="block text-sm font-medium mb-1">Platform</label>
                 <select
-                ref={inputRef}
+                ref={platformsRef}
 
                   id="platform"
                   name="platform"
                   value={formData.platform}
                   onChange={handleChange}
-                  className="w-full p-3 border border-gray-600 rounded-md focus:outline-none bg-black  focus:ring-2 focus:ring-pink-500"
+                  className={` w-full p-3 border text-sm border-gray-600 rounded-md bg-black  focus:outline-none  focus:ring-2 focus:ring-pink-500 ${error ? "input-error" : ""}`}
                  
                 >
                   <option value="">Select Platform</option>
@@ -230,14 +277,14 @@ const AddPortfolio = (props) => {
               <div>
                 <label htmlFor="auditDate" className="block text-sm font-medium mb-1">Audit Date</label>
                 <input
-                ref={inputRef}
+                ref={auditDateRef}
 
                   type="date"
                   id="auditDate"
                   name="auditDate"
                   value={formData.auditDate}
                   onChange={handleChange}
-                  className="w-full p-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  className={`w-full p-3 border text-sm border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500  ${error ? "input-error" : ""}`}
                 />
                 {formErrors.auditDate && <p className="text-red-500 mt-1">{formErrors.auditDate}</p>}
               </div>
@@ -246,14 +293,14 @@ const AddPortfolio = (props) => {
               <div>
                 <label htmlFor="errorBags" className="block text-sm font-medium mb-1">Error / Bags</label>
                 <input
-                ref={inputRef}
+                ref={errorRef}
 
                   type="number"
                   id="errorBags"
                   name="errorBags"
                   value={formData.errorBags}
                   onChange={handleChange}
-                  className="w-full p-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  className={`w-full p-3 border text-sm border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 ${error ? "input-error" : ""}`}
                 />
                 {formErrors.errorBags && <p className="text-red-500 mt-1">{formErrors.errorBags}</p>}
               </div>
@@ -262,13 +309,13 @@ const AddPortfolio = (props) => {
               <div>
                 <label htmlFor="status" className="block text-sm font-medium mb-1">Status</label>
                 <select
-                ref={inputRef}
+                ref={statusRef}
 
                   id="status"
                   name="status"
                   value={formData.status}
                   onChange={handleChange}
-                  className="w-full p-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 bg-black focus:ring-pink-500"
+                  className={`w-full p-3 border text-sm border-gray-600 rounded-md focus:outline-none focus:ring-2 bg-black focus:ring-pink-500 ${error ? "input-error" : ""}`}
                 >
                   <option value="">Select Status</option>
                   <option value="In Progress">In Progress</option>
@@ -282,14 +329,14 @@ const AddPortfolio = (props) => {
               <div>
                 <label htmlFor="companyDescription" className="block text-sm font-medium mb-1">Company Description</label>
                 <textarea
-                ref={inputRef}
+                ref={companyDesRef}
 
                   id="companyDescription"
                   name="companyDescription"
                   value={formData.companyDescription}
                   onChange={handleChange}
                   rows="3"
-                  className="w-full p-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  className={`w-full p-3 border text-sm border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 ${error ? "input-error" : ""}`}
                 />
                 {formErrors.companyDescription && <p className="text-red-500 mt-1">{formErrors.companyDescription}</p>}
               </div>
@@ -303,7 +350,7 @@ const AddPortfolio = (props) => {
                   id="pdf"
                   name="pdf"
                   onChange={handleFileChange}
-                  className="w-full p-3 border border-gray-600 rounded-md focus:outline-none"
+                  className="w-full p-3 border text-sm border-gray-600 rounded-md focus:outline-none"
                 />
                 {formErrors.pdf && <p className="text-red-500 mt-1">{formErrors.pdf}</p>}
               </div>
@@ -352,8 +399,6 @@ const AddPortfolio = (props) => {
         <div>
           <label htmlFor="errorDescription" className="block text-sm font-medium mb-1">Error Description</label>
           <textarea
-                ref={inputRef}
-
             id="errorDescription"
             name="errorDescription"
             value={entry.errorDescription}
@@ -394,7 +439,7 @@ const AddPortfolio = (props) => {
             </div>
 
             {/* Error Message */}
-            {error && <p className="text-red-500 mt-4">{error}</p>}
+            {error && <p className=" error-message text-red-500 mt-4">{error}</p>}
           </form>
         </div>
       </div>

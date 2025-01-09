@@ -12,6 +12,9 @@ max-width: 600px;
 margin: 0 auto;
 margin-bottom: 20px;
 }
+.heading-error{
+    line-height: 244.32px !important;
+}
 @media(max-width:440px){
     .description-thank-eror{
         color: #fff;

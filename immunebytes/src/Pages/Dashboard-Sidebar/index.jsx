@@ -7,12 +7,16 @@ import platform from "../../../src/assets/images/Dashboard/platform.svg";
 import portfolio from "../../../src/assets/images/Dashboard/portfolio-icon.svg";
 import sevrity from "../../../src/assets/images/Dashboard/sevrity-icon.svg";
 import logout from "../../../src/assets/images/Dashboard/logout.svg";
-import menuicon from "../../../src/assets/images/Dashboard/menu-icon.svg";
+import WhiteMenu from "../../../src/assets/images/WhiteMenu.svg";
+import WhiteCross from "../../../src/assets/images/WhiteCross.svg";
+import logo from '../../assets/images/logos/Logo.svg'
+
 
 function Sidebar() {
   const navigate = useNavigate();
   const location = useLocation();  // Hook to get current location
   // const [activeLink, setActiveLink] = useState("Dashboard");
+
   const [isSidebarVisible, setIsSidebarVisible] = useState(
     window.innerWidth > 1024 // Sidebar visible by default on desktop
   );
@@ -46,10 +50,11 @@ function Sidebar() {
     const handleResize = () => {
       if (window.innerWidth > 1024) {
         setIsSidebarVisible(true); // Always visible on desktop
+      } else {
+        setIsSidebarVisible(false); // Hidden by default on smaller screens
       }
     };
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -84,7 +89,7 @@ function Sidebar() {
   };
 
   const toggleSidebar = () => {
-    setIsSidebarVisible(!isSidebarVisible);
+    setIsSidebarVisible((prevState) => !prevState);
   };
 
   return (
@@ -94,15 +99,18 @@ function Sidebar() {
           className="toggle-sidebar-btn p-2 bg-pink-600 text-white rounded"
           onClick={toggleSidebar}
         >
-          <img src={menuicon} alt="Menu Icon" />
+          <img 
+           src={isSidebarVisible ? WhiteCross : WhiteMenu} // Show close or menu icon
+          alt="Menu Icon" />
         </button>
       )}
 
       <div className={`sidebar-container ${isSidebarVisible ? "active" : ""}`}>
         <div className="sidebar-wrapper w-64 bg-gray-800 p-4">
-          <h2 className="text-2xl font-bold mb-8 text-center text-white">
-            IMMUNE BYTES
-          </h2>
+        <div className="flex-center  relative logo-wrapper dashboard-logo">
+           
+           <img src={logo} alt="" />
+         </div>
           <ul className="space-y-4">
             <li
               className={`p-2 rounded cursor-pointer ${
@@ -148,14 +156,17 @@ function Sidebar() {
               <img src={platform} alt="" />
               Platform
             </li>
+     
           </ul>
+
           <button
-            className="mt-8 w-full p-2 logout-btn text-white rounded cursor-pointer hover:bg-black-500"
+            className="mt-8 w-full p-2 logout-btn text-white rounded cursor-pointer flex hover:bg-[#F9116C]"
             onClick={handleLogout}
           >
             Logout
-            <img src={logout} alt="" />
+            <img src={logout} alt=""  className="pl-2 pt-1"/>
           </button>
+     
         </div>
       </div>
     </>

@@ -78,6 +78,7 @@
   .audit-progress-dashboard{
     width: 100%;
     padding: 20px;
+    margin-bottom: 25px;
   }
   .audit-progress-dashboard .audit-progress {
     /* margin: 28px !important; */
@@ -150,5 +151,12 @@ left: 16px;
 .audit-section-title {
   font-size: 22px !important;
   text-align: left;
+}
+.audit-progress-dashboard{
+
+    width: 87%;
+    padding: 0px;
+    margin-bottom: 10px;
+
 }
 }

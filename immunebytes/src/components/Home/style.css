@@ -100,7 +100,7 @@
 }
 .homapage-prtfolio .portfolio-table-container {
   max-height: 550px;
-  min-height: 595px !important;
+  min-height: 454px !important;
   border: 1px solid #F9116C;
   background: none;
 }
@@ -137,7 +137,7 @@ padding: 48px 0px;
 
   .homapage-prtfolio .portfolio-table-container {
     max-height: 750px;
-    min-height: 700px !important;
+    min-height: 454px !important;
     border: none;
     background: none;
   }

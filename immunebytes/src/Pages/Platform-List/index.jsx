@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import close from '../../assets/images/cross.svg';
 
 const PlatformList = ({
   platforms,
@@ -14,9 +15,29 @@ const PlatformList = ({
 }) => {
   const platformsToDisplay = showAll ? platforms : currentPlatforms;
 
+  const [isDeleteConfirmationOpen, setIsDeleteConfirmationOpen] = useState(false);
+  const [platformToDelete, setPlatformToDelete] = useState(null);
+
   if (!platformsToDisplay || platformsToDisplay.length === 0) {
     return <p>No platforms to display.</p>;
   }
+
+  const openDeleteConfirmation = (platformIndex) => {
+    setPlatformToDelete(platformIndex); // Store the platform to delete
+    setIsDeleteConfirmationOpen(true); // Open confirmation modal
+  };
+
+  const closeDeleteConfirmation = () => {
+    setIsDeleteConfirmationOpen(false); // Close confirmation modal
+    setPlatformToDelete(null); // Clear platform to delete
+  };
+
+  const handleDelete = () => {
+    if (platformToDelete !== null) {
+      deletePlatform(platformToDelete); // Call deletePlatform with platform to delete
+    }
+    closeDeleteConfirmation(); // Close the modal after deletion
+  };
 
   return (
     <div className="platform-list w-full max-w-3xl bg-gray-800 rounded-lg p-4 shadow-lg">
@@ -25,7 +46,7 @@ const PlatformList = ({
         {platformsToDisplay.map((platform, index) => (
           <div
             key={showAll ? index : index + indexOfFirstPlatform}
-            className="flex items-center justify-between bg-gray-700 rounded-md p-2"
+            className="flex items-center justify-between bg-gray-700 rounded-md p-2 "
           >
             {editIndex === (showAll ? index : index + indexOfFirstPlatform) ? (
               <>
@@ -33,7 +54,7 @@ const PlatformList = ({
                   type="text"
                   value={editedPlatform}
                   onChange={(e) => setEditedPlatform(e.target.value)}
-                  className="flex-1 p-2 bg-gray-600 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  className="flex-1 p-2 bg-gray-600 border border-gray-500 rounded-md focus:outline-none focus:ring-2  focus:ring-pink-500"
                 />
                 <button
                   onClick={savePlatform}
@@ -44,21 +65,21 @@ const PlatformList = ({
               </>
             ) : (
               <>
-                <p className="flex-1">{platform.platformName}</p>
+                <p className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap">{platform.platformName}</p>
                 <div className="flex space-x-2">
                   <button
                     onClick={() =>
                       startEditing(showAll ? index : index + indexOfFirstPlatform)
                     }
-                    className="bg-gray-600 hover:bg-gray-500 text-white font-semibold py-1 px-4 rounded-md transition"
+                    className="bg-gray-600 hover:bg-gray-500 text-white font-semibold py-1 lg:px-4 px-2 rounded-md transition"
                   >
                     Edit
                   </button>
                   <button
                     onClick={() =>
-                      deletePlatform(showAll ? index : index + indexOfFirstPlatform)
+                      openDeleteConfirmation(showAll ? index : index + indexOfFirstPlatform)
                     }
-                    className="bg-red-600 hover:bg-red-700 text-white font-semibold py-1 px-4 rounded-md transition"
+                    className="bg-red-600 hover:bg-red-700 text-white font-semibold py-1 lg:px-4 px-2 rounded-md transition"
                   >
                     Delete
                   </button>
@@ -68,6 +89,30 @@ const PlatformList = ({
           </div>
         ))}
       </div>
+
+      {/* Confirmation Modal */}
+      {isDeleteConfirmationOpen && (
+ 
+        <div className="modal-overlay-delete">
+        <div className="modal-content-delete  bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg">
+          <button className="close-btn-delete" onClick={closeDeleteConfirmation}>
+            <img src={close} alt="Close" />
+          </button>
+          <p className='text-white pt-3'>Are you sure you want to delete this platform?</p>
+          <div className="modal-actions-delete">
+            <button
+              className="confirm-btn-delete"
+              onClick={handleDelete}
+            >
+              Yes, Delete
+            </button>
+            <button className="cancel-btn-delete" onClick={closeDeleteConfirmation}>
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+      )}
     </div>
   );
 };

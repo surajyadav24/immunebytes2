@@ -1,8 +1,57 @@
-import React from 'react';
+import React , {useEffect, useState} from 'react';
 import './style.css';
 import github from "../../assets/images/github-white.svg"
 import linkedin from "../../assets/images/linkedin-white.svg"
+import axios from 'axios'
 const Footer = () => {
+
+  const [message, setMessage] = useState("");
+
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+  });
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("/api/v1/users/subscribe", formData);
+      console.log("response :: ",response)
+      const user = response.data.data
+      // setFormData(user)
+
+      if (response.status === 200) {
+        // console.log("Your request has been submitted successfully!");
+        setMessage("Your Details have been submitted successfully!");
+        setFormData({
+          name: "",
+          email: "",
+        });
+        // navigate("/thankyoupage")
+      } else {
+        setMessage("Failed to submit. Please check the details!");
+        // navigate("/error")
+
+      }
+    } catch (error) {
+      setMessage("Failed to submit the form. Please try again later.");
+    }
+  };
+  useEffect(() => {
+    if (message) {
+      const timer = setTimeout(() => {
+        setMessage("");
+      }, 2000); // Message disappears after 3 seconds
+
+      return () => clearTimeout(timer); // Cleanup the timer
+    }
+  }, [message]);
   return (
     <footer className="footer">
       <div className="container">
@@ -11,9 +60,13 @@ const Footer = () => {
             <h3>Subscribe</h3>
             <form>
               <label htmlFor="first&lastname">First & Last Name</label>
-              <input type="text" placeholder="First & Last Name" />
+              <input type="text" placeholder="First & Last Name" id="name"
+                    value={formData.name}
+                    onChange={handleChange} />
               <label htmlFor="email">E-mail</label>
-              <input type="email" placeholder="Email Address" />
+              <input type="email" placeholder="Email Address"  id="email"
+                    value={formData.email}
+                    onChange={handleChange} />
               <button type="submit">Submit</button>
             </form>
           </div>
@@ -49,12 +102,17 @@ const Footer = () => {
           </div>
 
           <div className="col-lg-3 col-md-6  footer-section  footer-section-4">
-            <h3>Subscribe</h3>
-            <form>
+          <h3>Subscribe</h3>
+            <form onSubmit={handleSubmit}>
+            {message && <p className="message text-[#F9116C] text-sm">{message}</p>}
               <label htmlFor="first&lastname">First & Last Name</label>
-              <input type="text" placeholder="First & Last Name" />
+              <input type="text" placeholder="First & Last Name" id="name"
+                    value={formData.name}
+                    onChange={handleChange} />
               <label htmlFor="email">E-mail</label>
-              <input type="email" placeholder="Email Address" />
+              <input type="email" placeholder="Email Address"  id="email"
+                    value={formData.email}
+                    onChange={handleChange} />
               <button type="submit">Submit</button>
             </form>
           </div>

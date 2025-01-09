@@ -56,6 +56,9 @@
 }
 
 
+.row {
+  margin: 0 auto;
+}  
 
 .container{
   max-width: 1280px;
@@ -73,8 +76,12 @@ font-weight: 400;
 }
 .btn-wrapper{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+}
+
+.btn-wrapper .btn-primary {
+  padding: 12px 13px !important;
 }
 
 .bg-pink-600{
@@ -204,6 +211,21 @@ button.telegram-fixed:hover{
   padding-bottom: 0px;
 }
 
+.popup-form h3 {
+  margin-top: 0px;
+  text-align: center;
+  font-size: 23px;
+  padding-bottom: 8px;
+  padding-top: 7px;
+}
+
+p.sub-item-name {
+  font-size: 14px !important;
+}
+
+img.btn-icon {
+  transform: scale(0.7);
+}
 
 @keyframes logo-spin {
   from {
@@ -316,7 +338,7 @@ button.telegram-fixed:hover{
   padding: 0px;
 }
 .service-hero img {
-  max-width: 100%;
+  max-width: 70%;
 }
 .logo-wrapper img {
   padding: 0px;
@@ -361,10 +383,23 @@ h1.text-center.heading-h1.testimonial-heading.homepage-heading {
 .footer .container .row{
   justify-content: center;
 }
+.audit-content .audit-progress {
+  min-width: 100%;
+  min-height: 202px;
+  margin: 0px !important;
+  padding: 19px 14px 0px 1px;
+  border: none;
+  background: url("./assets/images/mobile-severty.svg") no-repeat center center / contain ;
 }
-.row {
-  margin: 0 auto;
-}  
+.por-cta {
+  padding-top: 40px;
+}
+
+.audit-content {
+  padding-top: 40px;
+}
+
+}
 
 
 

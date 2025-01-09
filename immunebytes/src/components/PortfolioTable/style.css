@@ -16,7 +16,10 @@
     color: #F9116C;
     margin-bottom: 0px;
 }
-  
+
+h2.portfolio-title.homepage-heading {
+  padding: 80px 0px 60px;
+}
   .search-bar {
     position: relative;
     display: flex;
@@ -355,7 +358,7 @@ input[type="text"]:focus-visible {
 }
 .audit-section-title {
   text-align: left;
-  font-size: 22px;
+  font-size: 32px;
   
 }
 .audit-content {
@@ -513,6 +516,10 @@ width: 100%;
   width: 88%;
   padding: 15px 20px;
   min-width: 338px;
+}
+
+h2.portfolio-title.homepage-heading {
+  padding: 40px 0px 20px;
 }
 
 }

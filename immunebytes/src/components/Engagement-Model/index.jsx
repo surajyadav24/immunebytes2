@@ -1,8 +1,9 @@
 import React from 'react'
 import './style.css'
-import PrimaryBtn from "../Primarybutton";
 
 
+import Formpopup from '../Formpopup';
+import iconarrow from '../../assets/images/iconarrow.svg';
 
 const EngagementModel = () => {
   return (
@@ -12,22 +13,26 @@ const EngagementModel = () => {
       <div className='engagementmodel-boxes'>
         <div className='engagementmodel-box'>
             <h3>Fixed Price</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est rerum unde, debitis quae delectus perspiciatis in tempore voluptatibus at consequatur quasi saepe repellat, velit facere. Aliquam necessitatibus mollitia omnis odit.</p>
+            <p>A comprehensive, end-to-end audit with a one-time cost, ensuring thorough analysis and a detailed report within a fixed budget.</p>
         </div>
         <div className='engagementmodel-box'>
             <h3>PPV</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est rerum unde, debitis quae delectus perspiciatis in tempore voluptatibus at consequatur quasi saepe repellat, velit facere. Aliquam necessitatibus mollitia omnis odit.</p>
+            <p>Pay only for confirmed vulnerabilities discovered during the audit, making it a cost-effective option for targeted security assessments.</p>
         </div>
         <div className='engagementmodel-box'>
             <h3>Retainer</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est rerum unde, debitis quae delectus perspiciatis in tempore voluptatibus at consequatur quasi saepe repellat, velit facere. Aliquam necessitatibus mollitia omnis odit.</p>
+            <p>Ongoing security support with periodic audits and updates, ensuring your project remains secure as it evolves over time.            </p>
         </div>
       </div>
       <div className='engagementmodel-yellow-box'>
      <div className="content">
      <h3 className='engagementmodel-yellow-box-text'>Our security professionals are ready to guide you toward a safer future.</h3>
      <div className="button-container">
-     <PrimaryBtn text="Let's Talk!" />
+     <Formpopup
+          auditName="Lets Talk!"
+          buttonClassName="btn btn-primary"
+          arrowicon={iconarrow} // Pass the imported icon
+        />
      </div>
      </div>
       </div>

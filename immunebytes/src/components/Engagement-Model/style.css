@@ -4,7 +4,7 @@
 
 .engagementmodel h2{
     text-align: center;
-    padding: 80px 0px;
+    padding: 80px 0px 40px;
  color: #F9116C ;
  font-size: 40px;
 }
@@ -80,8 +80,13 @@ align-items: center;
     fill: #fff;
 }
 .engagementmodel-yellow-box .btn-primary {
-    font-size: 1.5rem !important;
+    
     padding: 2rem !important;
+}
+
+.engagementmodel-yellow-box .button-container button.btn.btn-primary {
+    font-size: 16px !important;
+    padding: 3px 13px !important;
 }
 
 /* TABLET VERSION */
@@ -147,12 +152,13 @@ align-items: center;
 /* Mobile responsiveness */
 @media (max-width: 445px) {
     .engagementmodel h2 {
-        margin-top: 1.5rem;
+        margin-top: 0;
         font-size: 1.7rem;
         margin-bottom: 0.5rem;
         padding-bottom: 0px;
-        color: #ff4081; /* Pink color for the title */
-      }
+        color: #ff4081;
+        padding-top: 40px;
+    }
     .engagementmodel-boxes {
         grid-template-columns: 1fr; /* Single-column layout for smaller screens */
         gap: 1.5rem; /* Reduced gap */
@@ -223,6 +229,10 @@ align-items: center;
     .engagementmodel-box p{
         font-size: 14px;
     }
+    .engagementmodel-yellow-box .button-container button.btn.btn-primary {
+        font-size: 11px !important;
+    }
+
 }
 @media (max-width:375px) {
    

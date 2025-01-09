@@ -2,6 +2,9 @@ import React from "react";
 import "./style.css"; // Custom CSS file for this section
 import PrimaryBtn from "../Primarybutton";
 
+import Formpopup from "../Formpopup";
+import iconarrow from "../../assets/images/arrowicon.svg"
+
 function FeaturedAudit({
   title,
   auditCards,
@@ -36,7 +39,11 @@ function FeaturedAudit({
             <h3>
               {testimonial.talkTitle} <span>{testimonial.talkSubtitle}</span>
             </h3>
-            <PrimaryBtn text={testimonial.talkButtonText} />
+            <Formpopup
+          auditName="Request Audit"
+          buttonClassName="btn btn-primary"
+          arrowicon={iconarrow} // Pass the imported icon
+        />
           </div>
           <div className="featured-card testimonial-card">
             <div className="testimonial-header">

@@ -17,7 +17,7 @@ import Footer from "../Footer";
 
 import PortfolioTable from "../PortfolioTable";
 // import AuditProcess from "../Audit-Process";
-import AuditProcessSec from "../Audit-Process-sec"
+import AuditProcessSec from "../Audit-Process-sec";
 import HeroSection2 from "../Hero-section-2";
 // Import images
 import img10 from "../../assets/images/img11.svg";
@@ -29,20 +29,12 @@ import gif1 from "../../assets/images/Hero-section/hero-gif.gif";
 import "./style.css";
 import WhyChooseUsSec from "../Why-choose-sec";
 
-
-
-
-
-
 const Home = () => {
-
-
   const cardsData = [
     { text: "5+ Experience in Web3 Security" },
     { text: "315+ Happy Clients Globally" },
     { text: "100+ Critical Issues Reported" }
   ];
-
 
   return (
     <>
@@ -51,7 +43,6 @@ const Home = () => {
         title="Threat Perspective,"
         highlight="Defense Expertise!"
         description="Securing the Web3 industry through rigorous code audits as we empower protocols with trust, transparency, and impenetrable defense."
-        buttonText="Book Consultation"
         imageSrc={gif1}
         altText="Immunebytes Hero GIF"
       />
@@ -59,46 +50,54 @@ const Home = () => {
 
       <LogoSlider />
       <Cta title="Leading the Wave of Web3 Security" />
-<div className="container">
-<div className="services-wrapper">
-        <h1 className="text-center  heading-h1 homepage-heading">Our Services</h1>
-        <Servicescomponent
-          imageSrc={serviceimg2}
-          heading="Smart Contract Audit"
-          paragraphtext="An extensive evaluation of your smart contract code for security, verification of business specifications, and adherence to industry standards for code reusability"
-        />
-        <div className="service-2">
+      <div className="container">
+        <div className="services-wrapper">
+          <h1 className="text-center  heading-h1 homepage-heading">
+            Our Services
+          </h1>
           <Servicescomponent
-            imageSrc={serviceimg3}
-            heading="Blockchain Audit"
-            paragraphtext="A thorough assessment of your blockchain’s security posture, encompassing architecture, network layer, transaction layer, ledger layer, and other frameworks."
+            imageSrc={serviceimg2}
+            heading="Smart Contract Audit"
+            paragraphtext="An extensive evaluation of your smart contract code for security, verification of business specifications, and adherence to industry standards for code reusability"
+            link="/smartcontract"
           />
-        </div>
-        <div className="service-3">
-          <Servicescomponent
-            imageSrc={serviceimg}
-            heading="Penetration Testing"
-            paragraphtext="Amid the rising incidence of traditional security breaches affecting Web3, ImmuneBytes provides penetration testing services explicitly tailored for Web3 applications."
-          />
+          <div className="service-2">
+            <Servicescomponent
+              imageSrc={serviceimg3}
+              heading="Blockchain Audit"
+              paragraphtext="A thorough assessment of your blockchain’s security posture, encompassing architecture, network layer, transaction layer, ledger layer, and other frameworks."
+              link="/blockchainaudit"
+            />
+          </div>
+          <div className="service-3">
+            <Servicescomponent
+              imageSrc={serviceimg}
+              heading="Penetration Testing"
+              paragraphtext="Amid the rising incidence of traditional security breaches affecting Web3, ImmuneBytes provides penetration testing services explicitly tailored for Web3 applications."
+              link="/penetration-testing"
+            />
+          </div>
         </div>
       </div>
-</div>
 
-<div className="portfolio-container homapage-prtfolio">
-<PortfolioTable showEditButton={false} showDeleteButton={false} />
-<PrimaryBtn text="View More" />
-</div>
-      <h1 className="text-center  heading-h1 homepage-heading ">Audit Process</h1>
-<AuditProcessSec/>
+      <div className="portfolio-container homapage-prtfolio">
+        <PortfolioTable showEditButton={false} showDeleteButton={false} />
+        <PrimaryBtn text="View More" />
+      </div>
+      <h1 className="text-center  heading-h1 homepage-heading ">
+        Audit Process
+      </h1>
+      <AuditProcessSec />
 
       {/* <AuditProcess /> */}
       <div className="container pb-4 why-sec-choose">
-        <h1 className="text-center  heading-h1 homepage-heading">Why Choose Us?</h1>
+        <h1 className="text-center  heading-h1 homepage-heading">
+          Why Choose Us?
+        </h1>
         {/* <Whychooseus /> */}
         {/* <Whychooseusec /> */}
 
         <WhyChooseUsSec cards={cardsData} />
-
       </div>
       <h1 className="text-center  heading-h1 testimonial-heading homepage-heading">
         Testimonials
@@ -109,7 +108,9 @@ const Home = () => {
 
       <div className="container">
         <div className=" case-study-wrapper">
-          <h1 className="text-center  heading-h1 homepage-heading">Case Studies</h1>
+          <h1 className="text-center  heading-h1 homepage-heading">
+            Case Studies
+          </h1>
 
           <div className="row">
             <div className="col-lg-6 md-6 col-sm-12">

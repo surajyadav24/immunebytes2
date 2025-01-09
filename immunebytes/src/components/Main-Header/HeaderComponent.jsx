@@ -22,7 +22,8 @@ export default function HeaderComponent() {
 
           <div className="flex-center gap-x-5">
           <div className="desktop-btn-request md:hidden sm:hidden">
-          <Formpopup />
+          <Formpopup auditName="Request Audit" buttonClassName=" register-btn"  />
+
         </div>
             <div className="lg:hidden md:hidden xl:hidden mobile-menu">
               <MobMenu Menus={Menus} />

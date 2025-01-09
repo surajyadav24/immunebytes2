@@ -5,7 +5,7 @@
    color: #F9116C;
    font-size: 40px;
    text-align: center;
-   padding: 80px 0px;
+   padding: 80px 0px 40px;
 }
 .otherweb3services-cards{
     display: grid;
@@ -36,6 +36,13 @@
     max-width: 80%;
     margin: 0 auto;
 }
+
+.otherweb3services-card img {
+    margin: 0 auto;
+    width: 70%;
+    padding-bottom: 20px;
+}
+
 @media (max-width:1441) {
     .otherweb3services-cards {
         display: grid;
@@ -50,7 +57,7 @@
         padding: 10px;
     }
     .otherweb3services h2{
-            margin-top: 1.5rem;
+            margin-top: 0px;
             font-size: 1.7rem;
             margin-bottom: 1rem;
             color: #ff4081; /* Pink color for the title */
@@ -67,7 +74,7 @@
         padding-top: 0px;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         text-align: center;
     }
@@ -76,6 +83,7 @@
         padding-bottom: 4px;
     }
     .otherweb3services-card p{
+        text-align: left;
         font-size: 14px;
     }
 }

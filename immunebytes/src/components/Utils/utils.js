@@ -24,6 +24,7 @@ export const Menus = [
     subMenu: [
       {
         name: "Smart Contract Audit",
+        link:"/smartcontract",
    
         subSubHeading1: ["By Type"],
         subSubMenu1: [
@@ -48,12 +49,12 @@ export const Menus = [
         ]
       },
       {
-        name: "Blockchain Security Services",
+        name: "Blockchain Security Audit",
         link:"/blockchainaudit",
       },
       {
         name: "Penetration Testing",
-        link:"/penetration",
+        link:"/penetration-testing",
         subSubHeading1: ["By Type"],
         subSubMenu1: [
           { name: "Mobile", icon: Mobile,     link:"#" },

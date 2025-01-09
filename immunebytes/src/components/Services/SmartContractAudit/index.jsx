@@ -9,6 +9,10 @@ import EngagementModel from "../../Engagement-Model";
 import HeroSection2 from "../../Hero-section-2";
 import serviceimg2 from "../../../assets/images/services-img/service2.gif";
 
+import pinkImage from "../../../assets/images/services-img/service3.gif"
+import blueImage from "../../../assets/images/services-img/service1.gif"
+
+
 import FAQ from "../../FAQ";
 import AuditProcessdummy from "../penetrationTesting/auditprocessdummy";
 
@@ -152,59 +156,59 @@ const testimonial = {
 // ];
 const features = [
   {
-    title: "Team of Highly Skilled Auditors",
+    title: "Highly Skilled Auditing team",
     icon: team, // Replace with your GIF URL
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
+      "Our auditing team holds expertise in blockchain architecture and industry standards, ensuring your code is error-free.",
     backgroundColor: "bg-blue-500" // Unique background color
   },
   {
-    title: "Client-Centric Approach",
+    title: "Client First Approach",
     icon: centric, // Replace with your GIF URL
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
+      "Your success is our priority. We maintain transparent communication and focus on your project’s long-term security needs.",
     backgroundColor: "bg-green-500" // Unique background color
   },
   {
-    title: "Comprehensive Audit Process",
+    title: "CoMPREHENSIVE Security Audit",
     icon: comp, // Replace with your GIF URL
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
+      "We conduct comprehensive smart contract audits using the latest tools and methodologies to uncover critical vulnerabilities.",
     backgroundColor: "bg-red-500" // Unique background color
   },
   {
-    title: "Post-Audit Support",
+    title: "Post audit support",
     icon: Post, // Replace with your GIF URL
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
+      "We offer continuous support after the audit, assisting with any issues or updates to secure your smart contracts long-term.",
     backgroundColor: "bg-yellow-500" // Unique background color
   },
   {
-    title: "Tailored Approach",
+    title: "Tailored approach",
     icon: Tailored, // Replace with your GIF URL
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
+      "We customize our audits to meet the specific needs of your project, ensuring the highest level of protection for your unique use case.",
     backgroundColor: "bg-purple-500" // Unique background color
   },
   {
-    title: "Focus on Innovation",
+    title: "Transparent Reporting",
     icon: Focus, // Replace with your GIF URL
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
+      "Our detailed audit reports are clear and actionable, providing a transparent overview of risks and recommendations",
     backgroundColor: "bg-teal-500" // Unique background color
   },
   {
     title: "Proven Track Record",
     icon: Proven, // Replace with your GIF URL
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
+      "With a history of successful audits and satisfied clients, we’ve built a reputation for delivering reliable security solutions you can trust",
     backgroundColor: "bg-orange-500" // Unique background color
   },
   {
-    title: "Immunebytes Seal of Trust",
+    title: "Cost-Effective Security",
     icon: Seal, // Replace with your GIF URL
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
+      "We deliver top-tier security solutions with competitive pricing, providing high-value protection for your Web3 projects",
     backgroundColor: "bg-pink-500" // Unique background color
   }
 ];
@@ -232,6 +236,22 @@ const faqs = [
       "Yes, we support multiple languages like Solidity, Vyper, Rust, and Cairo, using tailored tools and methodologies for each environment."
   }
 ];
+
+// Services
+const services = [
+  {
+    image: pinkImage,
+    title: 'Blockchain  Audit',
+    description: 'A thorough assessment of your blockchain’s security posture, encompassing smart contracts, architecture, and development framework.',
+  },
+  {
+    image: blueImage,
+    title: 'Penetration Testing',
+    description: 'In light of increasing traditional security breaches impacting Web3, ImmuneBytes offers penetration testing for decentralised applications.',
+  },
+];
+// services
+
 
 const icons = {
   downArrowDesktop: downarrow,
@@ -275,13 +295,17 @@ function SmartContract() {
         <FeatureSection title="Why Us?" features={features} />
         {/* <FeatureSection/> */}
         <EngagementModel />
-        <OtherWeb3Services />
+
+        <OtherWeb3Services services={services} />
 
         <div>
           <FAQ title="FAQs" faqs={faqs} icons={icons} />
         </div>
 
         {/* <FAQ/> */}
+
+        <div className="secure-audit"><h2>Stay Ahead of the Security Curve.</h2></div>
+
       </div>
     </>
   );

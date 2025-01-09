@@ -9,6 +9,10 @@ import FAQ from "../../FAQ";
 import AuditProcessdummy from "../penetrationTesting/auditprocessdummy";
 import serviceimg3 from "../../../assets/images/services-img/service3.gif";
 
+import pinkImage from "../../../assets/images/services-img/service3.gif"
+import blueImage from "../../../assets/images/services-img/service1.gif"
+
+
 import icon1 from "../../../assets/images/services-main/block-chain-first/Layer-by-Layer-Defense.gif";
 import icon2 from "../../../assets/images/services-main/block-chain-first/Data-Integrity-Assurance.gif";
 import icon3 from "../../../assets/images/services-main/block-chain-first/Protocol-Stability-and-Consensus-Security.gif";
@@ -231,6 +235,25 @@ const faqs = [
   }
 ];
 
+
+// services
+
+const services = [
+  {
+    image: pinkImage,
+    title: 'Blockchain  Audit',
+    description: 'A thorough assessment of your blockchain’s security posture, encompassing smart contracts, architecture, and development framework.',
+  },
+  {
+    image: blueImage,
+    title: 'Penetration Testing',
+    description: 'In light of increasing traditional security breaches impacting Web3, ImmuneBytes offers penetration testing for decentralised applications.',
+  },
+];
+
+// services
+
+
 const icons = {
   downArrowDesktop: downarrow,
   downArrowMobile: downarrowmobile,
@@ -274,7 +297,7 @@ function BlockchainAudit() {
         <FeatureSection title="Why Us?" features={features} />
         {/* <FeatureSection/> */}
         <EngagementModel />
-        <OtherWeb3Services />
+        <OtherWeb3Services services={services} />
 
         <div>
           <FAQ title="FAQs" faqs={faqs} icons={icons} />

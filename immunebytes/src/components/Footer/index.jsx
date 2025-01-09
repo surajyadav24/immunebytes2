@@ -23,7 +23,6 @@ const Footer = () => {
               <li><a href="#">Portfolio</a></li>
               <li><a href="#">About us</a></li>
               <li><a href="#">Blog</a></li>
-              <li><a href="#">Request audit</a></li>
             </ul>
             <div className="social-icons">
               <a href="https://www.linkedin.com/company/immunebytes"><img src={linkedin} alt="" /></a>
@@ -34,17 +33,19 @@ const Footer = () => {
           <div className="col-lg-3 col-md-6 col-sm-6 footer-section footer-section-2">
             <h3>Services</h3>
             <ul>
-              <li><a href="#">Smart contract audit</a></li>
-              <li><a href="#">Blockchain security service</a></li>
-              <li><a href="#">Penetration Testing</a></li>
+              <li><a href="/smartcontract">Smart Contract Audit</a></li>
+              <li><a href="/blockchainaudit">Blockchain Security Audit</a></li>
+              <li><a href="/penetration-testing">Penetration Testing</a></li>
             </ul>
           </div>
 
           <div className="col-lg-3 col-md-6 col-sm-12 footer-section footer-section-3">
             <h3>Contact us</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Have questions or need a security audit for your next project? Reach out to our experts today and ensure your blockchain solutions are secure and reliable!
+
+
+
             </p>
           </div>
 

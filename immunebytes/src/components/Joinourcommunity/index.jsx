@@ -10,7 +10,7 @@ const Community = () => {
         <div className="join-wrapper pt-5">
             <h2>Join Our Community</h2>
             <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do   
+            Be part of a thriving network, shaping the future of secure decentralization.  
             </p>
 <div className="btn-section">
     <div className="telegram-btn">

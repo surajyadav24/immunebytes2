@@ -36,6 +36,7 @@
     "react-bootstrap": "^2.10.4",
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.3.1",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.28.1",
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.2",

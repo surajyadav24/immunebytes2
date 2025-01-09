@@ -17,12 +17,20 @@
     -webkit-text-fill-color: rgba( 255, 255, 255, 0 );
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: #4f4f4f;
-    font-family: "RobotoMono-Bold";
+    font-family: "Arvo-Bold";
     font-size: 50px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
   }
+  .stat-card p {
+    font-size: 24px;
+    font-weight: 400 !important;
+    font-family: Arvo-Regular !important;
+    -webkit-text-fill-color: #000;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #4f4f4f;
+}
   .stat-card:hover h2{
     color: #000 !important;
     background: transparent;
@@ -39,14 +47,17 @@
   }
   .stat-card p {
     -webkit-text-fill-color: rgba( 255, 255, 255, 0 );
-    -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: #4f4f4f;
-    font-family: "RobotoMono-Bold";
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+    font-family: "Arvo-Bold";
+    font-size: 32px !important;
   }
+  .red-border:hover h2 ,.red-border:hover p{
+    color: #fff !important;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #fff;
+}
+  
   
   .yellow-border {
 background: url(../../assets/images/portfolio/card-green.svg) no-repeat center center / contain;
@@ -138,4 +149,14 @@ padding: 37px 0px;
         -webkit-text-stroke-width: 2px;
         -webkit-text-stroke-color: #000;
       }
+
+
+      .red-border h2 ,.red-border p{
+        color: #fff !important;
+        -webkit-text-fill-color: #fff;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #fff;
+    }
+    
+
   }

@@ -1,12 +1,15 @@
 import React from "react";
 import "./style.css";
 import PrimaryBtn from "../Primarybutton";
+import Formpopup from "../Formpopup";
+import iconarrow from '../../assets/images/arrowicon.svg'
+
+
 
 const HeroSection2 = ({ 
   title, 
   highlight, 
   description, 
-  buttonText, 
   imageSrc, 
   altText 
 }) => {
@@ -20,14 +23,22 @@ const HeroSection2 = ({
           </h1>
           <p>{description}</p>
           <div className="btn-wrapper dekstop-hidden">
-            <PrimaryBtn text={buttonText} />
+          <Formpopup
+          auditName="Book Consultation"
+          buttonClassName="btn btn-primary"
+          arrowicon={iconarrow} // Pass the imported icon
+        />
           </div>
         </div>
         <div className="hero-video">
           <img src={imageSrc} alt={altText} />
         </div>
         <div className="btn-wrapper mobile-hidden">
-            <PrimaryBtn text={buttonText} />
+        <Formpopup
+          auditName="Book Consultation"
+          buttonClassName="btn btn-primary"
+          arrowicon={iconarrow} // Pass the imported icon
+        />
           </div>
       </div>
     </div>

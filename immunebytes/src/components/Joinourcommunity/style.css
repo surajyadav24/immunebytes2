@@ -29,9 +29,10 @@ text-align: center;
     color: #fff;
 }
 .btn-section button {
+    color: #fff;
     margin: 4px 0px !important;
     border: none;
-    font-family: RobotoMono-Bold;
+    font-family: 'Arvo-Regular';
     text-decoration: none;
     min-width: 233px;
     min-height: 75px;

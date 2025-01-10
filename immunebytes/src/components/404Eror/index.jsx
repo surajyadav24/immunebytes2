@@ -19,7 +19,7 @@ function Eror4o4() {
         <PrimaryBtn text="Back To Home" onClick={handleBackToHome}  />
       </div>
 
-      <div className="secure-audit">
+      <div className="secure-audit pt-7">
         <h2>Stay Ahead of the Security Curve.</h2>
       </div>
     </div>

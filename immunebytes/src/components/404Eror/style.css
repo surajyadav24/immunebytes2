@@ -33,7 +33,12 @@ margin-bottom: 20px;
     .eror-thank {
         font-size: 121px;
         line-height: 79px;
-        margin-bottom: 51px;
+        margin-bottom: 0px;
     }
-
+    .heading-error {
+        line-height: 139.32px !important;
+    }
+    .secure-audit.pt-7 {
+        padding-top: 40px !important;
+    }
 }

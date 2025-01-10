@@ -52,19 +52,17 @@ transform: scale(0.8);
     width: 350px;
 }
 @media (max-width:768px) {
-    .left-serv{
-        width: 70% !important;
+
+    .left-serv {
+        width: 60% !important;
     }
-    .col-lg-8.md-6.col-sm-6.col-xs-6.left-serv {
-        max-width: 50%;
-    }
+
     .col-lg-4.md-6.col-sm-6.col-xs-6.right-serv {
         max-width: 50%;
     }
     .service-discription h2 {
-       font-size: 14px;
-
-}
+        font-size: 32px;
+    }
 .service-discription p {
     max-width: 145px;
 
@@ -73,21 +71,24 @@ transform: scale(0.8);
     padding-bottom: 0px;
 }
 .service-discription button.btn.btn-primary {
-    padding: 5px 6px !important;
+    padding: 8px 8px !important;
     font-size: 7px;
 }
 .service-discription p {
     font-size: 9px;
-    max-width: 165px;
-    line-height: 16px;
+    max-width: 100%;
+    line-height: 24px;
 }
 .service-img img {
     margin-right: 0px;
     max-width: 50%;
+    
 }
 .service-img {
+    left: -32px !important;
+    position: relative;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 .service-discription {
     padding-bottom: 40px;

@@ -48,7 +48,7 @@
   
   .thank-btn button{
     font-size: 12px;
-    padding:15px 20px !important;
+    padding:9px 20px !important;
     font-family: "Arvo-Regular";
     font-weight: 300 !important;
   }
@@ -63,5 +63,9 @@
     .heading-thank {
         font-size: 56px;
         line-height: 75px;
+        padding-top: 100px;
+    }
+    .thankyou-section .secure-audit{
+      padding-top: 40px;
     }
   }

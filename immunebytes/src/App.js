@@ -25,6 +25,7 @@ import ThankYouSection from "./components/ThankYou/index.jsx";
 import Error from "./components/404Eror/";
 import HeaderComponent from "./components/Main-Header/HeaderComponent.jsx";
 import Blog from "./Pages/Blog/";
+import BlogSection from '../src/components/BlogPost/index.jsx'
 import Telegram from "./assets/images/telegram.svg";
 import "./App.css";
 
@@ -139,11 +140,20 @@ function App() {
             </Layout2>
           }
         />
+        {/* BlogSection */}
            <Route
           path="/blog"
           element={
             <Layout2>
             <Blog/>
+            </Layout2>
+          }
+        />
+           <Route
+          path="/BlogSection"
+          element={
+            <Layout2>
+            <BlogSection/>
             </Layout2>
           }
         />

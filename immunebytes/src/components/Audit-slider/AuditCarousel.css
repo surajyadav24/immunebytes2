@@ -12,6 +12,11 @@ justify-content: flex-start;
         justify-content: flex-start;
         top: -33px;
     }
+    .audit-carousel .popup-container .register-btn {
+        font-size: 12px !important;
+        color: #fff !important;
+    }
+
     .carousel .slider-wrapper {
         padding-top: 25px;
     }

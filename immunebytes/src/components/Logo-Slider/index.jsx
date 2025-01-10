@@ -18,7 +18,7 @@ import img11 from "../../assets/images/scallop-ramp 1.png";
 import img14 from "../../assets/images/img14.svg";
 import img13 from "../../assets/images/Group 24.svg";
 import stader from '../../assets/images/sliderlogo/staderlogo.svg'
-import csigma from '../../assets/images/sliderlogo/Csigma.png'
+import csigma from '../../assets/images/sliderlogo/csigma.svg'
 import ethernity from '../../assets/images/sliderlogo/ethernity.svg'
 import bird from '../../assets/images/sliderlogo/bird.svg'
 import farmsent from '../../assets/images/sliderlogo/farmsent.svg'

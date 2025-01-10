@@ -28,13 +28,16 @@ import profileImage from "../../../assets/images/testimonial/testimonial (4).png
 import FeatureSection from "../../Why-us-Feature";
 
 
+import pinkImage from "../../../assets/images/services-img/service3.gif"
+import blueImage from "../../../assets/images/services-img/service2.gif"
+
 import team from "../../../assets/images/services-main/feature-icon/Team-of-Highly-Skilled-Auditors.gif"
 import centric from "../../../assets/images/services-main/feature-icon/Client-Centric-Approach.gif";
 import comp from "../../../assets/images/services-main/feature-icon/Comprehensive-Audit-Process.gif";
 import Post from "../../../assets/images/services-main/feature-icon/Post-Audit-Support.gif";
 import Tailored from "../../../assets/images/services-main/feature-icon/Tailored-Approach.gif";
 import Focus from "../../../assets/images/services-main/feature-icon/TR.gif";
-import Proven from "../../../assets/images/services-main/feature-icon/Post-Audit-Support.gif";
+import Proven from "../../../assets/images/services-main/Blockchain-icon/Proven-Track-Record.gif";
 import Seal from "../../../assets/images/services-main/Penetration/below-six.gif";
 
 
@@ -232,6 +235,22 @@ const faqs = [
   }
 ];
 
+
+// Services
+const services = [
+  {
+    image: pinkImage,
+    title: 'Blockchain  Audit',
+    description: 'A thorough assessment of your blockchain’s security posture, encompassing smart contracts, architecture, and development framework.',
+  },
+  {
+    image: blueImage,
+    title: 'Smart Contract Audit',
+    description: 'An extensive evaluation of your smart contract code for security, verification of business specifications, and adherence to industry standards for code reusability.',
+  },
+];
+// services
+
 const icons = {
   downArrowDesktop: downarrow,
   downArrowMobile: downarrowmobile,
@@ -274,7 +293,7 @@ function Penetration (){
         <FeatureSection title="Why Us?" features={features} />
         {/* <FeatureSection/> */}
         <EngagementModel />
-        <OtherWeb3Services />
+        <OtherWeb3Services services={services} />
 
         <div>
           <FAQ title="FAQs" faqs={faqs} icons={icons} />

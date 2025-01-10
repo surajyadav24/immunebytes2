@@ -516,6 +516,7 @@ width: 100%;
   margin: 0 auto;
 }
 .audit-details {
+  background: url(../../assets/images/portfolio/card-sc-bg-mob.svg) no-repeat center center / contain !important;
   margin: 0 auto;
   min-height: auto;
   width: 88%;
@@ -525,6 +526,14 @@ width: 100%;
 
 h2.portfolio-title.homepage-heading {
   padding: 40px 0px 20px;
+}
+.carousel-root {
+  position: relative;
+  top: 18px;
+}
+.carousel-root .register-btn {
+  font-size: 14px !important;
+  color: #fff !important;
 }
 
 }

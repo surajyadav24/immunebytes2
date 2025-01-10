@@ -9,7 +9,7 @@ import FAQ from "../../FAQ";
 import AuditProcessdummy from "../penetrationTesting/auditprocessdummy";
 import serviceimg3 from "../../../assets/images/services-img/service3.gif";
 
-import pinkImage from "../../../assets/images/services-img/service3.gif"
+import pinkImage from "../../../assets/images/services-img/service2.gif"
 import blueImage from "../../../assets/images/services-img/service1.gif"
 
 
@@ -36,7 +36,7 @@ import comp from "../../../assets/images/services-main/feature-icon/Comprehensiv
 import Post from "../../../assets/images/services-main/feature-icon/Post-Audit-Support.gif";
 import Tailored from "../../../assets/images/services-main/feature-icon/Tailored-Approach.gif";
 import Focus from "../../../assets/images/services-main/feature-icon/TR.gif";
-import Proven from "../../../assets/images/services-main/feature-icon/Post-Audit-Support.gif";
+import Proven from "../../../assets/images/services-main/Blockchain-icon/Proven-Track-Record.gif";
 import Seal from "../../../assets/images/services-main/feature-icon/Cost-Effective Security.gif";
 
 
@@ -241,8 +241,8 @@ const faqs = [
 const services = [
   {
     image: pinkImage,
-    title: 'Blockchain  Audit',
-    description: 'A thorough assessment of your blockchain’s security posture, encompassing smart contracts, architecture, and development framework.',
+    title: 'Smart Contract Audit',
+    description: 'An extensive evaluation of your smart contract code for security, verification of business specifications, and adherence to industry standards for code reusability.',
   },
   {
     image: blueImage,

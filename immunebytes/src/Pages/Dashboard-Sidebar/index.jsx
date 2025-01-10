@@ -70,6 +70,7 @@ function Sidebar() {
 
 
       if (response.data.statusCode === 200) {
+        localStorage.clear();
         localStorage.removeItem('accessToken');
         localStorage.removeItem('user'); // or sessionStorage depending on your implementation
          // or sessionStorage depending on your implementation

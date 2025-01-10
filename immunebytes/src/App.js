@@ -23,7 +23,7 @@ import BlockchainAudit from './components/Services/BlockchainAudit/index.jsx'
 import Defi from './components/Services/Defi';
 // import HeaderComponent from "./components/Main-Header/HeaderComponent.jsx";
 
-
+import { useEffect } from "react";
 import { useAuthContext } from "./Context/AuthContext.jsx";
 import {Navigate} from 'react-router-dom'
 import ThankYouSection from "./components/ThankYou/index.jsx";
@@ -32,8 +32,54 @@ import Error from './components/404Eror/'
 import HeaderComponent from "./components/Main-Header/HeaderComponent.jsx"
 import  Telegram  from "./assets/images/telegram.svg";
 // import MyComponent from "./components/ThankYou/index.jsx";
+import Blog from '../src/Pages/Blog/index.jsx'
+
+
+
+const checkLoginExpiration = () => {
+  const loginTime = localStorage.getItem('loginTime');
+  
+  if (!loginTime) {
+    console.log('User not logged in');
+    return;
+  }; // User not logged in
+
+  const loginDate = new Date(loginTime);
+  const currentDate = new Date();
+  console.log(loginDate,currentDate,"login and current date")
+  // console.log(currentDate.getTime() > loginDate.getTime() +  60 * 1000,"NOT EQUAL")
+  // console.log(currentDate.getTime() > loginDate.getTime() + 24 * 60 * 60 * 1000 ,"EQUAL")
+
+
+  // Check if the current date is past midnight since the login time
+  if (currentDate.getTime() > loginDate.getTime() +24 * 60 * 60 * 1000 ) {
+    // Clear localStorage and log the user out
+    console.log('Session expired. Logging out...');
+    localStorage.clear();
+    
+    alert('Your session has expired. Please log in again.');
+    // Redirect to the login page
+    window.location.href = '/dashboard';
+  }
+};
+
+
+
 
 function App() {
+
+  useEffect(() => {
+    console.log("useEffect initialized");
+    checkLoginExpiration();
+    console.log("its working ")
+    // Optionally, set an interval to check every hour or less
+    const interval = setInterval(checkLoginExpiration, 10000); // Every hour
+    return () => clearInterval(interval);
+  }, []);
+
+
+
+
   const {authUser }= useAuthContext()
   return (
     <>
@@ -85,6 +131,14 @@ function App() {
           element={
             <Layout2>
             <Penetration/>
+            </Layout2>
+          }
+        />
+           <Route
+          path="/blog"
+          element={
+            <Layout2>
+            <Blog/>
             </Layout2>
           }
         />

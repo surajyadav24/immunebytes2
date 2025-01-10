@@ -48,8 +48,18 @@
   
   .thank-btn button{
     font-size: 12px;
+<<<<<<< HEAD
+/* <<<<<<< HEAD */
+    padding:10px 20px !important;
+    font-family: "RobotoMono-Regular";
+/* ======= */
     padding:15px 20px !important;
     font-family: "Arvo-Regular";
+/* >>>>>>> 1a766f0c86266d2d75a94a780308b9ff5d684c3a */
+=======
+    padding:15px 20px !important;
+    font-family: "Arvo-Regular";
+>>>>>>> c1963605e1ec33f5505b8cc4dc6c04ca319937e0
     font-weight: 300 !important;
   }
 

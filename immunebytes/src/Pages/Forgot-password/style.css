@@ -66,7 +66,7 @@
   .input {
 
     width: 100%;
-    padding: 10px;
+    padding: 10px !important;
     border-radius: 10px !important;
     border: 1px solid #333;
     background-color: #333;
@@ -161,3 +161,86 @@
   position: relative;
   overflow: visible !important; /* Ensure popup is not clipped */
 }
+
+
+@media (max-width:769px){
+  .form-container{
+    background: none !important;
+  }
+
+  
+}
+
+@media (max-width:426px){
+  .form-container{
+    width: 1000px;
+    font-family: "Arvo-Bold";
+    margin: 0 auto;
+    background: none !important;
+  }
+  .forgot-password {
+    display: inline;
+    text-align: right !important;
+    font-size: 0.7rem !important;
+    color: #F9116C !important;
+    margin-top: 17px !important;
+    text-decoration: none;
+    margin-left: 249px !important;}
+    .input{
+      font-size: 14px !important;
+    }
+  
+}
+
+@media (max-width:376px){
+ 
+  .forgot-password {
+    display: inline;
+    text-align: right !important;
+    font-size: 0.6rem !important;
+    color: #F9116C !important;
+    margin-top: 17px !important;
+    text-decoration: none;
+    margin-left: 217px !important;}
+  
+}
+
+@media (max-width:321px){
+ 
+  .forgot-password {
+    display: inline;
+    text-align: right !important;
+    font-size: 0.5rem !important;
+    color: #F9116C !important;
+    margin-top: 17px !important;
+    text-decoration: none;
+    margin-left: 176px !important;}
+    
+  .input {
+
+    width: 100%;
+    padding: 6px !important;
+    border-radius: 10px !important;
+    border: 1px solid #333;
+    background-color: #333;
+    color: #fff;
+  }
+  .title {
+    text-align: center;
+    font-size: 1.2rem !important;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .subtitle {
+    /* text-align: center; */
+    font-size: 0.7rem !important;
+    /* color: #aaa; */
+    /* margin-bottom: 20px; */
+  }
+  .input{
+    font-size: 12px !important;
+  }
+}
+
+

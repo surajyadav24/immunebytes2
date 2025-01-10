@@ -108,7 +108,7 @@ const errorStatusClasses = {
             <strong>Audit Date: </strong>{formatAuditDate(auditDate)}
           </div>
           {/* Month selector */}
-          <div className="month-selector">
+          {/* <div className="month-selector">
             <label htmlFor="month-select">Select Month:</label>
             <select id="month-select" value={selectedMonth} onChange={handleMonthChange}>
               {Object.keys(auditData || {}).map((month) => (
@@ -117,7 +117,7 @@ const errorStatusClasses = {
                 </option>
               ))}
             </select>
-          </div>
+          </div> */}
           {/* Error entries rendering */}
           {errorEntries.length > 0 ? (
             <div className="error-list">

@@ -60,7 +60,7 @@
     color: #aaa;
   }
   
-  .input {
+  /* .input {
 
     width: 100%;
     padding: 10px;
@@ -68,17 +68,17 @@
     border: 1px solid #333;
     background-color: #333;
     color: #fff;
-  }
+  } */
   
   /* Forgot password */
-  .forgot-password {
+  /* .forgot-password {
     display: block;
     text-align: right;
     font-size: 0.8rem;
     color: #888;
     margin-top: 5px;
     text-decoration: none;
-  }
+  } */
   
   /* Button */
   .button {

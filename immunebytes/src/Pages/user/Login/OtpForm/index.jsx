@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect } from 'react';
 import Logo from '../../../../assets/images/logos/Logo.svg'; // Adjust this import path to your project structure
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -43,6 +43,10 @@ function OtpForm() { // onOtpChange is now passed as a prop
     }
   };
 
+  // import { useEffect } from 'react';
+
+
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setError(null);  // Reset the error message before each request
@@ -58,6 +62,7 @@ function OtpForm() { // onOtpChange is now passed as a prop
       if (response.data.statusCode === 200) {
         localStorage.setItem("accessToken",response.data.data.accessToken)
         localStorage.setItem("user",JSON.stringify(response.data.data.user))
+        localStorage.setItem('loginTime', new Date().toISOString());
            
         // setAuthUser(response.data.data)
         console.log(JSON.stringify(response.data.data.user),"JSON.stringify(response.data.data.user)")

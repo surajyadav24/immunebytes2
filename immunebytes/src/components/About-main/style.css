@@ -12,20 +12,24 @@
     /* min-width: 60vw; */
     min-height: 80vh;
 }
-.About-main{
-    padding: 2rem;
-}
+
 .main{
     text-align: center;
 }
-.main h2{
-    font-size: 50px;
-    padding: 2rem;
+.main h2 {
+  font-size: 54px;
+  padding: 40px 210px;
 }
 .main span{
     color:#F9116C  
 }
+.About-main .why-choose-us {
+  padding: 80px 0px 40px;
+}
 
+.about-vision .section-heading {
+  padding: 80px 0px 40px;
+}
 
 /* Large screens (desktop and large tablets) */
 @media screen and (max-width: 1200px) {
@@ -69,21 +73,42 @@
     }
   
     .main p {
-      font-size: 10px; /* Smaller font for phones */
-      /* line-height: 1.4; */
-      padding: 10px 1px 1px 10px;
-    }
+      font-size: 18px;
+      text-align: left;
+      text-align: left;
+      padding: 0px;
+      padding-top: 10px;
+  }
   
     .Image {
       padding: 1rem;
       min-height: 50vh; /* Further reduce height for smaller devices */
     }
     .main h2{
-      font-size: 44px;
-      padding: 2rem;
+      font-size: 32px;
+      padding: 0rem;
+      text-align: left;
   }
 
   .main p {
     font-size: 18px;
   }
+
+  .About-main .why-choose-us {
+    padding: 40px 0px 20px;
+}
+
+.about-vision .section-heading {
+  padding: 40px 0px 20px;
+  margin: 0px;
+}
+.mobile-version {
+  margin-top: 0px;
+  display: block;
+}
+.vision-item {
+  margin-top: 0px;
+  padding: 1rem;
+}
+
   }

@@ -1,6 +1,9 @@
 .about-map{
-    margin-top: 5rem;
+ padding-top: 60px;
     /* overflow-x: hidden; */
+}
+.about-map .sub-heading-section {
+  padding-top: 40px;
 }
 
 .about-map h2{
@@ -16,10 +19,10 @@
 
 .map {
     position: relative;
-    padding: 3.5rem;
     display: inline-block;
     width: 100vw;
   }
+
   
   .map img,
   .map .custom-svg {
@@ -126,15 +129,16 @@
     line-height: 1.5;
     color: #555;
   }
+  .about-map h2 {
+    font-size: 40px; /* Slightly smaller heading */
+  }
   
   /* Add a subtle border for the tooltip */
   .tooltip {
     border: 1px solid #ddd;
   }
   @media screen and (max-width: 1200px) {
-    .about-map h2 {
-      font-size: 1.8rem; /* Slightly smaller heading */
-    }
+
   
     .tooltip {
       width: 14rem; /* Make the tooltip smaller */

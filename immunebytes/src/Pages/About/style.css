@@ -38,9 +38,9 @@ button.btn.btn-primary {
     font-weight: 400;
 }
 
-.about-process .audit-process-title{
+.about-process .audit-process-title {
     font-size: 42px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 }
 
 .about-process .sub-heading-section{
@@ -52,5 +52,44 @@ button.btn.btn-primary {
         display: flex;
         flex-direction: column;
         gap: 20px; /* Adjust the spacing between items */
+    }
+
+    .about-process .audit-process-title {
+        font-size: 32px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 40px 0px 20px;
+    }
+    .about-success .section-heading {
+        padding-top: 0px;
+        padding-bottom: 20px;
+    }
+
+    .about-card .card {
+        min-width: 44%;
+        max-width: 100%;
+        width: 100%;
+        margin-top: 2rem;
+    }
+    .about-card {
+        /* padding: 1rem; */
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .about-card .card .content {
+        padding: 0px !important;
+        margin-top: 1.5rem;
+        text-align: center;
+    }
+    .about-card h3 {
+        font-size: 18px;
+    }
+    .about-card .card p {
+        font-size: 14px !important;
+        font-family: "Arvo-Regular";
+        font-weight: 400;
     }
 }

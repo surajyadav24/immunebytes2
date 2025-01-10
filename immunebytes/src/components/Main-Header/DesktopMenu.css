@@ -20,6 +20,7 @@
 .submenuitem p{
 padding-left: 0px;
 font-family: "Arvo-Regular";
+font-size: 10px !important;
 }
 .li-wrapper a p{
   font-family: "Arvo-Regular";
@@ -120,6 +121,13 @@ header{
 
 .sub-menu  li {
   font-family: Arvo-Regular !important;
+}
+
+@media (max-width:768px){
+  .desktop-menu{
+    display: none;
+  }
+
 }
 
 @media (max-width: 440px) {

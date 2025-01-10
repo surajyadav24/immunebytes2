@@ -194,18 +194,60 @@ text-transform: uppercase;
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.telegram-message-box{
+  max-width: 300px;
+  position: fixed;
+  bottom: 20px;
+  right: 79px;
+  background-color: rgb(241, 241, 241);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px;
+  z-index: 1000;
+}
+.telegram-message-box p{
+  font-size: 12px !important;
+}
 
+
+@keyframes revealAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(50px); /* Start from the right */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Move to the normal position */
+  }
+}
+
+.reveal {
+  opacity: 0; /* Hidden initially */
+  animation: revealAnimation 1s ease-out forwards;
+}
 
 button.telegram-fixed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
-  bottom: 14px;
-  right: 10px;  
+  bottom: 5px;
+  right: 79px;
   border-radius: 50%;
   padding: 10px;
   height: 50px;
   border: 1px solid #fff;
   width: 50px;
 }
+
+button.telegram-fixed img {
+  margin: 0 auto;
+  max-width: 30px;
+  max-height: 30px;
+  position: relative;
+  left: -2px;
+}
+
 button.telegram-fixed:hover{
   box-shadow: 1px 1px 20px #fff;
 }
@@ -214,6 +256,9 @@ button.telegram-fixed:hover{
   padding-bottom: 0px;
 }
 
+button.telegram-fixed {
+  border: 2px solid #2aabee ! IMPORTANT;
+}
 .popup-form h3 {
   margin-top: 0px;
   text-align: center;
@@ -253,6 +298,16 @@ img.btn-icon {
 
 .mobile-menu{
   display: none;
+}
+@media (max-width:768px){
+  .desktop-menu {
+    display: none !important;
+}
+.lg\:hidden.xl\:hidden.mobile-menu {
+  display: block !important;
+  background-color: #000;
+}
+
 }
 
 @media (max-width:768px) {

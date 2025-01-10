@@ -8,7 +8,8 @@ function MyComponent() {
     navigate("/");
   };
   return (
-    <div className="container">
+<div className="thankyou-section">
+<div className="container">
       <h1 className="heading-thank">
         Thank <span className="highlight-you">You!</span>
       </h1>
@@ -24,6 +25,7 @@ Stay Ahead of the Security Curve.
 </div>
 
     </div>
+</div>
   );
 }
 

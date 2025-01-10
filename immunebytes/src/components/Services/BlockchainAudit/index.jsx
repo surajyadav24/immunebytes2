@@ -266,8 +266,8 @@ function BlockchainAudit() {
     <>
   <div className="service-hero">
   <HeroSection2
-        title="Blockchain"
-        highlight="Audit"
+        title="Blockchain Security"
+        highlight=" Audit"
         description="Secure your blockchain with us through seamless audits and trusted solutions to protect your decentralized assets from the very start."
         buttonText="Book Consultation"
         imageSrc={serviceimg3}

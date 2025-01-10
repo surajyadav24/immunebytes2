@@ -124,7 +124,7 @@ function App() {
           <button style={styles.closeButton} onClick={handleClose}>&times;</button>
         </div>
       )}
-      <a href="https://t.me/immunebytes" target="_blank" rel="noopener noreferrer">
+      <a href="https://t.me/aabhas_sood" target="_blank" rel="noopener noreferrer">
         <button className="telegram-fixed" style={styles.telegramButton}>
           <img src={Telegram} alt="Telegram" style={styles.telegramIcon} />
         </button>

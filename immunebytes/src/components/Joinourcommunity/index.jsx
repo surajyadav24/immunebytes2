@@ -15,7 +15,7 @@ const Community = () => {
             </p>
             <div className="btn-section">
               <div className="telegram-btn">
-              <a href="https://t.me/immunebytes">
+              <a href="https://t.me/aabhas_sood">
                 <button className="telegram">
                   <img src={twitter} alt="" />
                   Join Telegram

@@ -40,7 +40,7 @@ const Formpopup = ({ auditName = "", buttonClassName = "", arrowicon = "" }) => 
           projectwebsite: "",
           githublink: "",
           services: "",
-          timeline: "",
+          auditdeadline: "",
         });
         navigate("/thankyoupage")
       } else {
@@ -155,9 +155,10 @@ const Formpopup = ({ auditName = "", buttonClassName = "", arrowicon = "" }) => 
                   <input
                     type="date"
                     id="timeline"
-                    value={formData.timeline}
+                    value={formData.auditdeadline}
                     onChange={handleChange}
                     required
+                    min={new Date().toISOString().split("T")[0]} // Prevent past dates
                   />
                 </div>
               </div>

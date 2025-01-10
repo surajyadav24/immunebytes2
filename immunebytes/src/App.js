@@ -33,6 +33,8 @@ import HeaderComponent from "./components/Main-Header/HeaderComponent.jsx"
 import  Telegram  from "./assets/images/telegram.svg";
 // import MyComponent from "./components/ThankYou/index.jsx";
 import Blog from '../src/Pages/Blog/index.jsx'
+import BlogReadMore from '../src/Pages/BlogReadMore/index.jsx'
+import BlogSection from '../src/components/BlogPost/index.jsx'
 
 
 
@@ -134,11 +136,29 @@ function App() {
             </Layout2>
           }
         />
+        {/* BlogSection */}
+        {/* blogreadmore */}
            <Route
           path="/blog"
           element={
             <Layout2>
             <Blog/>
+            </Layout2>
+          }
+        />
+            <Route
+          path="/BlogSection"
+          element={
+            <Layout2>
+            <BlogSection/>
+            </Layout2>
+          }
+        />
+             <Route
+          path="/post/:postId"
+          element={
+            <Layout2>
+            <BlogReadMore/>
             </Layout2>
           }
         />

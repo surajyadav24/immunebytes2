@@ -127,6 +127,136 @@ header{
   .desktop-menu{
     display: none;
   }
+  .fixed.left-0.right-0.top-16.overflow-y-auto.h-full.text-white.p-6.pb-20.mobile-fixed-bg {
+    background: #000;
+}
+.mob-menu-ul li {
+  padding: 0px !important;
+  min-width: 80px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.mob-menu-ul li a {
+padding: 5px;
+max-width: 94px;
+min-width: 71px;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(8.86933135986328px);
+  border: 1px solid #ffffffa6;
+  gap: 5px;
+  font-size: 15px;
+}
+.mob-menu-ul img {
+  min-width: 34px;
+  max-width: 34px;
+}
+
+.mobilemenu-ul {
+  margin: 0px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0px;
+  -webkit-backdrop-filter: blur(67.86933135986328px);
+  backdrop-filter: blur(67.86933135986328px);
+  border: 1px solid #ffffffa6;
+  border-radius: 10px;
+  gap: 10px 10px;
+  padding: 0px 11px;
+  padding-bottom: 10px;
+  width: 100vw;
+}
+
+#timeline {
+  width: 100%;
+  color: #fff !important;
+  width: 96%;
+}
+
+.mobilemenu-ul p {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.mob-menu-ul span,.main-mobile-wrapper span {
+  font-family: Arame-Bold;
+}
+.register-btn {
+  font-size: 13px;
+  color: #fff !important;
+}
+.mobile-menu button svg path {
+  fill: #fff !important;
+  color: #fff;
+}
+.mobile-menu button svg line {
+  fill: #fff !important;
+  color: #fff;
+}
+
+.mobile-fixed-bg {
+  background: #000;
+}
+.mob-menu-ul li span>a {
+  width: 100%;
+  min-width: 270px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-left: 0px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  font-size: 15px;
+}
+.desktop-navigation{
+display: none;
+}
+.desktop-btn-request.md\:hidden.sm\:hidden {
+display: none;
+}
+.popup-container {
+display: flex;
+justify-content: flex-start;
+}
+.mob-menu-ul li {
+padding: 0px !important;
+min-width: 67px;
+}
+.mob-menu-ul li a {
+font-size: 15px;
+color: #fff !important;
+}
+.mob-menu-ul li a {
+min-width: 63px;
+font-size: 11px;
+color: #fff;
+max-width: 71px;
+min-width: 71px;
+min-width: 61px;
+}
+
+.mob-menu-ul img {
+min-width: 34px;
+max-width: 34px;
+}
+ul.ml-5.mob-menu-ul {
+  margin-left: 0px;
+}
+
+.mobilemenu-ul p {
+  font-size: 12px !important;
+}
+
+.mob-menu-ul span, .main-mobile-wrapper span {
+  padding-left: 0px !important;
+  font-family: Arame-Bold;
+}
 
 }
 

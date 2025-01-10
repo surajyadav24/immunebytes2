@@ -164,6 +164,7 @@ const logIn = asyncHandler(async (req, res) => {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
   };
+ 
 
   return res
     .status(200)

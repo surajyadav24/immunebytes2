@@ -163,7 +163,7 @@ const PlatformManagement = ({ headname, platformsPerPage = 5 }) => {
       </div>
       <div className="addplatform flex flex-col items-center min-h-screen text-white p-6">
         <div className="platform-widget w-full max-w-3xl bg-gray-800 rounded-lg p-4 shadow-lg mb-6">
-          <h3 className="text-xl font-semibold mb-4">Add Platform</h3>
+          <h3 className="text-xl font-semibold mb-4 add-platform ">Add Platform</h3>
           <form onSubmit={handlesubmit} className="flex items-center gap-4">
             <input
              ref={inputRef}

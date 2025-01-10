@@ -23,8 +23,8 @@ const VideoTestimonial = ({ title, description, testimonials }) => {
               <div className="video-placeholder"></div>
             )}
             <h3>{testimonial.name}</h3>
-            <p>{testimonial.position}</p>
             <p>{testimonial.company}</p>
+            <p>{testimonial.position}</p>
           </div>
         ))}
       </div>

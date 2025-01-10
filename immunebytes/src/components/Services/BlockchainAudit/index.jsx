@@ -9,6 +9,10 @@ import FAQ from "../../FAQ";
 import AuditProcessdummy from "../penetrationTesting/auditprocessdummy";
 import serviceimg3 from "../../../assets/images/services-img/service3.gif";
 
+import pinkImage from "../../../assets/images/services-img/service2.gif"
+import blueImage from "../../../assets/images/services-img/service1.gif"
+
+
 import icon1 from "../../../assets/images/services-main/block-chain-first/Layer-by-Layer-Defense.gif";
 import icon2 from "../../../assets/images/services-main/block-chain-first/Data-Integrity-Assurance.gif";
 import icon3 from "../../../assets/images/services-main/block-chain-first/Protocol-Stability-and-Consensus-Security.gif";
@@ -32,7 +36,7 @@ import comp from "../../../assets/images/services-main/feature-icon/Comprehensiv
 import Post from "../../../assets/images/services-main/feature-icon/Post-Audit-Support.gif";
 import Tailored from "../../../assets/images/services-main/feature-icon/Tailored-Approach.gif";
 import Focus from "../../../assets/images/services-main/feature-icon/TR.gif";
-import Proven from "../../../assets/images/services-main/feature-icon/Post-Audit-Support.gif";
+import Proven from "../../../assets/images/services-main/Blockchain-icon/Proven-Track-Record.gif";
 import Seal from "../../../assets/images/services-main/feature-icon/Cost-Effective Security.gif";
 
 
@@ -231,6 +235,25 @@ const faqs = [
   }
 ];
 
+
+// services
+
+const services = [
+  {
+    image: pinkImage,
+    title: 'Smart Contract Audit',
+    description: 'An extensive evaluation of your smart contract code for security, verification of business specifications, and adherence to industry standards for code reusability.',
+  },
+  {
+    image: blueImage,
+    title: 'Penetration Testing',
+    description: 'In light of increasing traditional security breaches impacting Web3, ImmuneBytes offers penetration testing for decentralised applications.',
+  },
+];
+
+// services
+
+
 const icons = {
   downArrowDesktop: downarrow,
   downArrowMobile: downarrowmobile,
@@ -274,7 +297,7 @@ function BlockchainAudit() {
         <FeatureSection title="Why Us?" features={features} />
         {/* <FeatureSection/> */}
         <EngagementModel />
-        <OtherWeb3Services />
+        <OtherWeb3Services services={services} />
 
         <div>
           <FAQ title="FAQs" faqs={faqs} icons={icons} />

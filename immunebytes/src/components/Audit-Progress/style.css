@@ -5,6 +5,7 @@
   color: #fff;
   text-align: center;
   padding-top: 100px;
+  padding-bottom: 0px;
   }
   .progress-bar{
     color: #fff;
@@ -59,7 +60,7 @@
   .audit-details p {
     font-size: 16px;
     color: #ccc;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
   
   .contact-btn {
@@ -108,7 +109,7 @@
   display: flex;
   min-height: 180px;
   width: 100%;
-  padding: 0px 21px;
+  padding: 0px 9px;
   flex-direction: column;
 }
 .progress-bar {
@@ -149,7 +150,7 @@ left: 16px;
   max-width: 100%;
 }
 .audit-section-title {
-  font-size: 22px !important;
+  font-size: 32px !important;
   text-align: left;
 }
 .audit-progress-dashboard{

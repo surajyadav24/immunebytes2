@@ -3,6 +3,8 @@ import axios from 'axios';
 import ProgressBar from '../Progressbar';
 import './style.css'; // Custom styles for the section
 import AuditProgress from '../Audit-Progress';
+import Formpopup from '../Formpopup'
+import AuditCarousel  from '../Audit-slider';
 const AuditSection = () => {
   const [percentages, setPercentages] = useState({
     critical: 0,
@@ -36,16 +38,23 @@ const AuditSection = () => {
           <span className="highlight">EXPLORE</span> OUR AUDITS
         </h2>
         <p className="audit-section-description">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+        Discover our portfolio of meticulously conducted security audits, where each audit reflects our commitment to enhancing blockchain security and reliability. Browse through to see how we’ve helped clients build trust and safeguard their Web3 solutions.
         </p>
 
         <div className="audit-content">
-          <div className="audit-details">
-            <h3>Smart Contract Audit</h3>
+          <div className="audit-details"> 
+
+          <AuditCarousel />
+            
+{/* <div className="audit-slider">
+<h3>Smart Contract Audit</h3>
             <p>
               An extensive evaluation of your smart contract code’s security, business functionality, and adherence to industry standards.
             </p>
-            <button className="contact-btn">Contact us</button>
+           
+            <Formpopup auditName="Contact Us" buttonClassName="register-btn" />
+
+</div> */}
           </div>
 
           <div className="audit-progress">

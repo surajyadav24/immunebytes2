@@ -10,8 +10,8 @@ const StatsSection = () => {
           <h2>205+</h2>
           <p>Project Audited</p>
         </div>
-        <div className="col-lg-6 col-md-4 col-sm-12 stat-card red-border">
-          <h2>5.2Bn</h2>
+        <div className="col-lg-6 col-md-4 col-sm-12 stat-card red-border ">
+          <h2>$5.2Bn</h2>
           <p>Onchain Value Secured</p>
         </div>
         <div className="col-lg-3 col-md-4 col-sm-12 stat-card green-border">

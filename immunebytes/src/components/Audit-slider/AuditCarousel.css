@@ -1,0 +1,19 @@
+.audit-carousel .popup-container{
+display: flex;
+justify-content: flex-start;
+}
+@media (max-width:445px){
+
+
+
+    .audit-carousel .popup-container {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        top: -33px;
+    }
+    .carousel .slider-wrapper {
+        padding-top: 25px;
+    }
+
+}

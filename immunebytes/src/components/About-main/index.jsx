@@ -15,7 +15,8 @@ const Main = () => {
 
   return (
     <>
-    <div className='About-main'>
+<div className="container">
+<div className='About-main'>
     <div className='main'>
      <h2>We're here to <span className='Red'>guarantee your success</span></h2>
       <p>A blockchain security audit firm with the goal of making the Web3 space more <p>secure to build through innovative and effective solutions.</p></p></div>
@@ -25,9 +26,10 @@ const Main = () => {
   <img src={main} alt="" />
 </div> */}
 
-<WhyChooseUsSec cards={cardsData} />
+<WhyChooseUsSec className=" pt-8 pb-4" cards={cardsData} />
 
 
+</div>
 </div>
 </div>
     </>

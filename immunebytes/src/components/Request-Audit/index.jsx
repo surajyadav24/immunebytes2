@@ -1,6 +1,9 @@
 import React from "react";
 import "./style.css"; 
 import PrimaryBtn from '../Primarybutton'
+import Formpopup from "../Formpopup";
+import iconarrow from '../../assets/images/arrowicon.svg'
+
 function RequestAudit({buttonText , text, spantext}) {
   return (
 <>
@@ -13,7 +16,11 @@ function RequestAudit({buttonText , text, spantext}) {
   </p>
 </div>
 <div className="button-container">
-<PrimaryBtn text={buttonText} />
+<Formpopup
+          auditName="Request Audit"
+          buttonClassName="btn btn-primary"
+          arrowicon={iconarrow} // Pass the imported icon
+        />
 </div>
 </div>
 </>

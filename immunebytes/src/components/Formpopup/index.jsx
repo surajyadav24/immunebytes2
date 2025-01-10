@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "./style.css"; // Create this CSS file
 import close from "../../assets/images/portfolio/close-btn.svg";
 import axios from "axios";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
-const PopupForm = () => {
-  const navigate = useNavigate()
+
+const Formpopup = ({ auditName = "", buttonClassName = "", arrowicon = "" }) => {
+  const navigate = useNavigate();
   const [showPopup, setShowPopup] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -29,10 +30,6 @@ const PopupForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post("/api/v1/users/requestquote", formData);
-      console.log("response :: ",response)
-      const user = response.data.data
-      // setFormData(user)
-
       if (response.status === 200) {
         setMessage("Your request has been submitted successfully!");
         // setMessage("Your request has been submitted successfully!");
@@ -58,14 +55,18 @@ const PopupForm = () => {
 
   return (
     <div className="popup-container">
-      <button className="open-popup-btn btn register-btn text-white" onClick={togglePopup}>
-        Request Audit
+      <button
+        className={`open-popup-btn btn text-white ${buttonClassName}`}
+        onClick={togglePopup}
+      >
+        {auditName}
+        {arrowicon && <img src={arrowicon} alt="Button Icon" className="btn-icon" />}
       </button>
 
       {showPopup && (
         <div className="popup-overlay">
           <div className="popup-form">
-            <h2>Request a Quote</h2>
+            <h3>Request Audit</h3>
             {message && <p className="message">{message}</p>}
             <form onSubmit={handleSubmit}>
               <div className="form-group">
@@ -176,4 +177,4 @@ const PopupForm = () => {
   );
 };
 
-export default PopupForm;
+export default Formpopup;

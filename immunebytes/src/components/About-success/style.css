@@ -16,7 +16,7 @@
     align-items: center;
     gap: 1rem;
     justify-content: center;
-    padding: 3rem 0rem;
+    padding: 1rem 0rem;
     max-width: 100%;
 }
 
@@ -56,6 +56,12 @@
 }
 .social-links-team img{
     max-width: 25px;
+}
+
+.about-card .card p {
+    font-size: 16px !important;
+    font-family: Arvo;
+    font-weight: 700;
 }
 /* Media Query for Tablet Screens */
 @media screen and (max-width: 768px) {

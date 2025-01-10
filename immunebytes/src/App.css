@@ -389,6 +389,9 @@ h1.text-center.heading-h1.testimonial-heading.homepage-heading {
 .case-study-wrapper h1 {
   padding-bottom: 40px !important;
 }
+h2.portfolio-title.homepage-heading {
+  padding: 25px 0px 28px;
+}
 
 }
 @media (max-width:445px) {

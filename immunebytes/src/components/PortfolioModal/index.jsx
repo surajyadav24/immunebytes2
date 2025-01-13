@@ -42,6 +42,11 @@ const PortfolioModal = ({ selectedItemId, closeModal }) => {
   // If portfolio data is loaded, extract the error entries
   const { errorEntries = [], auditData, name, image, platform, auditDate, companyDescription, pdf } = portfolioData || {};
   console.log(pdf,"pdf in portfolio modal")
+  // errorEntries
+  console.log(errorEntries,"errorEntries")
+  console.log(errorEntries?.errorStatus,"errorEntries?.errorstatus")
+  console.log(auditData,"auditdata")
+  console.log(portfolioData,"portfoliodata")
 
 
   const formatAuditDate = (date) => {
@@ -68,18 +73,50 @@ const PortfolioModal = ({ selectedItemId, closeModal }) => {
   }
   // Define mappings
 const errorTypeClasses = {
-  validation: 'validation',
-  server: 'server',
-  authentication: 'authentication',
-  network: 'network',
+  High: 'High',
+  Low: 'Low',
+  Critical: 'Critical',
+  Medium: 'Medium',
+  Informational:'Informational'
 };
 
 const errorStatusClasses = {
-  active: 'active',
-  resolve: 'resolve',
-  pending: 'pending',
-  close: 'close',
+  Fixed: 'Fixed',
+  Open: 'Open',
+  Acknowledged: 'Acknowledged',
+  Redacted: 'Redacted',
 };
+
+// Add this function to count the error statuses
+const countErrorStatuses = (errorEntries) => {
+  const counts = { Fixed: 0, Redacted: 0, Open: 0, Acknowledged: 0 };
+
+  // Loop through the error entries and count each status
+  errorEntries.forEach((entry) => {
+    const status = entry.errorStatus ? entry.errorStatus.trim().toLowerCase() : ""; // Normalize status to lowercase
+    console.log(status, "status");
+
+    // Normalize both status and counts keys (e.g. 'fixed' -> 'Fixed')
+    const formattedStatus = status.charAt(0).toUpperCase() + status.slice(1); // Ensure proper casing for comparison
+
+    // Check if the status is valid and exists in counts
+    if (counts[formattedStatus] !== undefined) {
+      counts[formattedStatus]++;
+    } else {
+      console.log("no counts");
+      console.log(formattedStatus, "formattedStatus");
+      console.log(counts[formattedStatus], "counts[formattedStatus]");
+    }
+  });
+
+  console.log("Final counts:", counts); // Log the final counts object
+  return counts;
+};
+
+
+// In the return statement of your component:
+const errorCounts = countErrorStatuses(errorEntries);
+console.log(errorCounts,"errorCounts")
 
   return (
     <div className="modal-overlay">
@@ -95,7 +132,7 @@ const errorStatusClasses = {
             <div className="company-name">{name}</div>
             <div className="platform-name">{platform}</div>
             {/* Add the DoughnutChart based on audit data */}
-            <DoughnutChart data={auditData?.progress || "hey"} />
+            <DoughnutChart data={errorCounts || "hey"} />
             <div className="developer-response">Developer Response</div>
           </div>
         </div>                    
@@ -122,15 +159,15 @@ const errorStatusClasses = {
           {errorEntries.length > 0 ? (
             <div className="error-list">
               {errorEntries.map((error, index) => {
-                  const errorTypeClass = errorTypeClasses[error.errorType.toLowerCase()] || 'unknown';
-                  const errorStatusClass = errorStatusClasses[error.errorStatus.toLowerCase()] || 'unknown';
+                  // const errorTypeClass = errorTypeClasses[error.errorType.toLowerCase()] || 'unknown';
+                  // const errorStatusClass = errorStatusClasses[error.errorStatus.toLowerCase()] || 'unknown';
                   return ( // Add a return here
                     <div key={index} className="error-row">
-                      <div className={`severity ${errorTypeClass}`}>
+                      <div className={`severity ${errorTypeClasses[error.errorType]}`}>
                         {error.errorType}
                       </div>
                       <div className="error-msg">{error.errorDescription}</div>
-                      <div className={`status ${errorStatusClass}`}>
+                      <div className={`status ${errorStatusClasses[error.errorStatus]}`}>
                         {error.errorStatus}
                       </div>
                     </div>
@@ -144,7 +181,7 @@ const errorStatusClasses = {
             <button className="request-btn" aria-label="Request Audit">
               Request Audit
             </button>
-            {pdf ? (
+            {(pdf !== "null") ? (
               <a
                 href={pdf || "#" }
                 className="download-btn"
@@ -155,7 +192,7 @@ const errorStatusClasses = {
               </a>
             ) : (
               <button className="download-btn" aria-label="No Report Available" disabled>
-                Download Report
+                No Report Available
               </button>
             )}
           </div>

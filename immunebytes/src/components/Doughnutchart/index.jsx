@@ -2,17 +2,24 @@ import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto'; // Import Chart.js
 
 const DoughnutChart = ({ data }) => {
-const chartRef = useRef(null);
+  const chartRef = useRef(null);
 
   useEffect(() => {
+    if (!data) return; // Ensure data is available
+
     const chart = new Chart(chartRef.current, {
       type: 'doughnut',
       data: {
-        labels: ['Final', 'Resolved', 'Open', 'Acknowledged'],
+        labels: ['Fixed', 'Redacted', 'Open', 'Acknowledged'],
         datasets: [
           {
-            data: [data.final, data.resolved, data.open, data.acknowledged], // Data passed as props
-            backgroundColor: ['#F9116C', '#ffc107', '#17a2b8', '#28a745'],   // Segment colors
+            data: [
+              data.Fixed || 0, 
+              data.Redacted || 0, 
+              data.Open || 0, 
+              data.Acknowledged || 0
+            ], // Data passed as props
+            backgroundColor: ['#008A1E', '#800080', '#980000', '#FF5A45'], // Segment colors
             hoverOffset: 4
           }
         ]
@@ -24,7 +31,7 @@ const chartRef = useRef(null);
           legend: {
             position: 'bottom', // Position of legend
             labels: {
-              color: '#fff'      // Change legend text color
+              color: '#fff' // Change legend text color
             }
           }
         }
@@ -43,5 +50,6 @@ const chartRef = useRef(null);
     </div>
   );
 };
+
 
 export default DoughnutChart;

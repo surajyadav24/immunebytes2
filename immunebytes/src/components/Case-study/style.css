@@ -194,8 +194,10 @@ border: none;
 .card-button{
   padding: 4px 4px;
 }
-.card-description{
+.card-description {
+  font-size: 14px !important;
   font-size: 10px;
+  line-height: 15px;
 }
 .container {
   display: flex;
@@ -285,4 +287,11 @@ footer .container-fluid {
 }
 
 
+}
+@media (min-width: 320px) and (max-width: 390px) {
+  .case-study-wrapper .case-study-card {
+    padding: 21px 31px !important;
+    max-height: 186px !important;
+    min-height: 184px !important;
+  }
 }

@@ -37,7 +37,9 @@
   .mobile-arrow {
     display: none;
   }
-  
+  .answer.bg-gray-900.text-gray-300.px-4.py-3 {
+    background: #161616;
+}
   /* Mobile: Show mobile arrow and hide desktop arrow */
   @media (max-width: 768px) {
      
@@ -81,5 +83,6 @@
         font-family: 'Arvo-Regular';
         padding-top: 2px !important;
     }
+    
   }
   

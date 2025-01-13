@@ -92,4 +92,13 @@ button.btn.btn-primary {
         font-family: "Arvo-Regular";
         font-weight: 400;
     }
+    .about-process .audit-process-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px 46px;
+    }
+    td {
+        font-family: 'Arvo-Regular';
+        font-size: 14px;
+    }
 }

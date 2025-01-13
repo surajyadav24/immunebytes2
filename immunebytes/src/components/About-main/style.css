@@ -63,15 +63,30 @@
       padding: 2rem;
       min-height: 60vh; /* Reduce height for smaller screens */
     }
+
+    .About-main .why-choose-us {
+      padding: 20px 0px 20px;
+  }
+  .about-vision .section-heading {
+    padding: 40px 0px 20px;
+}
+table tr td:nth-child(1) {
+  font-size: 14px;
+  width: 25%;
+}
   }
   
   /* Small screens (phones) */
   @media screen and (max-width: 480px) {
     .main h2 {
-      font-size: 1.6rem; /* Even smaller for phones */
+      font-size: 40px; /* Even smaller for phones */
       padding: 1rem;
     }
-  
+    .sub-heading-section {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 22.97px;
+    }
     .main p {
       font-size: 18px;
       text-align: left;

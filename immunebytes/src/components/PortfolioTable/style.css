@@ -415,6 +415,7 @@ max-width: 70%;
 }
 .audit-content .audit-progress {
   max-width: 95% !important;
+  width: 95% !important;
   margin: 0 auto;
 }
 }

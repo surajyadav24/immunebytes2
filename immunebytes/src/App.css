@@ -401,6 +401,11 @@ p {
   font-size: 16px !important;
   font-weight: 400;
 }
+.section-heading {
+  font-size: 32px !important;
+  color: #F9116C;
+  padding: 40px 0px 20px;
+}
 
 }
 @media (max-width:445px) {

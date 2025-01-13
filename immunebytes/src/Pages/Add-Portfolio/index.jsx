@@ -76,12 +76,19 @@ const AddPortfolio = (props) => {
     };
     fetchPlatforms();
   }, []);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    setFormErrors({ ...formErrors, [name]: "" });
+  
+    // Validate errorBags to ensure it doesn't go below 0
+    if (name === "errorBags" && (value < 0 || value === "")) {
+      setFormData({ ...formData, [name]: 0 }); // Set default to 0 if value is negative or empty
+      setFormErrors({ ...formErrors, [name]: "" });
+    } else {
+      setFormData({ ...formData, [name]: value });
+      setFormErrors({ ...formErrors, [name]: "" });
+    }
   };
+  
 
   const handleFileChange = (e) => {
     const { name } = e.target;
@@ -372,10 +379,10 @@ const AddPortfolio = (props) => {
           >
             <option value="">Select Error Type</option>
             <option value="Low">Low</option>
-            <option value="Validation">High</option>
-            <option value="Server">Medium</option>
-            <option value="Network">Critical</option>
-            <option value="Authentication">Informational</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Critical">Critical</option>
+            <option value="Informational">Informational</option>
           </select>
         </div>
 
@@ -388,10 +395,10 @@ const AddPortfolio = (props) => {
             className="w-full p-3 border border-gray-600 rounded-md bg-black"
           >
             <option value="">Select Error Status</option>
-            <option value="Active">Fixed</option>
-            <option value="Resolved">Open</option>
-            <option value="Pending">Acknowledged</option>
-            <option value="Closed">Redacted</option>
+            <option value="Fixed">Fixed</option>
+            <option value="Open">Open</option>
+            <option value="Acknowledged">Acknowledged</option>
+            <option value="Redacted">Redacted</option>
           </select>
         </div>
 

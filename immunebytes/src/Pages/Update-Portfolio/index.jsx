@@ -15,11 +15,13 @@ const UpdatePortfolio = (props) => {
 
   // Handle changes in dynamic error entry fields
   const handleDynamicChange = (index, field, value) => {
-    const updatedEntries = [...errorEntries];
-    updatedEntries[index][field] = value;
-    setErrorEntries(updatedEntries);
-    console.log("Updated Error Entries:", updatedEntries);
+    setErrorEntries(prevEntries => {
+      const updatedEntries = [...prevEntries];
+      updatedEntries[index][field] = value;
+      return updatedEntries;
+    });
   };
+  
 
   // Add a new error entry
   const addErrorEntry = () => {
@@ -111,21 +113,31 @@ const UpdatePortfolio = (props) => {
       }
     };
     fetchPlatforms();
-  });
+  },[selectedItemId]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    setFormErrors({ ...formErrors, [name]: "" });
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value, // This should work fine for flat fields
+    }));
+    setFormErrors(prevState => ({
+      ...prevState,
+      [name]: "", // Reset any existing error on that field
+    }));
   };
+  
 
  // Handle file uploads
  const handleFileChange = (e) => {
   const { name, files } = e.target;
   if (files && files[0]) {
-    setFormData((prevData) => ({ ...prevData, [name]: files[0] }));
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: files[0], // Ensure the file is properly updated in the state
+    }));
 
-    // Update preview for images or PDFs
+    // Set preview for image or pdf
     if (name === "image") {
       setPreviewImage(URL.createObjectURL(files[0]));
     } else if (name === "pdf") {
@@ -133,6 +145,7 @@ const UpdatePortfolio = (props) => {
     }
   }
 };
+
   const validateForm = () => {
     let errors = {};
     if (!formData.name) errors.name = "Name is required.";
@@ -423,10 +436,10 @@ const UpdatePortfolio = (props) => {
             className="w-full p-3 border border-gray-600 rounded-md bg-black"
           >
             <option value="">Select Error Status</option>
-            <option value="Active">Active</option>
-            <option value="Resolved">Resolved</option>
-            <option value="Pending">Pending</option>
-            <option value="Closed">Closed</option>
+            <option value="Fixed">Fixed</option>
+            <option value="Open">Open</option>
+            <option value="Acknowledged">Acknowledged</option>
+            <option value="Redacted">Redacted</option>
           </select>
         </div>
 

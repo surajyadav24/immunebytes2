@@ -174,6 +174,7 @@ button.close-btn img {
   text-transform: capitalize;
   display: inline-block;
   margin-right: 10px;
+  max-width: 122px !important;
 }
 
 /* Error Types */
@@ -182,15 +183,19 @@ button.close-btn img {
 }
 
 .severity.Critical {
-  background-color: #FF0000; /* Light Blue */
+  background-color: #B22222; /* Light Blue */
 }
 
 .severity.Medium {
-  background-color: #FF5C00; /* Light Yellow */
+  background-color: #FF8C00; /* Light Yellow */
+}
+.severity.Low {
+  background-color: #DAA520; /* Light Yellow */
 }
 
+
 .severity.Informational {
-  background-color: #00D22E; /* Light Green */
+  background-color: #228B22; /* Light Green */
   color: #155724;            /* Dark Green */
 }
 
@@ -243,6 +248,10 @@ button.close-btn img {
 .error-msg {
   flex: 1;
   margin-right: 10px;
+  width: 50%;
+  display: flex;
+  align-items: center !important;
+  justify-content: center;
 }
 /* END HERE FOR COLOR  */
 
@@ -294,7 +303,7 @@ border:3px solid  #F9116C;
 }
 
 .severity {
-  width: 20%;
+  width: 24%;
 }
 
 .error-msg {
@@ -307,7 +316,7 @@ border:3px solid  #F9116C;
 }
 
 .severity.high {
-  color: #fff;
+  color: #DC143C;
   background-color: red;
   max-width: 100px;
   border-radius: 5px;

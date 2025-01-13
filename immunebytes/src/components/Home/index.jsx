@@ -64,7 +64,7 @@ const Home = () => {
           <div className="service-2">
             <Servicescomponent
               imageSrc={serviceimg3}
-              heading="Blockchain Audit"
+              heading="Blockchain Security Audit"
               paragraphtext="A thorough assessment of your blockchain’s security posture, encompassing architecture, network layer, transaction layer, ledger layer, and other frameworks."
               link="/blockchainaudit"
             />

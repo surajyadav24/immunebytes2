@@ -25,7 +25,6 @@ import ThankYouSection from "./components/ThankYou/index.jsx";
 import Error from "./components/404Eror/";
 import HeaderComponent from "./components/Main-Header/HeaderComponent.jsx";
 import Blog from "./Pages/Blog/";
-import BlogSection from '../src/components/BlogPost/index.jsx'
 import Telegram from "./assets/images/telegram.svg";
 import "./App.css";
 
@@ -88,198 +87,50 @@ function App() {
   }, []);
 
   return (
-    <>
-    <Router>
-      <Routes>
-        {/* Routes without Layout */}
-        <Route path="/" element={
-          <Home />
-        } 
-          />
-        {/* <Route path="/about" element={<About />} /> */}
-
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path='/' element={authUser ? <Home /> : <Navigate to={"/dashboard-main"} />} />
-        <Route path='/' element={authUser ? <Home /> : <Navigate to={"/severity"} />} />
-        <Route path='/' element={authUser ? <Home /> : <Navigate to={"/addportfolio"} />} />
-        <Route path='/' element={authUser ? <Home /> : <Navigate to={"/updateportfolio/:selectedItemId"} />} />
-        <Route path='/' element={authUser ? <Home /> : <Navigate to={"/addplatform"} />} />
-
-  {/* Catch-All Route */}
-  <Route path="*" element={<Navigate to="/error" />} />
-        <Route
-          path="/otpform"
-          element={
-            // <PrivateRoute>
-              <OtpForm />
-            // </PrivateRoute>
-          }
-        />
-        <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route
-          path="/resetpassword/:resetPasswordToken"
-          element={<ResetPassword />}
-        />
-
-        {/* Routes with Layout */}
-        <Route path="/dashboard" element={<Dashboard />} />
-
-        <Route
-          path="/smartcontract"
-          element={
-            <Layout2>
-            <SmartContract/>
-            </Layout2>
-          }
-        />
-        <Route
-          path="/penetration-testing"
-          element={
-            <Layout2>
-            <Penetration/>
-            </Layout2>
-          }
-        />
-        {/* BlogSection */}
-           <Route
-          path="/blog"
-          element={
-            <Layout2>
-            <Blog/>
-            </Layout2>
-          }
-        />
-           <Route
-          path="/BlogSection"
-          element={
-            <Layout2>
-            <BlogSection/>
-            </Layout2>
-          }
-        />
-        <Route
-          path="/blockchainaudit"
-          element={
-            <Layout2>
-            <BlockchainAudit/>
-            </Layout2>
-          }
-        />
-        <Route
-          path="/defi"
-          element={
-            <Layout2>
-            <Defi/>
-            </Layout2>
-          }
-        />
-        <Route
-          path="/thankyoupage"
-          element={
-            <Layout2>
-            <ThankYouSection/>
-            </Layout2>
-          }
-        />
-        <Route
-          path="/error"
-          element={
-            <Layout2>
-       <Error/>
-            </Layout2>
-          }
-        />
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="*" element={<Navigate to="/error" />} />
+          <Route path="/otpform" element={<OtpForm />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route path="/resetpassword/:resetPasswordToken" element={<ResetPassword />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/smartcontract" element={<Layout2><SmartContract /></Layout2>} />
+          <Route path="/penetration-testing" element={<Layout2><Penetration /></Layout2>} />
+          <Route path="/blog" element={<Layout2><Blog /></Layout2>} />
+          <Route path="/blockchainaudit" element={<Layout2><BlockchainAudit /></Layout2>} />
+          <Route path="/defi" element={<Layout2><Defi /></Layout2>} />
+          <Route path="/thankyoupage" element={<Layout2><ThankYouSection /></Layout2>} />
+          <Route path="/error" element={<Layout2><Error /></Layout2>} />
+          <Route path="/about" element={<Layout2><About /></Layout2>} />
+          <Route path="/mainheader" element={<HeaderComponent />} />
+          <Route path="/dashboard-main" element={<PrivateRoute><Layout><DashboardMain /></Layout></PrivateRoute>} />
+          <Route path="/severity" element={<PrivateRoute><Layout><SeverityButtons headname="Severity Dashboard" /></Layout></PrivateRoute>} />
+          <Route path="/addportfolio" element={<PrivateRoute><Layout><AddPortfolio headname="Add Portfolio" /></Layout></PrivateRoute>} />
+          <Route path="/updateportfolio/:selectedItemId" element={<PrivateRoute><Layout><UpdatePortfolio headname="Update Portfolio" /></Layout></PrivateRoute>} />
+          <Route path="/addplatform" element={<PrivateRoute><Layout><PlatformManagement headname="Add Platform" /></Layout></PrivateRoute>} />
+        </Routes>
+      </Router>
+      <div className="telegram-wrapper">
+      {/* Welcome message and Telegram widget */}
+      {isVisible && (
       
-              <Route
-          path="/about"
-          element={
-            <Layout2>
-            <About/>
-            </Layout2>
-          }
-        />
-                    {/* <Route
-          path="/thankyou"
-          element={
-            <Layout2>
-            <MyComponent/>
-             </Layout2>
-          }
-        /> */}
-
-        {/* MyComponent */}
-              <Route
-          path="/mainheader"
-          element={
-            // <Layout2>
-            <HeaderComponent/>
-            // </Layout2>
-          }
-        />
-
-
-        <Route
-          path="/dashboard-main"
-          element={
-            <PrivateRoute>
-              <Layout>
-                <DashboardMain />
-              </Layout>
-            </PrivateRoute>
-          }
-        />
-
-        <Route
-          path="/severity"
-          element={
-            <PrivateRoute>
-              <Layout>
-                <SeverityButtons headname="Severity Dashboard" />
-              </Layout>
-            </PrivateRoute>
-          }
-        />
-
-        <Route
-          path="/addportfolio"
-          element={
-            <PrivateRoute>
-              <Layout>
-                <AddPortfolio headname="Add Portfolio" />
-              </Layout>
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/updateportfolio/:selectedItemId"
-          element={
-            <PrivateRoute>
-              <Layout>
-                <UpdatePortfolio headname="Update Portfolio" />
-              </Layout>
-            </PrivateRoute>
-          }
-        />
-
-        <Route
-          path="/addplatform"
-          element={
-            <PrivateRoute>
-              <Layout>
-                <PlatformManagement headname="Add Platform" />
-              </Layout>
-            </PrivateRoute>
-          }
-        />
-      </Routes>
-    </Router>
-    <a href="https://t.me/immunebytes" target="_blank" rel="noopener noreferrer">
-  <button className="telegram-fixed">
-    <img src={Telegram} alt="Telegram" />
-  </button>
-</a>
-
-    </>
+        <div className="telegram-message-box reveal" style={styles.messageBox}>
+          <p style={styles.messageText}>
+          Connect with our security experts!
+          </p>
+          <button style={styles.closeButton} onClick={handleClose}>&times;</button>
+        </div>
+      )}
+      <a href="https://t.me/aabhas_sood" target="_blank" rel="noopener noreferrer">
+        <button className="telegram-fixed" style={styles.telegramButton}>
+          <img src={Telegram} alt="Telegram" style={styles.telegramIcon} />
+        </button>
+      </a>
+    </div>
+    </div>
   );
 }
 

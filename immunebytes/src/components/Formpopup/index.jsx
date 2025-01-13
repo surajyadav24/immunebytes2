@@ -144,7 +144,7 @@ const Formpopup = ({ auditName = "", buttonClassName = "", arrowicon = "" }) => 
                       Select a service
                     </option>
                     <option value="Service 1">Smart Contract Audit</option>
-                    <option value="Service 2">Blockchain Security Services</option>
+                    <option value="Service 2">Blockchain Security Audit</option>
                     <option value="Service 3">Penetration Testing</option>
                   </select>
                 </div>

@@ -82,6 +82,52 @@
     .video-element {
       max-width: 90%;
     }
+    .hero-content {
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+    padding-top: 45px;
+  }
+    .hero-content h1 {
+        /* font-size: 26px; */
+        line-height: 1.2;
+        text-align: left;
+    }
+    .hero-content h1 span{
+      /* font-size: 34px;
+      line-height: 1.2;
+      text-align: left    ; */
+      display: inline;
+  }
+    .hero-content p{
+        font-size: 13px;
+        text-align: left;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+    .hero-content .btn-wrapper .btn.btn-primary {
+        min-width: 163px;
+        font-size: 11px !important;
+        padding: 5px 6px;
+        min-height: 41px;
+    }
+    .dekstop-hidden{
+      display: none !important;
+    }
+    .mobile-hidden{
+      margin: 10px 0px;
+      display: block !important;
+    }
+
+    .hero-video img {
+      max-width: 75%;
+  }
+  .hero-section{
+    padding-bottom: 40px;
+  }
+  .col-lg-7.md-6.col-sm-6.col-xs-6.left-serv {
+    padding: 0px;
+}
+    
   }
  
   @media (max-width:445px){

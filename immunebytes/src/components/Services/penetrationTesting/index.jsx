@@ -240,7 +240,7 @@ const faqs = [
 const services = [
   {
     image: pinkImage,
-    title: 'Blockchain  Audit',
+    title: 'Blockchain Security Audit',
     description: 'A thorough assessment of your blockchain’s security posture, encompassing smart contracts, architecture, and development framework.',
   },
   {

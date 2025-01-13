@@ -92,12 +92,10 @@ align-items: center;
 /* TABLET VERSION */
 @media (max-width: 768px) {
     .engagementmodel h2 {
-        margin-top: 1.5rem;
-        font-size: 1.7rem;
-        margin-bottom: 0.5rem;
-        padding-bottom: 0px;
-        color: #ff4081; /* Pink color for the title */
-      }
+        font-size: 32px;
+        padding: 40px 0px 20px;
+        margin: 0px;
+    }
     .engagementmodel-boxes {
         grid-template-columns: 1fr; /* Single-column layout for smaller screens */
         gap: 1.5rem; /* Reduced gap */
@@ -118,7 +116,6 @@ align-items: center;
     }
     .engagementmodel-yellow-box {
       padding: 47px ;
-      background: url(../../assets/images/Subtract.png);
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -131,7 +128,7 @@ align-items: center;
         padding: 0.5rem;
     }
     .engagementmodel-yellow-box h3 {
-        font-size: 14px;
+        font-size: 24px;
         margin-bottom: 8px;
         padding: 0.3rem;
     }
@@ -146,6 +143,13 @@ align-items: center;
         padding-right: 0.9rem !important;
         padding-left: 0.9rem !important;
     }
+    .engagementmodel-box {
+        margin: 0 auto;
+        max-width: 370px;
+        padding-top: 2rem;
+    }
+
+
 }
 
 

@@ -82,6 +82,14 @@ font-size: 14px !important;
       max-width: 429px;
       
         }
+
+.request-audit-container .text-content p {
+          font-family: 'Arvo-Bold' !important;
+          font-size: 32px !important;
+          line-height: 40px;
+          color: #fff;
+      }
+
   }
   @media (max-width:445px){
     .request-audit-container {

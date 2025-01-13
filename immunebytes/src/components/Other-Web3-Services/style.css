@@ -65,11 +65,13 @@
      }
     .otherweb3services-cards {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         padding: 4px;
         margin: 2px;
     }
     .otherweb3services-card {
+        max-width: 100%;
+        margin: 0 auto;
         padding: 20px;
         padding-top: 0px;
         display: flex;
@@ -78,12 +80,12 @@
         justify-content: center;
         text-align: center;
     }
-    .otherweb3services-card h3{
-        font-size: 1.2rem;
+    .otherweb3services-card h3 {
+        font-size: 24px;
         padding-bottom: 4px;
     }
     .otherweb3services-card p{
         text-align: left;
-        font-size: 14px;
+        font-size: 16px !important;
     }
 }

@@ -198,10 +198,10 @@ background-color: #FFFFFF1A;
 
 @media ((min-width: 426px) and (max-width: 768px)) {
   .featured-audit-title {
-    margin-top: 1.5rem;
-    font-size: 1.7rem;
-    margin-bottom: 1rem;
+    font-size: 32px;
+    margin-bottom: 0px;
     color: #ff4081; 
+    padding: 40px 0px 20px !important;
   }
   .case-study-card{
     min-height: 286px;
@@ -209,9 +209,8 @@ background-color: #FFFFFF1A;
   }
   .case-study-card h3 {
     gap: 10px 0px;
-    font-size: 22px;
-  
-  }
+    font-size: 50px;
+}
   .arrow-btn {
     bottom: 8px;
     right: 9px;
@@ -226,10 +225,10 @@ background-color: #FFFFFF1A;
     flex-direction: column;
   }
   .audit-process-grid {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid
+;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 20px;
 }
 .featured-card.stader-card {
   min-width: 100%;
@@ -247,9 +246,9 @@ background-color: #FFFFFF1A;
   min-width: 44%;
   max-width: 51%;
   right: -49%;
-  top: -311px;
-  min-height: 150px;
-  padding: 51px 0px;
+  top: -296px;
+  min-height: 170px;
+  padding: 59px 0px;
   border: none;
 
 
@@ -264,25 +263,48 @@ background-color: #FFFFFF1A;
   top: -256px;
 }
 .featured-card.talk-card h3 {
-  padding: 30px;
-  font-size: 18px;
+  padding: 21px 0px;
+  font-size: 33px;
   text-align: center;
-  /* margin-right: 10rem; */
 }
 .case-study-card{
-background:url("../../assets/images/services-main/case-mobile.svg") no-repeat center center/ contain;
+background:url("../../assets/images/services-main/case-mobile.svg") no-repeat center center/ 90%;
 padding: 50px 10px;
 }
 .feature-wrapper {
-  max-height: 800px;
+  max-height: 875px;
   overflow: hidden;
 }
+
 .featured-card.case-study-card {
   padding: 42px 10px !important;
   min-width:162px;
 }
 .why-sec-feature {
   padding: 0px 10px;
+}
+h2.text-center.text-3xl.font-bold.mb-8.heading-why.py-1.pt-5 {
+  padding: 40px 0px 20px !important;
+  margin: 0px;
+  font-size: 32px;
+}
+h2.audit-process-title {
+  font-size: 32px;
+  padding: 40px 0px 20px;
+}
+.otherweb3services h2{
+  padding: 40px 0px 20px;
+  margin-bottom: 0px;
+  font-size: 32px;
+}
+.audit-process-card h3 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+.audit-process-card h5 {
+  font-size: 16px;
+  margin-top: 18px;
+  margin-bottom: 9px;
 }
 
 }
@@ -353,7 +375,7 @@ padding: 50px 10px;
 
 }
 .case-study-card{
-background:url("../../assets/images/services-main/case-mobile.svg") no-repeat center center/ contain;
+background:url("../../assets/images/services-main/case-mobile.svg") no-repeat center center/ 89%;
 padding: 50px 10px;
 }
 .featured-card.testimonial-card {

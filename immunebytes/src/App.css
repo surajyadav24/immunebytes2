@@ -320,8 +320,11 @@ img.btn-icon {
 }
 .hero-content h1 {
   text-align: left;
-  font-size: 54px;
+  font-size: 40px;
   line-height: 1.2;
+}
+.hero-content{
+  margin-top: 0px;
 }
 .hero-content .highlight {
   padding-left: 0px;

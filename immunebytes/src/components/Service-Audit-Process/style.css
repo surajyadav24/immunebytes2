@@ -112,6 +112,11 @@
   margin-bottom: 16px;
 }
 
+@media (max-width:768px){
+  .audit-process-card{
+    padding: 20px !important;
+  }
+}
 
 
 @media (max-width:445px){

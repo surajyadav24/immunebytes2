@@ -165,7 +165,7 @@ function Sidebar() {
             onClick={handleLogout}
           >
             Logout
-            <img src={logout} alt=""  className="pl-2 pt-1"/>
+            <img src={logout} alt=""  className=""/>
           </button>
      
         </div>

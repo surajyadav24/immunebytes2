@@ -100,7 +100,7 @@ export const plainEmailTemplate = (heading,message) => {
     projectwebsite,
     githublink,
     services,
-    timeline,) => {
+    auditdeadline,) => {
     return `<!DOCTYPE html>
    <html lang="en">
    <head>
@@ -122,7 +122,7 @@ export const plainEmailTemplate = (heading,message) => {
          <p class="text-sm text-gray-600">${projectwebsite}.</p>
          <p class="text-sm text-gray-600">${githublink}.</p>
          <p class="text-sm text-gray-600">${services}.</p>
-         <p class="text-sm text-gray-600">${timeline}.</p>
+         <p class="text-sm text-gray-600">${auditdeadline}.</p>
 
        </div>
    

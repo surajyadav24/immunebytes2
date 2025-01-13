@@ -15,7 +15,7 @@ const Formpopup = ({ auditName = "", buttonClassName = "", arrowicon = "" }) => 
     projectwebsite: "",
     githublink: "",
     services: "",
-    timeline: "",
+    auditdeadline: "",
   });
   const [message, setMessage] = useState("");
 
@@ -42,6 +42,7 @@ const Formpopup = ({ auditName = "", buttonClassName = "", arrowicon = "" }) => 
           services: "",
           auditdeadline: "",
         });
+        setShowPopup(false); // Close the popup
         navigate("/thankyoupage")
       } else {
         setMessage("Failed to submit. Please check the details!");
@@ -151,10 +152,10 @@ const Formpopup = ({ auditName = "", buttonClassName = "", arrowicon = "" }) => 
 
               <div className="form-group">
                 <div className="input-block">
-                  <label htmlFor="timeline">Timeline</label>
+                  <label htmlFor="auditdeadline">Audit Deadline</label>
                   <input
                     type="date"
-                    id="timeline"
+                    id="auditdeadline"
                     value={formData.auditdeadline}
                     onChange={handleChange}
                     required

@@ -47,7 +47,10 @@ button.mt-8.w-full.p-2.logout-btn.text-white.rounded.cursor-pointer.hover\:bg-bl
     gap: 10px;
 }
 .logout-btn img{
-    max-width: 25px;
+  max-width: 29px;
+  padding-top: 10px;
+  padding-left: 10px;
+
 }
 .dashboard-logo{
   padding-bottom: 35px;
@@ -133,17 +136,32 @@ button.mt-8.w-full.p-2.logout-btn.text-white.rounded.cursor-pointer.hover\:bg-bl
       font-size: 14px; /* Smaller font size for Logout */
       padding: 0.8rem; /* Adjust padding */
     }
+    .logout-btn img {
+      max-width: 20px;
+      padding-top: 4px;
+      padding-left: 6px;
+  }
   }
 
   @media (max-width:426px) {
     .sidebar-wrapper {
         padding: 0.5rem !important; /* Adjust padding for smaller screens */
       }
+      .logout-btn img {
+        max-width: 20px;
+        padding-top: 4px;
+        padding-left: 6px;
+    }
   }
   @media (max-width:375px) {
     .sidebar-wrapper {
         padding: 0.5rem !important; /* Adjust padding for smaller screens */
       }
+      .logout-btn img {
+        max-width: 20px;
+        padding-top: 4px;
+        padding-left: 6px;
+    }
   }
   @media (max-width:360px) {
     .sidebar-wrapper {
@@ -152,6 +170,11 @@ button.mt-8.w-full.p-2.logout-btn.text-white.rounded.cursor-pointer.hover\:bg-bl
        .sidebar-container{
         width: 35vw !important;
        }
+       .logout-btn img {
+        max-width: 20px;
+        padding-top: 4px;
+        padding-left: 6px;
+    }
   }
   
 

@@ -10,9 +10,9 @@ import {
 
 
 const requestQuote = asyncHandler(async(req,res)=>{
-    const { name ,username, email, projectwebsite,githublink,services,timeline } = req.body;
+    const { name ,username, email, projectwebsite,githublink,services,auditdeadline } = req.body;
 
-    if ([name ,username, email, projectwebsite,githublink,services,timeline].some((field) => field?.trim() == "")) {
+    if ([name ,username, email, projectwebsite,githublink,services,auditdeadline].some((field) => field?.trim() == "")) {
       throw new ApiError(400, "All Fields are Required");
     }
     const newRequestQuote = await RequestQuote.create({
@@ -22,7 +22,7 @@ const requestQuote = asyncHandler(async(req,res)=>{
       projectwebsite,
       githublink,
       services,
-      timeline,
+      auditdeadline,
     });
     if (!newRequestQuote) {
         throw new ApiError(400, "Invalid newRequestQuote details");
@@ -43,10 +43,10 @@ const requestQuote = asyncHandler(async(req,res)=>{
           projectwebsite,
           githublink,
           services,
-          timeline),
+          auditdeadline),
       });
     
-      console.log(typeof name, typeof username, typeof email, typeof projectwebsite, typeof githublink, typeof services, typeof timeline);
+      console.log(typeof name, typeof username, typeof email, typeof projectwebsite, typeof githublink, typeof services, typeof auditdeadline);
 
 
       return res

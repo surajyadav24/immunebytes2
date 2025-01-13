@@ -332,6 +332,7 @@ const UpdatePortfolio = (props) => {
                   value={formData.auditDate}
                   onChange={handleChange}
                   className="w-full p-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  min={new Date().toISOString().split("T")[0]} // Prevent past date
                 />
                 {formErrors.auditDate && <p className="text-red-500 mt-1">{formErrors.auditDate}</p>}
               </div>

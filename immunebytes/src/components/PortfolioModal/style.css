@@ -170,7 +170,7 @@ button.close-btn img {
 .severity {
   padding: 5px 10px;
   border-radius: 4px;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-transform: capitalize;
   display: inline-block;
   margin-right: 10px;
@@ -208,7 +208,7 @@ button.close-btn img {
 .status {
   padding: 5px 10px;
   border-radius: 4px;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-transform: capitalize;
   display: inline-block;
 }
@@ -387,4 +387,23 @@ select#month-select option {
   position: absolute;
   top: 500px;
 }
+.severity {
+  width: 30%;
+}
+
+
+}
+@media (max-width:426px) {
+  .severity {
+    width: 30%;
+  }
+}
+@media (max-width:376px) {
+  .severity {
+    width: 30%;
+  }
+}@media (max-width:321px) {
+  .severity {
+    width: 36%;
+  }
 }

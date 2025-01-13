@@ -150,7 +150,7 @@ input[type="text"]:focus-visible {
     margin-top: 20px;
     position: absolute;
     right: 30px;
-    bottom: 30px;
+    bottom: 70px;
 }
   
   .pagination button {
@@ -388,6 +388,14 @@ width: 100%;
 .portfolio-table-container {
 background: none;
 }
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  position: absolute;
+  right: -7px;
+  bottom: -30px;
+}
 }
 @media (max-width: 426px) {
   .portfolio-grid-row {
@@ -535,5 +543,14 @@ h2.portfolio-title.homepage-heading {
   font-size: 14px !important;
   color: #fff !important;
 }
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  position: absolute;
+  right: -7px;
+  bottom: -27px;
+}
+
 
 }

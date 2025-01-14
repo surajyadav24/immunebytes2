@@ -209,13 +209,6 @@ const UpdatePortfolio = (props) => {
     console.log(formData.pdf,"formData.pdf -- 185 ")
 
     }
-    
-
-  
-
-
-    
-
   // Append dynamic error entries
   errorEntries.forEach((entry, index) => {
     form.append(`errorEntries[${index}][errorType]`, entry.errorType);
@@ -437,10 +430,11 @@ const UpdatePortfolio = (props) => {
             className="w-full p-3 border border-gray-600 rounded-md bg-black"
           >
             <option value="">Select Error Status</option>
-            <option value="Fixed">Fixed</option>
+            <option value="Closed">Closed</option>
             <option value="Open">Open</option>
             <option value="Acknowledged">Acknowledged</option>
-            <option value="Redacted">Redacted</option>
+            <option value="PartiallyResolved">Partially Resolved</option>
+            <option value="Resolved">Resolved</option>
           </select>
         </div>
 

@@ -292,7 +292,7 @@ const AddPortfolio = (props) => {
                   value={formData.auditDate}
                   onChange={handleChange}
                   className={`w-full p-3 border text-sm border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500  ${error ? "input-error" : ""}`}
-                  min={new Date().toISOString().split("T")[0]} // Prevent past date
+                  // min={new Date().toISOString().split("T")[0]} // Prevent past date
                 />
                 {formErrors.auditDate && <p className="text-red-500 mt-1">{formErrors.auditDate}</p>}
               </div>
@@ -396,10 +396,11 @@ const AddPortfolio = (props) => {
             className="w-full p-3 border border-gray-600 rounded-md bg-black"
           >
             <option value="">Select Error Status</option>
-            <option value="Fixed">Fixed</option>
+            <option value="Closed">Closed</option>
             <option value="Open">Open</option>
             <option value="Acknowledged">Acknowledged</option>
-            <option value="Redacted">Redacted</option>
+            <option value="PartiallyResolved">Partially Resolved</option>
+            <option value="Resolved">Resolved</option>
           </select>
         </div>
 

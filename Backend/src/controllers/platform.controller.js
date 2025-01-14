@@ -60,8 +60,20 @@ const updatePlatform = asyncHandler(async (req, res) => {
 const deletePlatform = asyncHandler(async (req, res) => {
   const { id } = req.params;
 
+    // Define the allowed email ID
+    const allowedEmail = "chetnadigitalmolecule@gmail.com";
+    console.log(allowedEmail,"allowedEmail")
+
+    // Check if the authenticated user's email matches the allowed email
+    if (req.user.email !== allowedEmail) {
+      throw new ApiError(403, "You are not authorized to delete this platform.");
+    }else{
+      console.log("equal -- email ")
+    }
+
   const deletedPlatform = await UserPlatform.findByIdAndDelete(id)
 ;
+console.log(deletePlatform,"deleteplatform")
 
   if (!deletedPlatform) {
     throw new ApiError(404, "Platform not found");

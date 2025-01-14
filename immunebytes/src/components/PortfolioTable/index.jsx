@@ -40,6 +40,26 @@ const PortfolioTable = ({ showEditButton, showDeleteButton }) => {
 
   const handleDelete = async (id) => {
     try {
+
+      
+
+       // Fetch the user's email from the backend or store it from authentication
+       const emaildata=    localStorage.getItem('user')
+       console.log(emaildata,"emaildata")
+       const parsedData = emaildata ? JSON.parse(emaildata) : null;
+       const useremail = parsedData?.email;
+       console.log(useremail,"useremail")
+   
+       const allowedEmail = "chetnadigitalmolecule@gmail.com"; // Replace with the allowed email ID
+     
+   
+   
+       if (useremail !== allowedEmail) {
+         alert("You are not authorized to delete portfolio.");
+         console.log("You are not authorized to delete portfolioportfolio.");
+   
+         return;
+       }
       await axios.delete(`/api/v1/users/deleteportfolio/${id}`);
       setPortfolios((prev) => prev.filter((item) => item._id !== id));
       setSelectedItem(null);

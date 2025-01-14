@@ -56,9 +56,9 @@ const PortfolioModal = ({ selectedItemId, closeModal }) => {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
+        // hour: '2-digit',
+        // minute: '2-digit',
+        // second: '2-digit',
       });
     }
     return 'N/A';
@@ -81,31 +81,32 @@ const errorTypeClasses = {
 };
 
 const errorStatusClasses = {
-  Fixed: 'Fixed',
+  Closed: 'Closed',
   Open: 'Open',
-  Acknowledged: 'Acknowledged',
-  Redacted: 'Redacted',
+  Acknowledged:'Acknowledged',
+  PartiallyResolved: 'Partially Resolved',
+  Resolved: 'Resolved',
 };
 
 // Add this function to count the error statuses
-const countErrorStatuses = (errorEntries) => {
-  const counts = { Fixed: 0, Redacted: 0, Open: 0, Acknowledged: 0 };
+const countErrorTypes = (errorEntries) => {
+  const counts = { High: 0, Low: 0, Critical: 0, Medium: 0 ,Informational:0};
 
   // Loop through the error entries and count each status
   errorEntries.forEach((entry) => {
-    const status = entry.errorStatus ? entry.errorStatus.trim().toLowerCase() : ""; // Normalize status to lowercase
-    console.log(status, "status");
+    const type = entry.errorType ? entry.errorType.trim().toLowerCase() : ""; // Normalize status to lowercase
+    console.log(type, "type");
 
     // Normalize both status and counts keys (e.g. 'fixed' -> 'Fixed')
-    const formattedStatus = status.charAt(0).toUpperCase() + status.slice(1); // Ensure proper casing for comparison
+    const formattedType = type.charAt(0).toUpperCase() + type.slice(1); // Ensure proper casing for comparison
 
     // Check if the status is valid and exists in counts
-    if (counts[formattedStatus] !== undefined) {
-      counts[formattedStatus]++;
+    if (counts[formattedType] !== undefined) {
+      counts[formattedType]++;
     } else {
       console.log("no counts");
-      console.log(formattedStatus, "formattedStatus");
-      console.log(counts[formattedStatus], "counts[formattedStatus]");
+      console.log(formattedType, "formattedStatus");
+      console.log(counts[formattedType], "counts[formattedStatus]");
     }
   });
 
@@ -115,7 +116,7 @@ const countErrorStatuses = (errorEntries) => {
 
 
 // In the return statement of your component:
-const errorCounts = countErrorStatuses(errorEntries);
+const errorCounts = countErrorTypes(errorEntries);
 console.log(errorCounts,"errorCounts")
 
   return (
@@ -137,6 +138,7 @@ console.log(errorCounts,"errorCounts")
           </div>
         </div>                    
         <div className="modal-right">
+          <div className="modal-right-content">
           <div className="company-description">
             <h3>Company Description</h3>
             <p>{companyDescription || 'No description available'}</p>
@@ -159,6 +161,9 @@ console.log(errorCounts,"errorCounts")
           {errorEntries.length > 0 ? (
             <div className="error-list">
               {errorEntries.map((error, index) => {
+                console.log(error,"error")
+console.log(error.errorStatus,"errorStatus")
+
                   // const errorTypeClass = errorTypeClasses[error.errorType.toLowerCase()] || 'unknown';
                   // const errorStatusClass = errorStatusClasses[error.errorStatus.toLowerCase()] || 'unknown';
                   return ( // Add a return here
@@ -166,9 +171,10 @@ console.log(errorCounts,"errorCounts")
                       <div className={`severity ${errorTypeClasses[error.errorType]}`}>
                         {error.errorType}
                       </div>
-                      <div className="error-msg">{error.errorDescription}</div>
+                      <div className="error-msg ">{error.errorDescription}</div>
                       <div className={`status ${errorStatusClasses[error.errorStatus]}`}>
                         {error.errorStatus}
+                
                       </div>
                     </div>
                   );
@@ -195,6 +201,7 @@ console.log(errorCounts,"errorCounts")
                 No Report Available
               </button>
             )}
+          </div>
           </div>
         </div>
       </div>

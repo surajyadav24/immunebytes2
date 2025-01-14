@@ -112,7 +112,7 @@ button.close-btn img {
   border-radius: 5px;
 }
 .acknowledged {
-  background-color: #00ccff;
+  background-color: #4B0082;
   max-width: 100px;
   border-radius: 5px;
 }
@@ -215,23 +215,35 @@ button.close-btn img {
 
 /* Status Types */
 .status.Fixed {
-  background-color: #008A1E;
+  background-color: #F9116C;
    /* Light Green */
   /* color: #fff;            Dark Green */
 }
 
 .status.Open {
-  background-color: #980000 /* Light Blue */
+  background-color: #F9116C /* Light Blue */
 
 }
 
 .status.Acknowledged {
-  background-color:#FF5A45; /* Light Yellow */
+  background-color:#F9116C; /* Light Yellow */
 }
 
 .status.Redacted {
-  background-color: #8F00FF; /* Light Red */
+  background-color: #F9116C; /* Light Red */
 }
+.status.Closed{
+  background-color: #F9116C;
+}
+.status.PartiallyResolved{
+  background-color: #F9116C;
+}
+.status.Resolved{
+  background-color: #F9116C;
+}
+/* .status.Closed{
+  background-color: #F9116C;
+} */
 
 .status.unknown {
   background-color: #e2e3e5; /* Light Gray */
@@ -254,7 +266,9 @@ button.close-btn img {
   justify-content: center;
 }
 /* END HERE FOR COLOR  */
-
+.modal-right-content{
+  padding: 10px;
+}
 .modal-actions {
   position: absolute;
   display: flex;
@@ -277,7 +291,8 @@ border:3px solid  #F9116C;
   border-radius: 8px;
 }
 .company-description P {
-  font-size: 13px;
+  font-size: 15px !important;
+  max-width: 665px;
 }
 .company-description {
   padding-top: 22px;
@@ -338,7 +353,7 @@ select#month-select option {
   color: #fff;
 }
 .status.redacted {
-  color: #800080;
+  color: #6C757D;
 }
 
 .month-selector {

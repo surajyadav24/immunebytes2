@@ -24,7 +24,7 @@ const subscribe = asyncHandler(async(req,res)=>{
       }
 
       await newSubscribe.save()
-      console.log("newSubscribe",newSubscribe)
+      // console.log("newSubscribe",newSubscribe)
       
 
 
@@ -37,7 +37,7 @@ const subscribe = asyncHandler(async(req,res)=>{
        ),
       });
     
-      console.log(typeof name, typeof email);
+      // console.log(typeof name, typeof email);
 
 
       return res

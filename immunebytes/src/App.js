@@ -66,7 +66,7 @@ const checkLoginExpiration = () => {
   const loginDate = new Date(loginTime);
   const currentDate = new Date();
   if (currentDate.getTime() > loginDate.getTime() + 24 * 60 * 60 * 1000) {
-    console.log("Session expired. Logging out...");
+    // console.log("Session expired. Logging out...");
     localStorage.clear();
     alert("Your session has expired. Please log in again.");
     window.location.href = "/dashboard";
@@ -80,7 +80,7 @@ function App() {
   const handleClose = () => setIsVisible(false);
 
   useEffect(() => {
-    console.log("useEffect initialized");
+    // console.log("useEffect initialized");
     checkLoginExpiration();
     const interval = setInterval(checkLoginExpiration, 10000);
     return () => clearInterval(interval);

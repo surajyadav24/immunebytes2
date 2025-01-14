@@ -29,7 +29,7 @@ const requestQuote = asyncHandler(async(req,res)=>{
       }
 
       await newRequestQuote.save()
-      console.log("newRequestQuote",newRequestQuote)
+      // console.log("newRequestQuote",newRequestQuote)
       
 
 
@@ -46,7 +46,7 @@ const requestQuote = asyncHandler(async(req,res)=>{
           auditdeadline),
       });
     
-      console.log(typeof name, typeof username, typeof email, typeof projectwebsite, typeof githublink, typeof services, typeof auditdeadline);
+      // console.log(typeof name, typeof username, typeof email, typeof projectwebsite, typeof githublink, typeof services, typeof auditdeadline);
 
 
       return res

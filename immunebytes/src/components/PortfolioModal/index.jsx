@@ -15,7 +15,7 @@ const PortfolioModal = ({ selectedItemId, closeModal }) => {
   useEffect(() => {
     const fetchPortfolioData = async () => {
       if (!selectedItemId) {
-        console.log("selectedItemId is not available");
+        // console.log("selectedItemId is not available");
         return;
       }
       try {
@@ -41,12 +41,12 @@ const PortfolioModal = ({ selectedItemId, closeModal }) => {
 
   // If portfolio data is loaded, extract the error entries
   const { errorEntries = [], auditData, name, image, platform, auditDate, companyDescription, pdf } = portfolioData || {};
-  console.log(pdf,"pdf in portfolio modal")
+  // console.log(pdf,"pdf in portfolio modal")
   // errorEntries
-  console.log(errorEntries,"errorEntries")
-  console.log(errorEntries?.errorStatus,"errorEntries?.errorstatus")
-  console.log(auditData,"auditdata")
-  console.log(portfolioData,"portfoliodata")
+  // console.log(errorEntries,"errorEntries")
+  // console.log(errorEntries?.errorStatus,"errorEntries?.errorstatus")
+  // console.log(auditData,"auditdata")
+  // console.log(portfolioData,"portfoliodata")
 
 
   const formatAuditDate = (date) => {
@@ -95,7 +95,7 @@ const countErrorTypes = (errorEntries) => {
   // Loop through the error entries and count each status
   errorEntries.forEach((entry) => {
     const type = entry.errorType ? entry.errorType.trim().toLowerCase() : ""; // Normalize status to lowercase
-    console.log(type, "type");
+    // console.log(type, "type");
 
     // Normalize both status and counts keys (e.g. 'fixed' -> 'Fixed')
     const formattedType = type.charAt(0).toUpperCase() + type.slice(1); // Ensure proper casing for comparison
@@ -104,20 +104,20 @@ const countErrorTypes = (errorEntries) => {
     if (counts[formattedType] !== undefined) {
       counts[formattedType]++;
     } else {
-      console.log("no counts");
-      console.log(formattedType, "formattedStatus");
-      console.log(counts[formattedType], "counts[formattedStatus]");
+      // console.log("no counts");
+      // console.log(formattedType, "formattedStatus");
+      // console.log(counts[formattedType], "counts[formattedStatus]");
     }
   });
 
-  console.log("Final counts:", counts); // Log the final counts object
+  // console.log("Final counts:", counts); // Log the final counts object
   return counts;
 };
 
 
 // In the return statement of your component:
 const errorCounts = countErrorTypes(errorEntries);
-console.log(errorCounts,"errorCounts")
+// console.log(errorCounts,"errorCounts")
 
   return (
     <div className="modal-overlay">
@@ -161,7 +161,7 @@ console.log(errorCounts,"errorCounts")
           {errorEntries.length > 0 ? (
             <div className="error-list">
               {errorEntries.map((error, index) => {
-                console.log(error,"error")
+                // console.log(error,"error")
 console.log(error.errorStatus,"errorStatus")
 
                   // const errorTypeClass = errorTypeClasses[error.errorType.toLowerCase()] || 'unknown';

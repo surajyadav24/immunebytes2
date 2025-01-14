@@ -22,7 +22,7 @@ const Footer = () => {
     e.preventDefault();
     try {
       const response = await axios.post("/api/v1/users/subscribe", formData);
-      console.log("response :: ",response)
+      // console.log("response :: ",response)
       const user = response.data.data
       // setFormData(user)
 

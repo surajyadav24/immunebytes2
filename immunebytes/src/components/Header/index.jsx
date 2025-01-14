@@ -21,7 +21,7 @@ import BASE from "../../assets/images/header/BASE.svg";
 import Starknet from "../../assets/images/header/Starknet.svg";
 
 function DropdownMenu({ title, links }) {
-  console.log("Hello")
+  // console.log("Hello")
   return (
     <li className="nav-item dropdown">
       <a href="#" className="nav-link text-white">

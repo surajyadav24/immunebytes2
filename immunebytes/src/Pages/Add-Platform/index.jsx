@@ -119,6 +119,27 @@ const PlatformManagement = ({ headname, platformsPerPage = 5 }) => {
   // New deletePlatform function
   const deletePlatform = async (index) => {
     try {
+
+       // Fetch the user's email from the backend or store it from authentication
+    const emaildata=    localStorage.getItem('user')
+    console.log(emaildata,"emaildata")
+    const parsedData = emaildata ? JSON.parse(emaildata) : null;
+    const useremail = parsedData?.email;
+    console.log(useremail,"useremail")
+    
+
+   
+
+    const allowedEmail = "chetnadigitalmolecule@gmail.com"; // Replace with the allowed email ID
+  
+
+
+    if (useremail !== allowedEmail) {
+      alert("You are not authorized to delete platforms.");
+      console.log("You are not authorized to delete platforms.");
+
+      return;
+    }
       const platformId = platforms[index]._id;
       const response = await axios.post(
         `/api/v1/users/deleteplatform/${platformId}`,

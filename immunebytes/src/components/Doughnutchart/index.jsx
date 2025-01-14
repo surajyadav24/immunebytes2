@@ -10,17 +10,18 @@ const DoughnutChart = ({ data }) => {
     const chart = new Chart(chartRef.current, {
       type: 'doughnut',
       data: {
-        labels: ['Fixed', 'Redacted', 'Open', 'Acknowledged'],
+        labels: ['Low', 'High', 'Medium', 'Critical','Informational'],
         datasets: [
           {
             data: [
-              data.Fixed || 0, 
-              data.Redacted || 0, 
-              data.Open || 0, 
-              data.Acknowledged || 0
+              data.Low || 0, 
+              data.High || 0, 
+              data.Medium || 0, 
+              data.Critical || 0,
+              data.Informational || 0
             ], // Data passed as props
-            backgroundColor: ['#008A1E', '#800080', '#980000', '#FF5A45'], // Segment colors
-            hoverOffset: 4
+            backgroundColor: ['#DAA520', '#C70000', '#FF8C00', '#B22222','#228B22'], // Segment colors
+            hoverOffset: 5
           }
         ]
       },

@@ -10,12 +10,17 @@ background-color: #D9D9D91A;
 }
 
 #companyDescription, #errorDescription {
-    padding: 4px !important;
+    padding: 8px !important;
     background-color: #D9D9D91A;
     width: 100%;
-    font-size: 12px;
-    height: 36px !important;
+    font-size: 19px !important;
+    height: 40px !important;
+    line-height: 18px;
+    white-space: nowrap; /* Ensure only one line is displayed */
+    overflow: hidden;    /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis (...) to indicate more content */
 }
+
 .addportfolio form {
     width: 80vw;
     background: #262626;

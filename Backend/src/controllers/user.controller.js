@@ -132,7 +132,7 @@ const logIn = asyncHandler(async (req, res) => {
   );
 
   const OTP = generateOTP();
-  // console.log(OTP,"otp")
+  console.log(OTP,"otp")
   
   // Hash the OTP before saving in the database
   const hashedOTP = await bcrypt.hash(OTP, 10);

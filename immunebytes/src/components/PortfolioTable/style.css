@@ -336,7 +336,7 @@ input[type="text"]:focus-visible {
 }
 .audit-progress {
   min-height: 152px;
-  width: 49%;
+  width: 100%;
   padding: 5px 7px;
 }
 .progress-bar {
@@ -358,9 +358,10 @@ input[type="text"]:focus-visible {
 }
 .audit-section-title {
   text-align: left;
-  font-size: 32px;
+  font-size: 40px !important;
   
 }
+
 .audit-content {
   padding-top: 10px;
 }
@@ -395,6 +396,27 @@ background: none;
   position: absolute;
   right: -7px;
   bottom: -30px;
+}
+.audit-section-description{
+  margin-left: 0px !important;
+}
+.audit-content {
+
+  flex-direction: column;
+
+}
+.audit-details {
+  width: 95.5% !important;
+  margin: 0 auto;
+}
+.audit-details p{
+  font-size: 16px;
+max-width: 70%;
+}
+.audit-content .audit-progress {
+  max-width: 95% !important;
+  width: 95% !important;
+  margin: 0 auto;
 }
 }
 @media (max-width: 426px) {

@@ -177,10 +177,13 @@ text-transform: uppercase;
 .subsubmenu-wrapper li span{
   font-family: Roboto-Regular !important;
 }
-.logo-wrapper img{
+/* .logo-wrapper img {
+  min-width: 102px;
   padding: 0px;
-  width: 200px
-}
+  max-width: 120px;
+  width: 100px;
+
+} */
 .logo {
   height: 6em;
   padding: 1.5em;

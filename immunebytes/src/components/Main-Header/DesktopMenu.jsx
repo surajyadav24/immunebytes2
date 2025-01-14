@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import "./DesktopMenu.css";
 
 export default function DesktopMenu({ menu }) {
+  
   const [isHovered, setIsHovered] = useState(false);
   const [hoveredSubMenuIndex, setHoveredSubMenuIndex] = useState(null);
 

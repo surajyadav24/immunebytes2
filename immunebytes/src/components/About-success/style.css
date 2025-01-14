@@ -13,7 +13,7 @@
 .about-card {
     display: grid;
     grid-template-columns:1fr 1fr 1fr 1fr 1fr; /* 3 columns for larger screens */
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
     justify-content: center;
     padding: 1rem 0rem;

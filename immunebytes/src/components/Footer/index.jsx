@@ -102,7 +102,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="col-lg-3 col-md-6  footer-section  footer-section-4">
+          <div className="col-lg-3 col-md-6  footer-section  footer-section-4 footer-tab">
           <h3>Subscribe</h3>
             <form onSubmit={handleSubmit}>
             {message && <p className="message text-[#F9116C] text-sm">{message}</p>}

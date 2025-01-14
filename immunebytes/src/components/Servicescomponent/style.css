@@ -172,6 +172,18 @@ transform: scale(0.8);
 }
 
 }
+
+@media (max-width:400px){
+    .case-study-card {
+        padding: 19px 20px !important;
+        max-height: 158px !important;
+        min-height: 197px !important;
+    }
+    .steps::before {
+        max-height: 460px;
+    }
+}
+
 @media (max-width:376px){
     .service-discription h2 {
         padding-top: 9px;

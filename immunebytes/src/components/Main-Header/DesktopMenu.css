@@ -22,6 +22,9 @@ padding-left: 0px;
 font-family: "Arvo-Regular";
 font-size: 10px !important;
 }
+.logo-wrapper-main{
+  width: 200px;
+}
 .li-wrapper a p{
   font-family: "Arvo-Regular";
   padding-left: 0px !important;

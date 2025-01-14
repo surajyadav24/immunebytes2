@@ -27,6 +27,19 @@ margin-bottom: 0px;
     padding: 10px 27px !important;
 }
 
+.cta-wrapper .close-popup-btn {
+    height: 30px !important;
+    position: absolute !important;
+    margin-top: 21px !important;
+    padding: 6px 4px !important;
+    width: 30px !important;
+}
+
+.cta-wrapper button.close-popup-btn img {
+    position: absolute;
+    top: 9px;
+}
+
 @media (max-width:768px) {
     .cta-wrapper h2{
         font-size: 42px;

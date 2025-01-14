@@ -19,16 +19,25 @@
   }
   
   .popup-form {
-    background: url('../../assets/images/portfolio/popup-bg.svg') no-repeat center center / contain , #000;
+    background: url('../../assets/images/portfolio/popup-bg.svg') no-repeat center center / contain #000000;
     position: relative;
-    padding: 30px;
+    padding: 15px 15px;
     border-radius: 13px;
     width: 941px;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
     color: white;
-    max-width: 941px;
+    max-width: 853px;
   }
-  
+  .cta-wrapper .popup-form{
+    position: relative;
+    padding: 15px 17px;
+    border-radius: 13px;
+    width: 941px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+    max-width: 957px;
+  }
+
   .popup-form h2 {
     font-size: 24px;
     margin-bottom: 20px;

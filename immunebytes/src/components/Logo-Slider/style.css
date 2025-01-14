@@ -1,23 +1,23 @@
 
 /* src/style.css */
 
-.splide {
+.logo-wrapper .splide {
     padding: 20px 0;
 
 }
 
-.splide__slide img {
+.logo-wrapper .splide__slide img {
     width: 100%;
     height: auto;
     max-height: 40px;
-    max-width: 120px; /* Adjust based on your logo size */
+    max-width: 120px; 
     transition: transform 0.3s ease-in-out;
 }
 
-.splide__slide:hover img {
+.logo-wrapper .splide__slide:hover img {
     transform: scale(1);
 }
-.splide__slide{
+.logo-wrapper .splide__slide{
     padding: 14px 0px;
     margin: 10px;
     background:url(../../assets/images/sliderlogo/slider-bg.svg) no-repeat center center / contain;
@@ -32,18 +32,18 @@ z-index: 99999999;
 position: relative;
 }
 
-ul.splide__pagination.splide__pagination--ltr {
+.logo-wrapper ul.splide__pagination.splide__pagination--ltr {
     display: none;
 }
-.splide__slide:hover {
+.logo-wrapper .splide__slide:hover {
     box-shadow: 5px 5px 8px #f9116c;
 }
 
 @media (max-width:445px) {
-    .splide {
+    .logo-wrapper .splide {
         padding: 0px 0;
     }
-    .splide__slide{
+    .logo-wrapper .splide__slide{
         display: flex;
         padding: 15px 5px;
         margin: 7px;

@@ -1,98 +1,56 @@
-/* Culture Section */
-.about-culture{
-  /* overflow-x: hidden; */
+.culture-wrapper .splide__slide img{
+  border-radius: 18px;
+  max-height: 90%;
 }
-.about-culture h2 {
-  color: #F9116C;
-  font-size: 40px;
+
+
+/* .container {
+  padding: 20px;
+}
+
+.about-culture {
   text-align: center;
-  padding-top: 60px;
 }
 
-/* Slider images */
-.image-slidder img {
-  object-fit: cover; /* Ensures the images maintain aspect ratio */
-  width: 100%;
-  height: 300px;
+.section-heading {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-/* Main container for the slider */
-.image-slidder {
-  margin-top: 2rem;
-  position: relative;
-  overflow: hidden; /* Ensures only visible images are shown */
-  width: 100%;
+.sub-heading-section {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.image-slider {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 20px;
 }
 
-/* Slider elements (for sliding effect) */
-.image-slidder-one,
-.image-slidder-two {
-  display: flex;
-  gap: 1rem;
-  animation: slide 20s linear infinite; /* 20 seconds per cycle */
-  margin: 2rem;
+.image-slider-one img,
+.image-slider-two img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  margin: auto;
 }
 
-.image-slidder-one {
-  animation-direction: normal;
-  margin-bottom: 0px;
-}
-
-.image-slidder-two {
-  animation-direction: reverse;
-}
-
-/* Keyframes for sliding animation */
-@keyframes slide {
-  0% {
-      transform: translateX(0);
+@media (min-width: 640px) {
+  .section-heading {
+    font-size: 28px;
   }
-  100% {
-      transform: translateX(-100%);
+  .sub-heading-section {
+    font-size: 18px;
   }
 }
 
-/* Media Query for Tablets */
-@media screen and (max-width: 768px) {
-  /* Adjust images for tablet screens */
-  .image-slidder img {
-      width: 50vw; /* Set a larger width for images on tablets */
-      height: 50vh; /* Adjust height */
-  }
-}
-
-/* Media Query for Mobile Devices */
-@media screen and (max-width: 480px) {
-  /* Adjust images for mobile screens */
-  .image-slidder{
-    margin-top: 0rem;
-  }
-  .image-slidder img {
-      width: 70vw; /* Set a larger width for images on mobile */
-      height: 40vh; /* Adjust height */
-  }
-
-  /* Stack images vertically and ensure the sliding animation is effective */
-  .image-slidder-one, 
-  .image-slidder-two {
-    margin: 1rem;
-    /* margin-top: 1rem; */
-      flex-direction: row; /* Stack images vertically on mobile */
-      gap: 0.5rem; /* Reduce gap between images */
-  }
-
-  /* Adjust the font size for mobile screens */
-  .about-culture h2 {
-    color: #F9116C;
+@media (min-width: 1024px) {
+  .section-heading {
     font-size: 32px;
-    text-align: center;
-    padding: 40px 0px 18px !important;
-}
-.video-testimonial .section-heading{
-  padding-top: 40px;
-  padding-bottom: 20px;
-}
-}
+  }
+  .sub-heading-section {
+    font-size: 20px;
+  }
+} */

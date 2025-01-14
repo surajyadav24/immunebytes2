@@ -136,14 +136,14 @@ const deletePortfolio = asyncHandler(async (req, res) => {
   const { id } = req.params;
 
 
-  const allowedEmail = "chetnadigitalmolecule@gmail.com";
-  console.log(allowedEmail,"allowedEmail")
+  const allowedEmail = ["chetnadigitalmolecule@gmail.com",'aabhas@immunebytes.com'];
+  // console.log(allowedEmail,"allowedEmail")
 
   // Check if the authenticated user's email matches the allowed email
-  if (req.user.email !== allowedEmail) {
+  if(!allowedEmail.includes(req.user.email)) {
     throw new ApiError(403, "You are not authorized to delete this portfolio.");
   }else{
-    console.log("equal -- email ")
+    // console.log("equal -- email ")
   }
   const portfolio = await AddPortfolio.findById(id);
   if (!portfolio) {

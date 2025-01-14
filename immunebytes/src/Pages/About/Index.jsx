@@ -102,12 +102,12 @@ const About = () => {
   const [visibleSteps, setVisibleSteps] = useState(6); // Initially display six steps
 
   const handleViewMore = () => {
-    console.log("View More clicked");
+    // console.log("View More clicked");
     setVisibleSteps(processSteps.length); // Show all steps
   };
 
   const handleViewLess = () => {
-    console.log("View Less clicked");
+    // console.log("View Less clicked");
     setVisibleSteps(6); // Show only the initial six steps
   };
 

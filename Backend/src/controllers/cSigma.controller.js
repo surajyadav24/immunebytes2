@@ -7,7 +7,7 @@ import { uploadOnCloudinary } from "../utils/Cloudinary.js";
 
  const cSigma =asyncHandler(async (req, res) => {
     const data = req.body;
-    console.log("data ::",data);
+    // console.log("data ::",data);
 
 
         // Transform company fields into a nested object

@@ -19,8 +19,8 @@ const PlatformManagement = ({ headname, platformsPerPage = 5 }) => {
     useEffect(() => {
       if (error && inputRef.current) {
         inputRef.current.focus(); // Focus the input when an error occurs
-        console.log(inputRef.current.focus(),"inputRef.current.focus() --- platform")
-        console.log(inputRef.current,"inputRef.current --- platform")
+        // console.log(inputRef.current.focus(),"inputRef.current.focus() --- platform")
+        // console.log(inputRef.current,"inputRef.current --- platform")
 
       }
     }, [error]); // Dependency array triggers focus when error state changes
@@ -59,7 +59,7 @@ const PlatformManagement = ({ headname, platformsPerPage = 5 }) => {
       );
 
       if (response.data.statusCode === 200) {
-        console.log(response,"response updatedplatform")
+        // console.log(response,"response updatedplatform")
         const updatedPlatforms = [...platforms];
         updatedPlatforms[editIndex] = {
           ...updatedPlatforms[editIndex],
@@ -98,8 +98,8 @@ const PlatformManagement = ({ headname, platformsPerPage = 5 }) => {
         // ]);
 
         const { newPlatform } = response.data.data;
-        console.log(response.data.data,"response.data.data")
-        console.log(newPlatform,"newPlatform")
+        // console.log(response.data.data,"response.data.data")
+        // console.log(newPlatform,"newPlatform")
         setPlatforms((prevPlatforms) => [newPlatform, ...prevPlatforms]);
         setAddPlatform("");
       } else {
@@ -122,22 +122,21 @@ const PlatformManagement = ({ headname, platformsPerPage = 5 }) => {
 
        // Fetch the user's email from the backend or store it from authentication
     const emaildata=    localStorage.getItem('user')
-    console.log(emaildata,"emaildata")
+    // console.log(emaildata,"emaildata")
     const parsedData = emaildata ? JSON.parse(emaildata) : null;
     const useremail = parsedData?.email;
-    console.log(useremail,"useremail")
+    // console.log(useremail,"useremail")
     
 
    
 
-    const allowedEmail = "chetnadigitalmolecule@gmail.com"; // Replace with the allowed email ID
+    // const allowedEmail = "chetnadigitalmolecule@gmail.com"; // Replace with the allowed email ID
+     const allowedEmails = ['chetnadigitalmolecule@gmail.com', 'aabhas@immunebytes.com'];
   
 
-
-    if (useremail !== allowedEmail) {
-      alert("You are not authorized to delete platforms.");
-      console.log("You are not authorized to delete platforms.");
-
+     if (!allowedEmails.includes(useremail)) {
+      alert("You are not authorized to delete portfolio.");
+      console.log("You are not authorized to delete portfolio.");
       return;
     }
       const platformId = platforms[index]._id;

@@ -30,7 +30,7 @@ class Intro {
   }
 
   init() {
-    console.log('init');
+    // console.log('init');
 
     // Setup camera
     this.camera = new THREE.PerspectiveCamera(10, window.innerWidth / window.innerHeight, 1, 5000);

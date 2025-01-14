@@ -22,7 +22,7 @@ function LoginForm() {
        
       );
       localStorage.setItem('accessToken', response.data.data.accessToken);
-      console.log("response-data", response.data);
+      // console.log("response-data", response.data);
 
       if (response.data.statusCode === 200) {
         navigate('/otpform');

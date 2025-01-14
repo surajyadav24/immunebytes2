@@ -99,7 +99,11 @@ const logIn = asyncHandler(async (req, res) => {
 
   const allowedEmails = [
     "chetnadigitalmolecule@gmail.com",
-    "suraj@digitalmolecule.in",
+    "chetnachetna8585@gmail.com",
+    // "suraj@digitalmolecule.in",
+    "aabhas@immunebytes.com",
+    "Sheetal@immunebytes.com"
+
   ];
 
   // Check if the user's email is in the allowed list
@@ -128,6 +132,7 @@ const logIn = asyncHandler(async (req, res) => {
   );
 
   const OTP = generateOTP();
+  // console.log(OTP,"otp")
   
   // Hash the OTP before saving in the database
   const hashedOTP = await bcrypt.hash(OTP, 10);
@@ -228,8 +233,8 @@ const verifyEmail = asyncHandler(async (req, res) => {
   if (!isOTPValid) {
     throw new ApiError(401, "Invalid OTP");
   }
-  console.log(token.token)
-  console.log(token)
+  // console.log(token.token)
+  // console.log(token)
 
   user.verified = true;
   await VerificationToken.findByIdAndDelete(token._id);
@@ -265,7 +270,7 @@ const verifyOTP = asyncHandler(async (req, res) => {
   }
 
   const user = req.user
-  console.log(user)
+  // console.log(user)
   if (!user) {
     throw new ApiError(401, "Sorry! This userId doesn't exist");
   }
@@ -275,11 +280,11 @@ const verifyOTP = asyncHandler(async (req, res) => {
   if (!token) {
     throw new ApiError(401, "OTP not found or expired");
   }
-  console.log(token,"token")
-  console.log(token.token,"token.token")
-  console.log(typeof token.token ,"type of token ")
-  console.log(typeof otp ,"type of otp ")
-  console.log(otp,"otp")
+  // console.log(token,"token")
+  // console.log(token.token,"token.token")
+  // console.log(typeof token.token ,"type of token ")
+  // console.log(typeof otp ,"type of otp ")
+  // console.log(otp,"otp")
 
   
 
@@ -353,7 +358,7 @@ const forgotPassword = asyncHandler(async (req, res) => {
   const mins = resetTokenExpiresAt.getMinutes();
 
   const formattedDate = `${day}-${month}-${year}-${hours}-${mins}`;
-  console.log(formattedDate); // Example: 12-11-2024
+  // console.log(formattedDate); // Example: 12-11-2024
 
   user.resetPasswordToken = resetPasswordToken;
   user.resetPasswordExpiresAt = resetTokenExpiresAt;
@@ -381,7 +386,7 @@ const forgotPassword = asyncHandler(async (req, res) => {
 // RESET PASSWORD -------------->
 const resetPassword = asyncHandler(async (req, res) => {
   const { resetPasswordToken } = req.params;
-  console.log("TOKEN :", resetPasswordToken);
+  // console.log("TOKEN :", resetPasswordToken);
   const { password,confirmpassword } = req.body;
 
     // Check if passwords match

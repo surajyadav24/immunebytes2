@@ -65,9 +65,9 @@ function OtpForm() { // onOtpChange is now passed as a prop
         localStorage.setItem('loginTime', new Date().toISOString());
            
         // setAuthUser(response.data.data)
-        console.log(JSON.stringify(response.data.data.user),"JSON.stringify(response.data.data.user)")
-        console.log(response.data.data,"response.data.data")
-        console.log(response.data,"response.data")
+        // console.log(JSON.stringify(response.data.data.user),"JSON.stringify(response.data.data.user)")
+        // console.log(response.data.data,"response.data.data")
+        // console.log(response.data,"response.data")
         navigate('/dashboard-main');
       } else {
         alert(response.data.message || 'Login failed');

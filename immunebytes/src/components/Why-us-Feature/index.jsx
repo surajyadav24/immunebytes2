@@ -4,10 +4,11 @@ import "./style.css";
 const FeatureSection = ({ title, features }) => {
   return (
     <>
-      <h2 className="text-center text-3xl font-bold mb-8 heading-why py-1 pt-5">
+      <h2 className="text-center text-3xl font-bold  heading-why  pt-5">
         {title}
       </h2>
-      <section className="why-sec-feature text-white p-8">
+<div className="container">
+<section className="why-sec-feature text-white ">
         <div className="container mx-auto">
           <div className="grid  sm:grid-cols-2 lg:grid-cols-2 gap-8 card-container">
             {features.map((feature, index) => (
@@ -35,6 +36,7 @@ const FeatureSection = ({ title, features }) => {
           </div>
         </div>
       </section>
+</div>
     </>
   );
 };

@@ -61,6 +61,10 @@ position: relative;
     padding: 0px !important;
     justify-content: center;
 }
+.hero-video img {
+    width: 90%;
+}
+
 @media (max-width:768px) {
     .heading {
         text-align: left;

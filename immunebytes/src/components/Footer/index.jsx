@@ -124,7 +124,7 @@ const Footer = () => {
             </div>
 
           <div className="col-12 footer-bottom  d-flex justify-content-between align-items-center">
-            <p>©2024 ImmuneBytes. All Rights Reserved</p>
+            <p>©2025 ImmuneBytes. All Rights Reserved</p>
             <div className="footer-links">
               <a href="#">Terms of Service</a>
               <a href="#">Privacy Policy</a>

@@ -278,6 +278,20 @@ img.btn-icon {
   transform: scale(0.7);
 }
 
+.engagementmodel .cta-wrapper {
+  padding: 80px 20px !important;
+}
+.engagementmodel .cta-wrapper .close-popup-btn{
+  margin-top: 0px !important;
+}
+
+.engagementmodel .cta-wrapper h2{
+  padding: 0px 0px;
+}
+.engagementmodel .cta-wrapper button.btn.btn-primary{
+  margin-top: 20px !important;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

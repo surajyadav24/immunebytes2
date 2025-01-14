@@ -53,10 +53,16 @@
     margin-bottom: 45px;
 
 }
+.form-group label {
+  width: 94%;
+  text-align: left;
+}
+
 .form-group .input-block {
+  text-align: left;
     display: flex;
     width: 50%;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
 }
 .form-group input:focus-visible {
@@ -107,7 +113,7 @@ button.close-popup-btn img {
   position: absolute;
   text-align: center;
   top: -9px;
-  right: 0px;
+  right: -13px;
   justify-content: center;
   align-items: center;
 }

@@ -31,6 +31,8 @@
     margin-bottom: 40px;
 }
 .step h3 {
+  font-family: 'Arvo-Regular';
+  font-weight: 300 !important;
   letter-spacing: 2px;
   font-size: 25px;
   text-align: left;
@@ -56,9 +58,7 @@
   margin-top: 20px;
   padding-top: 8px ;
 } 
-.audit-container{
-  margin: 0px 50px;
-}
+
   .step .circle {
     position: relative;
     width: 13px;

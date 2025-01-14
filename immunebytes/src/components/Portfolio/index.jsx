@@ -4,7 +4,7 @@ import AuditSection from '../Audit-Section'
 import PortfolioTable from '../PortfolioTable'
 import Ctacomponents from '../Cta-components'
 import './style.css'
-import StatsSection from '../StatsComponent'
+// import StatsSection from '../StatsComponent'
 import Footer from '../Footer'
 function Portfolio() {
   return (
@@ -13,8 +13,8 @@ function Portfolio() {
 <AuditSection/>
 <PortfolioTable showEditButton={false} showDeleteButton={false} />
 <div className="por-cta">
-<StatsSection/>
-<Ctacomponents title="Leading the Wave of Web3 Security"/>
+{/* <StatsSection/> */}
+{/* <Ctacomponents title="Leading the Wave of Web3 Security"/> */}
 <div className="secure-audit">
 <h2>
 Stay Ahead of the Security Curve.

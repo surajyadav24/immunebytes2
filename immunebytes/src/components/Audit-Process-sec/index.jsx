@@ -71,7 +71,8 @@ const AuditProcessSec = () => {
   }
 
   return (
-    <div className="audit-process">
+<div className="container">
+<div className="audit-process">
       <div className="audit-container">
         {/* Left Steps Section */}
         <div className="steps">
@@ -97,6 +98,7 @@ const AuditProcessSec = () => {
         </div>
       </div>
     </div>
+</div>
   );
 };
 

@@ -47,7 +47,7 @@ h2.portfolio-title.homepage-heading {
 .portfolio-grid-row>div {
   display: flex;
   width: 200px;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   padding: 5px 10px;
 }
@@ -67,7 +67,7 @@ h2.portfolio-title.homepage-heading {
   width: 219px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .portfolio-grid-header> div:last-child{

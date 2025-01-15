@@ -32,13 +32,15 @@ const CultureSliders = () => {
     // Initialize the first culture Splide slider (smooth loop)
     const splide1 = new Splide('#cultureSplide1', {
       type: 'loop',
-      drag: 'free',
+      drag: false,
       focus: 'center',
+      cloning: true,
+
       perPage: 4,
       autoScroll: {
-        speed: 2, // Speed for the scroll
+        // speed: 1, // Speed for the scroll
         pauseOnHover: true,
-        easing: 'linear', // Smooth linear animation
+        easing: 'ease-in-out', // Smooth linear animation
       },
       autoplay: true,  // Enable autoplay
       pagination: false,  // Disable pagination
@@ -52,13 +54,15 @@ const CultureSliders = () => {
     // Initialize the second culture Splide slider (smooth loop)
     const splide2 = new Splide('#cultureSplide2', {
       type: 'loop',
-      drag: 'free',
+      drag:false,
+      cloning: true,
+
       focus: 'center',
       perPage: 4,
       autoScroll: {
-        speed: -2, // Speed for the scroll
+        speed: -1, // Speed for the scroll
         pauseOnHover: true,
-        easing: 'linear', // Smooth linear animation
+        easing: 'ease-in-out', // Smooth linear animation
       },
       autoplay: true,  // Enable autoplay
       pagination: false,  // Disable pagination
@@ -70,10 +74,10 @@ const CultureSliders = () => {
     }).mount({ AutoScroll });
 
     // Clean up on component unmount
-    return () => {
-      splide1.destroy();
-      splide2.destroy();
-    };
+    // return () => {
+    //   splide1.destroy();
+    //   splide2.destroy();
+    // };
   }, []);
 
   return (
@@ -89,7 +93,7 @@ We are a closely-knitted team of Web3 nerds based in India, constantly looking f
         <div className="splide__track">
           <ul className="splide__list ">
             {cultureLogos1.map((logo, index) => (
-              <li key={index} className="splide__slide mx-2 ">
+              <li key={index} className="splide__slide mx-1 ">
                 <img src={logo} alt={`Culture Image ${index + 1}`} />
               </li>
             ))}
@@ -102,7 +106,7 @@ We are a closely-knitted team of Web3 nerds based in India, constantly looking f
         <div className="splide__track">
           <ul className="splide__list">
             {cultureLogos2.map((logo, index) => (
-              <li key={index} className="splide__slide mx-2">
+              <li key={index} className="splide__slide mx-1">
                 <img src={logo} alt={`Culture Image ${index + 1}`} />
               </li>
             ))}

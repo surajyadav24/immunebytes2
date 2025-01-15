@@ -150,7 +150,7 @@ const testimonialsData = [
       <Vision />
 
 
-      <div className="about-process">
+      <div className="about-process about-audit-process">
         <AuditProcessdummy
 subheading="We are a closely-knitted team of Web3 nerds based in India, constantly looking for ways to improve the overall security model of decentralized finance and blockchain. Our team comprises security experts"
           title="Elevating Protocol Safety Standards"

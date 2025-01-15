@@ -117,7 +117,7 @@
 @media (max-width:768px){
 
     .why-sec-feature {
-        padding: 1px 13px !important;
+        padding: 1px 0px !important;
     }
     .why-sec-feature .container{
         padding: 35px 10px;

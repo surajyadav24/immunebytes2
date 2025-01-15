@@ -126,9 +126,10 @@ button.close-popup-btn img {
       margin-bottom: 15px;
       width: 100%;
   }
-    .popup-form {
-        background: #000;
-    }
+  .popup-form {
+    border: 1px solid #f9116c;
+    background: #000;
+}
     .popup-overlay {
         position: absolute;
         top: 250px;

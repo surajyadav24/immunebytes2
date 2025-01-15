@@ -136,10 +136,12 @@
     margin-bottom: 16px;
   }
   .audit-process-card h5 {
+    display: none;
+    color: #fff !important;
     font-size: 16px;
     margin-top: 16px;
     margin-bottom: 16px;
-  }
+}
   .audit-process-card {
     padding: 20px 31px 20px 20px;
   }

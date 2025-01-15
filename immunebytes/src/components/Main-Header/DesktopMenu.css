@@ -260,6 +260,9 @@ ul.ml-5.mob-menu-ul {
   padding-left: 0px !important;
   font-family: Arame-Bold;
 }
+header {
+  padding: 0px 20px;
+}
 
 }
 

@@ -81,7 +81,7 @@ position: relative;
         margin-top: 21px !important;
         padding: 9px 12px !important;
         font-size: 12px !important;
-        background-color: transparent !important;
+
     }
     .cta-wrapper button.btn.btn-primary span {
         transform: scale(0.7);
@@ -90,6 +90,8 @@ position: relative;
     .cta-wrapper .close-popup-btn {
         background: #f9116c;
         margin-top: -15px !important;
+        right: 7px !important;
+        top: 7px;
     }
   
   }

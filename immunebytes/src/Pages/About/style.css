@@ -108,3 +108,11 @@ button.btn.btn-primary {
  
 
 }
+
+@media (max-width:445px) {
+    .about-process .audit-process-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px 46px;
+    }
+}

@@ -32,15 +32,14 @@ const CultureSliders = () => {
     // Initialize the first culture Splide slider (smooth loop)
     const splide1 = new Splide('#cultureSplide1', {
       type: 'loop',
-      drag: false,
+      drag: true,
       focus: 'center',
       cloning: true,
-
       perPage: 4,
       autoScroll: {
-        // speed: 1, // Speed for the scroll
+        speed: 1, // Speed for the scroll
         pauseOnHover: true,
-        easing: 'ease-in-out', // Smooth linear animation
+        easing: 'linear', // Smooth linear animation
       },
       autoplay: true,  // Enable autoplay
       pagination: false,  // Disable pagination
@@ -54,7 +53,7 @@ const CultureSliders = () => {
     // Initialize the second culture Splide slider (smooth loop)
     const splide2 = new Splide('#cultureSplide2', {
       type: 'loop',
-      drag:false,
+      drag:true,
       cloning: true,
 
       focus: 'center',
@@ -62,7 +61,7 @@ const CultureSliders = () => {
       autoScroll: {
         speed: -1, // Speed for the scroll
         pauseOnHover: true,
-        easing: 'ease-in-out', // Smooth linear animation
+        easing: "linear", // Smooth linear animation
       },
       autoplay: true,  // Enable autoplay
       pagination: false,  // Disable pagination
@@ -74,10 +73,10 @@ const CultureSliders = () => {
     }).mount({ AutoScroll });
 
     // Clean up on component unmount
-    // return () => {
-    //   splide1.destroy();
-    //   splide2.destroy();
-    // };
+    return () => {
+      splide1.destroy();
+      splide2.destroy();
+    };
   }, []);
 
   return (

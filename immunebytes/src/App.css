@@ -241,6 +241,7 @@ button.telegram-fixed {
   height: 50px;
   border: 1px solid #fff;
   width: 50px;
+  z-index: 99999;
 }
 
 button.telegram-fixed img {
@@ -284,7 +285,9 @@ img.btn-icon {
 .engagementmodel .cta-wrapper .close-popup-btn{
   margin-top: 0px !important;
 }
-
+.cta-wrapper .close-popup-btn{
+  margin-top: 0px !important;
+}
 .engagementmodel .cta-wrapper h2{
   padding: 0px 0px;
 }

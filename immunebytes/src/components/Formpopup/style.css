@@ -19,7 +19,9 @@
   }
   
   .popup-form {
-    background: url('../../assets/images/portfolio/popup-bg.svg') no-repeat center center / contain #000000;
+    border: 2px solid #F9116C;
+    background: #000;
+    /* background: url('../../assets/images/portfolio/popup-bg.svg') no-repeat center center / contain #000000; */
     position: relative;
     padding: 15px 15px;
     border-radius: 13px;
@@ -29,6 +31,7 @@
     max-width: 853px;
   }
   .cta-wrapper .popup-form{
+    border: 2px solid #F9116C;
     position: relative;
     padding: 15px 17px;
     border-radius: 13px;
@@ -127,7 +130,7 @@ button.close-popup-btn img {
       width: 100%;
   }
   .popup-form {
-    border: 1px solid #f9116c;
+    border: 2px solid #f9116c;
     background: #000;
 }
     .popup-overlay {
@@ -148,7 +151,7 @@ button.close-popup-btn img {
         width: 100%;
     }
     .popup-form {
-      z-index: 999;
+      z-index: 999999999;
       min-height: 100vh;
       background: #000;
       top: 120px;

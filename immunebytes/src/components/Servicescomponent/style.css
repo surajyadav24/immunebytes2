@@ -81,8 +81,7 @@ transform: scale(0.8);
 }
 .service-img img {
     margin-right: 0px;
-    max-width: 50%;
-    
+    max-width: 90%;
 }
 .service-img {
     left: -32px !important;

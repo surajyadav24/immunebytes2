@@ -112,6 +112,23 @@ padding: 48px 0px;
   padding: 5px 12px !important;
 }
 
+@media (max-width:768px) {
+  .homapage-prtfolio .portfolio-table-container {
+    max-height: 100%;
+    min-height: 100% !important;
+    border: none;
+    background: none;
+  }
+  .audit-process {
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 0px !important;
+}
+
+
+}
+
   @media (max-width:445px) {
     .homapage-prtfolio .portfolio-title {
       padding-top: 40px !important;
@@ -137,8 +154,8 @@ padding: 48px 0px;
   }
 
   .homapage-prtfolio .portfolio-table-container {
-    max-height: 750px;
-    min-height: 454px !important;
+    max-height: 770px;
+    min-height: 763px !important;
     border: none;
     background: none;
   }

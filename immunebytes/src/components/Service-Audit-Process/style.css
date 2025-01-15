@@ -110,8 +110,8 @@
   font-size: 20px;
   margin-top: 30px;
   margin-bottom: 16px;
+  min-height: 50px;
 }
-
 @media (max-width:768px){
   .audit-process-card{
     padding: 20px !important;

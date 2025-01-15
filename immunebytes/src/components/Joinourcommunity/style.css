@@ -19,7 +19,8 @@ text-align: center;
 .btn-section {
     padding: 40px 0px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px;
     max-width: 46%;
     margin: 0 auto;
 }
@@ -64,9 +65,15 @@ text-align: center;
     padding: 40px 0px;
 }
 .telegram-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: url(../../assets/images/tele-bg.svg)no-repeat center center / contain;
 }
-.twit-x{
+.x-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 10px 0px !important;
     background: url(../../assets/images/twitx.svg)no-repeat center center / 100%;
 }
@@ -84,7 +91,7 @@ text-align: center;
         text-decoration: none;
         color: #fff;
     }
-    .btn-section button {
+    /* .btn-section button {
         margin: 4px 10px !important;
         border: none;
         font-family: RobotoMono-Bold;
@@ -98,7 +105,7 @@ text-align: center;
         background-color: transparent;
         outline: none;
         gap: 0px 12px;
-    }
+    } */
     .btn-section button img {
         max-width: 21px;
     }
@@ -132,7 +139,7 @@ text-align: center;
     .btn-section button {
         margin: 4px 0px !important;
         border: none;
-        font-family: RobotoMono-Bold;
+        font-family: Arvo-Regular;
         text-decoration: none;
         min-width: 160px;
         min-height: 67px;

@@ -154,7 +154,7 @@ button.close-popup-btn img {
       z-index: 999999999;
       min-height: 100vh;
       background: #000;
-      top: 120px;
+      top: 40px;
   }
     .popup-overlay {
         position: absolute;

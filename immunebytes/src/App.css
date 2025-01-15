@@ -392,7 +392,7 @@ border: none !important;
 }
 .portfolio-container .btn-primary {
   padding: 8px 19px !important;
-  margin-top: 15px !important;
+  margin-top: 40px !important;
 }
 .heading-h1 {
   font-size: 40px;
@@ -426,6 +426,9 @@ p {
   color: #F9116C;
   padding: 40px 0px 20px;
 }
+.por-cta {
+  padding-top: 40px;
+}
 
 }
 @media (max-width:445px) {
@@ -435,7 +438,9 @@ p {
     font-size: 14px !important;
     font-weight: 400;
 }
-
+.why-choose-us .card p {
+  font-size: 26px !important;
+}
 
   h1.text-center.py-5.pb-4.heading-h1 {
     padding-top: 0px !important;
@@ -570,6 +575,11 @@ h1.text-center.heading-h1.testimonial-heading.homepage-heading {
   min-width: 343px;
   margin: 0 auto;
   min-height: 215px;
+}
+.audit-content p {
+  max-width: 100%;
+  line-height: 16px;
+  font-size: 16px !important;
 }
 
 }

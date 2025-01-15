@@ -18,7 +18,8 @@
     font-weight: bold;
   }
   .request-audit-container .button-container button.btn.btn-primary {
-    padding: 7px 13px !important;
+    gap: 8px;
+    padding: 11px 27px !important;
 }
 
   .request-button {

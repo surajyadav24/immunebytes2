@@ -136,7 +136,10 @@ padding: 37px 0px;
       }
 
       .secure-audit h2 {
-        font-size: 30px;
+        font-size: 30px !important;
+      }
+      .por-cta .secure-audit h2 {
+        font-size: 30px !important;
       }
       .yellow-border{
         background: url(../../assets/images/portfolio/hover-yellow.svg) no-repeat center center / contain;

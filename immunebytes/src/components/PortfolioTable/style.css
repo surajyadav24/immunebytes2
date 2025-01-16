@@ -418,14 +418,25 @@ max-width: 70%;
   width: 95% !important;
   margin: 0 auto;
 }
+.search-bar::before{
+  left: 7px !important;
+  position: absolute;
 }
-@media (max-width: 426px) {
+.search-bar input{
+  width: 100%;
+}
+
+}
+@media (max-width: 445px) {
   .portfolio-grid-row {
     display: flex;
     flex-direction: column;
     padding: 10px;
   }
-
+  .search-bar::before {
+    left: -17px !important;
+    position: absolute;
+}
   .portfolio-grid-row div {
     display: flex;
     flex-direction: row;

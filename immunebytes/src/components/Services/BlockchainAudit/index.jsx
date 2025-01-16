@@ -282,8 +282,7 @@ function BlockchainAudit() {
         />
 <div className="smart-contract-process">
 <AuditProcessdummy
-          title="Secure Every Layer
-"
+          title="Elevating Protocol Safety Standards"
           processSteps={processSteps}
         />
 </div>

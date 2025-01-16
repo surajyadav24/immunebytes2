@@ -1,8 +1,13 @@
 .culture-wrapper .splide__slide img{
   border-radius: 18px;
-  max-height: 90%;
+  max-height: 95%;
   transition: transform 0.5s ease-in-out;
 }
+.splide__slide {
+  margin-top: 30px;  /* Adjust for top margin */
+
+}
+
 
 
 /* .container {

@@ -20,35 +20,35 @@ const About = () => {
       title: "Billic",
       subTitleProcess: "",
       description:
-        "Uncover vulnerabilities in your DApp’s interfaces, workflows, and underlying smart contracts to ensure seamless user experiences.",
+        "A cyber security startup with an extensive product suite to focus on digital asset forensics, fraud prevention techniques and secured payment services.",
     },
     {
       icon:icon2,
       title: "MEXC global",
       subTitleProcess: "",
       description:
-        "Simulate high-traffic, heavy-load, and malicious-actor scenarios to validate your dApp’s robustness.",
+        "One of the first movers and pioneers of DeFi and blockchain, MEXC Global aims to become the go-to platform for traders and investors with their products - Futures, Spot and Leveraged ETFs.",
     },
     {
       icon:icon3,
       title: "BitMart",
       subTitleProcess: "",
       description:
-        "Test APIs and protocols for flaws like injection attacks, cross-domain vulnerabilities, and improper validations.",
+        "One of the most trusted cryptocurrency trading platforms with an added ease of use, 800+ trading pairs, hot and cold wallet systems and an advanced risk management system.",
     },
     {
       icon:icon1,
       title: "Billic",
       subTitleProcess: "",
       description:
-        "Analyze potential attack surfaces through holistic, end-to-end penetration testing for maximum threat coverage.",
+        "Web3 software development company dedicated to providing the best blockchain solutions to existing and emerging businesses, startups and industries with a use case of blockchain technology.",
     },
     {
       icon:icon2,
       title: "MEXC global",
       subTitleProcess: "",
       description:
-        "Evaluate how your DApp interacts with external contracts, oracles, and middleware for hidden security risks.",
+        "Professional videogame developers with an experience of over a decade in traditional and blockchain gaming. They provide a unique process of in-depth incubation program for gamefi projects.",
     },
     {
       icon:icon3,
@@ -56,7 +56,7 @@ const About = () => {
       subTitleProcess:
         "",
       description:
-        "Receive in-depth reports with clear fixes, empowering you to enhance security and build user confidence.",
+        "One of the most trusted cryptocurrency trading platforms with an added ease of use, 800+ trading pairs, hot and cold wallet systems and an advanced risk management system.",
     },
     {
       icon:icon1,
@@ -152,8 +152,8 @@ const testimonialsData = [
 
       <div className="about-process about-audit-process">
         <AuditProcessdummy
-subheading="We are a closely-knitted team of Web3 nerds based in India, constantly looking for ways to improve the overall security model of decentralized finance and blockchain. Our team comprises security experts"
-          title="Elevating Protocol Safety Standards"
+        title="Elevating Protocol Safety Standards"
+subheading="We are committed to raising the bar for Web3 safety through meticulous audits and innovative security solutions. By addressing vulnerabilities proactively, we empower blockchain projects to operate with confidence and resilience."
           processSteps={processSteps.slice(0, visibleSteps)} // Display limited steps
         />
         {visibleSteps < processSteps.length ? (
@@ -166,7 +166,7 @@ subheading="We are a closely-knitted team of Web3 nerds based in India, constant
       <Map />
       <VideoTestimonial
       title="Video Testimonial"
-      description="We are a closely-knitted team of Web3 nerds based in India, constantly looking for ways to improve the overall security model of decentralized finance and blockchain."
+      description="Hear directly from our clients as they share their experiences with ImmuneBytes. Discover how our Web3 security expertise has helped them achieve their goals with confidence and trust."
       testimonials={testimonialsData}
     />
       <Culture />

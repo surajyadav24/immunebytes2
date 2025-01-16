@@ -177,6 +177,7 @@ transform: scale(0.8);
         padding: 19px 20px !important;
         max-height: 158px !important;
         min-height: 197px !important;
+        border-radius: 0px !important;
     }
     .steps::before {
         max-height: 460px;

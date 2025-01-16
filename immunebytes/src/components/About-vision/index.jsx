@@ -7,25 +7,25 @@ const Vision = () => {
 <div className="container">
 <div className='about-vision'>
       <h2 className='section-heading'>Our Vision</h2>
-      <p className='sub-heading-section'>We are a closely-knitted team of Web3 nerds based in India, constantly looking for ways to improve the overall security model of decentralized finance and blockchain. Our team comprises security experts</p>
+      <p className='sub-heading-section'>Building a Secure and Trusted Foundation for the Decentralized Future.</p>
       <div className='table'>
       <table>
         <tbody>
             <tr>
-                <td>Securing DeFi</td>
-                <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scra </td>
+                <td>Securing DeFi:</td>
+                <td>Empowering decentralized finance with robust security measures, ensuring safety for funds and protocols in a rapidly evolving ecosystem.</td>
             </tr>
             <tr>
-                <td>Transparent Growth</td>
-                <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scra </td>
+                <td>Transparent Growth:</td>
+                <td>Fostering trust and accountability by delivering clear, comprehensive, and reliable auditing services that prioritize stakeholder interests. </td>
             </tr>
             <tr>
-                <td>Blockchain Adoption</td>
-                <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scra </td>
+                <td>Blockchain Adoption:</td>
+                <td>Accelerating global blockchain adoption by mitigating risks and building secure foundations for innovative decentralized applications.</td>
             </tr>
             <tr>
-                <td>Web3 Confidence</td>
-                <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scra </td>
+                <td>Web3 Confidence:</td>
+                <td>Strengthening confidence in Web3 by safeguarding its infrastructure, enabling users to explore and innovate without fear of vulnerabilities.</td>
             </tr>
         </tbody>
     </table>

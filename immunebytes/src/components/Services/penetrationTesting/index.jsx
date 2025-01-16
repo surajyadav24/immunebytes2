@@ -280,7 +280,7 @@ function Penetration (){
 
 <div className="smart-contract-process homepage-heading">
 <AuditProcessdummy
-          title="Shield Your DApp"
+          title="Elevating Protocol Safety Standards"
           processSteps={processSteps} 
         />
 </div>

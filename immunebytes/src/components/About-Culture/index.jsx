@@ -35,6 +35,7 @@ const CultureSliders = () => {
       drag: true,
       focus: 'center',
       cloning: true,
+      gap  :  '2px',
       perPage: 4,
       autoScroll: {
         speed: 1, // Speed for the scroll
@@ -55,6 +56,7 @@ const CultureSliders = () => {
       type: 'loop',
       drag:true,
       cloning: true,
+      gap    : '0.2rem',
 
       focus: 'center',
       perPage: 4,
@@ -82,17 +84,17 @@ const CultureSliders = () => {
   return (
     <div className="culture-wrapper">
  <div className="container">
- <h1 className="text-center heading-h1 culture-heading">Cultural Insights</h1>
+ <h1 className="text-center heading-h1 culture-heading">Our Culture</h1>
 <p className="sub-heading-section pb-4">
-We are a closely-knitted team of Web3 nerds based in India, constantly looking for ways to improve the overall security model of decentralized finance and blockchain.
+At ImmuneBytes, our culture is built on innovation, integrity, and collaboration. We strive to create a supportive environment that fosters creativity, values diverse perspectives, and empowers our team to push the boundaries of Web3 security.
 </p>
  </div>
       {/* Culture Slider 1 */}
-      <div className="splide mb-2" id="cultureSplide1" >
+      <div className="splide mb-0" id="cultureSplide1" >
         <div className="splide__track">
           <ul className="splide__list ">
             {cultureLogos1.map((logo, index) => (
-              <li key={index} className="splide__slide mx-1 ">
+              <li key={index} className="splide__slide ">
                 <img src={logo} alt={`Culture Image ${index + 1}`} />
               </li>
             ))}
@@ -105,7 +107,7 @@ We are a closely-knitted team of Web3 nerds based in India, constantly looking f
         <div className="splide__track">
           <ul className="splide__list">
             {cultureLogos2.map((logo, index) => (
-              <li key={index} className="splide__slide mx-1">
+              <li key={index} className="splide__slide ">
                 <img src={logo} alt={`Culture Image ${index + 1}`} />
               </li>
             ))}

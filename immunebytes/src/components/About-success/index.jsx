@@ -51,7 +51,7 @@ const Success = () => {
 <div className="container">
 <div className="about-success">
       <h2 className="section-heading">Our Success Team</h2>
-      <p className="sub-heading-section">We are a closely-knitted team of Web3 nerds based in India, constantly looking for ways to improve the overall security model of decentralized finance and blockchain. Our team comprises security experts with significant experience developing and auditing DeFi protocols, smart contracts, and NFTs.</p>
+      <p className="sub-heading-section">Driven by Expertise, United by Purpose. Our success is powered by a dedicated team who is committed to safeguarding the Web3 landscape. With a shared vision of driving innovation and security in the decentralized world, we work collaboratively to provide comprehensive, cutting-edge solutions that inspire trust and confidence in every project we support.</p>
       <div className="about-card">
         {team.map((member, index) => (
           <div className="card" key={index}>

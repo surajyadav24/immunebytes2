@@ -443,14 +443,13 @@ padding: 50px 10px;
 .featured-card.talk-card {
   background: url("../../assets/images/services-main/talk-bg.svg") no-repeat center center / contain;
   position: relative;
-  min-width: -18%;
-  max-width: 53%;
+  min-width: 41%;
+  max-width: 55%;
   right: -47%;
-  top: -226px;
-  min-height: 173px !important;
+  top: -205px;
+  min-height: 148px !important;
   padding: 0px 0px;
   border: none;
-
 }
 .featured-card.testimonial-card{
   position: relative;
@@ -496,6 +495,14 @@ padding: 50px 10px;
 .talk-card{
   justify-content: flex-start;
 }
+
+.arrow-btn {
+  bottom: 27px;
+  right: -3px;
+  height: 30px;
+  width: 30px;
+}
+
 }
 
 
@@ -506,7 +513,7 @@ padding: 50px 10px;
    height: 35px;
    width: 35px;
   }
-  .featured-card.talk-card {
+  /* .featured-card.talk-card {
    background: url("../../assets/images/services-main/talk-bg.svg") no-repeat center center / contain;
    position: relative;
    min-width: 41%;
@@ -518,7 +525,7 @@ padding: 50px 10px;
    border: none;
  
  
- }
+ } */
 
  .featured-card.talk-card button.btn.btn-primary {
   font-size: 9px !important;

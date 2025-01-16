@@ -3,7 +3,8 @@ import './style.css';
 
 const OtherWeb3Services = ({ services }) => {
   return (
-    <div className='otherweb3services'>
+<div className="container">
+<div className='otherweb3services'>
       <h2>Other Web3 Services</h2>
       <div className="otherweb3services-cards">
         {services.map((service, index) => (
@@ -17,6 +18,7 @@ const OtherWeb3Services = ({ services }) => {
         ))}
       </div>
     </div>
+</div>
   );
 };
 

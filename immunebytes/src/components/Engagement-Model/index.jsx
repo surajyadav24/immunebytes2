@@ -8,7 +8,8 @@ import iconarrow from '../../assets/images/iconarrow.svg';
 const EngagementModel = () => {
   return (
     <>
-    <div className='engagementmodel'>
+<div className="container">
+<div className='engagementmodel'>
       <h2>Engagement Model</h2>
       <div className='engagementmodel-boxes'>
         <div className='engagementmodel-box'>
@@ -37,6 +38,7 @@ const EngagementModel = () => {
   <Ctacomponents title="Leading the Wave of Web3 Security"/>
   
       </div>
+</div>
     </>
   )
 }

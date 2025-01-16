@@ -94,9 +94,7 @@ padding: 37px 0px;
         background: url(../../assets/images/portfolio/hover-green.svg) no-repeat center center / contain;
       }
 
-      .secure-audit h2 {
-        font-size: 50px;
-      }
+      
       .yellow-border{
         background: url(../../assets/images/portfolio/hover-yellow.svg) no-repeat center center / contain;
         color: #000;

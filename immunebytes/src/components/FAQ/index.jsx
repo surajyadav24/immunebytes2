@@ -9,7 +9,8 @@ const FAQ = ({ title, faqs, icons }) => {
   };
 
   return (
-    <div className="p-6 faq-container">
+<div className="container">
+<div className="p-6 faq-container">
       <h2 className="text-2xl font-bold text-center heading mb-6 pb-6">
         {title}
       </h2>
@@ -69,6 +70,7 @@ const FAQ = ({ title, faqs, icons }) => {
         ))}
       </div>
     </div>
+</div>
   );
 };
 

@@ -54,6 +54,7 @@ h2.portfolio-title.homepage-heading {
 
 .portfolio-grid-row>div:last-child{
   justify-content: flex-end;
+  gap:5px;
 }
 
 .portfolio-grid-header, .portfolio-grid-row {
@@ -138,7 +139,7 @@ input[type="text"]:focus-visible {
     align-items: center;
     justify-content: center;
     color: #fff;
-    padding: 6px 12px;
+    padding: 6px 0px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -418,9 +419,10 @@ max-width: 70%;
   width: 95% !important;
   margin: 0 auto;
 }
-.search-bar::before{
+.search-bar::before {
   left: 7px !important;
   position: absolute;
+  right: auto;
 }
 .search-bar input{
   width: 100%;
@@ -434,7 +436,6 @@ max-width: 70%;
     padding: 10px;
   }
   .search-bar::before {
-    left: -17px !important;
     position: absolute;
 }
   .portfolio-grid-row div {

@@ -167,7 +167,10 @@ button.close-popup-btn img {
     }
 
     .form-group input, .form-group select {
-      width: 87vw;
+      display: flex;
+              width: 87vw;
+              justify-content: flex-start;
+              max-width: 101%;
   }
 
   }

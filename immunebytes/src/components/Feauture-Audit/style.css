@@ -244,11 +244,11 @@ background-color: #FFFFFF1A;
   background: url("../../assets/images/services-main/talk-bg.svg") no-repeat center center / contain;
   position: relative;
   min-width: 44%;
-  max-width: 51%;
-  right: -49%;
-  top: -296px;
-  min-height: 170px;
-  padding: 59px 0px;
+  max-width: 53%;
+  right: -48%;
+  top: -300px;
+  min-height: 204px;
+  padding: 68px 0px;
   border: none;
 
 
@@ -277,6 +277,8 @@ padding: 50px 10px;
 }
 
 .featured-card.case-study-card {
+  position: relative;
+  left: -15px;
   padding: 42px 10px !important;
   min-width:162px;
 }
@@ -434,6 +436,7 @@ padding: 50px 10px;
   min-width: 100%;
 }
 .featured-audit-grid {
+  gap: 0px;
   flex-direction: column;
 }
 .featured-card.talk-card button.btn.btn-primary {
@@ -474,7 +477,7 @@ padding: 50px 10px;
   top: -183px;
 }
 .feature-wrapper {
-  max-height: 950px;
+  max-height: 900px;
   overflow: hidden;
 }
 .featured-card.case-study-card {

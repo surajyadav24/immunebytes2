@@ -399,7 +399,7 @@ const AddPortfolio = (props) => {
             <option value="Closed">Closed</option>
             <option value="Open">Open</option>
             <option value="Acknowledged">Acknowledged</option>
-            <option value="PartiallyResolved">Partially Resolved</option>
+            <option value="Partially Resolved">Partially Resolved</option>
             <option value="Resolved">Resolved</option>
           </select>
         </div>

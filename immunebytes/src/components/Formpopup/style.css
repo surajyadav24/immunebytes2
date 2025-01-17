@@ -149,6 +149,7 @@ button.close-popup-btn img {
   display: flex;
   justify-content: flex-start !important;
   margin-left: 0px !important;
+  min-width: 91vw;
 }
 
     .popup-overlay {

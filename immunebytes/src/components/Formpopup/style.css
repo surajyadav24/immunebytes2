@@ -168,6 +168,7 @@ button.close-popup-btn img {
 
     .form-group input, .form-group select {
       display: flex;
+      text-align: left !important;
               width: 87vw;
               justify-content: flex-start;
               max-width: 101%;

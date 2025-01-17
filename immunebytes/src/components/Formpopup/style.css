@@ -204,4 +204,13 @@ input[type="date"] {
               max-width: 101%;
   }
 
+  .form-group input[type="date"]{
+    width: 100% !important;
+    display: flex;
+    justify-content: flex-start !important;
+    margin-left: 0px !important;
+    min-width: 100%;
+  }
+
+
   }

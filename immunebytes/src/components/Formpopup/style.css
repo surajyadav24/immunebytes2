@@ -182,7 +182,7 @@ input[type="date"] {
 
     .popup-form {
       background: #000;
-      min-height: 75vh;
+      min-height: 73vh;
       top: -70px;
       left: 0px;
       z-index: 999999999;

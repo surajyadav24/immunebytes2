@@ -145,7 +145,10 @@ button.close-popup-btn img {
 
 
 .form-group input[type="date"]{
-  width: 300px !important;
+  width: 100% !important;
+  display: flex;
+  justify-content: flex-start !important;
+  margin-left: 0px !important;
 }
 
     .popup-overlay {
@@ -162,13 +165,16 @@ button.close-popup-btn img {
         flex-direction: column;
         margin-bottom: 13px;
     }
+    
     .form-group .input-block {
         width: 100%;
     }
+
     .popup-form {
       background: #000;
       min-height: 75vh;
       top: -70px;
+      left: 0px;
       z-index: 999999999;
   }
     .popup-overlay {

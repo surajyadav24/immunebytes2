@@ -53,7 +53,18 @@ const Formpopup = ({ auditName = "", buttonClassName = "", arrowicon = "" }) => 
       setMessage("Failed to submit the form. Please try again later.");
     }
   };
-
+  const handleChangedate = (e) => {
+    const selectedDate = e.target.value;
+    const today = new Date().toISOString().split("T")[0];
+    if (selectedDate < today) {
+      alert("You cannot select a past date.");
+      return;
+    }
+    setFormData({
+      ...formData,
+      auditdeadline: selectedDate,
+    });
+  };
   return (
     <div className="popup-container">
       <button
@@ -153,13 +164,17 @@ const Formpopup = ({ auditName = "", buttonClassName = "", arrowicon = "" }) => 
               <div className="form-group">
                 <div className="input-block">
                   <label htmlFor="auditdeadline">Audit Deadline</label>
+                 
+
+                 
                   <input
                     type="date"
                     id="auditdeadline"
                     value={formData.auditdeadline || new Date().toISOString().split("T")[0]}
-                    onChange={handleChange}
+                    onChange={handleChangedate}
                     required
                     min={new Date().toISOString().split("T")[0]} // Prevent past dates
+                    // style={{ width: '100%' }}
                   />
                 </div>
               </div>

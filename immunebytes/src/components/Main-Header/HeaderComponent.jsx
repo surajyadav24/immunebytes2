@@ -11,7 +11,7 @@ export default function HeaderComponent() {
         <nav className="px-3.5 flex-center-between w-full max-w-7xl mx-auto">
           {/* Logo Section */}
           <div className="flex-center relative logo-wrapper-main">
-            <img src={logo} alt="Logo" />
+            <a href="/"><img src={logo} alt="Logo" /></a>
           </div>
 
           {/* Desktop Menu */}

@@ -26,6 +26,7 @@ import Error from "./components/404Eror/";
 import HeaderComponent from "./components/Main-Header/HeaderComponent.jsx";
 import Blog from "./Pages/Blog/";
 import Telegram from "./assets/images/telegram.svg";
+import BlogPost from './components/BlogPost'
 import "./App.css";
 
 // Style object for Telegram widget
@@ -111,6 +112,9 @@ function App() {
           <Route path="/addportfolio" element={<PrivateRoute><Layout><AddPortfolio headname="Add Portfolio" /></Layout></PrivateRoute>} />
           <Route path="/updateportfolio/:selectedItemId" element={<PrivateRoute><Layout><UpdatePortfolio headname="Update Portfolio" /></Layout></PrivateRoute>} />
           <Route path="/addplatform" element={<PrivateRoute><Layout><PlatformManagement headname="Add Platform" /></Layout></PrivateRoute>} />
+          {/* BlogPost */}
+          <Route path="/BlogPost" element={<Layout2><BlogPost /></Layout2>} />
+
         </Routes>
       </Router>
       <div className="telegram-wrapper">

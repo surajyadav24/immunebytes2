@@ -7,10 +7,12 @@
 }
 
 .testimonial-slider .swiper-slide.swiper-slide-prev p {
-    margin-top: 20px;
+    margin-top: 3px;
+    font-size: 14px !important;
 }
 .testimonial-slider .swiper-slide.swiper-slide-next p {
-    margin-top: 20px;
+    margin-top: 3px;
+    font-size: 14px !important;
 }
 
 .testimonial-slider .swiper-slide-next{

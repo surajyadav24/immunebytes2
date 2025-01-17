@@ -37,7 +37,7 @@ import comp from "../../../assets/images/services-main/feature-icon/Comprehensiv
 import Post from "../../../assets/images/services-main/feature-icon/Post-Audit-Support.gif";
 import Tailored from "../../../assets/images/services-main/feature-icon/Tailored-Approach.gif";
 import Focus from "../../../assets/images/services-main/feature-icon/TR.gif";
-import Proven from "../../../assets/images/services-main/feature-icon/Post-Audit-Support.gif";
+import Proven from "../../../assets/images/services-main/Blockchain-icon/Proven-Track-Record.gif";
 import Seal from "../../../assets/images/services-main/feature-icon/Cost-Effective Security.gif";
 
 

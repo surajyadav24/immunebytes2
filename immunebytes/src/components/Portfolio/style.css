@@ -12,11 +12,13 @@
       margin-bottom: 3px;
   }
   .audit-details {
+    background: url(../../assets/images/portfolio/NEW1.svg) no-repeat center center / cover !important;
     display: flex;
     min-height: 180px;
-    width: 100%;
+    min-width: 100%;
     padding: 0px 21px;
     flex-direction: column;
+    margin: 0px !important;
 }
 .progress-bar {
   padding-left: 12px;

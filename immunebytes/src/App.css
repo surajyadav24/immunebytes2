@@ -573,12 +573,13 @@ h1.text-center.heading-h1.testimonial-heading.homepage-heading {
   justify-content: center;
 }
 .audit-content .audit-progress {
+  border: 1px solid #fff;
   min-width: 100%;
-  min-height: 202px;
+  min-height: 195px;
   margin: 0px !important;
-  padding: 19px 14px 0px 1px;
-  border: none;
-  background: url("./assets/images/mobile-severty.svg") no-repeat center center / contain ;
+  padding: 15px 14px 0px 1px;
+  border-radius: 20px;
+  background: #2a2828d1 !important;
 }
 .por-cta {
   padding-top: 40px;

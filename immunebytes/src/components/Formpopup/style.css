@@ -123,6 +123,15 @@ button.close-popup-btn img {
   justify-content: center;
   align-items: center;
 }
+
+input[type="date"] {
+  text-align: start; /* Ensures text is left-aligned */
+  appearance: none; /* Removes default styling */
+  -webkit-appearance: none; /* For Safari/iOS */
+  padding: 0.5em; /* Adjust padding as needed */
+  font-family: inherit; /* Ensure font consistency */
+}
+
   @media (max-width:768px) {
     .form-group {
         flex-direction: column;

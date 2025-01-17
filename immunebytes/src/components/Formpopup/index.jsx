@@ -156,7 +156,7 @@ const Formpopup = ({ auditName = "", buttonClassName = "", arrowicon = "" }) => 
                   <input
                     type="date"
                     id="auditdeadline"
-                    value={formData.auditdeadline}
+                    value={formData.auditdeadline || new Date().toISOString().split("T")[0]}
                     onChange={handleChange}
                     required
                     min={new Date().toISOString().split("T")[0]} // Prevent past dates

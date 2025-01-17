@@ -13,21 +13,23 @@ grid-template-columns: 1fr 1fr 1fr;
 gap: 3rem;
 }
 .engagementmodel-box {
-    background: url("../../assets/images/engagement/bg-box.svg") no-repeat center center / contain;
-    border-radius: 0.5rem;
-    padding: 39px 20px;
-    padding-bottom: 10px;
-    /* padding-top: 2rem; */
-    min-height: 265px;
+  
+        background: #2F2E2E;
+        border: 1px solid #f9116c;
+        border-radius: 20px;
+        padding: 30px 20px;
+        padding-bottom: 10px;
+        min-height: 255px;
 }
 .engagementmodel-box:hover {
-    background: url("../../assets/images/engagement/bg-hover.svg") no-repeat center center / contain;
-    border-radius: 0.5rem;
-    padding: 39px 20px;
-    padding-bottom: 10px;
-    /* padding-top: 2rem; */
-    min-height: 239px;
+        background: #f9116c;
+        border: 1px solid #f9116c;
+        border-radius: 20px;
+        padding: 30px 20px;
+        padding-bottom: 10px;
+        min-height: 255px;
 }
+
 
 
 .engagementmodel-box h3{

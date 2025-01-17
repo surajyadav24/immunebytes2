@@ -79,8 +79,10 @@
 ::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
+
+
   .form-group input, .form-group select {
-    width: 96%;
+    width: 100%;
     padding: 5px;
     font-size: 12px;
     border-radius: 5px;
@@ -142,7 +144,22 @@ input[type="date"] {
   .popup-form {
     border: 2px solid #f9116c;
     background: #000;
+    max-width: 95%;
+    left: -9px;
 }
+.form-group label {
+  width: 100%;
+  text-align: left;
+}
+
+
+.form-group input[type="date"]{
+  width: 100% !important;
+  display: flex;
+  justify-content: flex-start !important;
+  margin-left: 0px !important;
+}
+
     .popup-overlay {
         position: absolute;
         top: 250px;
@@ -157,13 +174,16 @@ input[type="date"] {
         flex-direction: column;
         margin-bottom: 13px;
     }
+    
     .form-group .input-block {
         width: 100%;
     }
+
     .popup-form {
       background: #000;
       min-height: 75vh;
       top: -70px;
+      left: 0px;
       z-index: 999999999;
   }
     .popup-overlay {
@@ -177,6 +197,7 @@ input[type="date"] {
 
     .form-group input, .form-group select {
       display: flex;
+      text-align: left !important;
               width: 87vw;
               justify-content: flex-start;
               max-width: 101%;

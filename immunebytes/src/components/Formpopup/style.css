@@ -133,6 +133,8 @@ button.close-popup-btn img {
   .popup-form {
     border: 2px solid #f9116c;
     background: #000;
+    max-width: 95%;
+    left: -9px;
 }
     .popup-overlay {
         position: absolute;

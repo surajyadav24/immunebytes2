@@ -168,6 +168,9 @@ button.close-popup-btn img {
 
     .form-group input, .form-group select {
       width: 87vw;
+      color: #fff !important;
+      text-align: left !important;
+      
   }
 
   }

@@ -95,4 +95,11 @@ color: #fff;
     .vision-item p {
         font-size: 0.9rem;
     }
+
+
+   .about-vision table tr {
+        padding: 8px 0px !important;
+        display: flex;
+        flex-direction: column;
+    }
 }

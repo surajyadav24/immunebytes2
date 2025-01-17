@@ -130,6 +130,7 @@
         font-size: 32px;
         margin-bottom: 1rem; 
         color: #F9116C; /* Pink color for the title */
+        padding: 40px 0px 20px !important;
       }
     .why-sec-feature {
         background-color: #0f0f0feb;
